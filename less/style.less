@@ -167,6 +167,22 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-casque:before {
+  content: "\e602";
+}
+
+.icon-consultants:before {
+  content: "\e603";
+}
+
+.icon-outils:before {
+  content: "\e604";
+}
+
+.icon-perso:before {
+  content: "\e605";
+}
+
 .icon-arrow-left:before {
   content: "\e600";
 }
@@ -174,7 +190,6 @@ textarea {
 .icon-arrow-right:before {
   content: "\e601";
 }
-
 
 .roboto-light(@size){
   font-family: 'robotolight', sans-serif;
@@ -446,7 +461,7 @@ a.btn{
 
 /* @group Header */
 
-#bloc-header{
+header{
   display: block;
   width: 100%;
   height: auto;
@@ -727,6 +742,34 @@ a.btn-video{
     color: #232324;
     padding: 0 50px;
     margin: 0 0 0 2*@largeurCol;
+  }
+}
+
+/* @end */
+
+/* @group Footer */
+
+footer{
+  display: block;
+  position: relative;
+  /* <ul id="menu-top-footer">
+        <li>
+          <a href="#">Des consultants <strong>Experts</strong></a>
+        </li>
+      </ul>*/
+  ul#menu-top-footer{
+    display: block;
+    width: 100%;
+    height: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 55px 0 0 0;
+    li{
+      display: inline-block;
+      vertical-align: top;
+      width: 4*@largeurCol;
+      height: 222px;
+    }
   }
 }
 

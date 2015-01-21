@@ -107,6 +107,18 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-casque:before {
+  content: "\e602";
+}
+.icon-consultants:before {
+  content: "\e603";
+}
+.icon-outils:before {
+  content: "\e604";
+}
+.icon-perso:before {
+  content: "\e605";
+}
 .icon-arrow-left:before {
   content: "\e600";
 }
@@ -374,7 +386,7 @@ a.btn:hover .triangle-btn {
 }
 /* @end */
 /* @group Header */
-#bloc-header {
+header {
   display: block;
   width: 100%;
   height: auto;
@@ -654,6 +666,31 @@ a.btn-video .arrow {
   color: #232324;
   padding: 0 50px;
   margin: 0 0 0 176px;
+}
+/* @end */
+/* @group Footer */
+footer {
+  display: block;
+  position: relative;
+  /* <ul id="menu-top-footer">
+        <li>
+          <a href="#">Des consultants <strong>Experts</strong></a>
+        </li>
+      </ul>*/
+}
+footer ul#menu-top-footer {
+  display: block;
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 55px 0 0 0;
+}
+footer ul#menu-top-footer li {
+  display: inline-block;
+  vertical-align: top;
+  width: 352px;
+  height: 222px;
 }
 /* @end */
 /* @end */
