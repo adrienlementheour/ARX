@@ -8,6 +8,18 @@
 
 @blanc: #fff;
 @noir: #000;
+@vertARX: #81fa00;
+@bleu1ARX: #308ac6;
+@bleu2ARX: #227dba;
+@bleu3ARX: #2782be;
+@bleu4ARX: #298bcc;
+@bleu5ARX: #3799da;
+@bleu6ARX: #237ebb;
+@bleutxtARX: #0070b8;
+@grisARX: #535354;
+
+//GRILLE
+@largeurCol: 88px;
 
 /* @end */
 
@@ -62,8 +74,663 @@ textarea {
 
 /* @end */
 
+/* @group Fonts */
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight_italic';
+    src: url('../fonts/Roboto-LightItalic-webfont.eot');
+    src: url('../fonts/Roboto-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-LightItalic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-LightItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-LightItalic-webfont.svg#robotolight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/Roboto-Regular-webfont.eot');
+    src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoitalic';
+    src: url('../fonts/Roboto-Italic-webfont.eot');
+    src: url('../fonts/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Italic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Italic-webfont.svg#robotoitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotobold_italic';
+    src: url('../fonts/Roboto-BoldItalic-webfont.eot');
+    src: url('../fonts/Roboto-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-BoldItalic-webfont.woff') format('woff'),
+         url('../fonts/Roboto-BoldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-BoldItalic-webfont.svg#robotobold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'arx';
+  src:url('../fonts/arx.eot?-ubtghn');
+  src:url('../fonts/arx.eot?#iefix-ubtghn') format('embedded-opentype'),
+    url('../fonts/arx.woff?-ubtghn') format('woff'),
+    url('../fonts/arx.ttf?-ubtghn') format('truetype'),
+    url('../fonts/arx.svg?-ubtghn#arx') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'arx';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+  content: "\e600";
+}
+
+.icon-arrow-right:before {
+  content: "\e601";
+}
 
 
+.roboto-light(@size){
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto-light-italic(@size){
+  font-family: 'robotolight_italic', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto(@size){
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto-italic(@size){
+  font-family: 'robotoitalic', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto-bold(@size){
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto-bold-italic(@size){
+  font-family: 'robotobold_italic', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* @end */
+
+/* @group Mixins spécifiques */
+
+// Triangle Mixin
+.triangle(@_, @width, @height, @color){
+  width: 0px;
+  height: 0px;
+  border-color: transparent;
+  border-style: solid; }
+  .triangle(top, @width, @height, @color){
+    border-width: 0 @width/2 @height @width/2;
+    border-bottom-color: @color;
+    border-left-color: fade(@color, 0);
+    border-right-color: fade(@color, 0);
+  }
+  .triangle(bottom, @width, @height, @color){
+    border-width: @height @width/2 0 @width/2;
+    border-top-color: @color;
+    border-left-color: fade(@color, 0);
+    border-right-color: fade(@color, 0);
+  }
+  .triangle(right, @width, @height, @color){
+    border-width: @height/2 0 @height/2 @width;
+    border-left-color: @color;
+    border-top-color: fade(@color, 0);
+    border-bottom-color: fade(@color, 0);
+  }
+  .triangle(left, @width, @height, @color){
+    border-width: @height/2 @width @height/2 0;
+    border-right-color: @color;
+    border-top-color: fade(@color, 0);
+    border-bottom-color: fade(@color, 0);
+  }
+  .triangle(top-right, @width, @height, @color){
+    border-width: 0 @width @height 0;
+    border-right-color: @color;
+    border-bottom-color: fade(@color, 0);
+  }
+  .triangle(top-left, @width, @height, @color){
+    border-width: @height @width 0 0;
+    border-top-color: @color;
+    border-right-color: fade(@color, 0);
+  }
+  .triangle(bottom-right, @width, @height, @color){
+    border-width: 0 0 @height @width;
+    border-bottom-color: @color;
+    border-left-color: fade(@color, 0);
+  }
+  .triangle(bottom-left, @width, @height, @color){
+    border-width: @height 0 0 @width;
+    border-left-color: @color;
+    border-top-color: fade(@color, 0);
+}
+
+// Triangles
+.triangle{
+  display: inline-block;
+  
+  @width: 50px;
+  @height: 50px;
+  &.top          { .triangle(top, @width, @height, red) }
+  &.bottom       { .triangle(bottom, @width, @height, orange) }
+  &.right        { .triangle(right, @width, @height, yellow) }
+  &.left         { .triangle(left, @width, @height, green) }
+  &.top-right    { .triangle(top-right, @width, @height, cyan) }
+  &.top-left     { .triangle(top-left, @width, @height, blue) }
+  &.bottom-right { .triangle(bottom-right, @width, @height, indigo) }
+  &.bottom-left  { .triangle(bottom-left, @width, @height, purple) }
+}
+
+/* @end */
+
+/* @group Global */
+
+html, body{
+  display: block;
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+}
+
+.container{
+  display: block;
+  position: relative;
+  width: 1056px;
+  height: auto;
+  margin: 0 auto;
+}
+
+h1{
+  .roboto-light(2.313em);
+  display: block;
+  width: 4*@largeurCol;
+  height: auto;
+  color: @noir;
+  text-align: center;
+  margin: 0;
+  padding: 200px 0 0 0;
+}
+
+h2{
+  margin: 0;
+  padding: 0;
+  .roboto-light(1.375em);
+}
+
+p{
+  margin: 0;
+  padding: 0;
+  .roboto-light(1em);
+}
+
+.center-aligned{
+  text-align: center;
+}
+
+.txt-bleu{
+  color: @bleutxtARX;
+}
+
+a.btn{
+  display: block;
+  position: relative;
+  .size(2*@largeurCol);
+  text-decoration: none;
+  .box-sizing(border-box);
+  padding: 35px;
+  margin: 0;
+  .transition(all 0.1s ease-in);
+  .roboto-light(1.375em);
+  h2{
+    font-size: 1em;
+    .txt-btn{
+      strong{
+        .roboto-bold(1em);
+      }
+    }
+  }
+  &.btn-bleu{
+    background-color: @bleu2ARX;
+    color: @blanc;
+    &:hover{
+      background-color: @blanc;
+      color: @bleu2ARX;
+      .triangle-btn{
+        border-bottom-color: @bleu2ARX;
+      }
+    }
+  }
+  &.btn-blanc{
+    background-color: @blanc;
+    color: @bleu3ARX;
+    .triangle-btn{
+      border-bottom-color: @bleu3ARX;
+    }
+  }
+  &.btn-blanc-alpha{
+    background-color: #dcdcdc;
+    background-color: fade(@blanc, 40%);
+    color: @blanc;
+  }
+  &.btn-vertical-centered{
+    line-height: 2*@largeurCol;
+    padding: 0 35px;
+    .txt-btn{
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+  }
+  &.small-padding{
+    padding: 26px 0 0 26px;
+    &.btn-vertical-centered{
+      padding: 0 26px;
+    }
+  }
+  .triangle-btn{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    .triangle(bottom-right, 10px, 10px, @blanc);
+    .transition(all 0.1s ease-in-out);
+  }
+  &:hover{
+    .transition(all 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860));
+    .triangle-btn{
+      margin: 3px 0 0 3px;
+      border-width: 0 0 13px 13px;
+      .transform(translate(5px, 5px));
+    }
+  }
+}
+
+.bloc-txt{
+  display: block;
+  position: relative;
+  .box-sizing(border-box);
+  padding: 18px;
+  margin: 0;
+  color: @blanc;
+  &.bloc-txt-vertical-centered{
+    line-height: 2*@largeurCol;
+    padding: 0 18px;
+    .txt-bloc{
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+  }
+}
+
+/* @end */
+
+/* @group Header */
+
+#bloc-header{
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 70px 0 0 0;
+}
+
+a#logo-arx{
+  display: block;
+  width: 150px;
+  height: 56px;
+  background: url("../layoutImg/logo.png") no-repeat center center;
+  float: left;
+}
+
+ul#menu-header{
+  display: block;
+  list-style-type: none;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  float: right;
+  li{
+    display: inline-block;
+    vertical-align: top;
+    .box-sizing(border-box);
+    width: 2*@largeurCol;
+    margin: 0;
+    padding: 0 3px;
+    text-align: center;
+    a{
+      display: block;
+      .roboto-bold(0.875em);
+      color: @blanc;
+      text-transform: uppercase;
+      text-decoration: none;
+      height: 48px;
+      line-height: 48px;
+      position: relative;
+      &.lien-pharmacies{
+        .bg-lien-header{
+          background-color: @vertARX;
+          background-color: fade(@vertARX, 60%);
+        }
+      }
+      &.lien-hopitaux{
+        .bg-lien-header{
+          background-color: @bleu1ARX;
+          background-color: fade(@bleu1ARX, 60%);
+        }
+      }
+      &.lien-arx{
+        .bg-lien-header{
+          background-color: @blanc;
+          background-color: fade(@blanc, 20%);
+        }
+      }
+      .bg-lien-header{
+        display: block;
+        width: 100%;
+        height: 48px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      .txt-lien-header{
+        position: relative;
+      }
+    }
+  }
+}
+
+/* @end */
+
+/* @group Bloc home */
+
+#bloc-home{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  #bg-bloc-home{
+    display: block;
+    background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
+    background-size: 100% auto;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  a#btn-robots-rowa{
+    position: absolute;
+    top: 408px;
+    left: 2*@largeurCol;
+  }
+  a#btn-contact{
+    position: absolute;
+    top: 350px;
+    left: 8*@largeurCol;
+  }
+}
+
+/* @end */
+
+/* @group Bloc video */
+
+a.btn-video{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  .size(2*@largeurCol);
+  line-height: 2*@largeurCol;
+  text-decoration: none;
+  margin: 214px 0 0 0;
+  padding: 0;
+  .transition(all 0.1s ease-in);
+  color: @bleu2ARX;
+  text-align: center;
+  background-color: @blanc;
+  .arrow{
+    font-size: 13px;
+  }
+}
+
+#bloc-video{
+  display: block;
+  position: relative;
+  padding: 0 0 90px 0;
+  #bg-bloc-video{
+    display: block;
+    /*background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
+    background-size: 100% auto;
+    background-size: cover;*/
+    background: #e6e6e6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  #wrapper-video{
+    display: inline-block;
+    vertical-align: top;
+    width: 8*@largeurCol;
+    height: 390px;
+    background: @noir;
+  }
+  h2{
+    .roboto(1.375em);
+    padding: 30px 0;
+    color: @grisARX;
+  }
+}
+
+/* @end */
+
+/* @group Bloc hopitaux */
+
+#bloc-hopitaux{
+  background-color: @bleu3ARX;
+  display: block;
+  position: relative;
+  #bg-bloc-hopitaux{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: @bleu3ARX url("../layoutImg/home/bloc-hopitaux/bg-bloc-hopitaux.jpg") no-repeat center center;
+    background-size: 100% auto;
+    background-size: cover;
+  }
+  #bloc-txt-automatiser{
+    display: inline-block;
+    vertical-align: top;
+    width: 2*@largeurCol;
+    height: 4*@largeurCol;
+    line-height: 4*@largeurCol;
+    background-color: @bleu4ARX;
+  }
+  #bloc-txt-desc-hopitaux{
+    display: inline-block;
+    vertical-align: top;
+    width: 4*@largeurCol;
+    height: 4*@largeurCol;
+    line-height: 4*@largeurCol;
+    background-color: @bleu5ARX;
+    padding: 0 30px;
+  }
+  #btn-solutions-hopitaux{
+    display: inline-block;
+    vertical-align: top;
+    .size(2*@largeurCol);
+  }
+}
+
+/* @end */
+
+/* @group Bloc réseaux sociaux */
+
+#bloc-reseaux-sociaux{
+  display: block;
+  position: relative;
+  background: url("../layoutImg/home/bloc-reseaux-sociaux/bg-bloc-reseaux-sociaux.jpg") no-repeat center center;
+  background-size: 100% auto;
+  background-size: cover;
+  #bloc-txt-arx-reseaux-sociaux{
+    display: inline-block;
+    vertical-align: top;
+    .size(2*@largeurCol);
+    color: @bleu6ARX;
+    background-color: @blanc;
+  }
+  ul#social-arx{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 @largeurCol;
+    padding: 0;
+    list-style-type: none;
+    li{
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      padding: 0;
+      .size(@largeurCol);
+      &:nth-child(even){
+        margin-top: @largeurCol;
+      }
+      a.social-link{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        &.twitter{
+          background-color: #6bacda;
+          background-color: fade(#6bacda, 90%);
+          background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-twitter.png");
+        }
+        &.facebook{
+          background-color: #004b99;
+          background-color: fade(#004b99, 85%);
+          background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-facebook.png");
+        }
+        &.pinterest{
+          background-color: @blanc;
+          background-color: fade(@blanc, 75%);
+          background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-pinterest.png");
+        }
+        &.youtube{
+          background-color: @blanc;
+          background-color: fade(@blanc, 75%);
+          background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-youtube.png");
+        }
+        &.googleplus{
+          background-color: @blanc;
+          background-color: fade(@blanc, 75%);
+          background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-googleplus.png");
+        }
+      }
+    }
+  }
+  #bloc-txt-desc-reseaux-sociaux{
+    width: 4*@largeurCol;
+    height: 2*@largeurCol;
+    line-height: 2*@largeurCol;
+    background-color: #dcdcdc;
+    background-color: fade(@blanc, 90%);
+    color: #232324;
+    padding: 0 50px;
+    margin: 0 0 0 2*@largeurCol;
+  }
+}
+
+/* @end */
 
 /* @end */
   
