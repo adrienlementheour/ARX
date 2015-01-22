@@ -107,6 +107,9 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-mail:before {
+  content: "\e606";
+}
 .icon-casque:before {
   content: "\e602";
 }
@@ -672,11 +675,6 @@ a.btn-video .arrow {
 footer {
   display: block;
   position: relative;
-  /* <ul id="menu-top-footer">
-        <li>
-          <a href="#">Des consultants <strong>Experts</strong></a>
-        </li>
-      </ul>*/
 }
 footer ul#menu-top-footer {
   display: block;
@@ -684,13 +682,310 @@ footer ul#menu-top-footer {
   height: auto;
   list-style-type: none;
   margin: 0;
-  padding: 55px 0 0 0;
+  padding: 55px 0 78px 0;
 }
 footer ul#menu-top-footer li {
   display: inline-block;
   vertical-align: top;
   width: 352px;
   height: 222px;
+}
+footer ul#menu-top-footer li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+}
+footer ul#menu-top-footer li a .visu-menu {
+  display: block;
+  color: #2782be;
+  position: absolute;
+}
+footer ul#menu-top-footer li a .zone-txt {
+  color: #30394b;
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1.375em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 130px 0 0 0;
+  display: block;
+}
+footer ul#menu-top-footer li a .zone-txt strong {
+  color: #2782be;
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+footer ul#menu-top-footer li a .plus {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: #2782be;
+  color: #ffffff;
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.563em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  line-height: 27px;
+  position: absolute;
+}
+footer ul#menu-top-footer li a .plus:after {
+  content: "+";
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+footer ul#menu-top-footer li a.consultants-experts .visu-menu {
+  width: 54px;
+  height: 83px;
+  font-size: 83px;
+  top: 32px;
+  left: 50%;
+  margin-left: -27px;
+}
+footer ul#menu-top-footer li a.consultants-experts .zone-txt {
+  width: 50%;
+  text-align: right;
+}
+footer ul#menu-top-footer li a.consultants-experts .plus {
+  top: 132px;
+  left: 50%;
+  margin-left: 8px;
+}
+footer ul#menu-top-footer li a.installation-personnalisee .visu-menu {
+  width: 99px;
+  height: 91px;
+  font-size: 91px;
+  top: 25px;
+  left: 50%;
+  margin-left: -50px;
+}
+footer ul#menu-top-footer li a.installation-personnalisee .zone-txt {
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+}
+footer ul#menu-top-footer li a.installation-personnalisee .plus {
+  position: relative;
+  margin: 5px auto 0 auto;
+}
+footer ul#menu-top-footer li a.sav-dedie .groupe-visu-menu {
+  display: block;
+  width: 114px;
+  height: 61px;
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  margin-left: -34px;
+}
+footer ul#menu-top-footer li a.sav-dedie .visu-menu.icon-casque {
+  font-size: 61px;
+  top: 0;
+  left: 0;
+}
+footer ul#menu-top-footer li a.sav-dedie .visu-menu.icon-outils {
+  font-size: 51px;
+  top: 5px;
+  right: 0px;
+}
+footer ul#menu-top-footer li a.sav-dedie .zone-txt {
+  width: 50%;
+  text-align: left;
+  margin-left: 50%;
+}
+footer ul#menu-top-footer li a.sav-dedie .plus {
+  top: 132px;
+  left: 50%;
+  margin-left: -34px;
+}
+footer a#btn-nous-contacter {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1.25em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  width: 278px;
+  height: 278px;
+  margin: 0 auto 75px auto;
+  padding: 110px 0 0 0;
+}
+footer a#btn-nous-contacter .icon-mail {
+  display: block;
+  font-size: 36px;
+  width: 47px;
+  height: 36px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -23px;
+}
+footer a#btn-nous-contacter .txt-btn strong {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+footer ul#menu-center-footer {
+  display: block;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+footer ul#menu-center-footer li {
+  display: inline-block;
+  vertical-align: top;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #535354;
+  margin: 0 5px;
+  position: relative;
+}
+footer ul#menu-center-footer li:last-of-type:after {
+  display: none;
+}
+footer ul#menu-center-footer li:after {
+  content: "•";
+  position: absolute;
+  top: 0;
+  right: -9px;
+}
+footer ul#menu-center-footer li a {
+  color: #2782be;
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+footer ul#menu-bottom-footer {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 80px 0 100px 0;
+  padding: 0;
+  list-style-type: none;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 176px;
+  padding: 0;
+  width: 176px;
+  height: auto;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer a {
+  display: block;
+  text-decoration: none;
+  color: #bfbfbf;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer a h3 {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.25em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 15px 0 0 5px;
+  padding: 0;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 .opts {
+  font-family: 'robotoitalic', sans-serif;
+  font-weight: normal;
+  font-size: 0.875em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #c1bebe;
+  margin: 0 0 0 10px;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 .no-link {
+  font-family: 'robotoitalic', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #c1bebe;
+  margin: 0;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li a {
+  display: block;
+  text-decoration: none;
+  color: #9a9a9a;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ-2 {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 15px 15px;
+  padding: 0;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ-2 li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 0.875em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ-2 li a {
+  display: block;
+  text-decoration: none;
+  color: #90a1ad;
 }
 /* @end */
 /* @end */
