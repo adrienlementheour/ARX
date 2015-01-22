@@ -723,28 +723,41 @@ a.btn-video{
         height: 6*@largeurCol;
         top: 0;
         left: 2*@largeurCol;
-        background-color: @noir;
       }
       &#references-bloc-vertical{
         width: 2*@largeurCol;
         height: 4*@largeurCol;
         top: 3*@largeurCol;
         left: 0;
-        background-color: red;
       }
       &#references-bloc-horizontal-top{
         width: 4*@largeurCol;
         height: 2*@largeurCol;
         top: 1*@largeurCol;
         left: 8*@largeurCol;
-        background-color: blue;
       }
       &#references-bloc-horizontal-bottom{
         width: 4*@largeurCol;
         height: 2*@largeurCol;
         top: 5*@largeurCol;
         left: 6*@largeurCol;
-        background-color: yellow;
+      }
+      .container-img-references{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        img{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: 100%;
+          width: auto;
+          .translate(-50%, -50%);
+        }
       }
     }
   }

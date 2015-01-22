@@ -647,28 +647,45 @@ a.btn-video .arrow {
   height: 528px;
   top: 0;
   left: 176px;
-  background-color: #000000;
 }
 #bloc-references ul#liste-references li#references-bloc-vertical {
   width: 176px;
   height: 352px;
   top: 264px;
   left: 0;
-  background-color: red;
 }
 #bloc-references ul#liste-references li#references-bloc-horizontal-top {
   width: 352px;
   height: 176px;
   top: 88px;
   left: 704px;
-  background-color: blue;
 }
 #bloc-references ul#liste-references li#references-bloc-horizontal-bottom {
   width: 352px;
   height: 176px;
   top: 440px;
   left: 528px;
-  background-color: yellow;
+}
+#bloc-references ul#liste-references li .container-img-references {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+#bloc-references ul#liste-references li .container-img-references img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 a.btn-references {
   display: block;
