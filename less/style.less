@@ -671,6 +671,112 @@ a.btn-video{
 
 /* @end */
 
+/* @group Bloc références */
+
+#bloc-references{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 8*@largeurCol;
+  .container{
+    height: 100%;
+  }
+  #bloc-txt-references{
+    width: 2*@largeurCol;
+    height: 2*@largeurCol;
+    line-height: 2*@largeurCol;
+    background-color: @blanc;
+    color: @bleu4ARX;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #btn-brochure{
+    position: absolute;
+    top: 6*@largeurCol;
+    left: 4*@largeurCol;
+  }
+  #bloc-couleur-references{
+    display: block;
+    .size(2*@largeurCol);
+    background-color: @bleu4ARX;
+    background-color: fade(@bleu4ARX, 40%);
+    position: absolute;
+    top: 6*@largeurCol;
+    left: 2*@largeurCol;
+  }
+  ul#liste-references{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li{
+      position: absolute;
+      display: block;
+      margin: 0;
+      padding: 0;
+      &#references-bloc-big{
+        width: 8*@largeurCol;
+        height: 6*@largeurCol;
+        top: 0;
+        left: 2*@largeurCol;
+        background-color: @noir;
+      }
+      &#references-bloc-vertical{
+        width: 2*@largeurCol;
+        height: 4*@largeurCol;
+        top: 3*@largeurCol;
+        left: 0;
+        background-color: red;
+      }
+      &#references-bloc-horizontal-top{
+        width: 4*@largeurCol;
+        height: 2*@largeurCol;
+        top: 1*@largeurCol;
+        left: 8*@largeurCol;
+        background-color: blue;
+      }
+      &#references-bloc-horizontal-bottom{
+        width: 4*@largeurCol;
+        height: 2*@largeurCol;
+        top: 5*@largeurCol;
+        left: 6*@largeurCol;
+        background-color: yellow;
+      }
+    }
+  }
+}
+
+a.btn-references{
+  display: block;
+  position: absolute;
+  .size(2*@largeurCol);
+  line-height: 2*@largeurCol;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  .transition(all 0.1s ease-in);
+  color: @blanc;
+  text-align: center;
+  background-color: @bleu4ARX;
+  .arrow{
+    font-size: 13px;
+  }
+  &#btn-left-references{
+    top: 4*@largeurCol;
+    left: 4*@largeurCol;
+  }
+  &#btn-right-references{
+    top: 4*@largeurCol;
+    left: 10*@largeurCol;
+  }
+}
+
+/* @end */
+
 /* @group Bloc réseaux sociaux */
 
 #bloc-reseaux-sociaux{

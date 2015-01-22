@@ -592,6 +592,113 @@ a.btn-video .arrow {
   height: 176px;
 }
 /* @end */
+/* @group Bloc références */
+#bloc-references {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 704px;
+}
+#bloc-references .container {
+  height: 100%;
+}
+#bloc-references #bloc-txt-references {
+  width: 176px;
+  height: 176px;
+  line-height: 176px;
+  background-color: #ffffff;
+  color: #298bcc;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#bloc-references #btn-brochure {
+  position: absolute;
+  top: 528px;
+  left: 352px;
+}
+#bloc-references #bloc-couleur-references {
+  display: block;
+  width: 176px;
+  height: 176px;
+  background-color: #298bcc;
+  background-color: rgba(41, 139, 204, 0.4);
+  position: absolute;
+  top: 528px;
+  left: 176px;
+}
+#bloc-references ul#liste-references {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#bloc-references ul#liste-references li {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#bloc-references ul#liste-references li#references-bloc-big {
+  width: 704px;
+  height: 528px;
+  top: 0;
+  left: 176px;
+  background-color: #000000;
+}
+#bloc-references ul#liste-references li#references-bloc-vertical {
+  width: 176px;
+  height: 352px;
+  top: 264px;
+  left: 0;
+  background-color: red;
+}
+#bloc-references ul#liste-references li#references-bloc-horizontal-top {
+  width: 352px;
+  height: 176px;
+  top: 88px;
+  left: 704px;
+  background-color: blue;
+}
+#bloc-references ul#liste-references li#references-bloc-horizontal-bottom {
+  width: 352px;
+  height: 176px;
+  top: 440px;
+  left: 528px;
+  background-color: yellow;
+}
+a.btn-references {
+  display: block;
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  line-height: 176px;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  color: #ffffff;
+  text-align: center;
+  background-color: #298bcc;
+}
+a.btn-references .arrow {
+  font-size: 13px;
+}
+a.btn-references#btn-left-references {
+  top: 352px;
+  left: 352px;
+}
+a.btn-references#btn-right-references {
+  top: 352px;
+  left: 880px;
+}
+/* @end */
 /* @group Bloc réseaux sociaux */
 #bloc-reseaux-sociaux {
   display: block;
