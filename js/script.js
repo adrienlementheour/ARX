@@ -29,7 +29,11 @@ $("ul#liste-references li img").load(function(){
 });
 
 $(document).ready(function(){
-	
+	// Clic sur le bouton play d'une video
+	$("ul#slider-videos li#current-video a.video-cover").click(function() {
+		alert("aze")
+		return false;
+	});
 });
 
 $( window ).resize(function() {

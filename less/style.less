@@ -15,7 +15,7 @@
 @bleu4ARX: #298bcc;
 @bleu5ARX: #3799da;
 @bleu6ARX: #237ebb;
-@bleutxtARX: #0070b8;
+@bleu7ARX: #0070b8;
 @grisARX: #535354;
 
 //GRILLE
@@ -341,6 +341,7 @@ html, body{
 
 h1{
   .roboto-light(2.313em);
+  line-height: 1.3em;
   display: block;
   width: 4*@largeurCol;
   height: auto;
@@ -359,7 +360,8 @@ h2{
 p{
   margin: 0;
   padding: 0;
-  .roboto-light(1em);
+  .roboto(1em);
+  line-height: 1.3em;
 }
 
 .center-aligned{
@@ -367,7 +369,7 @@ p{
 }
 
 .txt-bleu{
-  color: @bleutxtARX;
+  color: @bleu7ARX;
 }
 
 a.btn{
@@ -380,6 +382,7 @@ a.btn{
   margin: 0;
   .transition(all 0.1s ease-in);
   .roboto-light(1.375em);
+  line-height: 1.2em;
   h2{
     font-size: 1em;
     .txt-btn{
@@ -417,7 +420,7 @@ a.btn{
     .txt-btn{
       display: inline-block;
       vertical-align: middle;
-      line-height: normal;
+      line-height: 1.2em;
     }
   }
   &.small-padding{
@@ -463,6 +466,120 @@ a.btn{
 
 /* @end */
 
+/* @group Bg grid */
+
+ul.bg-grid{
+  display: block;
+  width: 1056px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -528px;
+  padding: 0;
+  pointer-events: none;
+  li.col-bg-grid{
+    display: inline-block;
+    vertical-align: top;
+    width: 16.666666667%;
+    height: 100%;
+    position: relative;
+    .box-sizing(border-box);
+    &.bleu{
+      &:before{
+        background-color: @bleu7ARX;
+        background-color: fade(@bleu7ARX, 25%);
+      }
+    }
+    &.last-bleu{
+      &:after{
+        background-color: @bleu7ARX;
+        background-color: fade(@bleu7ARX, 25%);
+      }
+    }
+    &.bleu2{
+      &:before{
+        background-color: @bleu3ARX;
+      }
+    }
+    &.last-bleu2{
+      &:after{
+        background-color: @bleu3ARX;
+      }
+    }
+    &.blanc{
+      &:before{
+        background-color: @blanc;
+        background-color: fade(@blanc, 25%);
+      }
+    }
+    &.last-blanc{
+      &:after{
+        background-color: @blanc;
+        background-color: fade(@blanc, 25%);
+      }
+    }
+    &.gris{
+      &:before{
+        background-color: #7d7d7d;
+        background-color: fade(#7d7d7d, 40%);
+      }
+    }
+    &.last-gris{
+      &:after{
+        background-color: #7d7d7d;
+        background-color: fade(#7d7d7d, 40%);
+      }
+    }
+    &.blanc-10{
+      &:before{
+        background-color: @blanc;
+        background-color: fade(@blanc, 10%);
+      }
+    }
+    &.last-blanc-10{
+      &:after{
+        background-color: @blanc;
+        background-color: fade(@blanc, 10%);
+      }
+    }
+    &:before{
+      content: "";
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+    }
+    &:last-of-type{
+      &:after{
+        content: "";
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+      }
+    }
+    &.active{
+      &:before{
+        display: block;
+      }
+    }
+    &.last-active{
+      &:last-of-type{
+        &:after{
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* @end */
+
 /* @group Header */
 
 header{
@@ -492,13 +609,24 @@ ul#menu-header{
   margin: 0;
   padding: 0;
   float: right;
+  position: relative;
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 118px;
+    background-color: @blanc;
+  }
   li{
     display: inline-block;
     vertical-align: top;
     .box-sizing(border-box);
     width: 2*@largeurCol;
     margin: 0;
-    padding: 0 3px;
+    padding: 0 0 0 6px;
     text-align: center;
     a{
       display: block;
@@ -510,18 +638,51 @@ ul#menu-header{
       line-height: 48px;
       position: relative;
       &.lien-pharmacies{
+        &:before{
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0;
+          top: -70px;
+          width: 1px;
+          height: 65px;
+          background-color: @blanc;
+          background-color: fade(@blanc, 25%);
+        }
         .bg-lien-header{
           background-color: @vertARX;
           background-color: fade(@vertARX, 60%);
         }
       }
       &.lien-hopitaux{
+        &:before{
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0;
+          top: -70px;
+          width: 1px;
+          height: 65px;
+          background-color: @blanc;
+          background-color: fade(@blanc, 25%);
+        }
         .bg-lien-header{
           background-color: @bleu1ARX;
           background-color: fade(@bleu1ARX, 60%);
         }
       }
       &.lien-arx{
+        &:before{
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0;
+          top: -70px;
+          width: 1px;
+          height: 65px;
+          background-color: @bleu3ARX;
+          background-color: fade(@bleu3ARX, 25%);
+        }
         .bg-lien-header{
           background-color: @blanc;
           background-color: fade(@blanc, 20%);
@@ -551,6 +712,43 @@ ul#menu-header{
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 760px;
+  max-height: 1000px;
+  ul.bg-grid{
+    li.col-bg-grid.last-active:last-of-type{
+      &:after{
+        top: 123px;
+      }
+    }
+    li.col-bg-grid{
+      &:nth-child(2){
+        &:before{
+          top: 357px;
+        }
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 193px;
+          background-color: @blanc;
+          background-color: fade(@blanc, 25%);
+        }
+      }
+      &:nth-child(5){
+        &:before{
+          top: 350px;
+        }
+      }
+      &:nth-child(6){
+        &:before{
+          top: 350px;
+        }
+      }
+    }
+  }
   #bg-bloc-home{
     display: block;
     background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
@@ -618,6 +816,107 @@ a.btn-video{
     width: 8*@largeurCol;
     height: 390px;
     background: @noir;
+    position: relative;
+    ul#slider-videos{
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      li{
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        a.video-cover{
+          line-height: 390px;
+          text-align: center;
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: 0;
+          padding: 0;
+          background-color: @noir;
+          text-decoration: none;
+          color: @blanc;
+          img.img-video-cover{
+            display: block;
+            width: auto;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            .translate(-50%, -50%);
+          }
+          .video-title{
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+            max-width: 300px;
+            .box-sizing(border-box);
+            padding: 25px;
+            border: 3px solid @blanc;
+            .video-title-fixed{
+              display: inline-block;
+              .roboto-light(1.375em);
+              color: #85cfff;
+              display: block;
+              margin: 0 0 15px 0;
+            }
+            .video-title-var{
+              .roboto-bold(1.250em);
+              line-height: 1.2em;
+            }
+          }
+          .video-play{
+            position: relative;
+            display: none;
+            vertical-align: middle;
+            line-height: normal;
+            width: 210px;
+            .box-sizing(border-box);
+            padding: 25px;
+            border: 3px solid @blanc;
+            .roboto-bold(1.375em);
+          }
+          &:hover{
+            .video-title{
+              display: none;
+            }
+            .video-play{
+              display: inline-block;
+            }
+          }
+        }
+        .embed-container{
+           position: relative;
+           padding-bottom: 56.25%;
+           height: 0;
+           overflow: hidden;
+           max-width: 100%;
+           iframe, object, embed{
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+           }
+         }
+      }
+    }
   }
   h2{
     .roboto(1.375em);
@@ -644,6 +943,31 @@ a.btn-video{
     background: @bleu3ARX url("../layoutImg/home/bloc-hopitaux/bg-bloc-hopitaux.jpg") no-repeat center center;
     background-size: 100% auto;
     background-size: cover;
+  }
+  ul.bg-grid{
+    li.col-bg-grid.last-active:last-of-type{
+      &:after{
+        top: 123px;
+      }
+    }
+    li.col-bg-grid{
+      &:nth-child(3){
+        &:before{
+          top: 265px;
+        }
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 87px;
+          background-color: @blanc;
+          background-color: fade(@blanc, 25%);
+        }
+      }
+    }
   }
   #bloc-txt-automatiser{
     display: inline-block;
@@ -875,6 +1199,32 @@ a.btn-references{
 footer{
   display: block;
   position: relative;
+  overflow: hidden;
+  ul.bg-grid{
+    li.col-bg-grid.last-active:last-of-type{
+      &:after{
+        top: 123px;
+      }
+    }
+    li.col-bg-grid{
+      &:nth-child(2){
+        &:before{
+          top: 253px;
+        }
+      }
+      &:nth-child(4){
+        &:before{
+          top: 285px;
+        }
+      }
+      &:nth-child(6){
+        &:before{
+          top: 285px;
+        }
+      }
+
+    }
+  }
   ul#menu-top-footer{
     display: block;
     width: 100%;
@@ -1030,9 +1380,11 @@ footer{
   }
   ul#menu-center-footer{
     display: block;
-    margin: 0;
+    width: 50%;
+    margin: 0 25%;
     padding: 20px 0;
     text-align: center;
+    background-color: @blanc;
     li{
       display: inline-block;
       vertical-align: top;
@@ -1061,9 +1413,10 @@ footer{
     display: block;
     width: 100%;
     height: auto;
-    margin: 80px 0 100px 0;
-    padding: 0;
+    margin: 80px 0 0 0;
+    padding: 5px 0 100px 0;
     list-style-type: none;
+    background-color: @blanc;
     li.col-menu-bottom-footer{
       display: inline-block;
       vertical-align: top;
