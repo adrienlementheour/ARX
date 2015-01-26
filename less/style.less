@@ -800,15 +800,32 @@ a.btn-video{
   padding: 0 0 90px 0;
   #bg-bloc-video{
     display: block;
-    /*background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
-    background-size: 100% auto;
-    background-size: cover;*/
-    background: #e6e6e6;
+    background: @blanc;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    overflow: hidden;
+    img.img-bg-video-cover{
+      display: block;
+      width: 102%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      .translate(-50%, -50%);
+      .blur(6px);
+    }
+    #sur-img-bg-video-cover{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: fade(@blanc, 75%);
+    }
   }
   #wrapper-video{
     display: inline-block;
@@ -860,7 +877,7 @@ a.btn-video{
             left: 50%;
             .translate(-50%, -50%);
           }
-          .video-title{
+          .video-txt{
             position: relative;
             display: inline-block;
             vertical-align: middle;
@@ -869,28 +886,25 @@ a.btn-video{
             .box-sizing(border-box);
             padding: 25px;
             border: 3px solid @blanc;
-            .video-title-fixed{
+            .video-title{
               display: inline-block;
-              .roboto-light(1.375em);
-              color: #85cfff;
-              display: block;
-              margin: 0 0 15px 0;
+              .video-title-fixed{
+                .roboto-light(1.375em);
+                color: #85cfff;
+                display: block;
+                margin: 0 0 15px 0;
+              }
+              .video-title-var{
+                .roboto-bold(1.250em);
+                line-height: 1.2em;
+              }  
             }
-            .video-title-var{
-              .roboto-bold(1.250em);
-              line-height: 1.2em;
+            .video-play{
+              position: relative;
+              display: none;
+              .box-sizing(border-box);
+              .roboto-bold(1.375em);
             }
-          }
-          .video-play{
-            position: relative;
-            display: none;
-            vertical-align: middle;
-            line-height: normal;
-            width: 210px;
-            .box-sizing(border-box);
-            padding: 25px;
-            border: 3px solid @blanc;
-            .roboto-bold(1.375em);
           }
           &:hover{
             .video-title{
