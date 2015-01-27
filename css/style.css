@@ -735,7 +735,6 @@ a.btn-video .arrow {
   overflow: hidden;
 }
 #bloc-video #wrapper-video ul#slider-videos li {
-  display: block;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -743,6 +742,18 @@ a.btn-video .arrow {
   left: 0;
   margin: 0;
   padding: 0;
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+#bloc-video #wrapper-video ul#slider-videos li#current-video {
+  -webkit-transform: translate(0%, 0);
+  -moz-transform: translate(0%, 0);
+  -o-transform: translate(0%, 0);
+  -ms-transform: translate(0%, 0);
+  transform: translate(0%, 0);
 }
 #bloc-video #wrapper-video ul#slider-videos li a.video-cover {
   line-height: 390px;
