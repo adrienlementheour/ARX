@@ -807,15 +807,20 @@ a.btn-video{
     bottom: 0;
     right: 0;
     overflow: hidden;
-    img.img-bg-video-cover{
+    img.bg-video-cover{
       display: block;
       width: 102%;
       height: auto;
       position: absolute;
       top: 50%;
-      left: 50%;
-      .translate(-50%, -50%);
+      left: -1%;
       .blur(6px);
+      &#img-bg-video-cover{
+        .translate(0%, -50%);
+      }
+      &#next-img-bg-video-cover{
+        .translate(100%, -50%);
+      }
     }
     #sur-img-bg-video-cover{
       display: block;
@@ -886,6 +891,7 @@ a.btn-video{
             vertical-align: middle;
             line-height: normal;
             max-width: 300px;
+            min-width: 215px;
             .box-sizing(border-box);
             padding: 25px;
             border: 3px solid @blanc;
@@ -920,8 +926,9 @@ a.btn-video{
         }
         .embed-container{
            position: relative;
-           padding-bottom: 56.25%;
-           height: 0;
+           /*padding-bottom: 56.25%;
+           height: 0;*/
+           height: 100%;
            overflow: hidden;
            max-width: 100%;
            iframe, object, embed{

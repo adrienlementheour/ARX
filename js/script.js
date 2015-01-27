@@ -9,7 +9,7 @@ function nextVideo(sens){
 	if($("ul#slider-videos li").length>=2){
 		// mettre la current video en pause
 		var numVideo = parseInt($("ul#slider-videos li#current-video .iframe-video").attr("id").match(pattern));
-		players[numVideo].pauseVideo();
+		players[numVideo].stopVideo();
 
 		if(sens=="right"){
 			// tester si il y a une vidéo suivante
@@ -24,8 +24,15 @@ function nextVideo(sens){
 			// positionner la video suivante
 			TweenMax.set($("ul#slider-videos li#next-video"), {display: "block", x: "100%"});
 			TweenMax.set($("ul#slider-videos li#current-video a.video-cover"), {display: "block"});
+			// positionner la photo du fond suivante
+			var imgVideoSrc = $("ul#slider-videos li#next-video a.video-cover img.img-video-cover").attr("src");
+			$("img#next-img-bg-video-cover").attr("src",imgVideoSrc);
+			TweenMax.set($("img#next-img-bg-video-cover"), {display: "block", x: "100%"});
+
 			TweenMax.to($("ul#slider-videos li#current-video"), 0.5, {x: "-100%", ease:Cubic.easeInOut});
 			TweenMax.to($("ul#slider-videos li#next-video"), 0.5, {x: "0%", ease:Cubic.easeInOut});
+			TweenMax.to($("#img-bg-video-cover"), 0.5, {x: "-100%", ease:Cubic.easeInOut});
+			TweenMax.to($("#next-img-bg-video-cover"), 0.5, {x: "0%", ease:Cubic.easeInOut});
 		}else if(sens=="left"){
 			// tester si il y a une vidéo précédante
 			if($("ul#slider-videos li .iframe-video#player-"+(numVideo-1)).length){
@@ -39,13 +46,23 @@ function nextVideo(sens){
 			// positionner la video suivante
 			TweenMax.set($("ul#slider-videos li#next-video"), {display: "block", x: "-100%"});
 			TweenMax.set($("ul#slider-videos li#current-video a.video-cover"), {display: "block"});
+			// positionner la photo du fond suivante
+			var imgVideoSrc = $("ul#slider-videos li#next-video a.video-cover img.img-video-cover").attr("src");
+			$("img#next-img-bg-video-cover").attr("src",imgVideoSrc);
+			TweenMax.set($("img#next-img-bg-video-cover"), {display: "block", x: "-100%"});
+
 			TweenMax.to($("ul#slider-videos li#current-video"), 0.5, {x: "100%", ease:Cubic.easeInOut});
 			TweenMax.to($("ul#slider-videos li#next-video"), 0.5, {x: "0%", ease:Cubic.easeInOut});
+			TweenMax.to($("#img-bg-video-cover"), 0.5, {x: "100%", ease:Cubic.easeInOut});
+			TweenMax.to($("#next-img-bg-video-cover"), 0.5, {x: "0%", ease:Cubic.easeInOut});
 		}
 
-		// mettre à jour les IDs
+		// mettre à jour les IDs et src
 		$("ul#slider-videos li#current-video").attr("id", "");
 		$("ul#slider-videos li#next-video").attr("id", "current-video");
+		$("#img-bg-video-cover").attr("id", "aze");
+		$("#next-img-bg-video-cover").attr("id", "img-bg-video-cover");
+		$("#aze").attr("id", "next-img-bg-video-cover");
 	}
 }
 
@@ -100,6 +117,8 @@ $("ul#liste-references li img").load(function(){
 
 $(document).ready(function(){
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
+	TweenMax.set($("#img-bg-video-cover"), {x: "0%", y: "-50%"});
+	TweenMax.set($("#next-img-bg-video-cover"), {x: "100%", y: "-50%"});
 	// Clic sur le bouton play d'une video
 	$("ul#slider-videos li a.video-cover").click(function() {
 		if($(this).closest("li").attr("id")=="current-video"){
@@ -111,14 +130,18 @@ $(document).ready(function(){
 		}
 		return false;
 	});
-	
+
 	$("a#btn-right-video").click(function() {
-		nextVideo("right");
+		if(!TweenMax.isTweening($("ul#slider-videos li#current-video"))&&!TweenMax.isTweening($("ul#slider-videos li#next-video"))&&!TweenMax.isTweening($("#img-bg-video-cover"))&&!TweenMax.isTweening($("#next-img-bg-video-cover"))){
+			nextVideo("right");
+		}
 		return false;
 	});
 
 	$("a#btn-left-video").click(function() {
-		nextVideo("left");
+		if(!TweenMax.isTweening($("ul#slider-videos li#current-video"))&&!TweenMax.isTweening($("ul#slider-videos li#next-video"))&&!TweenMax.isTweening($("#img-bg-video-cover"))&&!TweenMax.isTweening($("#next-img-bg-video-cover"))){
+			nextVideo("left");
+		}
 		return false;
 	});
 

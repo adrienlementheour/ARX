@@ -688,22 +688,31 @@ a.btn-video .arrow {
   right: 0;
   overflow: hidden;
 }
-#bloc-video #bg-bloc-video img.img-bg-video-cover {
+#bloc-video #bg-bloc-video img.bg-video-cover {
   display: block;
   width: 102%;
   height: auto;
   position: absolute;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  left: -1%;
   -webkit-filter: blur(6px);
   -moz-filter: blur(6px);
   -ms-filter: blur(6px);
   filter: blur(6px);
+}
+#bloc-video #bg-bloc-video img.bg-video-cover#img-bg-video-cover {
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+#bloc-video #bg-bloc-video img.bg-video-cover#next-img-bg-video-cover {
+  -webkit-transform: translate(100%, -50%);
+  -moz-transform: translate(100%, -50%);
+  -o-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
 }
 #bloc-video #bg-bloc-video #sur-img-bg-video-cover {
   display: block;
@@ -789,6 +798,7 @@ a.btn-video .arrow {
   vertical-align: middle;
   line-height: normal;
   max-width: 300px;
+  min-width: 215px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -839,8 +849,9 @@ a.btn-video .arrow {
 }
 #bloc-video #wrapper-video ul#slider-videos li .embed-container {
   position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
+  /*padding-bottom: 56.25%;
+           height: 0;*/
+  height: 100%;
   overflow: hidden;
   max-width: 100%;
 }
