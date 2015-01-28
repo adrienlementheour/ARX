@@ -590,15 +590,90 @@ header{
   top: 0;
   left: 0;
   z-index: 2;
-  padding: 70px 0 0 0;
+  padding: 70px 0 15px 0;
+  &.on{
+    position: fixed;
+    background-color: @blanc;
+    background-color: fade(@blanc, 95%);
+    padding: 0;
+    a#logo-arx{
+      margin: 15px 0 0 13px;
+      &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: -13px;
+        top: -15px;
+        width: 1px;
+        height: 70px;
+        background-color: #d8d9da;
+      }
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        right: -14px;
+        top: -15px;
+        width: 1px;
+        height: 70px;
+        background-color: #d8d9da;
+      }
+    }
+    ul#menu-header{
+      height: 86px;
+      &:before{
+        background-color: #d9dadc;
+        bottom: 14px;
+      }
+      li{
+        height: 86px;
+        padding: 0;
+        &#contact-menu-header{
+          display: inline-block;
+        }
+        a{
+          width: 100%;
+          &.lien-pharmacies{
+            color: @vertARX;
+            &:before{
+              background-color: #cccecf;
+            }
+          }
+          &.lien-hopitaux{
+            color: @bleu1ARX;
+            &:before{
+              background-color: #cccecf;
+            }
+          }
+          &.lien-arx{
+            color: #747171;
+            &:before{
+              display: none;
+            }
+          }
+          .bg-lien-header{
+            height: 0px;
+            .transition(all 0s ease-in-out);
+          }
+          &:hover{
+            .bg-lien-header-on{
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 a#logo-arx{
   display: block;
   width: 150px;
   height: 56px;
+  margin: 0 0 0 13px;
   background: url("../layoutImg/logo.png") no-repeat center center;
   float: left;
+  position: relative;
 }
 
 ul#menu-header{
@@ -625,31 +700,49 @@ ul#menu-header{
     vertical-align: top;
     .box-sizing(border-box);
     width: 2*@largeurCol;
+    height: 48px;
     margin: 0;
     padding: 0 0 0 6px;
     text-align: center;
+    position: relative;
+    &#contact-menu-header{
+      display: none;
+      a{
+        background-color: #308bc6;
+      }
+    }
+    &.active{
+      a{
+        .bg-lien-header{
+          height: 118px;
+        }
+      }
+    }
     a{
       display: block;
       .roboto-bold(0.875em);
       color: @blanc;
       text-transform: uppercase;
       text-decoration: none;
-      height: 48px;
-      line-height: 48px;
-      position: relative;
+      height: 118px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 170px;
+      .transition(all 0.15s ease-in-out);
       &.lien-pharmacies{
         &:before{
           content: "";
           display: block;
           position: absolute;
           right: 0;
-          top: -70px;
+          top: 0px;
           width: 1px;
           height: 65px;
           background-color: @blanc;
           background-color: fade(@blanc, 25%);
         }
-        .bg-lien-header{
+        .bg-lien-header, .bg-lien-header-on{
           background-color: @vertARX;
           background-color: fade(@vertARX, 60%);
         }
@@ -660,13 +753,13 @@ ul#menu-header{
           display: block;
           position: absolute;
           right: 0;
-          top: -70px;
+          top: 0px;
           width: 1px;
           height: 65px;
           background-color: @blanc;
           background-color: fade(@blanc, 25%);
         }
-        .bg-lien-header{
+        .bg-lien-header, .bg-lien-header-on{
           background-color: @bleu1ARX;
           background-color: fade(@bleu1ARX, 60%);
         }
@@ -677,7 +770,7 @@ ul#menu-header{
           display: block;
           position: absolute;
           right: 0;
-          top: -70px;
+          top: 0px;
           width: 1px;
           height: 65px;
           background-color: @bleu3ARX;
@@ -687,6 +780,15 @@ ul#menu-header{
           background-color: @blanc;
           background-color: fade(@blanc, 20%);
         }
+        .bg-lien-header-on{
+          background-color: #747171;
+          background-color: fade(#747171, 60%);
+        }
+      }
+      &.lien-contact{
+        .bg-lien-header-on{
+          background-color: @blanc;
+        }
       }
       .bg-lien-header{
         display: block;
@@ -695,9 +797,30 @@ ul#menu-header{
         position: absolute;
         bottom: 0;
         left: 0;
+        .transition(all 0.15s ease-in-out);
+      }
+      .bg-lien-header-on{
+        display: block;
+        width: 90px;
+        height: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -45px;
+        position: absolute;
+        .transition(all 0.15s ease-in-out);
       }
       .txt-lien-header{
-        position: relative;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 48px;
+        line-height: 48px;
+        width: 100%;
+      }
+      &:hover{
+        .bg-lien-header{
+          height: 118px;
+        }
       }
     }
   }

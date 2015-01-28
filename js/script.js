@@ -148,6 +148,26 @@ $(document).ready(function(){
 	youtubeInit();
 });
 
+////////////
+// scroll //
+////////////
+
+
+$(document).scroll(function() {
+	myScroll = $(document).scrollTop();
+	if (!$("html").hasClass("lt-ie9")) {
+		if (myScroll>55) {
+			if($("html").hasClass("no-touch")){
+				$("header").addClass("on");
+			}
+		}else{
+			if($("html").hasClass("no-touch")){
+				$("header").removeClass("on");
+			} 
+		}
+	}
+});
+
 $( window ).resize(function() {
 
 });
