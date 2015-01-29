@@ -408,11 +408,40 @@ a.btn{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
+    &:hover{
+      background-color: @bleu3ARX;
+      color: @blanc;
+      .triangle-btn{
+        border-bottom-color: @blanc;
+      }
+    }
   }
   &.btn-blanc-alpha{
     background-color: #dcdcdc;
     background-color: fade(@blanc, 40%);
     color: @blanc;
+    &:hover{
+      background-color: @blanc;
+      color: @bleu2ARX;
+      .triangle-btn{
+        border-bottom-color: @bleu2ARX;
+      }
+    }
+  }
+  &.btn-blanc-alpha-2{
+    background-color: #dcdcdc;
+    background-color: fade(@blanc, 80%);
+    color: @bleu3ARX;
+    .triangle-btn{
+      border-bottom-color: @bleu3ARX;
+    }
+    &:hover{
+      background-color: @blanc;
+      color: @bleu2ARX;
+      .triangle-btn{
+        border-bottom-color: @bleu2ARX;
+      }
+    }
   }
   &.btn-vertical-centered{
     line-height: 2*@largeurCol;
@@ -443,6 +472,9 @@ a.btn{
       border-width: 0 0 13px 13px;
       .transform(translate(5px, 5px));
     }
+  }
+  &:focus{
+    outline: none;
   }
 }
 
@@ -618,6 +650,9 @@ header{
         height: 70px;
         background-color: #d8d9da;
       }
+      &:focus{
+        outline: none;
+      }
     }
     ul#menu-header{
       height: 86px;
@@ -633,16 +668,19 @@ header{
         }
         a{
           width: 100%;
+          height: 86px;
           &.lien-pharmacies{
             color: @vertARX;
             &:before{
               background-color: #cccecf;
+              top: -34px;
             }
           }
           &.lien-hopitaux{
             color: @bleu1ARX;
             &:before{
-              background-color: #cccecf;
+              background-color: #cccecf; 
+              top: -34px;
             }
           }
           &.lien-arx{
@@ -724,7 +762,7 @@ ul#menu-header{
       color: @blanc;
       text-transform: uppercase;
       text-decoration: none;
-      height: 118px;
+      height: 48px;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -736,7 +774,7 @@ ul#menu-header{
           display: block;
           position: absolute;
           right: 0;
-          top: 0px;
+          top: -70px;
           width: 1px;
           height: 65px;
           background-color: @blanc;
@@ -753,7 +791,7 @@ ul#menu-header{
           display: block;
           position: absolute;
           right: 0;
-          top: 0px;
+          top: -70px;
           width: 1px;
           height: 65px;
           background-color: @blanc;
@@ -770,7 +808,7 @@ ul#menu-header{
           display: block;
           position: absolute;
           right: 0;
-          top: 0px;
+          top: -70px;
           width: 1px;
           height: 65px;
           background-color: @bleu3ARX;
@@ -818,9 +856,25 @@ ul#menu-header{
         width: 100%;
       }
       &:hover{
-        .bg-lien-header{
-          height: 118px;
+        &.lien-pharmacies{
+          .bg-lien-header{
+            background-color: @vertARX;
+          }
         }
+        &.lien-hopitaux{
+          .bg-lien-header{
+            background-color: @bleu1ARX;
+          }
+        }
+        &.lien-arx{
+          color: @bleu1ARX;
+          .bg-lien-header{
+            background-color: @blanc;
+          }
+        }
+      }
+      &:focus{
+        outline: none;
       }
     }
   }
@@ -929,6 +983,58 @@ a.btn-video{
   background-color: @blanc;
   .arrow{
     font-size: 13px;
+    display: block;
+    width: 36px;
+    height: 13px;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -18px;
+    .transition(all 0.1s ease-in);
+  }
+  .masque-arrow{
+    display: block;
+    width: 20px;
+    height: 13px;
+    background-color: @blanc;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -10px;
+    .transition(all 0.1s ease-in);
+  }
+  &#btn-left-video{
+    .masque-arrow{
+      margin-left: 17px;
+    }
+  }
+  &#btn-right-video{
+    .masque-arrow{
+      margin-left: -37px;
+    }
+  }
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    &#btn-left-video{
+      .arrow.icon-arrow-left{
+        .translate(-15px, 0);
+      }
+      .masque-arrow{
+        .translate(-28px, 0);
+      }
+    }
+    &#btn-right-video{
+      .arrow.icon-arrow-right{
+        .translate(15px, 0);
+      }
+      .masque-arrow{
+        .translate(28px, 0);
+      }
+    }
   }
 }
 
@@ -1286,6 +1392,37 @@ a.btn-references{
   background-color: @bleu4ARX;
   .arrow{
     font-size: 13px;
+    display: block;
+    width: 36px;
+    height: 13px;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -18px;
+    .transition(all 0.1s ease-in);
+  }
+  .masque-arrow{
+    display: block;
+    width: 20px;
+    height: 13px;
+    background-color: @bleu4ARX;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -10px;
+    .transition(all 0.1s ease-in);
+  }
+  &#btn-left-references{
+    .masque-arrow{
+      margin-left: 17px;
+    }
+  }
+  &#btn-right-references{
+    .masque-arrow{
+      margin-left: -37px;
+    }
   }
   &#btn-left-references{
     top: 4*@largeurCol;
@@ -1294,6 +1431,27 @@ a.btn-references{
   &#btn-right-references{
     top: 4*@largeurCol;
     left: 10*@largeurCol;
+  }
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    &#btn-left-references{
+      .arrow.icon-arrow-left{
+        .translate(-15px, 0);
+      }
+      .masque-arrow{
+        .translate(-28px, 0);
+      }
+    }
+    &#btn-right-references{
+      .arrow.icon-arrow-right{
+        .translate(15px, 0);
+      }
+      .masque-arrow{
+        .translate(28px, 0);
+      }
+    }
   }
 }
 
@@ -1337,6 +1495,8 @@ a.btn-references{
         padding: 0;
         background-repeat: no-repeat;
         background-position: 50% 50%;
+        .transition(all 0.1s ease-in-out);
+        position: relative;
         &.twitter{
           background-color: #6bacda;
           background-color: fade(#6bacda, 90%);
@@ -1361,6 +1521,47 @@ a.btn-references{
           background-color: @blanc;
           background-color: fade(@blanc, 75%);
           background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-googleplus.png");
+        }
+        .triangle-btn-social{
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          .triangle(bottom-right, 8px, 8px, @blanc);
+          .transition(all 0.1s ease-in-out);
+        }
+        &:focus{
+          outline: none;
+        }
+        &:hover{
+          &.twitter{
+            background-color: #6bacda;
+          }
+          &.facebook{
+            background-color: #004b99;
+          }
+          &.pinterest{
+            background-color: @blanc;
+            .triangle-btn-social{
+              border-bottom-color: @bleu2ARX;
+            }
+          }
+          &.youtube{
+            background-color: @blanc;
+            .triangle-btn-social{
+              border-bottom-color: @bleu2ARX;
+            }
+          }
+          &.googleplus{
+            background-color: @blanc;
+            .triangle-btn-social{
+              border-bottom-color: @bleu2ARX;
+            }
+          }
+          .triangle-btn-social{
+            margin: 3px 0 0 3px;
+            border-width: 0 0 11px 11px;
+            .transform(translate(3px, 3px));
+          }
         }
       }
     }
@@ -1591,6 +1792,9 @@ footer{
       a{
         color: @bleu3ARX;
         .roboto-bold(1em);
+        &:hover{
+          color: #777777;
+        }
       }
     }
   }
@@ -1610,9 +1814,12 @@ footer{
       width: 2*@largeurCol;
       height: auto;
       a{
-        display: block;
+        display: inline;
         text-decoration: none;
         color: #bfbfbf;
+        &:hover{
+          color: #777777;
+        }
         h3{
           .roboto-bold(1.250em);
           margin: 0;
@@ -1643,9 +1850,13 @@ footer{
           padding: 0;
           .roboto(1em);
           a{
-            display: block;
+            display: inline;
             text-decoration: none;
             color: #9a9a9a;
+            &:hover{
+              color: #777777;
+              text-decoration: underline;
+            }
           }
           ul.menu-categ-2{
             display: block;
@@ -1661,9 +1872,13 @@ footer{
               padding: 0;
               .roboto(0.875em);
               a{
-                display: block;
+                display: inline;
                 text-decoration: none;
                 color: #90a1ad;
+                &:hover{
+                  color: #777777;
+                  text-decoration: underline;
+                }
               }
             }
           }
