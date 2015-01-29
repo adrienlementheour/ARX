@@ -34,12 +34,12 @@ textarea {
 /* @group General */
 /* selection */
 ::-moz-selection {
-  background: #000000;
+  background: #308ac6;
   color: #ffffff;
   text-shadow: none;
 }
 ::selection {
-  background: #000000;
+  background: #308ac6;
   color: #ffffff;
   text-shadow: none;
 }
@@ -730,7 +730,7 @@ ul#menu-header li a:hover .bg-lien-header {
   position: relative;
   width: 100%;
   height: 85%;
-  min-height: 760px;
+  min-height: 700px;
   max-height: 1000px;
 }
 #bloc-home ul.bg-grid li.col-bg-grid.last-active:last-of-type:after {
@@ -1124,6 +1124,7 @@ a.btn-video .arrow {
   display: block;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 #bloc-references ul#liste-references li#references-bloc-big {
   width: 704px;
@@ -1155,10 +1156,40 @@ a.btn-video .arrow {
   height: 100%;
   margin: 0;
   padding: 0;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   overflow: hidden;
 }
 #bloc-references ul#liste-references li .container-img-references img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#bloc-references ul#liste-references li .container-next-img-references {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  transform: translate(100%, 0%);
+}
+#bloc-references ul#liste-references li .container-next-img-references img {
   position: absolute;
   top: 50%;
   left: 50%;

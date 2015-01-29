@@ -1,7 +1,15 @@
+//////////////////////////
+// variables à modifier //
+//////////////////////////
+// Nombre de références
+var nbRefs = 3;
+
 ///////////////
 // variables //
 ///////////////
 var pattern = /[0-9]+/g;
+var currentRef = 1;
+var nextRef;
 
 // Fonction pour passer d'une vidéo à une autre
 function nextVideo(sens){
@@ -145,8 +153,74 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("a#btn-right-references").click(function() {
+		if(!TweenMax.isTweening($(".container-img-references"))&&!TweenMax.isTweening($(".container-next-img-references"))){
+			// tester si il y a une référence suivante
+			if((currentRef+1)<=nbRefs){
+				// il y a une référence suivante
+				nextRef = currentRef+1;
+				animRefs(nextRef, "right");
+			}else{
+				// il n'y a pas de référence suivante
+				nextRef = 1;
+				animRefs(nextRef, "right");
+			}
+		}
+		return false;
+	});
+
+	$("a#btn-left-references").click(function() {
+		if(!TweenMax.isTweening($(".container-img-references"))&&!TweenMax.isTweening($(".container-next-img-references"))){
+			// tester si il y a une référence précédante
+			if((currentRef-1)>=1){
+				// il y a une référence suivante
+				nextRef = currentRef-1;
+				animRefs(nextRef, "left");
+			}else{
+				// il n'y a pas de référence précédante
+				nextRef = nbRefs;
+				animRefs(nextRef, "left");
+			}
+		}
+		return false;
+	});
+
 	youtubeInit();
 });
+
+function animRefs(nextRef, sens){
+	// charger les images dans divs correspondantes
+	$("ul#liste-references li#references-bloc-vertical .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-vertical.jpg");
+	$("ul#liste-references li#references-bloc-big .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-big.jpg");
+	$("ul#liste-references li#references-bloc-horizontal-top .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-top.jpg");
+	$("ul#liste-references li#references-bloc-horizontal-bottom .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-bottom.jpg");
+
+	if (sens=="right"){
+		// placer les images suivantes
+		TweenMax.set($(".container-next-img-references"), {x: "-100%"});
+		// animer les transitions
+		TweenMax.staggerTo(".container-img-references", 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(".container-next-img-references", 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiRefs, [nextRef]);
+	}else if(sens=="left"){
+		// placer les images suivantes
+		TweenMax.set($(".container-next-img-references"), {x: "100%"});
+		// animer les transitions
+		TweenMax.staggerTo(".container-img-references", 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(".container-next-img-references", 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiRefs, [nextRef]);
+	}
+
+
+
+	
+}
+
+function completeTransiRefs(nextRef){
+	// intervertir les class names
+	$(".container-img-references").toggleClass('container-img-references container-next');
+	$(".container-next-img-references").toggleClass('container-next-img-references container-img-references');
+	$(".container-next").toggleClass('container-next container-next-img-references');
+	currentRef=nextRef;
+}
 
 ////////////
 // scroll //

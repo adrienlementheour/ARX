@@ -62,12 +62,12 @@ textarea {
 
 /* selection */
 ::-moz-selection { 
-	background: @noir;  
+	background: @bleu1ARX;  
 	color: @blanc;
 	text-shadow: none; 
 }
 ::selection { 
-	background: @noir;  
+	background: @bleu1ARX;  
 	color: @blanc; 
 	text-shadow: none; 
 }
@@ -835,7 +835,7 @@ ul#menu-header{
   position: relative;
   width: 100%;
   height: 85%;
-  min-height: 760px;
+  min-height: 700px;
   max-height: 1000px;
   ul.bg-grid{
     li.col-bg-grid.last-active:last-of-type{
@@ -1204,6 +1204,7 @@ a.btn-video{
       display: block;
       margin: 0;
       padding: 0;
+      overflow: hidden;
       &#references-bloc-big{
         width: 8*@largeurCol;
         height: 6*@largeurCol;
@@ -1234,8 +1235,30 @@ a.btn-video{
         height: 100%;
         margin: 0;
         padding: 0;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         overflow: hidden;
+        img{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: 100%;
+          width: auto;
+          .translate(-50%, -50%);
+        }
+      }
+      .container-next-img-references{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        .translate(100%, 0%);
         img{
           position: absolute;
           top: 50%;
