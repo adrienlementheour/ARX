@@ -10,6 +10,7 @@ var nbRefs = 3;
 var pattern = /[0-9]+/g;
 var currentRef = 1;
 var nextRef;
+var heightBlocDrapeaux;
 
 // Fonction pour passer d'une vidéo à une autre
 function nextVideo(sens){
@@ -96,9 +97,34 @@ function posiImgsReferences(){
 	});
 }
 
-// Fonction pour initialiser l'iframe youtube avec l'api
-function youtubeInit(){
+function animRefs(nextRef, sens){
+	// charger les images dans divs correspondantes
+	$("ul#liste-references li#references-bloc-vertical .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-vertical.jpg");
+	$("ul#liste-references li#references-bloc-big .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-big.jpg");
+	$("ul#liste-references li#references-bloc-horizontal-top .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-top.jpg");
+	$("ul#liste-references li#references-bloc-horizontal-bottom .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-bottom.jpg");
 
+	if (sens=="right"){
+		// placer les images suivantes
+		TweenMax.set($(".container-next-img-references"), {x: "-100%"});
+		// animer les transitions
+		TweenMax.staggerTo(".container-img-references", 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(".container-next-img-references", 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiRefs, [nextRef]);
+	}else if(sens=="left"){
+		// placer les images suivantes
+		TweenMax.set($(".container-next-img-references"), {x: "100%"});
+		// animer les transitions
+		TweenMax.staggerTo(".container-img-references", 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(".container-next-img-references", 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiRefs, [nextRef]);
+	}
+}
+
+function completeTransiRefs(nextRef){
+	// intervertir les class names
+	$(".container-img-references").toggleClass('container-img-references container-next');
+	$(".container-next-img-references").toggleClass('container-next-img-references container-img-references');
+	$(".container-next").toggleClass('container-next container-next-img-references');
+	currentRef=nextRef;
 }
 
 // Inject YouTube API script
@@ -122,6 +148,12 @@ function onYouTubeIframeAPIReady() {
 $("ul#liste-references li img").load(function(){
 	posiImgsReferences();
 });
+
+// fonction pour masquer le bloc drapeaux
+function blocDrapeauxInit(){
+	heightBlocDrapeaux = $("#bloc-pays").height();
+	TweenMax.set($("#bloc-pays"), {height: "0px"});
+}
 
 $(document).ready(function(){
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
@@ -185,42 +217,22 @@ $(document).ready(function(){
 		return false;
 	});
 
-	youtubeInit();
+	blocDrapeauxInit();
+	$("a#btn-arx-international").click(function() {
+		if (!$("#bloc-pays").hasClass("open")){
+			// Si le bloc drapeaux est fermé
+			TweenMax.to($("#bloc-pays"), 0.5, {height: heightBlocDrapeaux+"px", className:"+=open", ease:Cubic.easeInOut});
+		}else{
+			// Si le bloc drapeaux est ouvert
+			TweenMax.to($("#bloc-pays"), 0.5, {height: "0px", className:"-=open", ease:Cubic.easeInOut});
+		}
+		return false;
+	});
+	$("a#close-menu-pays").click(function() {
+		TweenMax.to($("#bloc-pays"), 0.5, {height: "0px", className:"-=open", ease:Cubic.easeInOut});
+		return false;
+	});
 });
-
-function animRefs(nextRef, sens){
-	// charger les images dans divs correspondantes
-	$("ul#liste-references li#references-bloc-vertical .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-vertical.jpg");
-	$("ul#liste-references li#references-bloc-big .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-big.jpg");
-	$("ul#liste-references li#references-bloc-horizontal-top .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-top.jpg");
-	$("ul#liste-references li#references-bloc-horizontal-bottom .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-bottom.jpg");
-
-	if (sens=="right"){
-		// placer les images suivantes
-		TweenMax.set($(".container-next-img-references"), {x: "-100%"});
-		// animer les transitions
-		TweenMax.staggerTo(".container-img-references", 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
-		TweenMax.staggerTo(".container-next-img-references", 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiRefs, [nextRef]);
-	}else if(sens=="left"){
-		// placer les images suivantes
-		TweenMax.set($(".container-next-img-references"), {x: "100%"});
-		// animer les transitions
-		TweenMax.staggerTo(".container-img-references", 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
-		TweenMax.staggerTo(".container-next-img-references", 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiRefs, [nextRef]);
-	}
-
-
-
-	
-}
-
-function completeTransiRefs(nextRef){
-	// intervertir les class names
-	$(".container-img-references").toggleClass('container-img-references container-next');
-	$(".container-next-img-references").toggleClass('container-next-img-references container-img-references');
-	$(".container-next").toggleClass('container-next container-next-img-references');
-	currentRef=nextRef;
-}
 
 ////////////
 // scroll //
@@ -243,5 +255,5 @@ $(document).scroll(function() {
 });
 
 $( window ).resize(function() {
-
+	heightBlocDrapeaux = $("#bloc-pays").height();
 });

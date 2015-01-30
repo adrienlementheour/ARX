@@ -17,6 +17,7 @@
 @bleu6ARX: #237ebb;
 @bleu7ARX: #0070b8;
 @grisARX: #535354;
+@gris2ARX: #777777;
 
 //GRILLE
 @largeurCol: 88px;
@@ -165,6 +166,10 @@ textarea {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross:before {
+  content: "\e607";
 }
 
 .icon-mail:before {
@@ -337,6 +342,9 @@ html, body{
   width: 1056px;
   height: auto;
   margin: 0 auto;
+  &.small{
+    width: 700px;
+  }
 }
 
 h1{
@@ -1792,8 +1800,90 @@ footer{
       a{
         color: @bleu3ARX;
         .roboto-bold(1em);
+        &:focus{
+          outline: none;
+        }
         &:hover{
-          color: #777777;
+          color: @gris2ARX;
+        }
+      }
+    }
+  }
+  #bloc-pays{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    .background-image(linear-gradient(to top, #FFF 0%, #FFF 19%, #DBDBDB 100%));
+    overflow: hidden;
+    a#close-menu-pays{
+      display: block;
+      font-size: 11px;
+      .size(11px);
+      text-decoration: none;
+      position: absolute;
+      top: 12px;
+      right: 7px;
+      color: @bleu3ARX;
+      &:focus{
+        outline: none;
+      }
+      &:hover{
+        color: @gris2ARX;
+      }
+    }
+    ul#menu-pays{
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 70px 0 45px 0;
+      list-style-type: none;
+      li{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+        width: 20%;
+        height: auto;
+        a{
+          display: block;
+          position: relative;
+          width: 100%;
+          height: auto;
+          text-align: center;
+          padding: 62px 0 0 0;
+          .roboto-bold(1em);
+          color: @bleu3ARX;
+          line-height: 1.2em;
+          .drapeau{
+            display: block;
+            width: 87px;
+            height: 43px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -43px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            &.uk{
+              background-image: url("../layoutImg/bloc-drapeaux/drapeau-uk.png");
+            }
+            &.espagne{
+              background-image: url("../layoutImg/bloc-drapeaux/drapeau-espagne.png");
+            }
+            &.belgique{
+              background-image: url("../layoutImg/bloc-drapeaux/drapeau-belgique.png");
+            }
+            &.suisse{
+              background-image: url("../layoutImg/bloc-drapeaux/drapeau-suisse.png");
+            }
+            &.allemagne{
+              background-image: url("../layoutImg/bloc-drapeaux/drapeau-allemagne.png");
+            }
+          }
+          &:hover{
+            color: @gris2ARX;
+          }
         }
       }
     }
@@ -1818,7 +1908,10 @@ footer{
         text-decoration: none;
         color: #bfbfbf;
         &:hover{
-          color: #777777;
+          color: @gris2ARX;
+        }
+        &:focus{
+          outline: none;
         }
         h3{
           .roboto-bold(1.250em);
@@ -1853,8 +1946,11 @@ footer{
             display: inline;
             text-decoration: none;
             color: #9a9a9a;
+            &:focus{
+              outline: none;
+            }
             &:hover{
-              color: #777777;
+              color: @gris2ARX;
               text-decoration: underline;
             }
           }
@@ -1875,8 +1971,11 @@ footer{
                 display: inline;
                 text-decoration: none;
                 color: #90a1ad;
+                &:focus{
+                  outline: none;
+                }
                 &:hover{
-                  color: #777777;
+                  color: @gris2ARX;
                   text-decoration: underline;
                 }
               }

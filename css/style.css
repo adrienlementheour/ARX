@@ -107,6 +107,9 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-cross:before {
+  content: "\e607";
+}
 .icon-mail:before {
   content: "\e606";
 }
@@ -224,6 +227,9 @@ body {
   width: 1056px;
   height: auto;
   margin: 0 auto;
+}
+.container.small {
+  width: 700px;
 }
 h1 {
   font-family: 'robotolight', sans-serif;
@@ -1770,7 +1776,99 @@ footer ul#menu-center-footer li a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+footer ul#menu-center-footer li a:focus {
+  outline: none;
+}
 footer ul#menu-center-footer li a:hover {
+  color: #777777;
+}
+footer #bloc-pays {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTklIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmRiZGIiIHN0b3Atb3BhY2l0eT0iMSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNsZXNzaGF0LWdlbmVyYXRlZCkiIC8+PC9zdmc+);
+  background-image: -webkit-linear-gradient(bottom, #ffffff 0%, #ffffff 19%, #dbdbdb 100%);
+  background-image: -moz-linear-gradient(bottom, #ffffff 0%, #ffffff 19%, #dbdbdb 100%);
+  background-image: -o-linear-gradient(bottom, #ffffff 0%, #ffffff 19%, #dbdbdb 100%);
+  background-image: linear-gradient(to top, #ffffff 0%, #ffffff 19%, #dbdbdb 100%);
+  overflow: hidden;
+}
+footer #bloc-pays a#close-menu-pays {
+  display: block;
+  font-size: 11px;
+  width: 11px;
+  height: 11px;
+  text-decoration: none;
+  position: absolute;
+  top: 12px;
+  right: 7px;
+  color: #2782be;
+}
+footer #bloc-pays a#close-menu-pays:focus {
+  outline: none;
+}
+footer #bloc-pays a#close-menu-pays:hover {
+  color: #777777;
+}
+footer #bloc-pays ul#menu-pays {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 70px 0 45px 0;
+  list-style-type: none;
+}
+footer #bloc-pays ul#menu-pays li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  height: auto;
+}
+footer #bloc-pays ul#menu-pays li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 62px 0 0 0;
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2782be;
+  line-height: 1.2em;
+}
+footer #bloc-pays ul#menu-pays li a .drapeau {
+  display: block;
+  width: 87px;
+  height: 43px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -43px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+footer #bloc-pays ul#menu-pays li a .drapeau.uk {
+  background-image: url("../layoutImg/bloc-drapeaux/drapeau-uk.png");
+}
+footer #bloc-pays ul#menu-pays li a .drapeau.espagne {
+  background-image: url("../layoutImg/bloc-drapeaux/drapeau-espagne.png");
+}
+footer #bloc-pays ul#menu-pays li a .drapeau.belgique {
+  background-image: url("../layoutImg/bloc-drapeaux/drapeau-belgique.png");
+}
+footer #bloc-pays ul#menu-pays li a .drapeau.suisse {
+  background-image: url("../layoutImg/bloc-drapeaux/drapeau-suisse.png");
+}
+footer #bloc-pays ul#menu-pays li a .drapeau.allemagne {
+  background-image: url("../layoutImg/bloc-drapeaux/drapeau-allemagne.png");
+}
+footer #bloc-pays ul#menu-pays li a:hover {
   color: #777777;
 }
 footer ul#menu-bottom-footer {
@@ -1797,6 +1895,9 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer a {
 }
 footer ul#menu-bottom-footer li.col-menu-bottom-footer a:hover {
   color: #777777;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer a:focus {
+  outline: none;
 }
 footer ul#menu-bottom-footer li.col-menu-bottom-footer a h3 {
   font-family: 'robotobold', sans-serif;
@@ -1855,6 +1956,9 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li a {
   text-decoration: none;
   color: #9a9a9a;
 }
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li a:focus {
+  outline: none;
+}
 footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li a:hover {
   color: #777777;
   text-decoration: underline;
@@ -1885,6 +1989,9 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.men
   display: inline;
   text-decoration: none;
   color: #90a1ad;
+}
+footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ-2 li a:focus {
+  outline: none;
 }
 footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ-2 li a:hover {
   color: #777777;
