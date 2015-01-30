@@ -961,6 +961,11 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   -moz-filter: blur(6px);
   -ms-filter: blur(6px);
   filter: blur(6px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 #bloc-video #bg-bloc-video img.bg-video-cover#img-bg-video-cover {
   -webkit-transform: translate(0%, -50%);
@@ -1040,6 +1045,17 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   background-color: #000000;
   text-decoration: none;
   color: #ffffff;
+  /*&:hover{
+            .video-txt{
+              width: 215px;
+            }
+            .video-title{
+              display: none;
+            }
+            .video-play{
+              display: inline-block;
+            }
+          }*/
 }
 #bloc-video #wrapper-video ul#slider-videos li a.video-cover img.img-video-cover {
   display: block;
@@ -1054,18 +1070,33 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+#bloc-video #wrapper-video ul#slider-videos li a.video-cover .cadre-video-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid #ffffff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 #bloc-video #wrapper-video ul#slider-videos li a.video-cover .video-txt {
   position: relative;
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-  max-width: 300px;
-  min-width: 215px;
+  width: 300px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 25px;
-  border: 3px solid #ffffff;
 }
 #bloc-video #wrapper-video ul#slider-videos li a.video-cover .video-txt .video-title {
   display: inline-block;
@@ -1102,12 +1133,7 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-#bloc-video #wrapper-video ul#slider-videos li a.video-cover:hover .video-title {
-  display: none;
-}
-#bloc-video #wrapper-video ul#slider-videos li a.video-cover:hover .video-play {
-  display: inline-block;
+  width: 41px;
 }
 #bloc-video #wrapper-video ul#slider-videos li .embed-container {
   position: relative;
@@ -1908,6 +1934,7 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer a h3 {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+  display: inline;
 }
 footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 {
   display: block;

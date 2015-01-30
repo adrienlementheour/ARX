@@ -232,7 +232,33 @@ $(document).ready(function(){
 		TweenMax.to($("#bloc-pays"), 0.5, {height: "0px", className:"-=open", ease:Cubic.easeInOut});
 		return false;
 	});
+
+	// bloc video hover
+	$(".cadre-video-cover").each(function(){
+		var parentCadre = $(this).parent();
+		var widthParent = $(".video-txt", parentCadre).outerWidth();
+		var heightParent = $(".video-txt", parentCadre).outerHeight();
+		TweenMax.set($(this), {width: widthParent+"px", height: heightParent+"px"});
+	});
+
+	$("a.video-cover").hover(
+	  function() {
+	  	TweenMax.to($(".video-txt .video-title", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut, onComplete: onCompleteVideoCover});
+	  }, function() {
+	  	TweenMax.to($(".video-txt .video-play", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut, onComplete: onCompleteVideoCover2});
+	  }
+	);
 });
+
+function onCompleteVideoCover(){
+	TweenMax.to($("li#current-video .video-txt .video-play"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});
+	TweenMax.to($("li#current-video .cadre-video-cover"), 0.2, {width: "215px", height: "85px", ease:Cubic.easeInOut});
+}
+
+function onCompleteVideoCover2(){
+	TweenMax.to($("li#current-video .video-txt .video-title"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});
+	TweenMax.to($("li#current-video .cadre-video-cover"), 0.2, {width: $("li#current-video .video-txt").outerWidth()+"px", height: $("li#current-video .video-txt .video-title").outerHeight()+50+"px", ease:Cubic.easeInOut});
+}
 
 ////////////
 // scroll //
