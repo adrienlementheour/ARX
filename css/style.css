@@ -285,10 +285,10 @@ a.btn {
   box-sizing: border-box;
   padding: 35px;
   margin: 0;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -moz-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -o-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  transition: background-color 0.1s ease-in, color 0.1s ease-in;
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
   font-size: 1.375em;
@@ -392,10 +392,10 @@ a.btn .triangle-btn {
   transition: all 0.1s ease-in-out;
 }
 a.btn:hover {
-  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  -moz-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  -o-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -webkit-transition: background-color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: background-color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: background-color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: background-color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86), color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 a.btn:hover .triangle-btn {
   margin: 3px 0 0 3px;

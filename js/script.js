@@ -155,7 +155,46 @@ function blocDrapeauxInit(){
 	TweenMax.set($("#bloc-pays"), {height: "0px"});
 }
 
+// fonction de transition d'apparition du bouton
+function transiInButton(btnSelected){
+	var tlTransiInBtn = new TimelineMax;
+	tlTransiInBtn.to(btnSelected, 0.3, {opacity: "1", scaleY:1, ease:Circ.easeInOut});
+	tlTransiInBtn.to($(".txt-btn", btnSelected), 0.2, {opacity: "1", y: "0px", ease:Circ.easeInOut});
+	tlTransiInBtn.to($(".triangle-btn", btnSelected), 0.2, {opacity: "1", x: "0px", y: "0px", ease:Circ.easeInOut, clearProps: "all"});
+}
+
+function initBtnAnim(){
+	TweenMax.set($(".btn-anim"), {opacity: "0", scaleY:0});
+	TweenMax.set($(".btn-anim .txt-btn"), {opacity: "0", y: "-20px"});
+	TweenMax.set($(".btn-anim .triangle-btn"), {opacity: "0", x: "-10px", y: "-10px"});
+}
+
+function initHeaderHome(){
+	TweenMax.set($("h1"), {opacity: "0"});
+	TweenMax.set($("#machine"), {opacity: "0"});
+}
+
+function animHeaderHome(){
+	TweenMax.to($("h1"), 0.3, {opacity: "1", ease:Circ.easeInOut});
+	TweenMax.to($("#machine"), 0.5, {opacity: "1", ease:Circ.easeInOut, delay: 0.3, onComplete: completeAnimMachine});
+}
+
+function completeAnimMachine(){
+	transiInButton($("a#btn-robots-rowa"));
+	setTimeout(function(){
+		transiInButton($("a#btn-contact"));
+	}, 300);
+}
+
 $(document).ready(function(){
+	if($("body").hasClass("home")){
+		initHeaderHome();
+		setTimeout(function(){
+			animHeaderHome();
+		}, 1000);
+	}
+
+	initBtnAnim();
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
 	TweenMax.set($("#img-bg-video-cover"), {x: "0%", y: "-50%"});
 	TweenMax.set($("#next-img-bg-video-cover"), {x: "100%", y: "-50%"});
