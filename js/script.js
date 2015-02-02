@@ -159,24 +159,27 @@ function blocDrapeauxInit(){
 function transiInButton(btnSelected){
 	var tlTransiInBtn = new TimelineMax;
 	tlTransiInBtn.to(btnSelected, 0.3, {opacity: "1", scaleY:1, ease:Circ.easeInOut});
+	tlTransiInBtn.to(btnSelected, 1, {y: "0px", ease:Circ.easeInOut}, 0);
 	tlTransiInBtn.to($(".txt-btn", btnSelected), 0.2, {opacity: "1", y: "0px", ease:Circ.easeInOut});
 	tlTransiInBtn.to($(".triangle-btn", btnSelected), 0.2, {opacity: "1", x: "0px", y: "0px", ease:Circ.easeInOut, clearProps: "all"});
 }
 
 function initBtnAnim(){
-	TweenMax.set($(".btn-anim"), {opacity: "0", scaleY:0});
+	TweenMax.set($(".btn-anim"), {opacity: "0", scaleY:0, y: "180px"});
 	TweenMax.set($(".btn-anim .txt-btn"), {opacity: "0", y: "-20px"});
 	TweenMax.set($(".btn-anim .triangle-btn"), {opacity: "0", x: "-10px", y: "-10px"});
 }
 
 function initHeaderHome(){
-	TweenMax.set($("h1"), {opacity: "0"});
-	TweenMax.set($("#machine"), {opacity: "0"});
+	TweenMax.set($("h1"), {opacity: "0", y: "40px"});
+	TweenMax.set($("#machine"), {opacity: "0", y: "40px"});
+	//TweenMax.set(CSSRulePlugin.getRule("#test:before"), {opacity: "0", y: "180px"});
 }
 
 function animHeaderHome(){
-	TweenMax.to($("h1"), 0.3, {opacity: "1", ease:Circ.easeInOut});
-	TweenMax.to($("#machine"), 0.5, {opacity: "1", ease:Circ.easeInOut, delay: 0.3, onComplete: completeAnimMachine});
+	TweenMax.to($("h1"), 0.3, {opacity: "1", y: "0px", ease:Circ.easeInOut});
+	TweenMax.to($("#machine"), 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, delay: 0.3, onComplete: completeAnimMachine});
+	//TweenMax.to(CSSRulePlugin.getRule("#test:before"), 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, delay: 0.8});
 }
 
 function completeAnimMachine(){
@@ -317,6 +320,8 @@ $(document).scroll(function() {
 			} 
 		}
 	}
+	// parallaxe machine
+	TweenMax.set($("#machine"), {y: (0-(myScroll*.25))+"px"});
 });
 
 $( window ).resize(function() {

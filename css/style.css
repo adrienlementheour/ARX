@@ -409,6 +409,19 @@ a.btn:hover .triangle-btn {
 a.btn:focus {
   outline: none;
 }
+a.btn:active.btn-bleu {
+  -webkit-animation: blink 0.02s step-end;
+  -moz-animation: blink 0.02s step-end;
+  -o-animation: blink 0.02s step-end;
+  animation: blink 0.02s step-end;
+}
+a.btn:active.btn-bleu lesshat-selector {
+  -lh-property: 0; } 
+@-webkit-keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }}
+@-moz-keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }}
+@-o-keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }}
+@keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; };
+}
 .bloc-txt {
   display: block;
   position: relative;
@@ -834,7 +847,7 @@ ul#menu-header li a:focus {
   height: 643px;
   background: url("../layoutImg/home/bloc-home/machine.png") no-repeat center center;
   position: absolute;
-  top: 55%;
+  top: 60%;
   margin-top: -320px;
   right: -203px;
 }
@@ -1642,7 +1655,7 @@ footer ul#menu-top-footer li a .zone-txt strong {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-footer ul#menu-top-footer li a .plus {
+footer ul#menu-top-footer li a .fond-plus {
   display: block;
   width: 28px;
   height: 28px;
@@ -1657,6 +1670,32 @@ footer ul#menu-top-footer li a .plus {
   text-align: center;
   line-height: 27px;
   position: absolute;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -o-transition: -o-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out,-moz-transform 0.2s ease-in-out,-o-transform 0.2s ease-in-out,transform 0.2s ease-in-out;
+}
+footer ul#menu-top-footer li a .plus {
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.563em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  line-height: 27px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out,-moz-transform 0.3s ease-in-out,-o-transform 0.3s ease-in-out,transform 0.3s ease-in-out;
+}
+footer ul#menu-top-footer li a .plus:focus {
+  outline: none;
 }
 footer ul#menu-top-footer li a .plus:after {
   content: "+";
@@ -1681,6 +1720,7 @@ footer ul#menu-top-footer li a.consultants-experts .zone-txt {
   width: 50%;
   text-align: right;
 }
+footer ul#menu-top-footer li a.consultants-experts .fond-plus,
 footer ul#menu-top-footer li a.consultants-experts .plus {
   top: 132px;
   left: 50%;
@@ -1699,9 +1739,11 @@ footer ul#menu-top-footer li a.installation-personnalisee .zone-txt {
   text-align: center;
   margin-left: 25%;
 }
+footer ul#menu-top-footer li a.installation-personnalisee .fond-plus,
 footer ul#menu-top-footer li a.installation-personnalisee .plus {
-  position: relative;
-  margin: 5px auto 0 auto;
+  top: 193px;
+  left: 50%;
+  margin-left: -13px;
 }
 footer ul#menu-top-footer li a.sav-dedie .groupe-visu-menu {
   display: block;
@@ -1727,10 +1769,25 @@ footer ul#menu-top-footer li a.sav-dedie .zone-txt {
   text-align: left;
   margin-left: 50%;
 }
+footer ul#menu-top-footer li a.sav-dedie .fond-plus,
 footer ul#menu-top-footer li a.sav-dedie .plus {
   top: 132px;
   left: 50%;
   margin-left: -34px;
+}
+footer ul#menu-top-footer li a:hover .fond-plus {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+footer ul#menu-top-footer li a:hover .plus {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 footer a#btn-nous-contacter {
   font-family: 'robotolight', sans-serif;
