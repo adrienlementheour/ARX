@@ -311,6 +311,7 @@ a.btn h2 .txt-btn strong {
 a.btn.btn-bleu {
   background-color: #227dba;
   color: #ffffff;
+  border: 0px solid #227dba;
 }
 a.btn.btn-bleu:hover {
   background-color: #ffffff;
@@ -322,6 +323,7 @@ a.btn.btn-bleu:hover .triangle-btn {
 a.btn.btn-blanc {
   background-color: #ffffff;
   color: #2782be;
+  border: 0px solid #ffffff;
 }
 a.btn.btn-blanc .triangle-btn {
   border-bottom-color: #2782be;
@@ -336,6 +338,7 @@ a.btn.btn-blanc:hover .triangle-btn {
 a.btn.btn-blanc-alpha {
   background-color: #dcdcdc;
   background-color: rgba(255, 255, 255, 0.4);
+  border: 0px solid #ffffff;
   color: #ffffff;
 }
 a.btn.btn-blanc-alpha:hover {
@@ -409,18 +412,18 @@ a.btn:hover .triangle-btn {
 a.btn:focus {
   outline: none;
 }
-a.btn:active.btn-bleu {
-  -webkit-animation: blink 0.02s step-end;
-  -moz-animation: blink 0.02s step-end;
-  -o-animation: blink 0.02s step-end;
-  animation: blink 0.02s step-end;
+a.btn:active {
+  -webkit-animation: blink 0.05s ease-in-out 2;
+  -moz-animation: blink 0.05s ease-in-out 2;
+  -o-animation: blink 0.05s ease-in-out 2;
+  animation: blink 0.05s ease-in-out 2;
 }
-a.btn:active.btn-bleu lesshat-selector {
+a.btn:active lesshat-selector {
   -lh-property: 0; } 
-@-webkit-keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }}
-@-moz-keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }}
-@-o-keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }}
-@keyframes blink{ 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; };
+@-webkit-keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }}
+@-moz-keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }}
+@-o-keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }}
+@keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; };
 }
 .bloc-txt {
   display: block;
@@ -806,9 +809,23 @@ ul#menu-header li a:focus {
   top: 123px;
 }
 #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before {
-  top: 357px;
+  top: 408px;
 }
 #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 193px;
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
+  top: 408px;
+}
+#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):after {
   content: "";
   display: block;
   position: absolute;

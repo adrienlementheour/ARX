@@ -173,20 +173,24 @@ function initBtnAnim(){
 function initHeaderHome(){
 	TweenMax.set($("h1"), {opacity: "0", y: "40px"});
 	TweenMax.set($("#machine"), {opacity: "0", y: "40px"});
-	//TweenMax.set(CSSRulePlugin.getRule("#test:before"), {opacity: "0", y: "180px"});
+	TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], {cssRule: {opacity: "0", y: "180px"}});
+	TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], {cssRule: {opacity: "0", y: "180px"}});
 }
 
 function animHeaderHome(){
 	TweenMax.to($("h1"), 0.3, {opacity: "1", y: "0px", ease:Circ.easeInOut});
 	TweenMax.to($("#machine"), 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, delay: 0.3, onComplete: completeAnimMachine});
-	//TweenMax.to(CSSRulePlugin.getRule("#test:before"), 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, delay: 0.8});
+	TweenMax.to([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 3.1});
+	TweenMax.to([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 5.1});
 }
 
 function completeAnimMachine(){
-	transiInButton($("a#btn-robots-rowa"));
 	setTimeout(function(){
-		transiInButton($("a#btn-contact"));
-	}, 300);
+		transiInButton($("a#btn-robots-rowa"));
+		setTimeout(function(){
+			transiInButton($("a#btn-contact"));
+		}, 2000);
+	}, 2000);
 }
 
 $(document).ready(function(){

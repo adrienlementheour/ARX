@@ -402,6 +402,7 @@ a.btn{
   &.btn-bleu{
     background-color: @bleu2ARX;
     color: @blanc;
+    border: 0px solid @bleu2ARX;
     &:hover{
       background-color: @blanc;
       color: @bleu2ARX;
@@ -413,6 +414,7 @@ a.btn{
   &.btn-blanc{
     background-color: @blanc;
     color: @bleu3ARX;
+    border: 0px solid @blanc;
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
@@ -427,6 +429,7 @@ a.btn{
   &.btn-blanc-alpha{
     background-color: #dcdcdc;
     background-color: fade(@blanc, 40%);
+    border: 0px solid @blanc;
     color: @blanc;
     &:hover{
       background-color: @blanc;
@@ -485,10 +488,8 @@ a.btn{
     outline: none;
   }
   &:active{
-    &.btn-bleu{
-      .keyframes(~'blink, 0%{ background-color: #36aeff; } 100%{ background-color: #ffffff; }');
-     .animation(blink 0.02s step-end);
-    }
+    .keyframes(~'blink, 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }');
+    .animation(blink 0.05s ease-in-out 2);
   }
 }
 
@@ -914,7 +915,23 @@ ul#menu-header{
     li.col-bg-grid{
       &:nth-child(2){
         &:before{
-          top: 357px;
+          top: 408px;
+        }
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 193px;
+          background-color: @blanc;
+          background-color: fade(@blanc, 25%);
+        }
+      }
+      &:nth-child(3){
+        &:before{
+          top: 408px;
         }
         &:after{
           content: "";
