@@ -357,6 +357,14 @@ h1{
   text-align: center;
   margin: 0;
   padding: 200px 0 0 0;
+  .home &{
+    .opacity(0);
+    .transform(translateY(40px));
+    .no-js &{
+      .opacity(1);
+      .transform(translateY(0px));
+    }
+  }
 }
 
 h2{
@@ -391,6 +399,8 @@ a.btn{
   .transition(background-color 0.1s ease-in, color 0.1s ease-in);
   .roboto-light(1.375em);
   line-height: 1.2em;
+  .backface-visibility(hidden);
+  .transform-style(preserve-3d);
   h2{
     font-size: 1em;
     .txt-btn{
@@ -916,6 +926,12 @@ ul#menu-header{
       &:nth-child(2){
         &:before{
           top: 408px;
+          .opacity(0);
+          .transform(translateY(180px));
+          .no-js &{
+            .opacity(1);
+            .transform(translateY(0px));
+          }
         }
         &:after{
           content: "";
@@ -932,6 +948,12 @@ ul#menu-header{
       &:nth-child(3){
         &:before{
           top: 408px;
+          .opacity(0);
+          .transform(translateY(180px));
+          .no-js &{
+            .opacity(1);
+            .transform(translateY(0px));
+          }
         }
         &:after{
           content: "";
@@ -948,11 +970,23 @@ ul#menu-header{
       &:nth-child(5){
         &:before{
           top: 350px;
+          .opacity(0);
+          .transform(translateY(180px));
+          .no-js &{
+            .opacity(1);
+            .transform(translateY(0px));
+          }
         }
       }
       &:nth-child(6){
         &:before{
           top: 350px;
+          .opacity(0);
+          .transform(translateY(180px));
+          .no-js &{
+            .opacity(1);
+            .transform(translateY(0px));
+          }
         }
       }
     }
@@ -978,10 +1012,15 @@ ul#menu-header{
       height: 643px;
       background: url("../layoutImg/home/bloc-home/machine.png") no-repeat center center;
       position: absolute;
-      //top: 55%;
       top: 60%;
       margin-top: -320px;
       right: -203px;
+      .opacity(0);
+      .transform(translate(0px, 40px));
+      .no-js &{
+        .opacity(1);
+        .transform(translateY(0px, 0px));
+      }
     }
   }
   a#btn-robots-rowa{
@@ -1320,6 +1359,33 @@ a.btn-video{
   .container{
     height: 100%;
   }
+  ul.bg-grid{
+    li.col-bg-grid.last-active:last-of-type{
+      &:before{
+        background-color: #7d7d7d;
+        background-color: fade(#7d7d7d, 40%);
+      }
+      &:after{
+        top: inherit;
+        bottom: 176px;
+      }
+    }
+    li.col-bg-grid{
+      &:nth-child(4){
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          width: 1px;
+          height: 88px;
+          background-color: #7d7d7d;
+          background-color: fade(#7d7d7d, 40%);
+        }
+      }
+    }
+  }
   #bloc-txt-references{
     width: 2*@largeurCol;
     height: 2*@largeurCol;
@@ -1633,6 +1699,9 @@ footer{
   display: block;
   position: relative;
   overflow: hidden;
+  .home &{
+    padding-top: 50px;
+  }
   ul.bg-grid{
     li.col-bg-grid.last-active:last-of-type{
       &:after{
@@ -1643,16 +1712,64 @@ footer{
       &:nth-child(2){
         &:before{
           top: 253px;
+          .home &{
+            top: 303px;
+          }
+        }
+        .home &{
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 1px;
+            height: 105px;
+            background-color: #7d7d7d;
+            background-color: fade(#7d7d7d, 40%);
+          }
         }
       }
       &:nth-child(4){
         &:before{
           top: 285px;
+          .home &{
+            top: 335px;
+          }
+        }
+        .home &{
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 1px;
+            height: 105px;
+            background-color: #7d7d7d;
+            background-color: fade(#7d7d7d, 40%);
+          }
         }
       }
       &:nth-child(6){
         &:before{
           top: 285px;
+          .home &{
+            top: 335px;
+          }
+        }
+        .home &{
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            width: 1px;
+            height: 105px;
+            background-color: #7d7d7d;
+            background-color: fade(#7d7d7d, 40%);
+          }
         }
       }
 

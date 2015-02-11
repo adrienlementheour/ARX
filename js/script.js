@@ -171,10 +171,10 @@ function initBtnAnim(){
 }
 
 function initHeaderHome(){
-	TweenMax.set($("h1"), {opacity: "0", y: "40px"});
-	TweenMax.set($("#machine"), {opacity: "0", y: "40px"});
-	TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], {cssRule: {opacity: "0", y: "180px"}});
-	TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], {cssRule: {opacity: "0", y: "180px"}});
+	//TweenMax.set($("h1"), {opacity: "0", y: "40px"});
+	//TweenMax.set($("#machine"), {opacity: "0", y: "40px"});
+	//TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], {cssRule: {opacity: "0", y: "180px"}});
+	//TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], {cssRule: {opacity: "0", y: "180px"}});
 }
 
 function animHeaderHome(){
@@ -193,13 +193,21 @@ function completeAnimMachine(){
 	}, 2000);
 }
 
-$(document).ready(function(){
+$(window).load(function() {
 	if($("body").hasClass("home")){
-		initHeaderHome();
 		setTimeout(function(){
 			animHeaderHome();
 		}, 1000);
 	}
+});
+
+$(document).ready(function(){
+	/*if($("body").hasClass("home")){
+		initHeaderHome();
+		setTimeout(function(){
+			animHeaderHome();
+		}, 1000);
+	}*/
 
 	initBtnAnim();
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
