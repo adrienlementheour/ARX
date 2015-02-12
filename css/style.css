@@ -1092,7 +1092,7 @@ a.btn-video:hover#btn-right-video .masque-arrow {
 }
 #bloc-video #bg-bloc-video {
   display: block;
-  background: #ffffff;
+  background: #c0c1c3;
   position: absolute;
   top: 0;
   left: 0;

@@ -35,13 +35,9 @@ function nextVideo(sens){
 			TweenMax.set($("ul#slider-videos li#current-video a.video-cover"), {display: "block"});
 			// positionner la photo du fond suivante
 			var imgVideoSrc = $("ul#slider-videos li#next-video a.video-cover img.img-video-cover").attr("src");
-			$("img#next-img-bg-video-cover").attr("src",imgVideoSrc);
-			TweenMax.set($("img#next-img-bg-video-cover"), {display: "block", x: "100%"});
 
 			TweenMax.to($("ul#slider-videos li#current-video"), 0.5, {x: "-100%", ease:Cubic.easeInOut});
 			TweenMax.to($("ul#slider-videos li#next-video"), 0.5, {x: "0%", ease:Cubic.easeInOut});
-			TweenMax.to($("#img-bg-video-cover"), 0.5, {x: "-100%", ease:Cubic.easeInOut});
-			TweenMax.to($("#next-img-bg-video-cover"), 0.5, {x: "0%", ease:Cubic.easeInOut});
 		}else if(sens=="left"){
 			// tester si il y a une vidéo précédante
 			if($("ul#slider-videos li .iframe-video#player-"+(numVideo-1)).length){
@@ -56,22 +52,14 @@ function nextVideo(sens){
 			TweenMax.set($("ul#slider-videos li#next-video"), {display: "block", x: "-100%"});
 			TweenMax.set($("ul#slider-videos li#current-video a.video-cover"), {display: "block"});
 			// positionner la photo du fond suivante
-			var imgVideoSrc = $("ul#slider-videos li#next-video a.video-cover img.img-video-cover").attr("src");
-			$("img#next-img-bg-video-cover").attr("src",imgVideoSrc);
-			TweenMax.set($("img#next-img-bg-video-cover"), {display: "block", x: "-100%"});
-
 			TweenMax.to($("ul#slider-videos li#current-video"), 0.5, {x: "100%", ease:Cubic.easeInOut});
 			TweenMax.to($("ul#slider-videos li#next-video"), 0.5, {x: "0%", ease:Cubic.easeInOut});
-			TweenMax.to($("#img-bg-video-cover"), 0.5, {x: "100%", ease:Cubic.easeInOut});
-			TweenMax.to($("#next-img-bg-video-cover"), 0.5, {x: "0%", ease:Cubic.easeInOut});
 		}
 
 		// mettre à jour les IDs et src
 		$("ul#slider-videos li#current-video").attr("id", "");
 		$("ul#slider-videos li#next-video").attr("id", "current-video");
-		$("#img-bg-video-cover").attr("id", "aze");
-		$("#next-img-bg-video-cover").attr("id", "img-bg-video-cover");
-		$("#aze").attr("id", "next-img-bg-video-cover");
+
 	}
 }
 
