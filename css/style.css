@@ -267,6 +267,11 @@ h1 {
   -ms-transform: translateY(0px);
   transform: translateY(0px);
 }
+.pharmacies h1 {
+  color: #ffffff;
+  width: 528px;
+  margin: 0 auto;
+}
 h2 {
   margin: 0;
   padding: 0;
@@ -288,11 +293,25 @@ p {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.3em;
 }
+p strong {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .center-aligned {
   text-align: center;
 }
 .txt-bleu {
   color: #0070b8;
+}
+.txt-bleu-clair {
+  color: #60bbf6;
+}
+.txt-blanc {
+  color: #ffffff;
 }
 a.btn {
   display: block;
@@ -349,6 +368,19 @@ a.btn.btn-bleu:hover {
 }
 a.btn.btn-bleu:hover .triangle-btn {
   border-bottom-color: #227dba;
+}
+a.btn.btn-bleu-alpha {
+  background-color: #0070b8;
+  background-color: rgba(0, 112, 184, 0.8);
+  color: #ffffff;
+  border: 0px solid #0070b8;
+}
+a.btn.btn-bleu-alpha:hover {
+  background-color: #ffffff;
+  color: #0070b8;
+}
+a.btn.btn-bleu-alpha:hover .triangle-btn {
+  border-bottom-color: #0070b8;
 }
 a.btn.btn-blanc {
   background-color: #ffffff;
@@ -407,6 +439,46 @@ a.btn.small-padding {
 }
 a.btn.small-padding.btn-vertical-centered {
   padding: 0 26px;
+}
+a.btn.txt-small {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a.btn.txt-small h2 .txt-btn {
+  line-height: 1.1em;
+}
+a.btn.txt-small h2 .txt-btn strong {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.625em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.2em;
+}
+a.btn.txt-very-small {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 0.875em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a.btn.txt-very-small h2 .txt-btn {
+  line-height: 1.1em;
+}
+a.btn.txt-very-small h2 .txt-btn strong {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.857em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.15em;
 }
 a.btn .triangle-btn {
   position: absolute;
@@ -568,7 +640,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 70px 0 15px 0;
 }
 header.on {
@@ -946,16 +1018,18 @@ ul#menu-header li a:focus {
 }
 #bloc-home #bg-bloc-home {
   display: block;
-  background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
-  background-size: auto 100%;
-  background-size: cover;
-  background-color: #d7e0f0;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   overflow: hidden;
+}
+.home #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
+  background-size: auto 100%;
+  background-size: cover;
+  background-color: #d7e0f0;
 }
 #bloc-home #bg-bloc-home .container {
   height: 100%;
@@ -998,6 +1072,131 @@ ul#menu-header li a:focus {
   top: 350px;
   left: 704px;
 }
+#bloc-home a#btn-rowa-vmax-pharmacies {
+  position: absolute;
+  top: 408px;
+  left: 176px;
+}
+#bloc-home a#btn-rowa-smart-pharmacies {
+  position: absolute;
+  top: 350px;
+  left: 704px;
+}
+.pharmacies #bloc-home p {
+  width: 340px;
+  margin: 10px auto 0 auto;
+}
+#bloc-home #masque-btn-half-visu {
+  width: 50%;
+  width: calc(50% + 30px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-transform: skewX(8deg);
+  -moz-transform: skewX(8deg);
+  -o-transform: skewX(8deg);
+  -ms-transform: skewX(8deg);
+  transform: skewX(8deg);
+  margin-left: -60px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+#bloc-home a.btn-half-visu {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /*&:hover{
+      &#btn-visu-left{
+        z-index: 2;
+        .container-half-visu{
+          .transform(translateX(10px));
+        }
+      }
+      &#btn-visu-right{
+        z-index: 2;
+        .container-half-visu{
+          .transform(translateX(-10px));
+        }
+      }
+    }*/
+}
+#bloc-home a.btn-half-visu#btn-visu-left {
+  left: 0;
+  width: 110%;
+  -webkit-transform: skewX(-8deg);
+  -moz-transform: skewX(-8deg);
+  -o-transform: skewX(-8deg);
+  -ms-transform: skewX(-8deg);
+  transform: skewX(-8deg);
+}
+#bloc-home a.btn-half-visu#btn-visu-left .container-img-half-visu {
+  background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head2.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  right: 0;
+}
+#bloc-home a.btn-half-visu#btn-visu-left .over-container-half-visu {
+  left: -20%;
+}
+#bloc-home a.btn-half-visu#btn-visu-right {
+  right: 0;
+  width: 55%;
+}
+#bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
+  background: url("../layoutImg/bloc-home-pharmacies/rowa-smart-head2.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  left: 0;
+}
+#bloc-home a.btn-half-visu#btn-visu-right .over-container-half-visu {
+  right: -20%;
+}
+#bloc-home a.btn-half-visu .container-half-visu {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.1s;
+  -moz-transition: -moz-transform 0.1s;
+  -o-transition: -o-transform 0.1s;
+  transition: -webkit-transform 0.1s,-moz-transform 0.1s,-o-transform 0.1s,transform 0.1s;
+}
+#bloc-home a.btn-half-visu .container-half-visu .container-img-half-visu {
+  display: block;
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+#bloc-home a.btn-half-visu .over-container-half-visu {
+  display: block;
+  width: 120%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 /* @end */
 /* @group Bloc video */
 a.btn-video {
@@ -1014,9 +1213,9 @@ a.btn-video {
   -moz-transition: all 0.1s ease-in;
   -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
-  color: #227dba;
+  color: #ffffff;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #298bcc;
 }
 a.btn-video .arrow {
   font-size: 13px;
@@ -1037,7 +1236,7 @@ a.btn-video .masque-arrow {
   display: block;
   width: 20px;
   height: 13px;
-  background-color: #ffffff;
+  background-color: #298bcc;
   position: absolute;
   top: 50%;
   margin-top: -6px;
@@ -1092,7 +1291,7 @@ a.btn-video:hover#btn-right-video .masque-arrow {
 }
 #bloc-video #bg-bloc-video {
   display: block;
-  background: #c0c1c3;
+  background: #ffffff;
   position: absolute;
   top: 0;
   left: 0;
@@ -1743,6 +1942,142 @@ a.btn-references:hover#btn-right-references .masque-arrow {
   color: #232324;
   padding: 0 50px;
   margin: 0 0 0 176px;
+}
+/* @end */
+/* @group Pharmacies | Bloc automatiser */
+#bloc-automatiser {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 90px 0 0 0;
+  margin: 0;
+}
+#bloc-automatiser h2 {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 2.313em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 0 10px 0;
+  color: #0070b8;
+}
+#bloc-automatiser p.txt-title {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #727279;
+  margin: 0 auto;
+  line-height: 1.4em;
+}
+/*<ul id="slider-pharmacies">
+          <li class="slide-titre">
+            <div class="zone-txt-slider">
+               <h2 class="center-aligned">Pourquoi automatiser ?</h2>
+               <p class="center-aligned">De plus en plus de pharmacies nous font confiance chaque année pour automatiser leur officine.</p>
+               <p class="center-aligned">Voici <strong>5 bonnes raisons</strong> de lancer votre projet d’automatisation dans votre pharmacie.</p>
+             </div>
+          </li>
+          <li class="slide-txt-right">
+            <div class="visu-txt-slider"></div>
+            <div class="zone-txt-slider">
+               <h3>Rentabilité</h3>
+               <h4>Eliminer les erreurs humaines.</h4>
+               <p>comme le traitement de commande, les aller retour aux stocks, le picking etc...  Il aura de ce fait plus de temps à consacrer aux clients, il pourra ainsi mieux les conseiller, les orienter vers d'autres produits et donc augmenter le panier moyen de la pharmacie.</p>
+             </div>
+          </li>*/
+ul#slider-pharmacies {
+  display: block;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul#slider-pharmacies li {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  top: 100%;
+}
+ul#slider-pharmacies li.active {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  top: 50%;
+}
+ul#slider-pharmacies li.next-slide {
+  -webkit-opacity: 0.3;
+  -moz-opacity: 0.3;
+  opacity: 0.3;
+  top: 100%;
+}
+ul#slider-pharmacies li .visu-txt-slider {
+  display: block;
+  width: 352px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  margin-top: -125px;
+  left: 352px;
+}
+ul#slider-pharmacies li .zone-txt-slider {
+  display: block;
+  width: 352px;
+}
+ul#slider-pharmacies li .zone-txt-slider h3 {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.625em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0070b8;
+  margin: 25px 0 25px 0;
+  line-height: 1.2em;
+}
+ul#slider-pharmacies li .zone-txt-slider h4 {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0070b8;
+  margin: 20px 0 20px 0;
+}
+ul#slider-pharmacies li .zone-txt-slider p {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 0.875em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul#slider-pharmacies li.slide-right .zone-txt-slider {
+  margin-left: 704px;
+}
+ul#slider-pharmacies li#slide-1 .visu-txt-slider {
+  background: url("../layoutImg/slider-scroll/fleches.png") no-repeat 0 0;
 }
 /* @end */
 /* @group Footer */

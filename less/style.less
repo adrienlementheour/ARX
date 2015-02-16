@@ -365,6 +365,11 @@ h1{
       .transform(translateY(0px));
     }
   }
+  .pharmacies &{
+    color: @blanc;
+    width: 6*@largeurCol;
+    margin: 0 auto;
+  }
 }
 
 h2{
@@ -378,6 +383,9 @@ p{
   padding: 0;
   .roboto(1em);
   line-height: 1.3em;
+  strong{
+    .roboto-bold(1em);
+  }
 }
 
 .center-aligned{
@@ -386,6 +394,14 @@ p{
 
 .txt-bleu{
   color: @bleu7ARX;
+}
+
+.txt-bleu-clair{
+  color: #60bbf6;
+}
+
+.txt-blanc{
+  color: @blanc;
 }
 
 a.btn{
@@ -418,6 +434,19 @@ a.btn{
       color: @bleu2ARX;
       .triangle-btn{
         border-bottom-color: @bleu2ARX;
+      }
+    }
+  }
+  &.btn-bleu-alpha{
+    background-color: @bleu7ARX;
+    background-color: fade(@bleu7ARX, 80%);
+    color: @blanc;
+    border: 0px solid @bleu7ARX;
+    &:hover{
+      background-color: @blanc;
+      color: @bleu7ARX;
+      .triangle-btn{
+        border-bottom-color: @bleu7ARX;
       }
     }
   }
@@ -477,6 +506,30 @@ a.btn{
     padding: 26px 0 0 26px;
     &.btn-vertical-centered{
       padding: 0 26px;
+    }
+  }
+  &.txt-small{
+    .roboto-light(1em);
+    h2{
+      .txt-btn{
+        line-height: 1.1em;
+        strong{
+          .roboto-bold(1.625em);
+          line-height: 1.2em;
+        }
+      }
+    }
+  }
+  &.txt-very-small{
+    .roboto-light(0.875em);
+    h2{
+      .txt-btn{
+        line-height: 1.1em;
+        strong{
+          .roboto-bold(1.857em);
+          line-height: 1.15em;
+        }
+      }
     }
   }
   .triangle-btn{
@@ -646,7 +699,7 @@ header{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 70px 0 15px 0;
   &.on{
     position: fixed;
@@ -993,16 +1046,18 @@ ul#menu-header{
   }
   #bg-bloc-home{
     display: block;
-    background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
-    background-size: auto 100%;
-    background-size: cover;
-    background-color: #d7e0f0;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     overflow: hidden;
+    .home &{
+      background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
+      background-size: auto 100%;
+      background-size: cover;
+      background-color: #d7e0f0;
+    }
     .container{
       height: 100%;
     }
@@ -1033,6 +1088,107 @@ ul#menu-header{
     top: 350px;
     left: 8*@largeurCol;
   }
+  a#btn-rowa-vmax-pharmacies{
+    position: absolute;
+    top: 408px;
+    left: 2*@largeurCol;
+  }
+  a#btn-rowa-smart-pharmacies{
+    position: absolute;
+    top: 350px;
+    left: 8*@largeurCol;
+  }
+  .pharmacies &{
+    p{
+      width: 340px;
+      margin: 10px auto 0 auto;
+    }
+  }
+  #masque-btn-half-visu{
+    width: 50%;
+    width: calc(~"50% + 30px");
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    .transform(skewX(8deg));
+    margin-left: -60px;
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
+  }
+  a.btn-half-visu{
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
+    &#btn-visu-left{
+      left: 0;
+      width: 110%;
+      .transform(skewX(-8deg));
+      .container-img-half-visu{
+        background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head2.jpg") no-repeat 50% 50%;
+        background-size: auto 100%;
+        right: 0;
+      }
+      .over-container-half-visu{
+        left: -20%;
+      }
+    }
+    &#btn-visu-right{
+      right: 0;
+      width: 55%;
+      //width: calc(~"55% + 30px");
+      .container-img-half-visu{
+        background: url("../layoutImg/bloc-home-pharmacies/rowa-smart-head2.jpg") no-repeat 50% 50%;
+        background-size: auto 100%;
+        left: 0;
+      }
+      .over-container-half-visu{
+        right: -20%;
+      }
+    }
+    .container-half-visu{
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .transition(transform 0.1s);
+      .container-img-half-visu{
+        display: block;
+        width: 110%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+    }
+    .over-container-half-visu{
+      display: block;
+      width: 120%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    /*&:hover{
+      &#btn-visu-left{
+        z-index: 2;
+        .container-half-visu{
+          .transform(translateX(10px));
+        }
+      }
+      &#btn-visu-right{
+        z-index: 2;
+        .container-half-visu{
+          .transform(translateX(-10px));
+        }
+      }
+    }*/
+  }
 }
 
 /* @end */
@@ -1049,9 +1205,9 @@ a.btn-video{
   margin: 214px 0 0 0;
   padding: 0;
   .transition(all 0.1s ease-in);
-  color: @bleu2ARX;
+  color: @blanc;
   text-align: center;
-  background-color: @blanc;
+  background-color: @bleu4ARX;
   .arrow{
     font-size: 13px;
     display: block;
@@ -1068,7 +1224,7 @@ a.btn-video{
     display: block;
     width: 20px;
     height: 13px;
-    background-color: @blanc;
+    background-color: @bleu4ARX;
     position: absolute;
     top: 50%;
     margin-top: -6px;
@@ -1115,7 +1271,7 @@ a.btn-video{
   padding: 0 0 90px 0;
   #bg-bloc-video{
     display: block;
-    background: #c0c1c3;
+    background: @blanc;
     position: absolute;
     top: 0;
     left: 0;
@@ -1687,6 +1843,115 @@ a.btn-references{
     color: #232324;
     padding: 0 50px;
     margin: 0 0 0 2*@largeurCol;
+  }
+}
+
+/* @end */
+
+/* @group Pharmacies | Bloc automatiser */
+
+#bloc-automatiser{
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 90px 0 0 0;
+  margin: 0;
+  h2{
+    .roboto-light(2.313em);
+    margin: 0 0 10px 0;
+    color: @bleu7ARX;
+  }
+  p.txt-title{
+    .roboto-light(1em);
+    color: #727279;
+    margin: 0 auto;
+    line-height: 1.4em;
+  }
+}
+
+/*<ul id="slider-pharmacies">
+          <li class="slide-titre">
+            <div class="zone-txt-slider">
+               <h2 class="center-aligned">Pourquoi automatiser ?</h2>
+               <p class="center-aligned">De plus en plus de pharmacies nous font confiance chaque année pour automatiser leur officine.</p>
+               <p class="center-aligned">Voici <strong>5 bonnes raisons</strong> de lancer votre projet d’automatisation dans votre pharmacie.</p>
+             </div>
+          </li>
+          <li class="slide-txt-right">
+            <div class="visu-txt-slider"></div>
+            <div class="zone-txt-slider">
+               <h3>Rentabilité</h3>
+               <h4>Eliminer les erreurs humaines.</h4>
+               <p>comme le traitement de commande, les aller retour aux stocks, le picking etc...  Il aura de ce fait plus de temps à consacrer aux clients, il pourra ainsi mieux les conseiller, les orienter vers d'autres produits et donc augmenter le panier moyen de la pharmacie.</p>
+             </div>
+          </li>*/
+
+ul#slider-pharmacies{
+  display: block;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  li{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    .box-sizing(border-box);
+    .opacity(0);
+    .transform(translateY(-50%));
+    position: absolute;
+    top: 100%;
+    &.active{
+      .opacity(1);
+      top: 50%;
+    }
+    &.next-slide{
+      .opacity(0.3);
+      top: 100%;
+    }
+    .visu-txt-slider{
+      display: block;
+      width: 4*@largeurCol;
+      height: 250px;
+      position: absolute;
+      top: 50%;
+      margin-top: -125px;
+      left: 4*@largeurCol;
+    }
+    .zone-txt-slider{
+      display: block;
+      width: 4*@largeurCol;
+      h3{
+        .roboto-bold(1.625em);
+        color: @bleu7ARX;
+        margin: 25px 0 25px 0;
+        line-height: 1.2em;
+      }
+      h4{
+        .roboto-light(1em);
+        color: @bleu7ARX;
+        margin: 20px 0 20px 0;
+      }
+      p{
+        .roboto-light(0.875em);
+      }
+    }
+    &.slide-right{
+      .zone-txt-slider{
+        margin-left: 8*@largeurCol;
+      }
+    }
+    &#slide-1{
+      .visu-txt-slider{
+        background: url("../layoutImg/slider-scroll/fleches.png") no-repeat 0 0;
+        //background-size: 180px 250px;
+      }
+    }
   }
 }
 

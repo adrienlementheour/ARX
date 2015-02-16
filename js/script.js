@@ -3,6 +3,12 @@
 //////////////////////////
 // Nombre de références
 var nbRefs = 3;
+// Numéro d'étape du slider scroll
+var etape = 1;
+var indexPucesVision = 1;
+var wheel;
+var oldDate = new Date();
+var scrollPos;
 
 ///////////////
 // variables //
@@ -11,6 +17,7 @@ var pattern = /[0-9]+/g;
 var currentRef = 1;
 var nextRef;
 var heightBlocDrapeaux;
+var widthVisuLeftPharmacies;
 
 // Fonction pour passer d'une vidéo à une autre
 function nextVideo(sens){
@@ -181,6 +188,74 @@ function completeAnimMachine(){
 	}, 2000);
 }
 
+function sliderScroll(){
+	if(!$("html").hasClass("lt-ie9")){
+		$("ul#slider-pharmacies").on('mousewheel', function(event) {
+			mouseHandle(event, indexPucesVision);
+		});
+	}
+}
+
+function mouseHandle(event, indexPuceVision) {
+    newDate = new Date();
+    var scrollAllowed = true;
+
+    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 100 ) {
+        scrollPos -= event.deltaY*(10-wheel);
+        wheel++;
+    }else{
+        if( (newDate.getTime()-oldDate.getTime()) > 100 ) {
+            wheel = 0;
+            scrollPos -= event.deltaY*60;
+        }else{
+            scrollAllowed = false;
+        }
+    }
+
+    oldDate = new Date();
+
+    if(scrollAllowed) {
+        if (event.deltaY<0) {
+        	// au scroll down
+        	/*if(indexPuceVision==1){
+        		TweenMax.to($('a#btn-prev-slide-metier'), 0, {display: "block"});
+        		majPucesVision(indexPucesVision+1);
+        		TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "-350px", opacity: "0.5", ease:textAnimationEase, onComplete: function(){
+        			indexPucesVision++;
+        		}});
+        		TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase});
+        		TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
+        	}else if (indexPuceVision==2) {
+        		majPucesVision(indexPucesVision+1);
+        		TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "-350px", opacity: "0", ease:textAnimationEase, onComplete: function(){
+        			indexPucesVision++;
+        		}});
+        		TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "-350px", opacity: "0.5", ease:textAnimationEase});
+        		TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase});
+        	}*/
+        	
+        }else{
+        	// au scroll up
+        	/*if(indexPuceVision==2){
+        		TweenMax.to($('a#btn-prev-slide-metier'), 0, {display: "none"});
+        		majPucesVision(indexPucesVision-1);
+	        	TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase, onComplete: function(){
+	        		indexPucesVision--;
+	        	}});
+	        	TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
+	        	TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
+        	}else if(indexPuceVision==3) {
+        		majPucesVision(indexPucesVision-1);
+				TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "-350px", opacity: "0.5", ease:textAnimationEase, onComplete: function(){
+					indexPucesVision--;
+				}});
+				TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase});
+				TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
+        	}*/
+        }
+    }
+}
+
 $(window).load(function() {
 	if($("body").hasClass("home")){
 		setTimeout(function(){
@@ -190,12 +265,9 @@ $(window).load(function() {
 });
 
 $(document).ready(function(){
-	/*if($("body").hasClass("home")){
-		initHeaderHome();
-		setTimeout(function(){
-			animHeaderHome();
-		}, 1000);
-	}*/
+	if($("body").hasClass("pharmacies")){
+		sliderScroll();
+	}
 
 	initBtnAnim();
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
@@ -288,6 +360,41 @@ $(document).ready(function(){
 	  	TweenMax.to($(".video-txt .video-title", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut, onComplete: onCompleteVideoCover});
 	  }, function() {
 	  	TweenMax.to($(".video-txt .video-play", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut, onComplete: onCompleteVideoCover2});
+	  }
+	);
+	TweenMax.set($("#masque-btn-half-visu"), {width: "calc(50% + 30px)"});
+	TweenMax.set($("#btn-visu-right"), {width: "55%"});
+	$("a.btn-half-visu").hover(
+	  function() {
+	  	if($(this).is("#btn-visu-left")){
+	        //TweenMax.to($("#btn-visu-left"), 0.2, {x: "20px", ease:Cubic.easeInOut});
+	        TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(55% + 30px)", ease:Cubic.easeInOut});
+	        TweenMax.to($("#btn-visu-right"), 0.2, {width: "50%", ease:Cubic.easeInOut});
+	  	}else if($(this).is("#btn-visu-right")){
+	  		TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(45% + 30px)", ease:Cubic.easeInOut});
+	  		TweenMax.to($("#btn-visu-right"), 0.2, {width: "65%", ease:Cubic.easeInOut});
+	  	}
+	  }, function() {
+	  	TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(50% + 30px)", ease:Cubic.easeInOut});
+	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
+	  }
+	);
+	$("a#btn-rowa-vmax-pharmacies").hover(
+	  function() {
+        TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(55% + 30px)", ease:Cubic.easeInOut});
+        TweenMax.to($("#btn-visu-right"), 0.2, {width: "50%", ease:Cubic.easeInOut});
+	  }, function() {
+	  	TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(50% + 30px)", ease:Cubic.easeInOut});
+	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
+	  }
+	);
+	$("a#btn-rowa-smart-pharmacies").hover(
+	  function() {
+        TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(45% + 30px)", ease:Cubic.easeInOut});
+        TweenMax.to($("#btn-visu-right"), 0.2, {width: "65%", ease:Cubic.easeInOut});
+	  }, function() {
+	  	TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(50% + 30px)", ease:Cubic.easeInOut});
+	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
 	  }
 	);
 });
