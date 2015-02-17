@@ -347,6 +347,14 @@ html, body{
   }
 }
 
+#zone-titre-home{
+  .vmax &{
+    width: 4*@largeurCol;
+    .box-sizing(border-box);
+    padding: 0 13px;
+  }
+}
+
 h1{
   .roboto-light(2.313em);
   line-height: 1.3em;
@@ -354,7 +362,6 @@ h1{
   width: 4*@largeurCol;
   height: auto;
   color: @noir;
-  text-align: center;
   margin: 0;
   padding: 200px 0 0 0;
   .home &{
@@ -366,7 +373,6 @@ h1{
     }
   }
   .pharmacies &{
-    color: @blanc;
     width: 6*@largeurCol;
     margin: 0 auto;
   }
@@ -969,6 +975,9 @@ ul#menu-header{
   height: 85%;
   min-height: 700px;
   max-height: 1000px;
+  .container{
+    height: 100%;
+  }
   ul.bg-grid{
     li.col-bg-grid.last-active:last-of-type{
       &:after{
@@ -1058,6 +1067,12 @@ ul#menu-header{
       background-size: cover;
       background-color: #d7e0f0;
     }
+    .vmax &{
+      background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head2.jpg") no-repeat center center;
+      background-size: auto 100%;
+      background-size: cover;
+      background-color: #d7e0f0;
+    }
     .container{
       height: 100%;
     }
@@ -1098,6 +1113,37 @@ ul#menu-header{
     top: 350px;
     left: 8*@largeurCol;
   }
+  a#btn-options-vmax{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  a#btn-qualite-securite-vmax{
+    position: absolute;
+    bottom: 2*@largeurCol;
+    left: 2*@largeurCol;
+  }
+  a#btn-design-speciaux-vmax{
+    position: absolute;
+    bottom: 4*@largeurCol;
+    left: 4*@largeurCol;
+  }
+  a#btn-vitesse-precision-vmax{
+    position: absolute;
+    bottom: 2*@largeurCol;
+    left: 6*@largeurCol;
+  }
+  a#btn-maitriser-espace-vmax{
+    position: absolute;
+    bottom: 4*@largeurCol;
+    left: 8*@largeurCol;
+  }
+  a#btn-outil-silencieux-vmax{
+    position: absolute;
+    bottom: 0;
+    left: 8*@largeurCol;
+  }
+
   .pharmacies &{
     p{
       width: 340px;
@@ -1870,51 +1916,26 @@ a.btn-references{
   }
 }
 
-/*<ul id="slider-pharmacies">
-          <li class="slide-titre">
-            <div class="zone-txt-slider">
-               <h2 class="center-aligned">Pourquoi automatiser ?</h2>
-               <p class="center-aligned">De plus en plus de pharmacies nous font confiance chaque année pour automatiser leur officine.</p>
-               <p class="center-aligned">Voici <strong>5 bonnes raisons</strong> de lancer votre projet d’automatisation dans votre pharmacie.</p>
-             </div>
-          </li>
-          <li class="slide-txt-right">
-            <div class="visu-txt-slider"></div>
-            <div class="zone-txt-slider">
-               <h3>Rentabilité</h3>
-               <h4>Eliminer les erreurs humaines.</h4>
-               <p>comme le traitement de commande, les aller retour aux stocks, le picking etc...  Il aura de ce fait plus de temps à consacrer aux clients, il pourra ainsi mieux les conseiller, les orienter vers d'autres produits et donc augmenter le panier moyen de la pharmacie.</p>
-             </div>
-          </li>*/
-
 ul#slider-pharmacies{
   display: block;
   width: 100%;
-  height: 500px;
+  height: auto;
   position: relative;
   list-style-type: none;
-  margin: 0;
+  margin: 100px 0 250px 0;
   padding: 0;
-  overflow: hidden;
   li{
     display: block;
     width: 100%;
     height: auto;
     position: relative;
     .box-sizing(border-box);
-    .opacity(0);
-    .transform(translateY(-50%));
-    position: absolute;
-    top: 100%;
+    .opacity(0.3);
+    margin: 50px 0;
     &.active{
       .opacity(1);
-      top: 50%;
     }
-    &.next-slide{
-      .opacity(0.3);
-      top: 100%;
-    }
-    .visu-txt-slider{
+    .zone-visu-txt-slider{
       display: block;
       width: 4*@largeurCol;
       height: 250px;
@@ -1922,6 +1943,15 @@ ul#slider-pharmacies{
       top: 50%;
       margin-top: -125px;
       left: 4*@largeurCol;
+      .visu-txt-slider{
+        display: block;
+        width: 180px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -90px;
+      }
     }
     .zone-txt-slider{
       display: block;
@@ -1947,9 +1977,24 @@ ul#slider-pharmacies{
       }
     }
     &#slide-1{
-      .visu-txt-slider{
-        background: url("../layoutImg/slider-scroll/fleches.png") no-repeat 0 0;
-        //background-size: 180px 250px;
+      .zone-visu-txt-slider{
+        .visu-txt-slider{
+          background: url("../layoutImg/slider-scroll/fleches.png") no-repeat 0 0;
+        }
+      }
+    }
+    &#slide-2{
+      .zone-visu-txt-slider{
+        .visu-txt-slider{
+          background: url("../layoutImg/slider-scroll/box.png") no-repeat 0 0;
+        }
+      }
+    }
+    &#slide-3{
+      .zone-visu-txt-slider{
+        .visu-txt-slider{
+          background: url("../layoutImg/slider-scroll/stocks.png") no-repeat 0 0;
+        }
       }
     }
   }
@@ -2519,7 +2564,10 @@ footer{
 
 /* retina */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-    
+    ul#slider-pharmacies li#slide-1 .zone-visu-txt-slider .visu-txt-slider{
+      background-image: url("../layoutImg/slider-scroll/fleches@2x.png");
+      background-size: 1080px 1750px;
+    }
 }
 
 

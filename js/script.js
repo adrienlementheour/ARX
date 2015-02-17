@@ -194,6 +194,24 @@ function sliderScroll(){
 			mouseHandle(event, indexPucesVision);
 		});
 	}
+
+	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
+	var steppedEase = new SteppedEase(numCols-1);
+	//var tl = new TimelineMax({repeat:-1});
+	// Première boucle
+	var tl = new TimelineMax({onComplete: completeFirstLoop});
+	for(var i=0;i<3;i++){
+		tl.add(TweenMax.fromTo('#slide-1 .zone-visu-txt-slider .visu-txt-slider', 0.3, { backgroundPosition:'0 -'+(frameHeight*i)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease:steppedEase}));
+	}
+}
+
+function completeFirstLoop(){
+	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
+	var steppedEase = new SteppedEase(numCols-1);
+	var tlaze = new TimelineMax({repeat:-1});
+	for(var i=3;i<numRows;i++){
+		tlaze.add(TweenMax.fromTo('#slide-1 .zone-visu-txt-slider .visu-txt-slider', 0.3, { backgroundPosition:'0 -'+(frameHeight*i)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease:steppedEase}));
+	}
 }
 
 function mouseHandle(event, indexPuceVision) {
