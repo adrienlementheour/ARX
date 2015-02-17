@@ -431,6 +431,48 @@ a.btn{
       }
     }
   }
+  &.btn-image{
+    .size(4*@largeurCol);
+    padding: 0;
+    .roboto-light(1em);
+    &.btn-bleu-alpha{
+      background: none;
+      .zone-btn{
+        background-color: @bleu7ARX;
+        background-color: fade(@bleu7ARX, 80%);
+        color: @blanc;
+        border: 0px solid @bleu7ARX;
+      }
+      &:hover{
+        background: none;
+        color: @blanc;
+        .zone-btn{
+          background-color: @blanc;
+          color: @bleu7ARX;
+          .triangle-btn{
+            border-bottom-color: @bleu7ARX;
+          }
+        }
+      }
+    }
+    .zone-btn{
+      display: block;
+      .size(2*@largeurCol);
+      .box-sizing(border-box);
+      padding: 35px;
+      .transition(background-color 0.1s ease-in, color 0.1s ease-in);
+      .backface-visibility(hidden);
+      .transform-style(preserve-3d);
+    }
+    h2{
+      .txt-btn{
+        strong{
+          .roboto-bold(1.625em);
+          line-height: 1.15em;
+        }
+      }
+    }
+  }
   &.btn-bleu{
     background-color: @bleu2ARX;
     color: @blanc;
@@ -1997,6 +2039,194 @@ ul#slider-pharmacies{
         }
       }
     }
+  }
+}
+
+/* @end */
+
+/* @group Bloc options */
+
+ul#liste-options-pharmacies{
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li{
+    display: inline-block;
+    vertical-align: top;
+    .size(4*@largeurCol);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* @end */
+
+/* @group Carousel */
+
+ul.carousel-type{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    .container-img-carousel{
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: auto;
+        .translate(-50%, -50%);
+      }
+    }
+    .container-next-img-carousel{
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      .translate(100%, 0%);
+      img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: auto;
+        .translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+a.btn-carousel{
+  display: block;
+  margin: 0;
+  padding: 0;
+  .box-sizing(border-box);
+  .size(@largeurCol);
+  background: none;
+  border: 1px solid @blanc;
+  line-height: 2*@largeurCol;
+  text-decoration: none;
+  .transition(all 0.1s ease-in);
+  color: @blanc;
+  text-align: center;
+  &.btn-close-carousel{
+    line-height: normal;
+  }
+  .arrow{
+    font-size: 13px;
+    display: block;
+    width: 36px;
+    height: 13px;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    left: 50%;
+    margin-left: -18px;
+    .transition(all 0.1s ease-in);
+  }
+  .cross{
+    .roboto-light(28px);
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    margin-top: -14px;
+    left: 50%;
+    margin-left: -14px;
+    .transition(all 0.1s ease-in);
+    line-height: 28px;
+  }
+  &#btn-left-options{
+    position: absolute;
+    top: @largeurCol;
+    left: 4*@largeurCol;
+    border-right: none;
+  }
+  &#btn-right-options{
+    position: absolute;
+    top: @largeurCol;
+    left: 5*@largeurCol;
+  }
+  &#btn-close-options{
+    position: absolute;
+    top: 0;
+    left: 5*@largeurCol;
+    border-bottom: none;
+  }
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    &.btn-left-carousel{
+      .arrow.icon-arrow-left{
+        .translate(-15px, 0);
+      }
+    }
+    &.btn-right-carousel{
+      .arrow.icon-arrow-right{
+        .translate(15px, 0);
+      }
+    }
+    &.btn-close-carousel{
+      .cross{
+        .rotate(90deg);
+      }
+    }
+  }
+}
+
+#zone-carousel-options{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  width: 6*@largeurCol;
+  height: 687px;
+  position: relative;
+}
+
+#zone-txt-options{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 55px 50px 0 50px;
+  width: 6*@largeurCol;
+  height: auto;
+  .box-sizing(border-box);
+  p{
+    .roboto-light(1em);
   }
 }
 

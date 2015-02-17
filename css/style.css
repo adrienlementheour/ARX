@@ -362,6 +362,69 @@ a.btn h2 .txt-btn strong {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a.btn.btn-image {
+  width: 352px;
+  height: 352px;
+  padding: 0;
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a.btn.btn-image.btn-bleu-alpha {
+  background: none;
+}
+a.btn.btn-image.btn-bleu-alpha .zone-btn {
+  background-color: #0070b8;
+  background-color: rgba(0, 112, 184, 0.8);
+  color: #ffffff;
+  border: 0px solid #0070b8;
+}
+a.btn.btn-image.btn-bleu-alpha:hover {
+  background: none;
+  color: #ffffff;
+}
+a.btn.btn-image.btn-bleu-alpha:hover .zone-btn {
+  background-color: #ffffff;
+  color: #0070b8;
+}
+a.btn.btn-image.btn-bleu-alpha:hover .zone-btn .triangle-btn {
+  border-bottom-color: #0070b8;
+}
+a.btn.btn-image .zone-btn {
+  display: block;
+  width: 176px;
+  height: 176px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 35px;
+  -webkit-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -moz-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -o-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+a.btn.btn-image h2 .txt-btn strong {
+  font-family: 'robotobold', sans-serif;
+  font-weight: normal;
+  font-size: 1.625em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.15em;
+}
 a.btn.btn-bleu {
   background-color: #227dba;
   color: #ffffff;
@@ -2107,6 +2170,226 @@ ul#slider-pharmacies li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
 }
 ul#slider-pharmacies li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/stocks.png") no-repeat 0 0;
+}
+/* @end */
+/* @group Bloc options */
+ul#liste-options-pharmacies {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul#liste-options-pharmacies li {
+  display: inline-block;
+  vertical-align: top;
+  width: 352px;
+  height: 352px;
+  margin: 0;
+  padding: 0;
+}
+/* @end */
+/* @group Carousel */
+ul.carousel-type {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.carousel-type li {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul.carousel-type li .container-img-carousel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+ul.carousel-type li .container-img-carousel img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+ul.carousel-type li .container-next-img-carousel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  transform: translate(100%, 0%);
+}
+ul.carousel-type li .container-next-img-carousel img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+a.btn-carousel {
+  display: block;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 88px;
+  height: 88px;
+  background: none;
+  border: 1px solid #ffffff;
+  line-height: 176px;
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  color: #ffffff;
+  text-align: center;
+}
+a.btn-carousel.btn-close-carousel {
+  line-height: normal;
+}
+a.btn-carousel .arrow {
+  font-size: 13px;
+  display: block;
+  width: 36px;
+  height: 13px;
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  left: 50%;
+  margin-left: -18px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+a.btn-carousel .cross {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 28px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  left: 50%;
+  margin-left: -14px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  line-height: 28px;
+}
+a.btn-carousel#btn-left-options {
+  position: absolute;
+  top: 88px;
+  left: 352px;
+  border-right: none;
+}
+a.btn-carousel#btn-right-options {
+  position: absolute;
+  top: 88px;
+  left: 440px;
+}
+a.btn-carousel#btn-close-options {
+  position: absolute;
+  top: 0;
+  left: 440px;
+  border-bottom: none;
+}
+a.btn-carousel:focus {
+  outline: none;
+}
+a.btn-carousel:hover.btn-left-carousel .arrow.icon-arrow-left {
+  -webkit-transform: translate(-15px, 0);
+  -moz-transform: translate(-15px, 0);
+  -o-transform: translate(-15px, 0);
+  -ms-transform: translate(-15px, 0);
+  transform: translate(-15px, 0);
+}
+a.btn-carousel:hover.btn-right-carousel .arrow.icon-arrow-right {
+  -webkit-transform: translate(15px, 0);
+  -moz-transform: translate(15px, 0);
+  -o-transform: translate(15px, 0);
+  -ms-transform: translate(15px, 0);
+  transform: translate(15px, 0);
+}
+a.btn-carousel:hover.btn-close-carousel .cross {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#zone-carousel-options {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  width: 528px;
+  height: 687px;
+  position: relative;
+}
+#zone-txt-options {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 55px 50px 0 50px;
+  width: 528px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#zone-txt-options p {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 /* @end */
 /* @group Footer */

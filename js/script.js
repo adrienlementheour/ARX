@@ -71,8 +71,8 @@ function nextVideo(sens){
 }
 
 // Fonction pour positionner correctement les images des références
-function posiImgsReferences(){
-	$("ul#liste-references li img").each(function(){
+function posiImgsReferences(images){
+	images.each(function(){
 		// test pour savoir si l'image est plus haute que large
 		if($(this).height()>=$(this).width()){
 			//l'image est plus haute que large
@@ -141,7 +141,11 @@ function onYouTubeIframeAPIReady() {
 }
 
 $("ul#liste-references li img").load(function(){
-	posiImgsReferences();
+	posiImgsReferences($("ul#liste-references li img"));
+});
+
+$("ul.carousel-type li img").load(function(){
+	posiImgsReferences($("ul.carousel-type li img"));
 });
 
 // fonction pour masquer le bloc drapeaux
