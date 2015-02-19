@@ -16,6 +16,8 @@ var scrollPos;
 var pattern = /[0-9]+/g;
 var currentRef = 1;
 var nextRef;
+var currentDetailHome = 1;
+var nextDetailHome;
 var heightBlocDrapeaux;
 var widthVisuLeftPharmacies;
 
@@ -79,7 +81,7 @@ function posiImgsReferences(images){
 			TweenMax.set($(this), {width: "100%", height: "auto"});
 			// test pour savoir si l'image est plus petite que le container
 			if($(this).height()<$(this).parent().height()){
-				TweenMax.set($(this), {width: "auto", height: "100%"});
+				TweenMax.set($(this), {width: "100%", height: "auto"});
 			}
 		}else{
 			//l'image est plus large que haute
@@ -146,6 +148,10 @@ $("ul#liste-references li img").load(function(){
 
 $("ul.carousel-type li img").load(function(){
 	posiImgsReferences($("ul.carousel-type li img"));
+});
+
+$("#carousel-img-home li img").load(function(){
+	posiImgsReferences($("ul#carousel-img-home li img"));
 });
 
 // fonction pour masquer le bloc drapeaux
@@ -419,7 +425,148 @@ $(document).ready(function(){
 	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
 	  }
 	);
+	$("a#btn-options").click(function() {
+		if(!$(this).hasClass("btn-open")){
+			openOptions($(this));
+		}
+		return false;
+	});
+	$("a.btn-detail-home").click(function() {
+		posiImgsReferences($("ul#carousel-img-home li img"));
+		openDetailHome($(this));
+		return false;
+	});
+	$("a#btn-close-carousel-home").click(function() {
+		closeDetailHome();
+		return false;
+	});
+	$("a#btn-right-carousel-home").click(function() {
+		if(!TweenMax.isTweening($("ul#carousel-img-home li"))&&!TweenMax.isTweening($("ul#carousel-txt-home li"))){
+			animCarouselHome("right");
+		}
+		return false;
+	});
+	$("a#btn-left-carousel-home").click(function() {
+		if(!TweenMax.isTweening($("ul#carousel-img-home li"))&&!TweenMax.isTweening($("ul#carousel-txt-home li"))){
+			animCarouselHome("left");
+		}
+		return false;
+	});
+	$("ul#liste-options-pharmacies li a").click(function() {
+		posiImgsReferences($("ul.carousel-type li img"));
+		$("#bloc-content-options").slideToggle(300, function(){
+			$("#bloc-content-detail-options").slideToggle(500);
+		});
+		openDetailOption($(this));
+		return false;
+	});
 });
+
+function animCarouselHome(sens){
+	var indexDetailHomeActive = $("ul#carousel-img-home li.active").index("ul#carousel-img-home li")+1;
+	var nbDetailsHome = $("ul#carousel-img-home li").length;
+	if(sens=="right"){
+		// tester si il y a un detail suivant
+		if((indexDetailHomeActive+1)<=nbDetailsHome){
+			// il y a un detail suivant
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive);
+			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive);
+		}else{
+			// il n'y a pas de detail suivant
+			// il y a un detail suivant
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(0);
+			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(0);
+		}
+		// placer l'image et le texte suivant
+		TweenMax.set(nextDetailHomeImg, {x: "-100%"});
+		TweenMax.set(nextDetailHomeTxt, {x: "-100%"});
+		// animer les transitions
+		TweenMax.staggerTo($("ul#carousel-img-home li.active"), 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(nextDetailHomeImg, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
+		TweenMax.staggerTo($("ul#carousel-txt-home li.active"), 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(nextDetailHomeTxt, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
+	}else if(sens=="left"){
+		// tester si il y a un detail précédent
+		if((indexDetailHomeActive-1)>=1){
+			// il y a un detail précédent
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive-2);
+			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive-2);
+		}else{
+			// il n'y a pas de detail précédent
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(nbDetailsHome-1);
+			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(nbDetailsHome-1);
+		}
+		// placer l'image et le texte précédent
+		TweenMax.set(nextDetailHomeImg, {x: "100%"});
+		TweenMax.set(nextDetailHomeTxt, {x: "100%"});
+		// animer les transitions
+		TweenMax.staggerTo($("ul#carousel-img-home li.active"), 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(nextDetailHomeImg, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
+		TweenMax.staggerTo($("ul#carousel-txt-home li.active"), 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
+		TweenMax.staggerTo(nextDetailHomeTxt, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
+	}
+}
+
+function completeTransiCarouselHome(nextDetailHomeImg, nextDetailHomeTxt){
+	// intervertir les class names
+	TweenMax.set($("ul#carousel-img-home li.active"), {className:"-=active", clearProps:"all"});
+	TweenMax.set($("ul#carousel-txt-home li.active"), {className:"-=active", clearProps:"all"});
+	TweenMax.set(nextDetailHomeImg, {className:"+=active", clearProps:"all"});
+	TweenMax.set(nextDetailHomeTxt, {className:"+=active", clearProps:"all"});
+}
+
+function openOptions(btnClic){
+	// Ajouter classe body
+	TweenMax.set($("body"), {className:"+=options"});
+	if($("body").hasClass("detail-home")){
+		closeDetailHome();
+	}
+	$("#bloc-content-options").slideToggle(500);
+	TweenMax.delayedCall(0.1, function(){
+		TweenMax.to(window, 1, {scrollTo:{y:($("#bloc-content-options").offset().top-260)}});
+	});
+	TweenMax.to(btnClic, 0.2,{className:"+=btn-open"});
+	var tlBlocOptionsTitle = new TimelineMax();
+	tlBlocOptionsTitle.to($("#bloc-options-title"), 0.4,{className:"+=open"});
+	tlBlocOptionsTitle.to($("#txt-bloc-options-title"), 0.4,{opacity: 1, y: 0});
+}
+
+function openDetailHome(btnDetailClic){
+	// Ajouter classe body
+	TweenMax.set($("body"), {className:"+=detail-home"});
+	// Récupérer l'index de l'élément cliqué
+	var btnDetailHomeIndex = btnDetailClic.index(".btn-detail-home");
+	// Enlever l'image et le texte actuels du carousel
+	TweenMax.set($("ul#carousel-img-home li.active"), {className:"-=active"});
+	TweenMax.set($("ul#carousel-txt-home li.active"), {className:"-=active"});
+	// Afficher la bonne image et le bon texte dans le carousel
+	TweenMax.set($("ul#carousel-img-home li").eq(btnDetailHomeIndex), {className:"+=active"});
+	TweenMax.set($("ul#carousel-txt-home li").eq(btnDetailHomeIndex), {className:"+=active"});
+
+	//Afficher les carousels
+	var tlBlocDetailHome = new TimelineMax();
+	tlBlocDetailHome.set($("#bloc-detail-home"), {className:"+=detail-home-open"});
+	tlBlocDetailHome.staggerTo(".container-inte-bloc-detail-home", 0.5, {width: "50%", ease:Cubic.easeInOut}, 0.1);
+}
+
+function openDetailOption(btnOptionClic){
+	// Ajouter classe body
+	TweenMax.set($("body"), {className:"+=detail-option"});
+	// Récupérer l'index de l'élément cliqué
+	var btnDetailOptionIndex = btnOptionClic.index("ul#liste-options-pharmacies li a");
+	
+}
+
+function closeDetailHome(){
+	// Supprimer classe body
+	TweenMax.set($("body"), {className:"-=detail-home"});
+	//Fermer les carousels
+	var tlCloseBlocDetailHome = new TimelineMax();
+	tlCloseBlocDetailHome.staggerTo(".container-inte-bloc-detail-home", 0.5, {width: "0", ease:Cubic.easeInOut}, 0.1);
+	tlCloseBlocDetailHome.set($("#bloc-detail-home"), {className:"-=detail-home-open"});
+	TweenMax.set($("ul#carousel-img-home li"), {clearProps:"all"});
+	TweenMax.set($("ul#carousel-txt-home li"), {clearProps:"all"});
+}
 
 function onCompleteVideoCover(){
 	TweenMax.to($("li#current-video .video-txt .video-play"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});
