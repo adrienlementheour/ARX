@@ -722,9 +722,20 @@ a.btn-file {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0 0 0 36px;
+  padding: 0 0 0 40px;
   display: inline-block;
   vertical-align: top;
+  position: relative;
+}
+a.btn-file .sprite-btn-file {
+  display: block;
+  width: 37px;
+  height: 40px;
+  background: url("../layoutImg/btn/bouton-dl.png") no-repeat 0 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  left: 0;
 }
 .bloc-txt {
   display: block;
@@ -884,6 +895,9 @@ header.on ul#menu-header:before {
 header.on ul#menu-header li {
   height: 86px;
   padding: 0;
+}
+header.on ul#menu-header li.active a .bg-lien-header-on {
+  height: 8px;
 }
 header.on ul#menu-header li#contact-menu-header {
   display: inline-block;
@@ -2602,6 +2616,20 @@ a.btn-carousel {
   color: #ffffff;
   text-align: center;
 }
+a.btn-carousel.btn-carousel-gris {
+  border-color: #30394b;
+  color: #30394b;
+}
+a.btn-carousel.btn-carousel-bleu {
+  background-color: #227dba;
+  color: #ffffff;
+  border: 0px solid #227dba;
+}
+a.btn-carousel.btn-carousel-bleu:hover {
+  background-color: #ffffff;
+  color: #227dba;
+  border-width: 1px;
+}
 a.btn-carousel.btn-close-carousel {
   line-height: normal;
 }
@@ -2652,7 +2680,7 @@ a.btn-carousel#btn-right-options {
   top: 88px;
   left: 440px;
 }
-a.btn-carousel#btn-close-options {
+a.btn-carousel#btn-close-detail-option {
   position: absolute;
   top: 0;
   left: 440px;
@@ -2673,6 +2701,20 @@ a.btn-carousel#btn-close-carousel-home {
   position: absolute;
   top: 0;
   right: 0;
+}
+a.btn-carousel#btn-close-options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: none;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
 }
 a.btn-carousel:focus {
   outline: none;
@@ -2698,33 +2740,106 @@ a.btn-carousel:hover.btn-close-carousel .cross {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-#zone-carousel-options {
+#container-carousel-img-options {
   display: inline-block;
   vertical-align: top;
+  width: 50%;
+  height: 687px;
   margin: 0;
   padding: 0;
-  width: 528px;
-  height: 687px;
   position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
 }
-#zone-txt-options {
-  display: inline-block;
-  vertical-align: top;
+#container-carousel-img-options ul#carousel-img-options {
+  display: block;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  padding: 55px 50px 0 50px;
-  width: 528px;
-  height: auto;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  overflow: hidden;
+}
+#container-carousel-img-options ul#carousel-img-options li {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
 }
-#zone-txt-options p {
+#container-carousel-img-options ul#carousel-img-options li.active {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+#container-carousel-txt-options {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height: 687px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+#container-carousel-txt-options ul#carousel-txt-options {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  overflow: hidden;
+}
+#container-carousel-txt-options ul#carousel-txt-options li {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 55px 50px 0 50px;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+#container-carousel-txt-options ul#carousel-txt-options li.active {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+#container-carousel-txt-options ul#carousel-txt-options li p {
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
   font-size: 1em;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #232324;
 }
 #zone-txt-options-pharmacies {
   display: block;
