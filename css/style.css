@@ -1461,16 +1461,60 @@ ul#menu-header li a:focus {
   overflow: hidden;
   width: 0;
 }
-#bloc-home #bloc-detail-home #container-carousel-img-home {
+#bloc-home #bloc-detail-home .masque-bloc-detail-home {
+  display: block;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+#bloc-home #bloc-detail-home .container-inte-bloc-detail-home {
   display: inline-block;
   vertical-align: top;
-  width: 0;
+  width: 50%;
   height: 100%;
   margin: 0;
   padding: 0;
   position: relative;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#bloc-home #bloc-detail-home .container-inte-bloc-detail-home .container-anim-inte-bloc-detail-home {
+  display: block;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background-color: #ffffff;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#bloc-home #bloc-detail-home .container-inte-bloc-detail-home .container-anim-inte-bloc-detail-home .masque-carousel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 2;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 #bloc-home #bloc-detail-home #container-carousel-img-home ul#carousel-img-home {
   display: block;
@@ -1506,17 +1550,6 @@ ul#menu-header li a:focus {
   -o-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
-}
-#bloc-home #bloc-detail-home #container-carousel-txt-home {
-  display: inline-block;
-  vertical-align: top;
-  width: 0;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  background-color: #ffffff;
-  overflow: hidden;
 }
 #bloc-home #bloc-detail-home #container-carousel-txt-home ul#carousel-txt-home {
   display: block;
@@ -2435,14 +2468,29 @@ ul#slider-pharmacies li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
 }
 /* @end */
 /* @group Bloc options */
-#bloc-content-detail-options {
-  display: none;
+#bloc-options {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+#bloc-content-options {
+  display: block;
   width: 100%;
   height: auto;
   position: relative;
   z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
 }
-#bloc-content-options {
+#bloc-content-detail-options {
   display: none;
   width: 100%;
   height: auto;
@@ -2451,10 +2499,10 @@ ul#slider-pharmacies li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
 }
 #bloc-options-title {
   display: block;
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 352px;
   background-color: #ffffff;
-  padding: 32px;
+  padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2483,6 +2531,9 @@ ul#slider-pharmacies li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
   position: absolute;
   top: 32px;
   left: 32px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #bloc-options-title #txt-bloc-options-title h2 {
   font-family: 'robotolight', sans-serif;
@@ -2495,7 +2546,6 @@ ul#slider-pharmacies li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
 }
 #bloc-options-title.open {
   width: 352px;
-  height: 352px;
 }
 ul#liste-options-pharmacies {
   display: block;
@@ -2513,6 +2563,16 @@ ul#liste-options-pharmacies li {
   height: 352px;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+ul#liste-options-pharmacies li .masque-content-options {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
 }
 ul#liste-options-pharmacies li.up {
   margin-top: -176px;
@@ -2702,7 +2762,7 @@ a.btn-carousel#btn-close-carousel-home {
   top: 0;
   right: 0;
 }
-a.btn-carousel#btn-close-options {
+a.btn-carousel#btn-close-bloc-options {
   position: absolute;
   bottom: 0;
   right: 0;

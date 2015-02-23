@@ -1423,16 +1423,50 @@ ul#menu-header{
     left: 4*@largeurCol;
     overflow: hidden;
     width: 0;
-    #container-carousel-img-home{
+    .masque-bloc-detail-home{
+      display: block;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: @blanc;
+    }
+    .container-inte-bloc-detail-home{
       display: inline-block;
       vertical-align: top;
-      width: 0;
+      width: 50%;
       height: 100%;
       margin:0;
       padding: 0;
       position: relative;
       overflow: hidden;
-      background-color: @blanc;
+      .backface-visibility(hidden);
+      .container-anim-inte-bloc-detail-home{
+        display: block;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: @blanc;
+        overflow: hidden;
+        .backface-visibility(hidden);
+        .masque-carousel{
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background-color: @blanc;
+          z-index: 2;
+          overflow: hidden;
+          .backface-visibility(hidden);
+        }
+      }
+    }
+    #container-carousel-img-home{
       ul#carousel-img-home{
         display: block;
         width: 100%;
@@ -1460,15 +1494,6 @@ ul#menu-header{
       }
     }
     #container-carousel-txt-home{
-      display: inline-block;
-      vertical-align: top;
-      width: 0;
-      height: 100%;
-      margin:0;
-      padding: 0;
-      position: relative;
-      background-color: @blanc;
-      overflow: hidden;
       ul#carousel-txt-home{
         display: block;
         width: 100%;
@@ -2273,15 +2298,29 @@ ul#slider-pharmacies{
 
 /* @group Bloc options */
 
-#bloc-content-detail-options{
-  display: none;
+#bloc-options{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#bloc-content-options{
+  display: block;
   width: 100%;
   height: auto;
   position: relative;
   z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .opacity(0);
 }
 
-#bloc-content-options{
+#bloc-content-detail-options{
   display: none;
   width: 100%;
   height: auto;
@@ -2291,9 +2330,10 @@ ul#slider-pharmacies{
 
 #bloc-options-title{
   display: block;
-  .size(0px);
+  width: 0;
+  height: 4*@largeurCol;
   background-color: @blanc;
-  padding: 32px;
+  padding: 0;
   margin: 0;
   .box-sizing(border-box);
   position: absolute;
@@ -2308,13 +2348,14 @@ ul#slider-pharmacies{
     position: absolute;
     top: 32px;
     left: 32px;
+    .box-sizing(border-box);
     h2{
       .roboto-light(2.313em);
       color: @gris3ARX;
     }
   }
   &.open{
-    .size(4*@largeurCol);
+    width: 4*@largeurCol;
   }
 }
 
@@ -2332,6 +2373,16 @@ ul#liste-options-pharmacies{
     .size(4*@largeurCol);
     margin: 0;
     padding: 0;
+    position: relative;
+    .masque-content-options{
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: @blanc;
+    }
     &.up{
       margin-top: -2*@largeurCol;
     }
@@ -2496,7 +2547,7 @@ a.btn-carousel{
     top: 0;
     right: 0;
   }
-  &#btn-close-options{
+  &#btn-close-bloc-options{
     position: absolute;
     bottom: 0;
     right: 0;

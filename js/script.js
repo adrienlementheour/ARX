@@ -21,6 +21,10 @@ var nextDetailHome;
 var heightBlocDrapeaux;
 var widthVisuLeftPharmacies;
 
+// TIMELINES
+var tpsEtapeFondDetailHome = 0.1;
+var tpsEtapeDetailHome = 0.2;
+
 // Fonction pour passer d'une vidéo à une autre
 function nextVideo(sens){
 	// si il y a au moins 2 vidéos
@@ -456,8 +460,12 @@ $(document).ready(function(){
 		}
 		return false;
 	});
-	$("a#btn-close-options").click(function() {
-		closeOptions();
+	$("a#btn-close-bloc-options").click(function() {
+		if($("body").hasClass("detail-option")){
+			closeDetailOption("all");
+		}else if($("body").hasClass("options")){
+			closeOptions("all");
+		}
 		return false;
 	});
 	$("a#btn-close-detail-option").click(function() {
@@ -484,9 +492,6 @@ $(document).ready(function(){
 	});
 	$("ul#liste-options-pharmacies li a").click(function() {
 		posiImgsReferences($("#container-carousel-img-options li img"));
-		$("#bloc-content-options").slideToggle(300, function(){
-			$("#bloc-content-detail-options").slideToggle(500);
-		});
 		openDetailOption($(this));
 		return false;
 	});
@@ -598,43 +603,6 @@ function completeTransiCarouselOptions(nextOptionImg, nextOptionTxt){
 	TweenMax.set(nextOptionTxt, {className:"+=active", clearProps:"all"});
 }
 
-function openOptions(btnClic){
-	// Ajouter classe body
-	TweenMax.set($("body"), {className:"+=options"});
-	if($("body").hasClass("detail-home")){
-		closeDetailHome();
-	}
-	$("#bloc-content-options").slideToggle(500);
-	TweenMax.delayedCall(0.1, function(){
-		TweenMax.to(window, 1, {scrollTo:{y:($("#bloc-content-options").offset().top-260)}});
-	});
-	TweenMax.set($("#btn-close-options"), {display: "block"});
-	var tlBlocOptionsTitle = new TimelineMax();
-	tlBlocOptionsTitle.to($("#bloc-options-title"), 0.4, {className:"+=open"});
-	tlBlocOptionsTitle.to($("#txt-bloc-options-title"), 0.4, {opacity: 1, y: 0});
-	tlBlocOptionsTitle.to($("#btn-close-options"), 0.2, {opacity: 1, y: 0});
-}
-
-function closeOptions(){
-	if($("body").hasClass("detail-option")){
-		// Supprimer classe body
-		TweenMax.set($("body"), {className:"-=detail-option"});
-		TweenMax.set($("body"), {className:"-=options"});
-		//Fermer les carousels
-		TweenMax.set($("ul#carousel-img-options li"), {clearProps:"all"});
-		TweenMax.set($("ul#carousel-txt-options li"), {clearProps:"all"});
-		$("#bloc-content-detail-options").slideToggle(500);
-	}else if($("body").hasClass("options")){
-		// Supprimer classe body
-		TweenMax.set($("body"), {className:"-=options"});
-		$("#bloc-content-options").slideToggle(500);
-	}
-	var tlBlocOptionsTitleClose = new TimelineMax();
-	tlBlocOptionsTitleClose.to([$("#btn-close-options"), $("#txt-bloc-options-title")], 0.2, {opacity: 0, y: "20px"});
-	tlBlocOptionsTitleClose.to($("#bloc-options-title"), 0.4, {className:"-=open"});
-	tlBlocOptionsTitleClose.set($("#btn-close-options"), {display: "none"});
-}
-
 function openDetailHome(btnDetailClic){
 	// Ajouter classe body
 	TweenMax.set($("body"), {className:"+=detail-home"});
@@ -650,7 +618,69 @@ function openDetailHome(btnDetailClic){
 	//Afficher les carousels
 	var tlBlocDetailHome = new TimelineMax();
 	tlBlocDetailHome.set($("#bloc-detail-home"), {className:"+=detail-home-open"});
-	tlBlocDetailHome.staggerTo(".container-inte-bloc-detail-home", 0.5, {width: "50%", ease:Cubic.easeInOut}, 0.1);
+	tlBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "100%", ease:Cubic.easeIn});
+	tlBlocDetailHome.staggerTo(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "100%", ease:Cubic.easeIn}, 0.1);
+	tlBlocDetailHome.staggerTo(".container-inte-bloc-detail-home .masque-carousel", tpsEtapeDetailHome, {width: "0%", ease:Cubic.easeIn}, 0.1);
+}
+
+function closeDetailHome(){
+	// Supprimer classe body
+	TweenMax.set($("body"), {className:"-=detail-home"});
+	//Fermer les carousels
+	var tlCloseBlocDetailHome = new TimelineMax();
+	tlCloseBlocDetailHome.staggerTo(".container-inte-bloc-detail-home .masque-carousel", tpsEtapeDetailHome, {width: "100%", ease:Cubic.easeOut}, 0.1);
+	tlCloseBlocDetailHome.staggerTo(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "0", ease:Cubic.easeOut}, 0.1);
+	tlCloseBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "0%", ease:Cubic.easeOut});
+	tlCloseBlocDetailHome.set($("#bloc-detail-home"), {className:"-=detail-home-open"});
+	TweenMax.set($("ul#carousel-img-home li"), {clearProps:"all"});
+	TweenMax.set($("ul#carousel-txt-home li"), {clearProps:"all"});
+}
+
+function closeBlocOptions(){
+	var tlCloseBlocOptions = new TimelineMax();
+	// Ou ferme le bloc titre des options "Adaptez les performances à vos besoins"
+	tlCloseBlocOptions.to([$("#btn-close-bloc-options"), $("#txt-bloc-options-title")], 0.2, {opacity: 0, y: "20px"});
+	tlCloseBlocOptions.to($("#bloc-options-title"), 0.4, {className:"-=open"});
+	tlCloseBlocOptions.set($("#btn-close-bloc-options"), {display: "none"});
+	// On ferme le bloc des options
+	tlCloseBlocOptions.to($("#bloc-content-options"), 0.3, {opacity: "0"});
+	tlCloseBlocOptions.to($("#bloc-options"), 0.3, {height: "0px"});
+}
+
+function openOptions(btnClic){
+	// Ajouter classe body
+	TweenMax.set($("body"), {className:"+=options"});
+	// Si il y a un détail home, le fermer
+	if($("body").hasClass("detail-home")){
+		closeDetailHome();
+	}
+	// Scroll jusqu'aux options
+	TweenMax.delayedCall(0.1, function(){
+		TweenMax.to(window, 1, {scrollTo:{y:($("#bloc-content-options").offset().top-260)}});
+	});
+	TweenMax.set($("#btn-close-bloc-options"), {display: "block"});
+	var tlBlocOptionsTitle = new TimelineMax();
+	// On ouvre le bloc des options
+	tlBlocOptionsTitle.to($("#bloc-options"), 0.3, {height: $("#bloc-content-options").height()+"px"});
+	tlBlocOptionsTitle.to($("#bloc-content-options"), 0.3, {opacity: "1"});
+	// Ou ouvre le bloc titre des options "Adaptez les performances à vos besoins"
+	tlBlocOptionsTitle.to($("#bloc-options-title"), 0.3, {className:"+=open"});
+	tlBlocOptionsTitle.to($("#txt-bloc-options-title"), 0.2, {opacity: 1, y: 0});
+	tlBlocOptionsTitle.to($("#btn-close-bloc-options"), 0.2, {opacity: 1, y: 0});
+	// On ouvre les différentes options
+	tlBlocOptionsTitle.staggerTo(".masque-content-options", 0.2, {width: "0", ease:Cubic.easeOut}, 0.1);
+}
+
+function closeOptions(closeAll){
+	// Enlève la classe body
+	TweenMax.set($("body"), {className:"-=options"});
+	// On ferme les différentes options
+	var tlCloseOptions = new TimelineMax();
+	if(closeAll=="all"){
+		tlCloseOptions.staggerTo(".masque-content-options", 0.2, {width: "100%", ease:Cubic.easeOut, onComplete: closeBlocOptions}, 0.1);
+	}else{
+		tlCloseOptions.staggerTo(".masque-content-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
+	}
 }
 
 function openDetailOption(btnOptionClic){
@@ -664,20 +694,15 @@ function openDetailOption(btnOptionClic){
 	// Afficher la bonne image et le bon texte dans le carousel
 	TweenMax.set($("ul#carousel-img-options li").eq(btnDetailOptionIndex), {className:"+=active"});
 	TweenMax.set($("ul#carousel-txt-options li").eq(btnDetailOptionIndex), {className:"+=active"});
+	// Masquer les options
+	closeOptions();
+	// Ouvrir un détail option
+	var tlDetailOption = new TimelineMax();
+	tlDetailOption.to($("#bloc-options"), 0.3, {height: $("#bloc-content-detail-options").height()+"px"});
+	tlDetailOption.to($("#bloc-content-detail-options"), 0.3, {opacity: "1"});
 }
 
-function closeDetailHome(){
-	// Supprimer classe body
-	TweenMax.set($("body"), {className:"-=detail-home"});
-	//Fermer les carousels
-	var tlCloseBlocDetailHome = new TimelineMax();
-	tlCloseBlocDetailHome.staggerTo(".container-inte-bloc-detail-home", 0.5, {width: "0", ease:Cubic.easeInOut}, 0.1);
-	tlCloseBlocDetailHome.set($("#bloc-detail-home"), {className:"-=detail-home-open"});
-	TweenMax.set($("ul#carousel-img-home li"), {clearProps:"all"});
-	TweenMax.set($("ul#carousel-txt-home li"), {clearProps:"all"});
-}
-
-function closeDetailOption(){
+function closeDetailOption(closeAll){
 	// Supprimer classe body
 	TweenMax.set($("body"), {className:"-=detail-option"});
 	//Fermer les carousels
@@ -708,11 +733,11 @@ function animBtnFile(btnFile){
 	tlBtnFile2 = new TimelineMax();
 	if(indexBtnSurvol==0){
 		for(var i=0;i<numRowsBtnFile;i++){
-		    tlBtnFile1.add(TweenMax.fromTo($(".sprite-btn-file", btnFile), 0.1, { backgroundPosition:'0 -'+(frameHeightBtnFile*i)+'px'}, { backgroundPosition: '-'+(frameWidthBtnFile*(numColsBtnFile-1))+'px -'+(frameHeightBtnFile*i)+'px', ease:steppedEaseBtnFile} ));
+		    tlBtnFile1.add(TweenMax.fromTo($(".sprite-btn-file", btnFile), 0.05, { backgroundPosition:'0 -'+(frameHeightBtnFile*i)+'px'}, { backgroundPosition: '-'+(frameWidthBtnFile*(numColsBtnFile-1))+'px -'+(frameHeightBtnFile*i)+'px', ease:steppedEaseBtnFile} ));
 		}
 	}else if(indexBtnSurvol==1){
 		for(var i=0;i<numRowsBtnFile;i++){
-		    tlBtnFile2.add(TweenMax.fromTo($(".sprite-btn-file", btnFile), 0.1, { backgroundPosition:'0 -'+(frameHeightBtnFile*i)+'px'}, { backgroundPosition: '-'+(frameWidthBtnFile*(numColsBtnFile-1))+'px -'+(frameHeightBtnFile*i)+'px', ease:steppedEaseBtnFile} ));
+		    tlBtnFile2.add(TweenMax.fromTo($(".sprite-btn-file", btnFile), 0.05, { backgroundPosition:'0 -'+(frameHeightBtnFile*i)+'px'}, { backgroundPosition: '-'+(frameWidthBtnFile*(numColsBtnFile-1))+'px -'+(frameHeightBtnFile*i)+'px', ease:steppedEaseBtnFile} ));
 		}
 	}
 }
