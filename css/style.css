@@ -362,10 +362,6 @@ a.btn {
   -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  /*&.btn-open{
-    .size(4*@largeurCol);
-    bottom: -2*@largeurCol!important;
-  }*/
 }
 a.btn h2 {
   font-size: 1em;
@@ -377,6 +373,68 @@ a.btn h2 .txt-btn strong {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+a.btn.btn-anim-width {
+  padding: 0;
+  background-color: none;
+}
+a.btn.btn-anim-width:hover {
+  background-color: none;
+}
+a.btn.btn-anim-width.btn-vertical-centered {
+  padding: 0;
+}
+a.btn.btn-anim-width.btn-bleu-alpha {
+  background: none;
+}
+a.btn.btn-anim-width.btn-bleu-alpha:hover {
+  background: none;
+  color: #0070b8;
+}
+a.btn.btn-anim-width.btn-bleu-alpha:hover .container-fond-btn-anim {
+  background-color: #ffffff;
+}
+a.btn.btn-anim-width.btn-bleu-alpha .container-fond-btn-anim {
+  background-color: #0070b8;
+  background-color: rgba(0, 112, 184, 0.8);
+  color: #ffffff;
+  border: 0px solid #0070b8;
+  -webkit-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -moz-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  -o-transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  transition: background-color 0.1s ease-in, color 0.1s ease-in;
+}
+a.btn.btn-anim-width .container-fond-btn-anim {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a.btn.btn-anim-width .container-btn-anim {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a.btn.btn-anim-width .container-btn-anim h2 {
+  padding: 0 35px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 a.btn.btn-image {
   width: 352px;
@@ -1112,6 +1170,16 @@ ul#menu-header li a:focus {
 }
 /* @end */
 /* @group Bloc home */
+.container-img-liquid {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  overflow: hidden;
+}
 #bloc-home {
   display: block;
   position: relative;
@@ -1314,26 +1382,36 @@ ul#menu-header li a:focus {
   position: absolute;
   bottom: 176px;
   left: 176px;
+  width: 176px;
+  height: 176px;
 }
 #bloc-home a#btn-design-speciaux-vmax {
   position: absolute;
   bottom: 352px;
   left: 352px;
+  width: 176px;
+  height: 176px;
 }
 #bloc-home a#btn-vitesse-precision-vmax {
   position: absolute;
   bottom: 176px;
   left: 528px;
+  width: 176px;
+  height: 176px;
 }
 #bloc-home a#btn-maitriser-espace-vmax {
   position: absolute;
   bottom: 352px;
   left: 704px;
+  width: 176px;
+  height: 176px;
 }
 #bloc-home a#btn-outil-silencieux-vmax {
   position: absolute;
   bottom: 0;
   left: 704px;
+  width: 176px;
+  height: 176px;
 }
 .pharmacies #bloc-home p {
   width: 340px;

@@ -76,28 +76,6 @@ function nextVideo(sens){
 	}
 }
 
-// Fonction pour positionner correctement les images des références
-function posiImgsReferences(images){
-	images.each(function(){
-		// test pour savoir si l'image est plus haute que large
-		if($(this).height()>=$(this).width()){
-			//l'image est plus haute que large
-			TweenMax.set($(this), {width: "100%", height: "auto"});
-			// test pour savoir si l'image est plus petite que le container
-			if($(this).height()<$(this).parent().height()){
-				TweenMax.set($(this), {width: "100%", height: "auto"});
-			}
-		}else{
-			//l'image est plus large que haute
-			TweenMax.set($(this), {width: "auto", height: "100%"});
-			// test pour savoir si l'image est plus petite que le container
-			if($(this).width()<$(this).parent().width()){
-				TweenMax.set($(this), {width: "100%", height: "auto"});
-			}
-		}
-	});
-}
-
 function animRefs(nextRef, sens){
 	// charger les images dans divs correspondantes
 	$("ul#liste-references li#references-bloc-vertical .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-vertical.jpg");
@@ -145,23 +123,6 @@ function onYouTubeIframeAPIReady() {
     	players[i] = new YT.Player("player-"+i);
     }
 }
-
-$("ul#liste-references li img").load(function(){
-	posiImgsReferences($("ul#liste-references li img"));
-});
-
-$("ul.carousel-type li img").load(function(){
-	posiImgsReferences($("ul.carousel-type li img"));
-});
-
-$("#carousel-img-home li img").load(function(){
-	posiImgsReferences($("#carousel-img-home li img"));
-});
-
-$("#container-carousel-img-options li img").load(function(){
-	posiImgsReferences($("#container-carousel-img-options li img"));
-});
-
 
 // fonction pour masquer le bloc drapeaux
 function blocDrapeauxInit(){
@@ -305,6 +266,7 @@ $(document).ready(function(){
 	if($("body").hasClass("pharmacies")){
 		sliderScroll();
 	}
+	$(".imgLiquidFill").imgLiquid();
 
 	initBtnAnim();
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
@@ -442,11 +404,10 @@ $(document).ready(function(){
 	  }
 	);
 	$("a#btn-options").click(function() {
-		openOptions($(this));
+		openOptions("openTitleOptions");
 		return false;
 	});
 	$("a.btn-detail-home").click(function() {
-		posiImgsReferences($("ul#carousel-img-home li img"));
 		openDetailHome($(this));
 		return false;
 	});
@@ -491,7 +452,6 @@ $(document).ready(function(){
 		return false;
 	});
 	$("ul#liste-options-pharmacies li a").click(function() {
-		posiImgsReferences($("#container-carousel-img-options li img"));
 		openDetailOption($(this));
 		return false;
 	});
@@ -615,8 +575,14 @@ function openDetailHome(btnDetailClic){
 	TweenMax.set($("ul#carousel-img-home li").eq(btnDetailHomeIndex), {className:"+=active"});
 	TweenMax.set($("ul#carousel-txt-home li").eq(btnDetailHomeIndex), {className:"+=active"});
 
-	//Afficher les carousels
 	var tlBlocDetailHome = new TimelineMax();
+	//Fermer les btn detail home
+	//a.btn-detail-home
+	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {width: "0px", ease:Cubic.easeIn}, 0.1);
+	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {width: "0px", ease:Cubic.easeIn}, 0.1);
+
+	//Afficher les carousels
+	
 	tlBlocDetailHome.set($("#bloc-detail-home"), {className:"+=detail-home-open"});
 	tlBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "100%", ease:Cubic.easeIn});
 	tlBlocDetailHome.staggerTo(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "100%", ease:Cubic.easeIn}, 0.1);
@@ -647,26 +613,30 @@ function closeBlocOptions(){
 	tlCloseBlocOptions.to($("#bloc-options"), 0.3, {height: "0px"});
 }
 
-function openOptions(btnClic){
+function openOptions(titleOption){
 	// Ajouter classe body
 	TweenMax.set($("body"), {className:"+=options"});
 	// Si il y a un détail home, le fermer
 	if($("body").hasClass("detail-home")){
 		closeDetailHome();
 	}
-	// Scroll jusqu'aux options
-	TweenMax.delayedCall(0.1, function(){
-		TweenMax.to(window, 1, {scrollTo:{y:($("#bloc-content-options").offset().top-260)}});
-	});
+	if(titleOption=="openTitleOptions"){
+		// Scroll jusqu'aux options
+		TweenMax.delayedCall(0.1, function(){
+			TweenMax.to(window, 1, {scrollTo:{y:($("#bloc-content-options").offset().top-260)}});
+		});
+	}
 	TweenMax.set($("#btn-close-bloc-options"), {display: "block"});
 	var tlBlocOptionsTitle = new TimelineMax();
 	// On ouvre le bloc des options
 	tlBlocOptionsTitle.to($("#bloc-options"), 0.3, {height: $("#bloc-content-options").height()+"px"});
-	tlBlocOptionsTitle.to($("#bloc-content-options"), 0.3, {opacity: "1"});
-	// Ou ouvre le bloc titre des options "Adaptez les performances à vos besoins"
-	tlBlocOptionsTitle.to($("#bloc-options-title"), 0.3, {className:"+=open"});
-	tlBlocOptionsTitle.to($("#txt-bloc-options-title"), 0.2, {opacity: 1, y: 0});
-	tlBlocOptionsTitle.to($("#btn-close-bloc-options"), 0.2, {opacity: 1, y: 0});
+	tlBlocOptionsTitle.set($("#bloc-content-options"), {opacity: "1"});
+	if(titleOption=="openTitleOptions"){
+		// Ou ouvre le bloc titre des options "Adaptez les performances à vos besoins"
+		tlBlocOptionsTitle.to($("#bloc-options-title"), 0.3, {className:"+=open"});
+		tlBlocOptionsTitle.to($("#txt-bloc-options-title"), 0.2, {opacity: 1, y: 0});
+		tlBlocOptionsTitle.to($("#btn-close-bloc-options"), 0.2, {opacity: 1, y: 0});
+	}
 	// On ouvre les différentes options
 	tlBlocOptionsTitle.staggerTo(".masque-content-options", 0.2, {width: "0", ease:Cubic.easeOut}, 0.1);
 }
@@ -699,7 +669,7 @@ function openDetailOption(btnOptionClic){
 	// Ouvrir un détail option
 	var tlDetailOption = new TimelineMax();
 	tlDetailOption.to($("#bloc-options"), 0.3, {height: $("#bloc-content-detail-options").height()+"px"});
-	tlDetailOption.to($("#bloc-content-detail-options"), 0.3, {display: "block", opacity: "1"});
+	tlDetailOption.set($("#bloc-content-detail-options"), {display: "block", opacity: "1"});
 	tlDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "0", ease:Cubic.easeOut}, 0.1);
 }
 
@@ -712,12 +682,12 @@ function closeDetailOption(closeAll){
 		tlCloseDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
 		tlCloseDetailOption.set($("ul#container-carousel-img-options li"), {clearProps:"all"});
 		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
-		tlCloseDetailOption.to($("#bloc-content-detail-options"), 0.3, {display: "none", opacity: "0", onComplete: closeBlocOptions});
+		tlCloseDetailOption.set($("#bloc-content-detail-options"), {display: "none", opacity: "0", onComplete: closeBlocOptions});
 	}else{
 		tlCloseDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
 		tlCloseDetailOption.set($("ul#container-carousel-img-options li"), {clearProps:"all"});
 		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
-		tlCloseDetailOption.to($("#bloc-content-detail-options"), 0.3, {display: "none", opacity: "0", onComplete: openOptions});
+		tlCloseDetailOption.set($("#bloc-content-detail-options"), {display: "none", opacity: "0", onComplete: openOptions});
 	}
 }
 
