@@ -629,7 +629,7 @@ function closeDetailHome(){
 	//Fermer les carousels
 	var tlCloseBlocDetailHome = new TimelineMax();
 	tlCloseBlocDetailHome.staggerTo(".container-inte-bloc-detail-home .masque-carousel", tpsEtapeDetailHome, {width: "100%", ease:Cubic.easeOut}, 0.1);
-	tlCloseBlocDetailHome.staggerTo(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "0", ease:Cubic.easeOut}, 0.1);
+	tlCloseBlocDetailHome.to(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "0", ease:Cubic.easeOut});
 	tlCloseBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "0%", ease:Cubic.easeOut});
 	tlCloseBlocDetailHome.set($("#bloc-detail-home"), {className:"-=detail-home-open"});
 	TweenMax.set($("ul#carousel-img-home li"), {clearProps:"all"});
@@ -640,7 +640,7 @@ function closeBlocOptions(){
 	var tlCloseBlocOptions = new TimelineMax();
 	// Ou ferme le bloc titre des options "Adaptez les performances à vos besoins"
 	tlCloseBlocOptions.to([$("#btn-close-bloc-options"), $("#txt-bloc-options-title")], 0.2, {opacity: 0, y: "20px"});
-	tlCloseBlocOptions.to($("#bloc-options-title"), 0.4, {className:"-=open"});
+	TweenMax.to($("#bloc-options-title"), 0.4, {className:"-=open", delay: 0.4});
 	tlCloseBlocOptions.set($("#btn-close-bloc-options"), {display: "none"});
 	// On ferme le bloc des options
 	tlCloseBlocOptions.to($("#bloc-content-options"), 0.3, {opacity: "0"});
@@ -699,18 +699,26 @@ function openDetailOption(btnOptionClic){
 	// Ouvrir un détail option
 	var tlDetailOption = new TimelineMax();
 	tlDetailOption.to($("#bloc-options"), 0.3, {height: $("#bloc-content-detail-options").height()+"px"});
-	tlDetailOption.to($("#bloc-content-detail-options"), 0.3, {opacity: "1"});
+	tlDetailOption.to($("#bloc-content-detail-options"), 0.3, {display: "block", opacity: "1"});
+	tlDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "0", ease:Cubic.easeOut}, 0.1);
 }
 
 function closeDetailOption(closeAll){
-	// Supprimer classe body
+	// Enlever la classe body
 	TweenMax.set($("body"), {className:"-=detail-option"});
-	//Fermer les carousels
-	TweenMax.set($("ul#carousel-img-options li"), {clearProps:"all"});
-	TweenMax.set($("ul#carousel-txt-options li"), {clearProps:"all"});
-	$("#bloc-content-detail-options").slideToggle(300, function(){
-		$("#bloc-content-options").slideToggle(500);
-	});
+	// On ferme le detail option
+	var tlCloseDetailOption = new TimelineMax();
+	if(closeAll=="all"){
+		tlCloseDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
+		tlCloseDetailOption.set($("ul#container-carousel-img-options li"), {clearProps:"all"});
+		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
+		tlCloseDetailOption.to($("#bloc-content-detail-options"), 0.3, {display: "none", opacity: "0", onComplete: closeBlocOptions});
+	}else{
+		tlCloseDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
+		tlCloseDetailOption.set($("ul#container-carousel-img-options li"), {clearProps:"all"});
+		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
+		tlCloseDetailOption.to($("#bloc-content-detail-options"), 0.3, {display: "none", opacity: "0", onComplete: openOptions});
+	}
 }
 
 function onCompleteVideoCover(){

@@ -2800,6 +2800,15 @@ a.btn-carousel:hover.btn-close-carousel .cross {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+.masque-content-detail-options {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+}
 #container-carousel-img-options {
   display: inline-block;
   vertical-align: top;
