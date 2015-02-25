@@ -23,7 +23,7 @@ var widthVisuLeftPharmacies;
 
 // TIMELINES
 var tpsEtapeFondDetailHome = 0.1;
-var tpsEtapeDetailHome = 0.2;
+var tpsEtapeDetailHome = 0.1;
 
 // Fonction pour passer d'une vidéo à une autre
 function nextVideo(sens){
@@ -466,16 +466,27 @@ function animCarouselHome(sens){
 			// il y a un detail suivant
 			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive);
 			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive);
+			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(indexDetailHomeActive);
 		}else{
 			// il n'y a pas de detail suivant
 			// il y a un detail suivant
 			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(0);
 			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(0);
+			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(0);
 		}
 		// placer l'image et le texte suivant
 		TweenMax.set(nextDetailHomeImg, {x: "-100%"});
 		TweenMax.set(nextDetailHomeTxt, {x: "-100%"});
+		TweenMax.set(nextDetailTitle, {x: "0"});
+		TweenMax.set($(".container-title-carousel-home", nextDetailTitle), {x: "-100%"});
+		TweenMax.set($(".container-fond-title-carousel-home", nextDetailTitle), {x: "-100%"});
 		// animer les transitions
+		var tlAnimNextDetailHome = new TimelineMax();
+		tlAnimNextDetailHome.to($("ul#container-titles-carousel-home li.active .container-title-carousel-home"), 0.2, {x: "100%", ease:Cubic.easeInOut});
+		tlAnimNextDetailHome.to($("ul#container-titles-carousel-home li.active .container-fond-title-carousel-home"), 0.2, {x: "100%", ease:Cubic.easeInOut, onComplete: completeTransiTitleCarouselHome, onCompleteParams:[nextDetailTitle]});
+		tlAnimNextDetailHome.to($(".container-fond-title-carousel-home", nextDetailTitle), 0.2, {x: "0%", ease:Cubic.easeInOut});
+		tlAnimNextDetailHome.to($(".container-title-carousel-home", nextDetailTitle), 0.2, {x: "0%", ease:Cubic.easeInOut});
+
 		TweenMax.staggerTo($("ul#carousel-img-home li.active"), 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
 		TweenMax.staggerTo(nextDetailHomeImg, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
 		TweenMax.staggerTo($("ul#carousel-txt-home li.active"), 0.5, {x: "100%", ease:Cubic.easeInOut}, 0.1);
@@ -486,20 +497,39 @@ function animCarouselHome(sens){
 			// il y a un detail précédent
 			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive-2);
 			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive-2);
+			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(indexDetailHomeActive-2);
 		}else{
 			// il n'y a pas de detail précédent
 			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(nbDetailsHome-1);
 			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(nbDetailsHome-1);
+			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(nbDetailsHome-1);
 		}
 		// placer l'image et le texte précédent
 		TweenMax.set(nextDetailHomeImg, {x: "100%"});
 		TweenMax.set(nextDetailHomeTxt, {x: "100%"});
+		TweenMax.set(nextDetailTitle, {x: "0"});
+		TweenMax.set($(".container-title-carousel-home", nextDetailTitle), {x: "100%"});
+		TweenMax.set($(".container-fond-title-carousel-home", nextDetailTitle), {x: "100%"});
 		// animer les transitions
+		var tlAnimNextDetailHome = new TimelineMax();
+		tlAnimNextDetailHome.to($("ul#container-titles-carousel-home li.active .container-title-carousel-home"), 0.2, {x: "-100%", ease:Cubic.easeInOut});
+		tlAnimNextDetailHome.to($("ul#container-titles-carousel-home li.active .container-fond-title-carousel-home"), 0.2, {x: "-100%", ease:Cubic.easeInOut, onComplete: completeTransiTitleCarouselHome, onCompleteParams:[nextDetailTitle]});
+		tlAnimNextDetailHome.to($(".container-fond-title-carousel-home", nextDetailTitle), 0.2, {x: "0%", ease:Cubic.easeInOut});
+		tlAnimNextDetailHome.to($(".container-title-carousel-home", nextDetailTitle), 0.2, {x: "0%", ease:Cubic.easeInOut});
+
 		TweenMax.staggerTo($("ul#carousel-img-home li.active"), 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
 		TweenMax.staggerTo(nextDetailHomeImg, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
 		TweenMax.staggerTo($("ul#carousel-txt-home li.active"), 0.5, {x: "-100%", ease:Cubic.easeInOut}, 0.1);
 		TweenMax.staggerTo(nextDetailHomeTxt, 0.5, {x: "0%", ease:Cubic.easeInOut}, 0.1, completeTransiCarouselHome, [nextDetailHomeImg, nextDetailHomeTxt]);
 	}
+}
+
+function completeTransiTitleCarouselHome(nextDetailTitle){
+	// intervertir les class names
+	TweenMax.set($("ul#container-titles-carousel-home li.active .container-fond-title-carousel-home"), {clearProps:"all"});
+	TweenMax.set($("ul#container-titles-carousel-home li.active .container-title-carousel-home"), {clearProps:"all"});
+	TweenMax.set($("ul#container-titles-carousel-home li.active"), {className:"-=active", clearProps:"all"});
+	TweenMax.set(nextDetailTitle, {className:"+=active", clearProps:"all"});
 }
 
 function completeTransiCarouselHome(nextDetailHomeImg, nextDetailHomeTxt){
@@ -574,19 +604,22 @@ function openDetailHome(btnDetailClic){
 	// Afficher la bonne image et le bon texte dans le carousel
 	TweenMax.set($("ul#carousel-img-home li").eq(btnDetailHomeIndex), {className:"+=active"});
 	TweenMax.set($("ul#carousel-txt-home li").eq(btnDetailHomeIndex), {className:"+=active"});
+	// Afficher le bon titre dans le carousel
+	TweenMax.set($("ul#container-titles-carousel-home li.active"), {className:"-=active"});
+	TweenMax.set($("ul#container-titles-carousel-home li").eq(btnDetailHomeIndex), {className:"+=active"});
 
 	var tlBlocDetailHome = new TimelineMax();
 	//Fermer les btn detail home
-	//a.btn-detail-home
-	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {width: "0px", ease:Cubic.easeIn}, 0.1);
-	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {width: "0px", ease:Cubic.easeIn}, 0.1);
-
+	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {x: "100%", ease:Cubic.easeIn}, 0.08);
+	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {x: "100%", ease:Cubic.easeIn}, 0.08);
+	tlBlocDetailHome.set($("a.btn-detail-home"), {display: "none"});
 	//Afficher les carousels
-	
 	tlBlocDetailHome.set($("#bloc-detail-home"), {className:"+=detail-home-open"});
 	tlBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "100%", ease:Cubic.easeIn});
 	tlBlocDetailHome.staggerTo(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "100%", ease:Cubic.easeIn}, 0.1);
 	tlBlocDetailHome.staggerTo(".container-inte-bloc-detail-home .masque-carousel", tpsEtapeDetailHome, {width: "0%", ease:Cubic.easeIn}, 0.1);
+	tlBlocDetailHome.staggerTo("ul#container-titles-carousel-home li.active .container-fond-title-carousel-home", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.1);
+	tlBlocDetailHome.staggerTo("ul#container-titles-carousel-home li.active .container-title-carousel-home", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.1);
 }
 
 function closeDetailHome(){
@@ -594,23 +627,34 @@ function closeDetailHome(){
 	TweenMax.set($("body"), {className:"-=detail-home"});
 	//Fermer les carousels
 	var tlCloseBlocDetailHome = new TimelineMax();
+	tlCloseBlocDetailHome.staggerTo("ul#container-titles-carousel-home li.active .container-title-carousel-home", tpsEtapeDetailHome, {x: "-100%", ease:Cubic.easeIn}, 0.1);
+	tlCloseBlocDetailHome.staggerTo("ul#container-titles-carousel-home li.active .container-fond-title-carousel-home", tpsEtapeDetailHome, {x: "-100%", ease:Cubic.easeIn}, 0.1);
 	tlCloseBlocDetailHome.staggerTo(".container-inte-bloc-detail-home .masque-carousel", tpsEtapeDetailHome, {width: "100%", ease:Cubic.easeOut}, 0.1);
 	tlCloseBlocDetailHome.to(".container-anim-inte-bloc-detail-home", tpsEtapeDetailHome, {width: "0", ease:Cubic.easeOut});
 	tlCloseBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "0%", ease:Cubic.easeOut});
 	tlCloseBlocDetailHome.set($("#bloc-detail-home"), {className:"-=detail-home-open"});
 	TweenMax.set($("ul#carousel-img-home li"), {clearProps:"all"});
 	TweenMax.set($("ul#carousel-txt-home li"), {clearProps:"all"});
+	//ouvrir les btn detail home
+	tlCloseBlocDetailHome.set($("a.btn-detail-home"), {display: "block"});
+	tlCloseBlocDetailHome.staggerTo("a.btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.08);
+	tlCloseBlocDetailHome.staggerTo("a.btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.08);
 }
 
 function closeBlocOptions(){
 	var tlCloseBlocOptions = new TimelineMax();
 	// Ou ferme le bloc titre des options "Adaptez les performances à vos besoins"
-	tlCloseBlocOptions.to([$("#btn-close-bloc-options"), $("#txt-bloc-options-title")], 0.2, {opacity: 0, y: "20px"});
+	TweenMax.to($("#txt-bloc-options-title"), 0.2, {opacity: 0, y: "20px"});
+	TweenMax.to($("#btn-close-bloc-options"), 0.2, {opacity: 0});
 	TweenMax.to($("#bloc-options-title"), 0.4, {className:"-=open", delay: 0.4});
 	tlCloseBlocOptions.set($("#btn-close-bloc-options"), {display: "none"});
+
 	// On ferme le bloc des options
 	tlCloseBlocOptions.to($("#bloc-content-options"), 0.3, {opacity: "0"});
 	tlCloseBlocOptions.to($("#bloc-options"), 0.3, {height: "0px"});
+	// On ouvre le bouton 'Les options'
+	tlCloseBlocOptions.to($("a#btn-options .container-fond-btn-anim"), 0.2, {x:"0%"});
+	tlCloseBlocOptions.to($("a#btn-options .container-btn-anim"), 0.2, {x: "0%"});
 }
 
 function openOptions(titleOption){
@@ -632,10 +676,13 @@ function openOptions(titleOption){
 	tlBlocOptionsTitle.to($("#bloc-options"), 0.3, {height: $("#bloc-content-options").height()+"px"});
 	tlBlocOptionsTitle.set($("#bloc-content-options"), {opacity: "1"});
 	if(titleOption=="openTitleOptions"){
+		// On ferme le bouton "Les options"
+		tlBlocOptionsTitle.to($("a#btn-options .container-btn-anim"), 0.2, {x: "-100%"});
+		tlBlocOptionsTitle.to($("a#btn-options .container-fond-btn-anim"), 0.2, {x: "-100%"});
 		// Ou ouvre le bloc titre des options "Adaptez les performances à vos besoins"
 		tlBlocOptionsTitle.to($("#bloc-options-title"), 0.3, {className:"+=open"});
 		tlBlocOptionsTitle.to($("#txt-bloc-options-title"), 0.2, {opacity: 1, y: 0});
-		tlBlocOptionsTitle.to($("#btn-close-bloc-options"), 0.2, {opacity: 1, y: 0});
+		tlBlocOptionsTitle.to($("#btn-close-bloc-options"), 0.2, {opacity: 1});
 	}
 	// On ouvre les différentes options
 	tlBlocOptionsTitle.staggerTo(".masque-content-options", 0.2, {width: "0", ease:Cubic.easeOut}, 0.1);
@@ -648,6 +695,9 @@ function closeOptions(closeAll){
 	var tlCloseOptions = new TimelineMax();
 	if(closeAll=="all"){
 		tlCloseOptions.staggerTo(".masque-content-options", 0.2, {width: "100%", ease:Cubic.easeOut, onComplete: closeBlocOptions}, 0.1);
+		// On ouvre le bouton "Les options"
+		tlCloseOptions.to($("a#btn-options .container-fond-btn-anim"), 0.2, {x:"0%"});
+		tlCloseOptions.to($("a#btn-options .container-btn-anim"), 0.2, {x: "0%"});
 	}else{
 		tlCloseOptions.staggerTo(".masque-content-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
 	}

@@ -444,6 +444,7 @@ a.btn{
   &.btn-anim-width{
     padding: 0;
     background-color: none;
+    overflow: hidden;
     &:hover{
       background-color: none;
     }
@@ -464,7 +465,21 @@ a.btn{
         background-color: fade(@bleu7ARX, 80%);
         color: @blanc;
         border: 0px solid @bleu7ARX;
-        .transition(background-color 0.1s ease-in, color 0.1s ease-in);
+      }
+    }
+    &.btn-blanc{
+      background: none;
+      &:hover{
+        background: none;
+        color: @blanc;
+        .container-fond-btn-anim{
+          background-color: @bleu3ARX;
+        }
+      }
+      .container-fond-btn-anim{
+        background-color: @blanc;
+        color: @bleu3ARX;
+        border: 0px solid @blanc;
       }
     }
     .container-fond-btn-anim{
@@ -477,6 +492,7 @@ a.btn{
       overflow: hidden;
       padding: 0;
       .box-sizing(border-box);
+      .transition(background-color 0.1s ease-in, color 0.1s ease-in);
     }
     .container-btn-anim{
       display: block;
@@ -1308,7 +1324,7 @@ ul#menu-header{
       background-color: #d7e0f0;
     }
     .vmax &{
-      background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head2.jpg") no-repeat center center;
+      background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head3.jpg") no-repeat bottom center;
       background-size: auto 100%;
       background-size: cover;
       background-color: #d7e0f0;
@@ -1478,6 +1494,10 @@ ul#menu-header{
       width: 50%;
       .box-sizing(border-box);
       padding: 0 12px 0 0;
+      @media (max-height: 900px) {
+        width: 100%;
+        margin: 0 0 10px 0;
+      }
     }
   }
   #bloc-detail-home{
@@ -1591,6 +1611,71 @@ ul#menu-header{
     &.detail-home-open{
       width: 8*@largeurCol;
       height: 6*@largeurCol;
+    }
+
+    /*<ul id="container-titles-carousel-home">
+                <li id="title-qualite-securite-vmax" class="active">
+                  <span class="container-fond-title-carousel-home"></span>
+                  <span class="container-title-carousel-home">
+                  <h2><span class="txt-title-carousel-home">Qualité &amp; <strong>Sécurité</strong></span></h2></span>
+                </li>
+              </ul>*/
+    ul#container-titles-carousel-home{
+      display: block;
+      .size(2*@largeurCol);
+      position: absolute;
+      bottom: 2*@largeurCol;
+      left: 0;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 176px;
+        .transform(translateX(-100%));
+        overflow: hidden;
+        &.active{
+          .transform(translateX(0%));
+        }
+        .container-fond-title-carousel-home{
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: @bleu7ARX;
+          position: absolute;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          .transform(translateX(-100%));
+        }
+        .container-title-carousel-home{
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          overflow: hidden;
+          color: @blanc;
+          .transform(translateX(-100%));
+          h2{
+            padding: 0 35px;
+            .box-sizing(border-box);
+            .txt-title-carousel-home{
+              display: inline-block;
+              vertical-align: middle;
+              line-height: 1.2em;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -2617,7 +2702,6 @@ a.btn-carousel{
     right: 0;
     display: none;
     .opacity(0);
-    .transform(translateY(20px));
   }
   &:focus{
     outline: none;
