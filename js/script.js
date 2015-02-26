@@ -353,12 +353,15 @@ $(document).ready(function(){
 		var heightParent = $(".video-txt", parentCadre).outerHeight();
 		TweenMax.set($(this), {width: widthParent+"px", height: heightParent+"px"});
 	});
-
+	var tlCoverLienVideo = new TimelineMax();
 	$("a.video-cover").hover(
 	  function() {
-	  	TweenMax.to($(".video-txt .video-title", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut, onComplete: onCompleteVideoCover});
+	  	tlCoverLienVideo = new TimelineMax();
+	  	tlCoverLienVideo.to($(".video-txt .video-title", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut});
+	  	tlCoverLienVideo.to($("li#current-video .video-txt .video-play"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});
+	  	tlCoverLienVideo.to($("li#current-video .cadre-video-cover"), 0.2, {width: "215px", height: "85px", ease:Cubic.easeInOut}, 0.2);
 	  }, function() {
-	  	TweenMax.to($(".video-txt .video-play", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut, onComplete: onCompleteVideoCover2});
+	  	tlCoverLienVideo.reverse();
 	  }
 	);
 	TweenMax.set($("#masque-btn-half-visu"), {width: "calc(50% + 30px)"});
@@ -739,16 +742,6 @@ function closeDetailOption(closeAll){
 		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
 		tlCloseDetailOption.set($("#bloc-content-detail-options"), {display: "none", opacity: "0", onComplete: openOptions});
 	}
-}
-
-function onCompleteVideoCover(){
-	TweenMax.to($("li#current-video .video-txt .video-play"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});
-	TweenMax.to($("li#current-video .cadre-video-cover"), 0.2, {width: "215px", height: "85px", ease:Cubic.easeInOut});
-}
-
-function onCompleteVideoCover2(){
-	TweenMax.to($("li#current-video .video-txt .video-title"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});
-	TweenMax.to($("li#current-video .cadre-video-cover"), 0.2, {width: $("li#current-video .video-txt").outerWidth()+"px", height: $("li#current-video .video-txt .video-title").outerHeight()+50+"px", ease:Cubic.easeInOut});
 }
 
 var tlBtnFile1 = new TimelineMax();
