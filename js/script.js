@@ -25,6 +25,125 @@ var widthVisuLeftPharmacies;
 var tpsEtapeFondDetailHome = 0.1;
 var tpsEtapeDetailHome = 0.1;
 
+// Scroll page Pharmacie
+var isAnimating = false;
+var numCurrentSlideScroll = 1;
+var nbSlidesScroll = $("ul#slider-scroll li").length;
+//$("ul#slider-scroll").on("mousewheel DOMMouseScroll", onMouseWheel);
+$("#bloc-automatiser").on("mousewheel DOMMouseScroll", onMouseWheel);
+
+function onMouseWheel(event)
+{
+	//Normalize event wheel delta
+	var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
+
+	if(delta < -1){
+		// Scroll down
+		nextSlideScroll();
+	}else if(delta > 1){
+		// Scroll up
+		prevSlideScroll();
+	}
+
+	event.preventDefault();
+}
+
+function nextSlideScroll(){
+	// Si il y a une slide après
+	if(numCurrentSlideScroll < nbSlidesScroll){
+		if(!isAnimating){
+			isAnimating = true;
+			var currentSlideScroll = $("ul#slider-scroll li.active");
+			var nextSlide = $("ul#slider-scroll li#slide-"+(numCurrentSlideScroll+1));
+			var slideScrollPosition = nextSlide.offset().top;
+			var slideScrollHeight = nextSlide.height();
+			var windowHeight = $(window).height();
+			// Arreter l'ancienne anim et jouer la nouvelle
+			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
+			tableAnimScroll[numCurrentSlideScroll].restart();
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll] !== 'undefined'){
+				tableAnimScrollLoop[numCurrentSlideScroll].kill();
+			}
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
+				tableAnimScrollLoop[numCurrentSlideScroll-1].kill();
+			}
+
+			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0.3", ease:Cubic.easeInOut});
+			TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
+			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimNextSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
+		}
+	}
+}
+
+function prevSlideScroll(){
+	// Si il y a une slide avant
+	if(numCurrentSlideScroll > 1){
+		if(!isAnimating){
+			isAnimating = true;
+			var currentSlideScroll = $("ul#slider-scroll li.active");
+			var nextSlide = $("ul#slider-scroll li#slide-"+(numCurrentSlideScroll-1));
+			var slideScrollPosition = nextSlide.offset().top;
+			var slideScrollHeight = nextSlide.height();
+			var windowHeight = $(window).height();
+			// Arreter l'ancienne anim et jouer la nouvelle
+			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
+			tableAnimScroll[numCurrentSlideScroll-2].restart();
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll] !== 'undefined'){
+				tableAnimScrollLoop[numCurrentSlideScroll-1].kill();
+			}
+
+			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0.3", ease:Cubic.easeInOut});
+			TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
+			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimPrevSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
+		}
+	}
+}
+
+function completeAnimNextSlideScroll(oldActive, newActive){
+	numCurrentSlideScroll++;
+	isAnimating = false;
+	TweenMax.set(oldActive, {className:"-=active"});
+	TweenMax.set(newActive, {className:"+=active"});
+}
+
+function completeAnimPrevSlideScroll(oldActive, newActive){
+	numCurrentSlideScroll--;
+	isAnimating = false;
+	TweenMax.set(oldActive, {className:"-=active"});
+	TweenMax.set(newActive, {className:"+=active"});
+}
+
+var tableAnimScroll = [];
+var tableAnimScrollLoop = [];
+// Fonction pour préparer les anims en sprites du slider au scroll
+function initSliderScroll(){
+	for(var i=0;i<nbSlidesScroll;i++){
+		// Première boucle
+		var slideAnim = $("ul#slider-scroll li").eq(i);
+		
+		var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
+		var steppedEase = new SteppedEase(numCols-1);
+
+		// Première boucle
+		tableAnimScroll[i] = new TimelineMax({paused: true, onComplete: completeFirstLoop, onCompleteParams: [slideAnim, i]});
+		for(var j=0;j<3;j++){
+			tableAnimScroll[i].add(TweenMax.fromTo($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), 0.3, { backgroundPosition:'0 -'+(frameHeight*j)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*j)+'px', ease:steppedEase}));
+		}
+	}
+
+	// Lancer la première anim
+	tableAnimScroll[0].play();
+}
+
+function completeFirstLoop(slideAnim, numAnim){
+	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
+	var steppedEase = new SteppedEase(numCols-1);
+	tableAnimScrollLoop[numAnim] = new TimelineMax({repeat:-1});
+	for(var i=3;i<numRows;i++){
+		tableAnimScrollLoop[numAnim].add(TweenMax.fromTo($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), 0.3, { backgroundPosition:'0 -'+(frameHeight*i)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease:steppedEase}));
+	}
+}
+
 // Fonction pour passer d'une vidéo à une autre
 function nextVideo(sens){
 	// si il y a au moins 2 vidéos
@@ -168,92 +287,6 @@ function completeAnimMachine(){
 	}, 2000);
 }
 
-function sliderScroll(){
-	if(!$("html").hasClass("lt-ie9")){
-		$("ul#slider-pharmacies").on('mousewheel', function(event) {
-			mouseHandle(event, indexPucesVision);
-		});
-	}
-
-	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
-	var steppedEase = new SteppedEase(numCols-1);
-	//var tl = new TimelineMax({repeat:-1});
-	// Première boucle
-	var tl = new TimelineMax({onComplete: completeFirstLoop});
-	for(var i=0;i<3;i++){
-		tl.add(TweenMax.fromTo('#slide-1 .zone-visu-txt-slider .visu-txt-slider', 0.3, { backgroundPosition:'0 -'+(frameHeight*i)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease:steppedEase}));
-	}
-}
-
-function completeFirstLoop(){
-	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
-	var steppedEase = new SteppedEase(numCols-1);
-	var tlaze = new TimelineMax({repeat:-1});
-	for(var i=3;i<numRows;i++){
-		tlaze.add(TweenMax.fromTo('#slide-1 .zone-visu-txt-slider .visu-txt-slider', 0.3, { backgroundPosition:'0 -'+(frameHeight*i)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease:steppedEase}));
-	}
-}
-
-function mouseHandle(event, indexPuceVision) {
-    newDate = new Date();
-    var scrollAllowed = true;
-
-    if( wheel < 10 && (newDate.getTime()-oldDate.getTime()) < 100 ) {
-        scrollPos -= event.deltaY*(10-wheel);
-        wheel++;
-    }else{
-        if( (newDate.getTime()-oldDate.getTime()) > 100 ) {
-            wheel = 0;
-            scrollPos -= event.deltaY*60;
-        }else{
-            scrollAllowed = false;
-        }
-    }
-
-    oldDate = new Date();
-
-    if(scrollAllowed) {
-        if (event.deltaY<0) {
-        	// au scroll down
-        	/*if(indexPuceVision==1){
-        		TweenMax.to($('a#btn-prev-slide-metier'), 0, {display: "block"});
-        		majPucesVision(indexPucesVision+1);
-        		TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "-350px", opacity: "0.5", ease:textAnimationEase, onComplete: function(){
-        			indexPucesVision++;
-        		}});
-        		TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase});
-        		TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
-        	}else if (indexPuceVision==2) {
-        		majPucesVision(indexPucesVision+1);
-        		TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "-350px", opacity: "0", ease:textAnimationEase, onComplete: function(){
-        			indexPucesVision++;
-        		}});
-        		TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "-350px", opacity: "0.5", ease:textAnimationEase});
-        		TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase});
-        	}*/
-        	
-        }else{
-        	// au scroll up
-        	/*if(indexPuceVision==2){
-        		TweenMax.to($('a#btn-prev-slide-metier'), 0, {display: "none"});
-        		majPucesVision(indexPucesVision-1);
-	        	TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase, onComplete: function(){
-	        		indexPucesVision--;
-	        	}});
-	        	TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
-	        	TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
-        	}else if(indexPuceVision==3) {
-        		majPucesVision(indexPucesVision-1);
-				TweenMax.to($('#slide1-vision'), textAnimationTime, {top: "-350px", opacity: "0.5", ease:textAnimationEase, onComplete: function(){
-					indexPucesVision--;
-				}});
-				TweenMax.to($('#slide2-vision'), textAnimationTime, {top: "50%", opacity: "1", ease:textAnimationEase});
-				TweenMax.to($('#slide3-vision'), textAnimationTime, {top: "100%", opacity: "0", ease:textAnimationEase});
-        	}*/
-        }
-    }
-}
-
 $(window).load(function() {
 	if($("body").hasClass("home")){
 		setTimeout(function(){
@@ -264,7 +297,7 @@ $(window).load(function() {
 
 $(document).ready(function(){
 	if($("body").hasClass("pharmacies")){
-		sliderScroll();
+		initSliderScroll();
 	}
 	$(".imgLiquidFill").imgLiquid();
 
@@ -356,6 +389,7 @@ $(document).ready(function(){
 	var tlCoverLienVideo = new TimelineMax();
 	$("a.video-cover").hover(
 	  function() {
+	  	tlCoverLienVideo.kill();
 	  	tlCoverLienVideo = new TimelineMax();
 	  	tlCoverLienVideo.to($(".video-txt .video-title", this), 0.2, {opacity: "0", display: "none", ease:Cubic.easeInOut});
 	  	tlCoverLienVideo.to($("li#current-video .video-txt .video-play"), 0.2, {display: "inline-block", opacity: "1", ease:Cubic.easeInOut});

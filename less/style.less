@@ -2359,7 +2359,7 @@ a.btn-references{
   }
 }
 
-ul#slider-pharmacies{
+ul#slider-scroll{
   display: block;
   width: 100%;
   height: auto;
@@ -2437,6 +2437,20 @@ ul#slider-pharmacies{
       .zone-visu-txt-slider{
         .visu-txt-slider{
           background: url("../layoutImg/slider-scroll/stocks.png") no-repeat 0 0;
+        }
+      }
+    }
+    &#slide-4{
+      .zone-visu-txt-slider{
+        .visu-txt-slider{
+          background: url("../layoutImg/slider-scroll/shield.png") no-repeat 0 0;
+        }
+      }
+    }
+    &#slide-5{
+      .zone-visu-txt-slider{
+        .visu-txt-slider{
+          background: url("../layoutImg/slider-scroll/stats.png") no-repeat 0 0;
         }
       }
     }
@@ -3398,9 +3412,49 @@ footer{
 
 /* retina */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-    ul#slider-pharmacies li#slide-1 .zone-visu-txt-slider .visu-txt-slider{
-      background-image: url("../layoutImg/slider-scroll/fleches@2x.png");
-      background-size: 1080px 1750px;
+    ul#slider-scroll{
+      li{
+        &#slide-1{
+          .zone-visu-txt-slider{
+            .visu-txt-slider{
+              background: url("../layoutImg/slider-scroll/fleches@2x.png") no-repeat 0 0;
+              background-size: 1080px 1750px;
+            }
+          }
+        }
+        &#slide-2{
+          .zone-visu-txt-slider{
+            .visu-txt-slider{
+              background: url("../layoutImg/slider-scroll/box@2x.png") no-repeat 0 0;
+              background-size: 1080px 1750px;
+            }
+          }
+        }
+        &#slide-3{
+          .zone-visu-txt-slider{
+            .visu-txt-slider{
+              background: url("../layoutImg/slider-scroll/stocks@2x.png") no-repeat 0 0;
+              background-size: 1080px 1750px;
+            }
+          }
+        }
+        &#slide-4{
+          .zone-visu-txt-slider{
+            .visu-txt-slider{
+              background: url("../layoutImg/slider-scroll/shield@2x.png") no-repeat 0 0;
+              background-size: 1080px 1750px;
+            }
+          }
+        }
+        &#slide-5{
+          .zone-visu-txt-slider{
+            .visu-txt-slider{
+              background: url("../layoutImg/slider-scroll/stats@2x.png") no-repeat 0 0;
+              background-size: 1080px 1750px;
+            }
+          }
+        }
+      }
     }
 }
 

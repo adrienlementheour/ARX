@@ -2559,7 +2559,7 @@ a.btn-references:hover#btn-right-references .masque-arrow {
   margin: 0 auto;
   line-height: 1.4em;
 }
-ul#slider-pharmacies {
+ul#slider-scroll {
   display: block;
   width: 100%;
   height: auto;
@@ -2568,7 +2568,7 @@ ul#slider-pharmacies {
   margin: 100px 0 250px 0;
   padding: 0;
 }
-ul#slider-pharmacies li {
+ul#slider-scroll li {
   display: block;
   width: 100%;
   height: auto;
@@ -2581,12 +2581,12 @@ ul#slider-pharmacies li {
   opacity: 0.3;
   margin: 50px 0;
 }
-ul#slider-pharmacies li.active {
+ul#slider-scroll li.active {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
-ul#slider-pharmacies li .zone-visu-txt-slider {
+ul#slider-scroll li .zone-visu-txt-slider {
   display: block;
   width: 352px;
   height: 250px;
@@ -2595,7 +2595,7 @@ ul#slider-pharmacies li .zone-visu-txt-slider {
   margin-top: -125px;
   left: 352px;
 }
-ul#slider-pharmacies li .zone-visu-txt-slider .visu-txt-slider {
+ul#slider-scroll li .zone-visu-txt-slider .visu-txt-slider {
   display: block;
   width: 180px;
   height: 100%;
@@ -2604,11 +2604,11 @@ ul#slider-pharmacies li .zone-visu-txt-slider .visu-txt-slider {
   left: 50%;
   margin-left: -90px;
 }
-ul#slider-pharmacies li .zone-txt-slider {
+ul#slider-scroll li .zone-txt-slider {
   display: block;
   width: 352px;
 }
-ul#slider-pharmacies li .zone-txt-slider h3 {
+ul#slider-scroll li .zone-txt-slider h3 {
   font-family: 'robotobold', sans-serif;
   font-weight: normal;
   font-size: 1.625em;
@@ -2619,7 +2619,7 @@ ul#slider-pharmacies li .zone-txt-slider h3 {
   margin: 25px 0 25px 0;
   line-height: 1.2em;
 }
-ul#slider-pharmacies li .zone-txt-slider h4 {
+ul#slider-scroll li .zone-txt-slider h4 {
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
   font-size: 1em;
@@ -2629,7 +2629,7 @@ ul#slider-pharmacies li .zone-txt-slider h4 {
   color: #0070b8;
   margin: 20px 0 20px 0;
 }
-ul#slider-pharmacies li .zone-txt-slider p {
+ul#slider-scroll li .zone-txt-slider p {
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
   font-size: 0.875em;
@@ -2637,17 +2637,23 @@ ul#slider-pharmacies li .zone-txt-slider p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-ul#slider-pharmacies li.slide-right .zone-txt-slider {
+ul#slider-scroll li.slide-right .zone-txt-slider {
   margin-left: 704px;
 }
-ul#slider-pharmacies li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
+ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/fleches.png") no-repeat 0 0;
 }
-ul#slider-pharmacies li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
+ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/box.png") no-repeat 0 0;
 }
-ul#slider-pharmacies li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
+ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/stocks.png") no-repeat 0 0;
+}
+ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
+  background: url("../layoutImg/slider-scroll/shield.png") no-repeat 0 0;
+}
+ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
+  background: url("../layoutImg/slider-scroll/stats.png") no-repeat 0 0;
 }
 /* @end */
 /* @group Bloc options */
@@ -3714,8 +3720,24 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.men
 /* mes resolutions responsives "classiques" */
 /* retina */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  ul#slider-pharmacies li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
-    background-image: url("../layoutImg/slider-scroll/fleches@2x.png");
+  ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/fleches@2x.png") no-repeat 0 0;
+    background-size: 1080px 1750px;
+  }
+  ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/box@2x.png") no-repeat 0 0;
+    background-size: 1080px 1750px;
+  }
+  ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/stocks@2x.png") no-repeat 0 0;
+    background-size: 1080px 1750px;
+  }
+  ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/shield@2x.png") no-repeat 0 0;
+    background-size: 1080px 1750px;
+  }
+  ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/stats@2x.png") no-repeat 0 0;
     background-size: 1080px 1750px;
   }
 }
