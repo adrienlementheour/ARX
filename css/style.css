@@ -2559,6 +2559,12 @@ a.btn-references:hover#btn-right-references .masque-arrow {
   margin: 0 auto;
   line-height: 1.4em;
 }
+#zone-slider-scroll {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
 ul#slider-scroll {
   display: block;
   width: 100%;
@@ -2579,7 +2585,7 @@ ul#slider-scroll li {
   -webkit-opacity: 0.3;
   -moz-opacity: 0.3;
   opacity: 0.3;
-  margin: 50px 0;
+  margin: 140px 0;
 }
 ul#slider-scroll li.active {
   -webkit-opacity: 1;

@@ -29,8 +29,7 @@ var tpsEtapeDetailHome = 0.1;
 var isAnimating = false;
 var numCurrentSlideScroll = 1;
 var nbSlidesScroll = $("ul#slider-scroll li").length;
-//$("ul#slider-scroll").on("mousewheel DOMMouseScroll", onMouseWheel);
-$("#bloc-automatiser").on("mousewheel DOMMouseScroll", onMouseWheel);
+$("#zone-slider-scroll").on("mousewheel DOMMouseScroll", onMouseWheel);
 
 function onMouseWheel(event)
 {
@@ -88,8 +87,11 @@ function prevSlideScroll(){
 			// Arreter l'ancienne anim et jouer la nouvelle
 			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
 			tableAnimScroll[numCurrentSlideScroll-2].restart();
-			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll] !== 'undefined'){
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll-1].kill();
+			}
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-2] !== 'undefined'){
+				tableAnimScrollLoop[numCurrentSlideScroll-2].restart().pause();
 			}
 
 			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0.3", ease:Cubic.easeInOut});
