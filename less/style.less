@@ -344,8 +344,12 @@ html, body{
   width: 1056px;
   height: auto;
   margin: 0 auto;
+  z-index: 2;
   &.small{
     width: 700px;
+  }
+  &.pointer-events{
+    pointer-events: none;
   }
 }
 
@@ -445,7 +449,7 @@ a.btn{
     padding: 0;
     background-color: none;
     overflow: hidden;
-    &:hover{
+    &:hover, &.survol{
       background-color: none;
     }
     &.btn-vertical-centered{
@@ -453,7 +457,7 @@ a.btn{
     }
     &.btn-bleu-alpha{
       background: none;
-      &:hover{
+      &:hover, &.survol{
         background: none;
         color: @bleu7ARX;
         .container-fond-btn-anim{
@@ -469,7 +473,7 @@ a.btn{
     }
     &.btn-blanc{
       background: none;
-      &:hover{
+      &:hover, &.survol{
         background: none;
         color: @blanc;
         .container-fond-btn-anim{
@@ -515,7 +519,7 @@ a.btn{
     padding: 0;
     .roboto-light(1em);
     overflow: hidden;
-    &:hover{
+    &:hover, &.survol{
       .zone-img-sur{
         .opacity(0);
       }
@@ -528,7 +532,7 @@ a.btn{
         color: @blanc;
         border: 0px solid @bleu7ARX;
       }
-      &:hover{
+      &:hover, &.survol{
         background: none;
         color: @blanc;
         .zone-btn{
@@ -553,7 +557,7 @@ a.btn{
           }
         }
       }
-      &:hover{
+      &:hover, &.survol{
         background: none;
         color: @blanc;
         .zone-btn{
@@ -634,7 +638,7 @@ a.btn{
     background-color: @bleu2ARX;
     color: @blanc;
     border: 0px solid @bleu2ARX;
-    &:hover{
+    &:hover, &.survol{
       background-color: @blanc;
       color: @bleu2ARX;
       .triangle-btn{
@@ -647,7 +651,7 @@ a.btn{
     background-color: fade(@bleu7ARX, 80%);
     color: @blanc;
     border: 0px solid @bleu7ARX;
-    &:hover{
+    &:hover, &.survol{
       background-color: @blanc;
       color: @bleu7ARX;
       .triangle-btn{
@@ -662,7 +666,7 @@ a.btn{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
-    &:hover{
+    &:hover, &.survol{
       background-color: @bleu3ARX;
       color: @blanc;
       .triangle-btn{
@@ -677,7 +681,7 @@ a.btn{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
-    &:hover{
+    &:hover, &.survol{
       background-color: @bleu3ARX;
       color: @blanc;
       border-color: @bleu3ARX;
@@ -691,7 +695,7 @@ a.btn{
     background-color: fade(@blanc, 40%);
     border: 0px solid @blanc;
     color: @blanc;
-    &:hover{
+    &:hover, &.survol{
       background-color: @blanc;
       color: @bleu2ARX;
       .triangle-btn{
@@ -706,7 +710,7 @@ a.btn{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
-    &:hover{
+    &:hover, &.survol{
       background-color: @blanc;
       color: @bleu2ARX;
       .triangle-btn{
@@ -760,7 +764,7 @@ a.btn{
     .triangle(bottom-right, 10px, 10px, @blanc);
     .transition(all 0.1s ease-in-out);
   }
-  &:hover{
+  &:hover, &.survol{
     .transition(background-color 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860), color 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860));
     .triangle-btn{
       margin: 3px 0 0 3px;
@@ -1448,8 +1452,8 @@ ul#menu-header{
       width: 55%;
       //width: calc(~"55% + 30px");
       .container-img-half-visu{
-        background: url("../layoutImg/bloc-home-pharmacies/rowa-smart-head2.jpg") no-repeat 50% 50%;
-        background-size: auto 100%;
+        background: url("../layoutImg/bloc-home-pharmacies/rowa-smart-head2.jpg") no-repeat 40% 50%;
+        background-size: auto 115%;
         left: 0;
       }
       .over-container-half-visu{

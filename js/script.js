@@ -20,6 +20,7 @@ var currentDetailHome = 1;
 var nextDetailHome;
 var heightBlocDrapeaux;
 var widthVisuLeftPharmacies;
+var mouseWheelPreventDefault = true;
 
 // TIMELINES
 var tpsEtapeFondDetailHome = 0.1;
@@ -29,25 +30,26 @@ var tpsEtapeDetailHome = 0.1;
 var isAnimating = false;
 var numCurrentSlideScroll = 1;
 var nbSlidesScroll = $("ul#slider-scroll li").length;
-$("#zone-slider-scroll").on("mousewheel DOMMouseScroll", onMouseWheel);
+$("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
-function onMouseWheel(event)
-{
+function zoneSliderScrollMouseWheel(event){
 	//Normalize event wheel delta
 	var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
-
 	if(delta < -1){
 		// Scroll down
-		nextSlideScroll();
+		nextSlideScroll(event);
 	}else if(delta > 1){
 		// Scroll up
-		prevSlideScroll();
+		prevSlideScroll(event);
 	}
+	if(mouseWheelPreventDefault){
+		event.preventDefault();
+		//event.stopPropagation();
+	}
+	mouseWheelPreventDefault = true;
+};
 
-	event.preventDefault();
-}
-
-function nextSlideScroll(){
+function nextSlideScroll(event){
 	// Si il y a une slide après
 	if(numCurrentSlideScroll < nbSlidesScroll){
 		if(!isAnimating){
@@ -58,7 +60,12 @@ function nextSlideScroll(){
 			var slideScrollHeight = nextSlide.height();
 			var windowHeight = $(window).height();
 			// Arreter l'ancienne anim et jouer la nouvelle
-			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
+				tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
+			}
+			if ( typeof tableAnimScroll[numCurrentSlideScroll-1] !== 'undefined'){
+				tableAnimScroll[numCurrentSlideScroll-1].pause();
+			}
 			tableAnimScroll[numCurrentSlideScroll].restart();
 			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll].kill();
@@ -71,10 +78,13 @@ function nextSlideScroll(){
 			TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
 			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimNextSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
 		}
+	}else{
+		//$("#zone-slider-scroll").unbind('mousewheel DOMMouseScroll');
+		mouseWheelPreventDefault = false;
 	}
 }
 
-function prevSlideScroll(){
+function prevSlideScroll(event){
 	// Si il y a une slide avant
 	if(numCurrentSlideScroll > 1){
 		if(!isAnimating){
@@ -85,7 +95,12 @@ function prevSlideScroll(){
 			var slideScrollHeight = nextSlide.height();
 			var windowHeight = $(window).height();
 			// Arreter l'ancienne anim et jouer la nouvelle
-			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
+			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
+				tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
+			}
+			if ( typeof tableAnimScroll[numCurrentSlideScroll-1] !== 'undefined'){
+				tableAnimScroll[numCurrentSlideScroll-1].pause();
+			}
 			tableAnimScroll[numCurrentSlideScroll-2].restart();
 			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll-1].kill();
@@ -98,6 +113,9 @@ function prevSlideScroll(){
 			TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
 			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimPrevSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
 		}
+	}else{
+		//$("#zone-slider-scroll").unbind('mousewheel DOMMouseScroll');
+		mouseWheelPreventDefault = false;
 	}
 }
 
@@ -203,7 +221,7 @@ function animRefs(nextRef, sens){
 	$("ul#liste-references li#references-bloc-big .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-big.jpg");
 	$("ul#liste-references li#references-bloc-horizontal-top .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-top.jpg");
 	$("ul#liste-references li#references-bloc-horizontal-bottom .container-next-img-references img").attr("src", "img/references/ref-"+nextRef+"/img-references-bloc-horizontal-bottom.jpg");
-
+	$(".imgLiquidFill").imgLiquid();
 	if (sens=="right"){
 		// placer les images suivantes
 		TweenMax.set($(".container-next-img-references"), {x: "-100%"});
@@ -285,8 +303,8 @@ function completeAnimMachine(){
 		transiInButton($("a#btn-robots-rowa"));
 		setTimeout(function(){
 			transiInButton($("a#btn-contact"));
-		}, 2000);
-	}, 2000);
+		}, 500);
+	}, 500);
 }
 
 $(window).load(function() {
@@ -405,16 +423,19 @@ $(document).ready(function(){
 	$("a.btn-half-visu").hover(
 	  function() {
 	  	if($(this).is("#btn-visu-left")){
-	        //TweenMax.to($("#btn-visu-left"), 0.2, {x: "20px", ease:Cubic.easeInOut});
 	        TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(55% + 30px)", ease:Cubic.easeInOut});
 	        TweenMax.to($("#btn-visu-right"), 0.2, {width: "50%", ease:Cubic.easeInOut});
+	        TweenMax.set($(".btn-half-visu-small-left"), {className:"+=survol"});
 	  	}else if($(this).is("#btn-visu-right")){
 	  		TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(45% + 30px)", ease:Cubic.easeInOut});
 	  		TweenMax.to($("#btn-visu-right"), 0.2, {width: "65%", ease:Cubic.easeInOut});
+	  		TweenMax.set($(".btn-half-visu-small-right"), {className:"+=survol"});
 	  	}
 	  }, function() {
 	  	TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(50% + 30px)", ease:Cubic.easeInOut});
 	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
+	  	TweenMax.set($(".btn-half-visu-small-left"), {className:"-=survol"});
+	  	TweenMax.set($(".btn-half-visu-small-right"), {className:"-=survol"});
 	  }
 	);
 	$("a#btn-rowa-vmax-pharmacies").hover(
