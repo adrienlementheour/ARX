@@ -872,6 +872,7 @@ ul.bg-grid {
   margin: 0 0 0 -528px;
   padding: 0;
   pointer-events: none;
+  z-index: 2;
 }
 ul.bg-grid li.col-bg-grid {
   display: inline-block;
@@ -1242,7 +1243,7 @@ ul#menu-header li a:focus {
   top: 123px;
 }
 #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before {
-  top: 408px;
+  top: 404px;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
@@ -1274,7 +1275,7 @@ ul#menu-header li a:focus {
   background-color: rgba(255, 255, 255, 0.25);
 }
 #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
-  top: 408px;
+  top: 404px;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
@@ -1306,7 +1307,7 @@ ul#menu-header li a:focus {
   background-color: rgba(255, 255, 255, 0.25);
 }
 #bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before {
-  top: 350px;
+  top: 346px;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
@@ -1327,7 +1328,7 @@ ul#menu-header li a:focus {
   transform: translateY(0px);
 }
 #bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before {
-  top: 350px;
+  top: 346px;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
@@ -1471,11 +1472,6 @@ ul#menu-header li a:focus {
   top: 0;
   left: 0;
   overflow: hidden;
-  -webkit-transform: skewX(8deg);
-  -moz-transform: skewX(8deg);
-  -o-transform: skewX(8deg);
-  -ms-transform: skewX(8deg);
-  transform: skewX(8deg);
   margin-left: -60px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -1507,11 +1503,6 @@ ul#menu-header li a:focus {
 #bloc-home a.btn-half-visu#btn-visu-left {
   left: 0;
   width: 110%;
-  -webkit-transform: skewX(-8deg);
-  -moz-transform: skewX(-8deg);
-  -o-transform: skewX(-8deg);
-  -ms-transform: skewX(-8deg);
-  transform: skewX(-8deg);
 }
 #bloc-home a.btn-half-visu#btn-visu-left .container-img-half-visu {
   background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head2.jpg") no-repeat 50% 50%;
@@ -1558,7 +1549,10 @@ ul#menu-header li a:focus {
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #000000;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
 }
 #bloc-home ul#liste-btn-home {
   display: block;
@@ -2594,6 +2588,47 @@ a.btn-references:hover#btn-right-references .masque-arrow {
   width: 100%;
   height: auto;
   position: relative;
+  margin: 40px 0 0 0;
+}
+ul#slider-scroll-navigator {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 0 0 -100px;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  position: fixed;
+  bottom: 200px;
+  left: 50%;
+  z-index: 2;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+ul#slider-scroll-navigator li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 8px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+ul#slider-scroll-navigator li.active a {
+  background-color: #0070b8;
+}
+ul#slider-scroll-navigator li a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid #0070b8;
+  background-color: #ffffff;
+}
+ul#slider-scroll-navigator li a:hover {
+  background-color: #0070b8;
 }
 ul#slider-scroll {
   display: block;
@@ -2601,8 +2636,8 @@ ul#slider-scroll {
   height: auto;
   position: relative;
   list-style-type: none;
-  margin: 100px 0 250px 0;
-  padding: 0;
+  padding: 100px 0 250px 0;
+  margin: 0;
 }
 ul#slider-scroll li {
   display: block;
@@ -2612,15 +2647,22 @@ ul#slider-scroll li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-opacity: 0.3;
-  -moz-opacity: 0.3;
-  opacity: 0.3;
-  margin: 140px 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  margin: 160px 0;
 }
 ul#slider-scroll li.active {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
+}
+ul#slider-scroll li.active .zone-txt-slider {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
 }
 ul#slider-scroll li .zone-visu-txt-slider {
   display: block;
@@ -2643,6 +2685,11 @@ ul#slider-scroll li .zone-visu-txt-slider .visu-txt-slider {
 ul#slider-scroll li .zone-txt-slider {
   display: block;
   width: 352px;
+  -webkit-transform: translateY(300px);
+  -moz-transform: translateY(300px);
+  -o-transform: translateY(300px);
+  -ms-transform: translateY(300px);
+  transform: translateY(300px);
 }
 ul#slider-scroll li .zone-txt-slider h3 {
   font-family: 'robotobold', sans-serif;

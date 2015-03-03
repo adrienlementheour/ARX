@@ -835,6 +835,7 @@ ul.bg-grid{
   margin: 0 0 0 -528px;
   padding: 0;
   pointer-events: none;
+  z-index: 2;
   li.col-bg-grid{
     display: inline-block;
     vertical-align: top;
@@ -1247,7 +1248,7 @@ ul#menu-header{
     li.col-bg-grid{
       &:nth-child(2){
         &:before{
-          top: 408px;
+          top: 404px;
           .opacity(0);
           .transform(translateY(180px));
           .no-js &{
@@ -1269,7 +1270,7 @@ ul#menu-header{
       }
       &:nth-child(3){
         &:before{
-          top: 408px;
+          top: 404px;
           .opacity(0);
           .transform(translateY(180px));
           .no-js &{
@@ -1291,7 +1292,7 @@ ul#menu-header{
       }
       &:nth-child(5){
         &:before{
-          top: 350px;
+          top: 346px;
           .opacity(0);
           .transform(translateY(180px));
           .no-js &{
@@ -1302,7 +1303,7 @@ ul#menu-header{
       }
       &:nth-child(6){
         &:before{
-          top: 350px;
+          top: 346px;
           .opacity(0);
           .transform(translateY(180px));
           .no-js &{
@@ -1362,6 +1363,7 @@ ul#menu-header{
     position: absolute;
     top: 350px;
     left: 8*@largeurCol;
+
   }
   a#btn-rowa-vmax-pharmacies{
     position: absolute;
@@ -1422,7 +1424,7 @@ ul#menu-header{
     top: 0;
     left: 0;
     overflow: hidden;
-    .transform(skewX(8deg));
+    //.transform(skewX(8deg));
     margin-left: -60px;
     .backface-visibility(hidden);
     .transform-style(preserve-3d);
@@ -1437,7 +1439,7 @@ ul#menu-header{
     &#btn-visu-left{
       left: 0;
       width: 110%;
-      .transform(skewX(-8deg));
+      //.transform(skewX(-8deg));
       .container-img-half-visu{
         background: url("../layoutImg/bloc-home-pharmacies/rowa-vmax-head2.jpg") no-repeat 50% 50%;
         background-size: auto 100%;
@@ -1482,7 +1484,9 @@ ul#menu-header{
       height: 100%;
       position: absolute;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      //background-color: rgba(0, 0, 0, 0.5);
+      background-color: @noir;
+      .opacity(0.5);
     }
   }
   ul#liste-btn-home{
@@ -2368,6 +2372,44 @@ a.btn-references{
   width: 100%;
   height: auto;
   position: relative;
+  margin: 40px 0 0 0;
+}
+
+ul#slider-scroll-navigator{
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 0 0 -100px;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  position: fixed;
+  bottom: 200px;
+  left: 50%;
+  z-index: 2;
+  .opacity(0);
+  li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px;
+    padding: 0;
+    .size(24px);
+    &.active{
+      a{
+        background-color: @bleu7ARX;
+      }
+    }
+    a{
+      display: block;
+      .size(24px);
+      .box-sizing(border-box);
+      border: 3px solid @bleu7ARX;
+      background-color: @blanc;
+      &:hover{
+        background-color: @bleu7ARX;
+      }
+    }
+  }
 }
 
 ul#slider-scroll{
@@ -2376,18 +2418,21 @@ ul#slider-scroll{
   height: auto;
   position: relative;
   list-style-type: none;
-  margin: 100px 0 250px 0;
-  padding: 0;
+  padding: 100px 0 250px 0;
+  margin: 0;
   li{
     display: block;
     width: 100%;
     height: auto;
     position: relative;
     .box-sizing(border-box);
-    .opacity(0.3);
-    margin: 140px 0;
+    .opacity(0);
+    margin: 160px 0;
     &.active{
       .opacity(1);
+      .zone-txt-slider{
+        .transform(translateY(0px));
+      }
     }
     .zone-visu-txt-slider{
       display: block;
@@ -2410,6 +2455,7 @@ ul#slider-scroll{
     .zone-txt-slider{
       display: block;
       width: 4*@largeurCol;
+      .transform(translateY(300px));
       h3{
         .roboto-bold(1.625em);
         color: @bleu7ARX;

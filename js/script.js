@@ -73,13 +73,13 @@ function nextSlideScroll(event){
 			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll-1].kill();
 			}
-
-			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0.3", ease:Cubic.easeInOut});
+			TweenMax.set($(".zone-txt-slider", nextSlide), {y: "300px"});
+			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0", ease:Cubic.easeInOut});
 			TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
+			TweenMax.to($(".zone-txt-slider", nextSlide), 0.4, {y: "0px", delay: 0.1, ease:Cubic.easeInOut});
 			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimNextSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
 		}
 	}else{
-		//$("#zone-slider-scroll").unbind('mousewheel DOMMouseScroll');
 		mouseWheelPreventDefault = false;
 	}
 }
@@ -108,13 +108,13 @@ function prevSlideScroll(event){
 			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-2] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll-2].restart().pause();
 			}
-
-			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0.3", ease:Cubic.easeInOut});
+			TweenMax.set($(".zone-txt-slider", nextSlide), {y: "-300px"});
+			TweenMax.to(currentSlideScroll, 0.2, {opacity: "0", ease:Cubic.easeInOut});
 			TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
+			TweenMax.to($(".zone-txt-slider", nextSlide), 0.4, {y: "0px", delay: 0.15, ease:Cubic.easeInOut});
 			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimPrevSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
 		}
 	}else{
-		//$("#zone-slider-scroll").unbind('mousewheel DOMMouseScroll');
 		mouseWheelPreventDefault = false;
 	}
 }
@@ -124,6 +124,8 @@ function completeAnimNextSlideScroll(oldActive, newActive){
 	isAnimating = false;
 	TweenMax.set(oldActive, {className:"-=active"});
 	TweenMax.set(newActive, {className:"+=active"});
+	TweenMax.set($("ul#slider-scroll-navigator li").eq(numCurrentSlideScroll-2), {className:"-=active"});
+	TweenMax.set($("ul#slider-scroll-navigator li").eq(numCurrentSlideScroll-1), {className:"+=active"});
 }
 
 function completeAnimPrevSlideScroll(oldActive, newActive){
@@ -131,6 +133,8 @@ function completeAnimPrevSlideScroll(oldActive, newActive){
 	isAnimating = false;
 	TweenMax.set(oldActive, {className:"-=active"});
 	TweenMax.set(newActive, {className:"+=active"});
+	TweenMax.set($("ul#slider-scroll-navigator li").eq(numCurrentSlideScroll), {className:"-=active"});
+	TweenMax.set($("ul#slider-scroll-navigator li").eq(numCurrentSlideScroll-1), {className:"+=active"});
 }
 
 var tableAnimScroll = [];
@@ -279,23 +283,20 @@ function transiInButton(btnSelected){
 }
 
 function initBtnAnim(){
-	TweenMax.set($(".btn-anim"), {opacity: "0", scaleY:0, y: "180px"});
+	if ($("window").height()>=830){
+		TweenMax.set($(".btn-anim"), {opacity: "0", scaleY:0, y: "180px"});
+	}else{
+		TweenMax.set($(".btn-anim"), {opacity: "0", scaleY:0, y: "130px"});
+	}
 	TweenMax.set($(".btn-anim .txt-btn"), {opacity: "0", y: "-20px"});
 	TweenMax.set($(".btn-anim .triangle-btn"), {opacity: "0", x: "-10px", y: "-10px"});
-}
-
-function initHeaderHome(){
-	//TweenMax.set($("h1"), {opacity: "0", y: "40px"});
-	//TweenMax.set($("#machine"), {opacity: "0", y: "40px"});
-	//TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], {cssRule: {opacity: "0", y: "180px"}});
-	//TweenMax.set([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], {cssRule: {opacity: "0", y: "180px"}});
 }
 
 function animHeaderHome(){
 	TweenMax.to($("h1"), 0.3, {opacity: "1", y: "0px", ease:Circ.easeInOut});
 	TweenMax.to($("#machine"), 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, delay: 0.3, onComplete: completeAnimMachine});
-	TweenMax.to([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 3.1});
-	TweenMax.to([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 5.1});
+	TweenMax.to([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 1.5});
+	TweenMax.to([CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule("#bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 2});
 }
 
 function completeAnimMachine(){
@@ -311,12 +312,13 @@ $(window).load(function() {
 	if($("body").hasClass("home")){
 		setTimeout(function(){
 			animHeaderHome();
-		}, 1000);
+		}, 200);
 	}
 });
 
 $(document).ready(function(){
-	if($("body").hasClass("pharmacies")){
+	if($("body").hasClass("categ")){
+		TweenMax.to(window, 1, {scrollTo:{y: 0}});
 		initSliderScroll();
 	}
 	$(".imgLiquidFill").imgLiquid();
@@ -426,16 +428,25 @@ $(document).ready(function(){
 	        TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(55% + 30px)", ease:Cubic.easeInOut});
 	        TweenMax.to($("#btn-visu-right"), 0.2, {width: "50%", ease:Cubic.easeInOut});
 	        TweenMax.set($(".btn-half-visu-small-left"), {className:"+=survol"});
+	        TweenMax.to($("#btn-rowa-smart-pharmacies"), 0.2, {x:"80px", ease:Cubic.easeInOut});
+	        TweenMax.to($("#btn-rowa-vmax-pharmacies"), 0.2, {x:"80px", ease:Cubic.easeInOut});
+	        TweenMax.to($("#btn-visu-left .over-container-half-visu"), 0.2, {opacity:"0", ease:Cubic.easeInOut});
 	  	}else if($(this).is("#btn-visu-right")){
 	  		TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(45% + 30px)", ease:Cubic.easeInOut});
-	  		TweenMax.to($("#btn-visu-right"), 0.2, {width: "65%", ease:Cubic.easeInOut});
+	  		TweenMax.to($("#btn-visu-right"), 0.2, {width: "60%", ease:Cubic.easeInOut});
 	  		TweenMax.set($(".btn-half-visu-small-right"), {className:"+=survol"});
+	  		TweenMax.to($("#btn-rowa-smart-pharmacies"), 0.2, {x:"-80px", ease:Cubic.easeInOut});
+	  		TweenMax.to($("#btn-rowa-vmax-pharmacies"), 0.2, {x:"-80px", ease:Cubic.easeInOut});
+	  		TweenMax.to($("#btn-visu-right .over-container-half-visu"), 0.2, {opacity:"0.2", ease:Cubic.easeInOut});
 	  	}
 	  }, function() {
 	  	TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(50% + 30px)", ease:Cubic.easeInOut});
 	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
 	  	TweenMax.set($(".btn-half-visu-small-left"), {className:"-=survol"});
 	  	TweenMax.set($(".btn-half-visu-small-right"), {className:"-=survol"});
+	  	TweenMax.to($("#btn-rowa-smart-pharmacies"), 0.2, {opacity: "1", x:"0", ease:Cubic.easeInOut});
+	  	TweenMax.to($("#btn-rowa-vmax-pharmacies"), 0.2, {opacity: "1", x:"0", ease:Cubic.easeInOut});
+	  	TweenMax.to([$("#btn-visu-left .over-container-half-visu"), $("#btn-visu-right .over-container-half-visu")], 0.2, {opacity:"0.5", ease:Cubic.easeInOut});
 	  }
 	);
 	$("a#btn-rowa-vmax-pharmacies").hover(
@@ -847,9 +858,21 @@ $(document).scroll(function() {
 			} 
 		}
 	}
+	if($("body").hasClass("categ")){
+		setSliderScrollNavigator(myScroll);
+	}
 	// parallaxe machine
 	TweenMax.set($("#machine"), {y: (0-(myScroll*.25))+"px"});
 });
+
+function setSliderScrollNavigator(myScroll){
+	if(myScroll >= ($("ul#slider-scroll").offset().top)-myScroll+300){
+		console.log("aze");
+		TweenMax.set($("ul#slider-scroll-navigator"), {opacity: "1"});
+	}else{
+		TweenMax.set($("ul#slider-scroll-navigator"), {opacity: "0"});
+	}
+}
 
 $( window ).resize(function() {
 	heightBlocDrapeaux = $("#bloc-pays").height();
