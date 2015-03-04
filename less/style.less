@@ -383,6 +383,10 @@ h1{
     margin: 0 auto;
     padding-left: 110px;
   }
+  .hopitaux &{
+    width: 8*@largeurCol;
+    margin: 0 auto;
+  }
 }
 
 h2{
@@ -1348,6 +1352,11 @@ ul#menu-header{
       background-size: cover;
       background-color: #d7e0f0;
     }
+    .hopitaux &{
+      background: url("../layoutImg/bloc-home-hopitaux/rowa-vmax-hospital.jpg") no-repeat center center;
+      background-size: auto 100%;
+      background-size: cover;
+    }
     .container{
       height: 100%;
     }
@@ -1421,6 +1430,24 @@ ul#menu-header{
   a#btn-outil-silencieux-vmax{
     position: absolute;
     bottom: 0;
+    left: 8*@largeurCol;
+    .size(2*@largeurCol);
+  }
+  a#btn-rowa-vmax-hopitaux{
+    position: absolute;
+    bottom: @largeurCol;
+    left: 2*@largeurCol;
+    .size(2*@largeurCol);
+  }
+  a#btn-blispack-grisfols-hopitaux{
+    position: absolute;
+    bottom: 0;
+    left: 6*@largeurCol;
+    .size(2*@largeurCol);
+  }
+  a#btn-armoire-pyxis-hopitaux{
+    position: absolute;
+    bottom: 2*@largeurCol;
     left: 8*@largeurCol;
     .size(2*@largeurCol);
   }
