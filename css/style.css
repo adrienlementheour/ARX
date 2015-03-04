@@ -2630,6 +2630,10 @@ ul#slider-scroll-navigator li a {
 ul#slider-scroll-navigator li a:hover {
   background-color: #0070b8;
 }
+ul#slider-scroll-navigator li a:active,
+ul#slider-scroll-navigator li a:focus {
+  outline: none;
+}
 ul#slider-scroll {
   display: block;
   width: 100%;
