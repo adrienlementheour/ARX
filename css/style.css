@@ -280,6 +280,7 @@ h1 {
 .pharmacies h1 {
   width: 528px;
   margin: 0 auto;
+  padding-left: 110px;
 }
 h2 {
   margin: 0;
@@ -873,6 +874,7 @@ ul.bg-grid {
   padding: 0;
   pointer-events: none;
   z-index: 2;
+  overflow: hidden;
 }
 ul.bg-grid li.col-bg-grid {
   display: inline-block;
@@ -913,6 +915,14 @@ ul.bg-grid li.col-bg-grid.gris:before {
 ul.bg-grid li.col-bg-grid.last-gris:after {
   background-color: #7d7d7d;
   background-color: rgba(125, 125, 125, 0.4);
+}
+ul.bg-grid li.col-bg-grid.gris-10:before {
+  background-color: #7d7d7d;
+  background-color: rgba(125, 125, 125, 0.1);
+}
+ul.bg-grid li.col-bg-grid.last-gris-10:after {
+  background-color: #7d7d7d;
+  background-color: rgba(125, 125, 125, 0.1);
 }
 ul.bg-grid li.col-bg-grid.blanc-10:before {
   background-color: #ffffff;
@@ -955,7 +965,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 4;
   padding: 70px 0 15px 0;
 }
 header.on {
@@ -1234,7 +1244,7 @@ ul#menu-header li a:focus {
   height: 85%;
   min-height: 700px;
   max-height: 1000px;
-  z-index: 2;
+  z-index: 3;
 }
 #bloc-home .container {
   height: 100%;
@@ -1466,13 +1476,11 @@ ul#menu-header li a:focus {
 }
 #bloc-home #masque-btn-half-visu {
   width: 50%;
-  width: calc(50% + 30px);
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
-  margin-left: -60px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
@@ -1483,6 +1491,11 @@ ul#menu-header li a:focus {
   -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  transform: translateZ(1px);
 }
 #bloc-home a.btn-half-visu {
   display: block;
@@ -1499,6 +1512,11 @@ ul#menu-header li a:focus {
   -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  transform: translateZ(1px);
 }
 #bloc-home a.btn-half-visu#btn-visu-left {
   left: 0;
@@ -1514,7 +1532,7 @@ ul#menu-header li a:focus {
 }
 #bloc-home a.btn-half-visu#btn-visu-right {
   right: 0;
-  width: 55%;
+  width: 50%;
 }
 #bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
   background: url("../layoutImg/bloc-home-pharmacies/rowa-smart-head2.jpg") no-repeat 40% 50%;
@@ -1523,6 +1541,10 @@ ul#menu-header li a:focus {
 }
 #bloc-home a.btn-half-visu#btn-visu-right .over-container-half-visu {
   right: -20%;
+}
+#bloc-home a.btn-half-visu#btn-visu-right .container-half-visu {
+  width: 105%;
+  right: 0;
 }
 #bloc-home a.btn-half-visu .container-half-visu {
   display: block;
@@ -2562,6 +2584,14 @@ a.btn-references:hover#btn-right-references .masque-arrow {
   padding: 90px 0 0 0;
   margin: 0;
 }
+#bloc-automatiser #bloc-titre-automatiser {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #ffffff;
+  width: 528px;
+  height: auto;
+}
 #bloc-automatiser h2 {
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
@@ -2694,6 +2724,8 @@ ul#slider-scroll li .zone-txt-slider {
   -o-transform: translateY(300px);
   -ms-transform: translateY(300px);
   transform: translateY(300px);
+  background-color: #ffffff;
+  padding: 10px 0;
 }
 ul#slider-scroll li .zone-txt-slider h3 {
   font-family: 'robotobold', sans-serif;
@@ -2703,7 +2735,7 @@ ul#slider-scroll li .zone-txt-slider h3 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #0070b8;
-  margin: 25px 0 25px 0;
+  margin: 0 0 25px 0;
   line-height: 1.2em;
 }
 ul#slider-scroll li .zone-txt-slider h4 {
@@ -3232,6 +3264,9 @@ footer ul.bg-grid li.col-bg-grid:nth-child(2):before {
 .home footer ul.bg-grid li.col-bg-grid:nth-child(2):before {
   top: 303px;
 }
+.categ footer ul.bg-grid li.col-bg-grid:nth-child(2):before {
+  top: 0;
+}
 .home footer ul.bg-grid li.col-bg-grid:nth-child(2):after {
   content: "";
   display: block;
@@ -3249,6 +3284,9 @@ footer ul.bg-grid li.col-bg-grid:nth-child(4):before {
 .home footer ul.bg-grid li.col-bg-grid:nth-child(4):before {
   top: 335px;
 }
+.categ footer ul.bg-grid li.col-bg-grid:nth-child(4):before {
+  top: 0;
+}
 .home footer ul.bg-grid li.col-bg-grid:nth-child(4):after {
   content: "";
   display: block;
@@ -3265,6 +3303,9 @@ footer ul.bg-grid li.col-bg-grid:nth-child(6):before {
 }
 .home footer ul.bg-grid li.col-bg-grid:nth-child(6):before {
   top: 335px;
+}
+.categ footer ul.bg-grid li.col-bg-grid:nth-child(6):before {
+  top: 0;
 }
 .home footer ul.bg-grid li.col-bg-grid:nth-child(6):after {
   content: "";
@@ -3546,6 +3587,7 @@ footer #bloc-pays {
   background-image: -o-linear-gradient(bottom, #ffffff 0%, #ffffff 19%, #dbdbdb 100%);
   background-image: linear-gradient(to top, #ffffff 0%, #ffffff 19%, #dbdbdb 100%);
   overflow: hidden;
+  z-index: 2;
 }
 footer #bloc-pays a#close-menu-pays {
   display: block;

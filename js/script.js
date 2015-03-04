@@ -25,6 +25,8 @@ var mouseWheelPreventDefault = true;
 // TIMELINES
 var tpsEtapeFondDetailHome = 0.1;
 var tpsEtapeDetailHome = 0.1;
+var tpsAnimBtnHalfVisu = 1;
+var easeAnimBtnHalfVisu = Expo.easeOut;
 
 // Scroll page Pharmacie
 var isAnimating = false;
@@ -114,7 +116,9 @@ function nextSlideScroll(event){
 			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimNextSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
 		}
 	}else{
-		mouseWheelPreventDefault = false;
+		if(!isAnimating){
+			mouseWheelPreventDefault = false;
+		}
 	}
 }
 
@@ -149,7 +153,9 @@ function prevSlideScroll(event){
 			TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimPrevSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide], ease:Cubic.easeInOut});
 		}
 	}else{
-		mouseWheelPreventDefault = false;
+		if(!isAnimating){
+			mouseWheelPreventDefault = false;
+		}
 	}
 }
 
@@ -359,9 +365,14 @@ $(window).load(function() {
 	}
 });
 
+$(window).on('beforeunload', function(){
+	if($("body").hasClass("categ")){
+		$(window).scrollTop(0);
+	}
+});
+
 $(document).ready(function(){
 	if($("body").hasClass("categ")){
-		TweenMax.to(window, 1, {scrollTo:{y: 0}});
 		initSliderScroll();
 	}
 	$(".imgLiquidFill").imgLiquid();
@@ -463,33 +474,33 @@ $(document).ready(function(){
 	  	tlCoverLienVideo.reverse();
 	  }
 	);
-	TweenMax.set($("#masque-btn-half-visu"), {width: "calc(50% + 30px)"});
-	TweenMax.set($("#btn-visu-right"), {width: "55%"});
+	TweenMax.set($("#masque-btn-half-visu"), {width: "50%)"});
+	TweenMax.set($("#btn-visu-right"), {width: "50%"});
 	$("a.btn-half-visu").hover(
 	  function() {
 	  	if($(this).is("#btn-visu-left")){
-	        TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(55% + 30px)", ease:Cubic.easeInOut});
-	        TweenMax.to($("#btn-visu-right"), 0.2, {width: "50%", ease:Cubic.easeInOut});
+	        TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "55%", ease:easeAnimBtnHalfVisu});
+	        TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "47%", ease:easeAnimBtnHalfVisu});
 	        TweenMax.set($(".btn-half-visu-small-left"), {className:"+=survol"});
-	        TweenMax.to($("#btn-rowa-smart-pharmacies"), 0.2, {x:"80px", ease:Cubic.easeInOut});
-	        TweenMax.to($("#btn-rowa-vmax-pharmacies"), 0.2, {x:"80px", ease:Cubic.easeInOut});
-	        TweenMax.to($("#btn-visu-left .over-container-half-visu"), 0.2, {opacity:"0", ease:Cubic.easeInOut});
+	        TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {x:"80px", ease:easeAnimBtnHalfVisu});
+	        TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {x:"80px", ease:easeAnimBtnHalfVisu});
+	        TweenMax.to($("#btn-visu-left .over-container-half-visu"), tpsAnimBtnHalfVisu, {opacity:"0", ease:easeAnimBtnHalfVisu});
 	  	}else if($(this).is("#btn-visu-right")){
-	  		TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(45% + 30px)", ease:Cubic.easeInOut});
-	  		TweenMax.to($("#btn-visu-right"), 0.2, {width: "60%", ease:Cubic.easeInOut});
+	  		TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "45%", ease:easeAnimBtnHalfVisu});
+	  		TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "57%", ease:easeAnimBtnHalfVisu});
 	  		TweenMax.set($(".btn-half-visu-small-right"), {className:"+=survol"});
-	  		TweenMax.to($("#btn-rowa-smart-pharmacies"), 0.2, {x:"-80px", ease:Cubic.easeInOut});
-	  		TweenMax.to($("#btn-rowa-vmax-pharmacies"), 0.2, {x:"-80px", ease:Cubic.easeInOut});
-	  		TweenMax.to($("#btn-visu-right .over-container-half-visu"), 0.2, {opacity:"0.2", ease:Cubic.easeInOut});
+	  		TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {x:"-80px", ease:easeAnimBtnHalfVisu});
+	  		TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {x:"-80px", ease:easeAnimBtnHalfVisu});
+	  		TweenMax.to($("#btn-visu-right .over-container-half-visu"), tpsAnimBtnHalfVisu, {opacity:"0.2", ease:easeAnimBtnHalfVisu});
 	  	}
 	  }, function() {
-	  	TweenMax.to($("#masque-btn-half-visu"), 0.2, {width: "calc(50% + 30px)", ease:Cubic.easeInOut});
-	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
+	  	TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "50%", ease:easeAnimBtnHalfVisu});
+	  	TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "50%", ease:easeAnimBtnHalfVisu});
 	  	TweenMax.set($(".btn-half-visu-small-left"), {className:"-=survol"});
 	  	TweenMax.set($(".btn-half-visu-small-right"), {className:"-=survol"});
-	  	TweenMax.to($("#btn-rowa-smart-pharmacies"), 0.2, {opacity: "1", x:"0", ease:Cubic.easeInOut});
-	  	TweenMax.to($("#btn-rowa-vmax-pharmacies"), 0.2, {opacity: "1", x:"0", ease:Cubic.easeInOut});
-	  	TweenMax.to([$("#btn-visu-left .over-container-half-visu"), $("#btn-visu-right .over-container-half-visu")], 0.2, {opacity:"0.5", ease:Cubic.easeInOut});
+	  	TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {opacity: "1", x:"0", ease:easeAnimBtnHalfVisu});
+	  	TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {opacity: "1", x:"0", ease:easeAnimBtnHalfVisu});
+	  	TweenMax.to([$("#btn-visu-left .over-container-half-visu"), $("#btn-visu-right .over-container-half-visu")], tpsAnimBtnHalfVisu, {opacity:"0.5", ease:easeAnimBtnHalfVisu});
 	  }
 	);
 	$("a#btn-rowa-vmax-pharmacies").hover(
@@ -839,6 +850,7 @@ function openDetailOption(btnOptionClic){
 	var tlDetailOption = new TimelineMax();
 	tlDetailOption.to($("#bloc-options"), 0.3, {height: $("#bloc-content-detail-options").height()+"px"});
 	tlDetailOption.set($("#bloc-content-detail-options"), {display: "block", opacity: "1"});
+	tlDetailOption.to($("a#btn-close-bloc-options"), 0.2,{opacity: "0", display: "none", ease:Cubic.easeOut});
 	tlDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "0", ease:Cubic.easeOut}, 0.1);
 }
 
@@ -851,11 +863,13 @@ function closeDetailOption(closeAll){
 		tlCloseDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
 		tlCloseDetailOption.set($("ul#container-carousel-img-options li"), {clearProps:"all"});
 		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
+		tlCloseDetailOption.to($("a#btn-close-bloc-options"), 0.2,{opacity: "1", display: "block", ease:Cubic.easeOut});
 		tlCloseDetailOption.set($("#bloc-content-detail-options"), {display: "none", opacity: "0", onComplete: closeBlocOptions});
 	}else{
 		tlCloseDetailOption.staggerTo(".masque-content-detail-options", 0.2, {width: "100%", ease:Cubic.easeOut}, 0.1);
 		tlCloseDetailOption.set($("ul#container-carousel-img-options li"), {clearProps:"all"});
 		tlCloseDetailOption.set($("ul#carousel-txt-options li"), {clearProps:"all"});
+		tlCloseDetailOption.to($("a#btn-close-bloc-options"), 0.2,{opacity: "1", display: "block", ease:Cubic.easeOut});
 		tlCloseDetailOption.set($("#bloc-content-detail-options"), {display: "none", opacity: "0", onComplete: openOptions});
 	}
 }
