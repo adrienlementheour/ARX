@@ -1264,7 +1264,9 @@ ul#menu-header li a:focus {
   max-height: 510px;
 }
 .hopitaux #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
-  top: 436px;
+  top: inherit;
+  bottom: 0;
+  height: 264px;
 }
 .hopitaux #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):after {
   content: "";
@@ -1278,10 +1280,14 @@ ul#menu-header li a:focus {
   background-color: rgba(255, 255, 255, 0.25);
 }
 .hopitaux #bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before {
-  top: 348px;
+  top: inherit;
+  bottom: 0;
+  height: 176px;
 }
 .hopitaux #bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before {
-  top: 348px;
+  top: inherit;
+  bottom: 0;
+  height: 352px;
 }
 .home #bloc-home ul.bg-grid li.col-bg-grid.last-active:last-of-type:after {
   top: 123px;

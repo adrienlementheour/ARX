@@ -1270,7 +1270,9 @@ ul#menu-header{
       li.col-bg-grid{
         &:nth-child(3){
           &:before{
-            top: 436px;
+            top: inherit;
+            bottom: 0;
+            height: 3*@largeurCol;
           }
           &:after{
             content: "";
@@ -1286,12 +1288,16 @@ ul#menu-header{
         }
         &:nth-child(5){
           &:before{
-            top: 348px;
+            top: inherit;
+            bottom: 0;
+            height: 2*@largeurCol;
           }
         }
         &:nth-child(6){
           &:before{
-            top: 348px;
+            top: inherit;
+            bottom: 0;
+            height: 4*@largeurCol;
           }
         }
       }
