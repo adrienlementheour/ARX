@@ -1258,75 +1258,107 @@ ul#menu-header{
     height: 100%;
   }
   ul.bg-grid{
-    li.col-bg-grid.last-active:last-of-type{
-      &:after{
-        top: 123px;
+    .hopitaux &{
+      li.col-bg-grid{
+        &:nth-child(3){
+          &:before{
+            top: 436px;
+          }
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 176px;
+            background-color: @blanc;
+            background-color: fade(@blanc, 25%);
+          }
+        }
+        &:nth-child(5){
+          &:before{
+            top: 348px;
+          }
+        }
+        &:nth-child(6){
+          &:before{
+            top: 348px;
+          }
+        }
       }
     }
-    li.col-bg-grid{
-      &:nth-child(2){
-        &:before{
-          top: 404px;
-          .opacity(0);
-          .transform(translateY(180px));
-          .no-js &{
-            .opacity(1);
-            .transform(translateY(0px));
-          }
-        }
+    .home &{
+      li.col-bg-grid.last-active:last-of-type{
         &:after{
-          content: "";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1px;
-          height: 193px;
-          background-color: @blanc;
-          background-color: fade(@blanc, 25%);
+          top: 123px;
         }
       }
-      &:nth-child(3){
-        &:before{
-          top: 404px;
-          .opacity(0);
-          .transform(translateY(180px));
-          .no-js &{
-            .opacity(1);
-            .transform(translateY(0px));
+      li.col-bg-grid{
+        &:nth-child(2){
+          &:before{
+            top: 404px;
+            .opacity(0);
+            .transform(translateY(180px));
+            .no-js &{
+              .opacity(1);
+              .transform(translateY(0px));
+            }
+          }
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 193px;
+            background-color: @blanc;
+            background-color: fade(@blanc, 25%);
           }
         }
-        &:after{
-          content: "";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1px;
-          height: 193px;
-          background-color: @blanc;
-          background-color: fade(@blanc, 25%);
-        }
-      }
-      &:nth-child(5){
-        &:before{
-          top: 346px;
-          .opacity(0);
-          .transform(translateY(180px));
-          .no-js &{
-            .opacity(1);
-            .transform(translateY(0px));
+        &:nth-child(3){
+          &:before{
+            top: 404px;
+            .opacity(0);
+            .transform(translateY(180px));
+            .no-js &{
+              .opacity(1);
+              .transform(translateY(0px));
+            }
+          }
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 193px;
+            background-color: @blanc;
+            background-color: fade(@blanc, 25%);
           }
         }
-      }
-      &:nth-child(6){
-        &:before{
-          top: 346px;
-          .opacity(0);
-          .transform(translateY(180px));
-          .no-js &{
-            .opacity(1);
-            .transform(translateY(0px));
+        &:nth-child(5){
+          &:before{
+            top: 346px;
+            .opacity(0);
+            .transform(translateY(180px));
+            .no-js &{
+              .opacity(1);
+              .transform(translateY(0px));
+            }
+          }
+        }
+        &:nth-child(6){
+          &:before{
+            top: 346px;
+            .opacity(0);
+            .transform(translateY(180px));
+            .no-js &{
+              .opacity(1);
+              .transform(translateY(0px));
+            }
           }
         }
       }
