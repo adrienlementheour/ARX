@@ -35,7 +35,7 @@ var nbSlidesScroll = $("ul#slider-scroll li").length;
 $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
 // Position sous menu pour le fixer au scroll
-var offsetSubMenu = $('.subMenu').offset().top - 100;
+//var offsetSubMenu = $('.subMenu').offset().top - 100;
 
 function zoneSliderScrollMouseWheel(event){
 	//Normalize event wheel delta
