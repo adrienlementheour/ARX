@@ -354,11 +354,9 @@ html, body{
 }
 
 #zone-titre-home{
-  .vmax &{
-    width: 4*@largeurCol;
-    .box-sizing(border-box);
-    padding: 0 13px;
-  }
+  width: 4*@largeurCol;
+  .box-sizing(border-box);
+  padding: 0 13px;
 }
 
 h1{
@@ -1060,7 +1058,7 @@ a#logo-arx{
   width: 150px;
   height: 56px;
   margin: 0 0 0 13px;
-  background: url("../layoutImg/logo.png") no-repeat center center;
+  background: url("../layoutImg/logo.png") no-repeat 50% 50%;
   float: left;
   position: relative;
 }
@@ -1104,6 +1102,12 @@ ul#menu-header{
       a{
         .bg-lien-header{
           height: 118px;
+        }
+        &.lien-arx{
+          color: @bleu1ARX;
+          .bg-lien-header{
+            background-color: @blanc;
+          }
         }
       }
     }
@@ -1257,6 +1261,10 @@ ul#menu-header{
   .container{
     height: 100%;
   }
+  .arxFrance &{
+    min-height: 410px;
+    max-height: 510px;
+  }
   ul.bg-grid{
     .hopitaux &{
       li.col-bg-grid{
@@ -1373,7 +1381,7 @@ ul#menu-header{
     right: 0;
     overflow: hidden;
     .home &{
-      background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
+      background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
       background-color: #d7e0f0;
@@ -1385,7 +1393,12 @@ ul#menu-header{
       background-color: #d7e0f0;
     }
     .hopitaux &{
-      background: url("../layoutImg/bloc-home-hopitaux/rowa-vmax-hospital.jpg") no-repeat center center;
+      background: url("../layoutImg/bloc-home-hopitaux/rowa-vmax-hospital.jpg") no-repeat 50% 50%;
+      background-size: auto 100%;
+      background-size: cover;
+    }
+    .apropos &{
+      background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
     }
@@ -1396,7 +1409,7 @@ ul#menu-header{
       display: block;
       width: 876px;
       height: 643px;
-      background: url("../layoutImg/home/bloc-home/machine.png") no-repeat center center;
+      background: url("../layoutImg/home/bloc-home/machine.png") no-repeat 50% 50%;
       position: absolute;
       top: 60%;
       margin-top: -320px;
@@ -1780,7 +1793,7 @@ a.btn-video{
   text-decoration: none;
   margin: 214px 0 0 0;
   padding: 0;
-  .transition(all 0.1s ease-in);
+  .transition(.1s ease-in);
   color: @blanc;
   text-align: center;
   background-color: @bleu4ARX;
@@ -1794,7 +1807,7 @@ a.btn-video{
     margin-top: -6px;
     left: 50%;
     margin-left: -18px;
-    .transition(all 0.1s ease-in);
+    .transition(.1s ease-in);
   }
   .masque-arrow{
     display: block;
@@ -1806,7 +1819,7 @@ a.btn-video{
     margin-top: -6px;
     left: 50%;
     margin-left: -10px;
-    .transition(all 0.1s ease-in);
+    .transition(.1s ease-in);
   }
   &#btn-left-video{
     .masque-arrow{

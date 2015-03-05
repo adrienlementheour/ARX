@@ -235,7 +235,7 @@ body {
 .container.pointer-events {
   pointer-events: none;
 }
-.vmax #zone-titre-home {
+#zone-titre-home {
   width: 352px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1060,7 +1060,7 @@ a#logo-arx {
   width: 150px;
   height: 56px;
   margin: 0 0 0 13px;
-  background: url("../layoutImg/logo.png") no-repeat center center;
+  background: url("../layoutImg/logo.png") no-repeat 50% 50%;
   float: left;
   position: relative;
 }
@@ -1105,6 +1105,12 @@ ul#menu-header li#contact-menu-header a {
 }
 ul#menu-header li.active a .bg-lien-header {
   height: 118px;
+}
+ul#menu-header li.active a.lien-arx {
+  color: #308ac6;
+}
+ul#menu-header li.active a.lien-arx .bg-lien-header {
+  background-color: #ffffff;
 }
 ul#menu-header li a {
   display: block;
@@ -1253,6 +1259,10 @@ ul#menu-header li a:focus {
 #bloc-home .container {
   height: 100%;
 }
+.arxFrance #bloc-home {
+  min-height: 410px;
+  max-height: 510px;
+}
 .hopitaux #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
   top: 436px;
 }
@@ -1392,7 +1402,7 @@ ul#menu-header li a:focus {
   overflow: hidden;
 }
 .home #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat center center;
+  background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
   background-color: #d7e0f0;
@@ -1404,7 +1414,12 @@ ul#menu-header li a:focus {
   background-color: #d7e0f0;
 }
 .hopitaux #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/bloc-home-hopitaux/rowa-vmax-hospital.jpg") no-repeat center center;
+  background: url("../layoutImg/bloc-home-hopitaux/rowa-vmax-hospital.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  background-size: cover;
+}
+.apropos #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
@@ -1415,7 +1430,7 @@ ul#menu-header li a:focus {
   display: block;
   width: 876px;
   height: 643px;
-  background: url("../layoutImg/home/bloc-home/machine.png") no-repeat center center;
+  background: url("../layoutImg/home/bloc-home/machine.png") no-repeat 50% 50%;
   position: absolute;
   top: 60%;
   margin-top: -320px;
@@ -1890,10 +1905,10 @@ a.btn-video {
   text-decoration: none;
   margin: 214px 0 0 0;
   padding: 0;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in;
+  -moz-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
   color: #ffffff;
   text-align: center;
   background-color: #298bcc;
@@ -1908,10 +1923,10 @@ a.btn-video .arrow {
   margin-top: -6px;
   left: 50%;
   margin-left: -18px;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in;
+  -moz-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
 }
 a.btn-video .masque-arrow {
   display: block;
@@ -1923,10 +1938,10 @@ a.btn-video .masque-arrow {
   margin-top: -6px;
   left: 50%;
   margin-left: -10px;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: 0.1s ease-in;
+  -moz-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
 }
 a.btn-video#btn-left-video .masque-arrow {
   margin-left: 17px;
