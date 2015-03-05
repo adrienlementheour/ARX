@@ -492,7 +492,6 @@ a.btn {
   display: block;
   position: relative;
   width: 176px;
-  height: 176px;
   text-decoration: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -520,6 +519,14 @@ a.btn {
   -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+}
+a.btn:before {
+  content: "";
+  display: block;
+  margin-top: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 a.btn h2 {
   font-size: 1em;
@@ -3580,6 +3587,9 @@ footer ul#menu-top-footer li a {
   position: relative;
   text-decoration: none;
 }
+footer ul#menu-top-footer li a:focus {
+  outline: none;
+}
 footer ul#menu-top-footer li a .visu-menu {
   display: block;
   color: #2782be;
@@ -3643,9 +3653,6 @@ footer ul#menu-top-footer li a .plus {
   -moz-transition: -moz-transform 0.3s ease-in-out;
   -o-transition: -o-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out,-moz-transform 0.3s ease-in-out,-o-transform 0.3s ease-in-out,transform 0.3s ease-in-out;
-}
-footer ul#menu-top-footer li a .plus:focus {
-  outline: none;
 }
 footer ul#menu-top-footer li a .plus:after {
   content: "+";
@@ -4138,6 +4145,262 @@ ul.subMenu a.actif {
 /* ==|== media queries ======================================================
    ========================================================================== */
 /* mes resolutions responsives "classiques" */
+@media (max-width: 1056px) {
+  html,
+  body {
+    font-size: 0.95em;
+  }
+  .container {
+    width: 100%;
+  }
+  ul.bg-grid {
+    width: 100%;
+  }
+  a.btn {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    padding: 20px;
+  }
+  a.btn.btn-vertical-centered {
+    line-height: 16.66666667vw;
+    padding: 0 20px;
+  }
+  #bloc-home #bg-bloc-home #machine {
+    right: 50%;
+    margin-right: -770px;
+  }
+  #bloc-home a#btn-robots-rowa {
+    left: 16.66666667vw;
+  }
+  #bloc-home a#btn-contact {
+    left: 66.66666667vw;
+  }
+  a.btn-video {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    line-height: 16.66666667vw;
+  }
+  a.btn-video#btn-left-video {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+  }
+  a.btn-video#btn-right-video {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    right: 0;
+  }
+  #bloc-video #wrapper-video {
+    width: 66.66666667vw;
+    margin-left: 16.66666667vw;
+    height: 350px;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li a.video-cover {
+    line-height: 350px;
+  }
+  a.btn-references {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    line-height: 16.66666667vw;
+  }
+  a.btn-references#btn-left-references {
+    top: 33.33333333vw;
+    left: 33.33333333vw;
+  }
+  a.btn-references#btn-right-references {
+    top: 33.33333333vw;
+    left: 83.33333333vw;
+  }
+  #bloc-hopitaux #bloc-txt-automatiser {
+    width: 16.66666667vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+  }
+  #bloc-hopitaux #bloc-txt-desc-hopitaux {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+  }
+  #bloc-hopitaux #btn-solutions-hopitaux {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+  }
+  #bloc-references {
+    height: 66.66666667vw;
+  }
+  #bloc-references #bloc-txt-references {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    line-height: 16.66666667vw;
+  }
+  #bloc-references a#btn-brochure {
+    top: 50vw;
+    left: 33.33333333vw;
+  }
+  #bloc-references #bloc-couleur-references {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    top: 50vw;
+    left: 16.66666667vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-big {
+    width: 66.66666667vw;
+    height: 50vw;
+    left: 16.66666667vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-vertical {
+    width: 16.66666667vw;
+    height: 33.33333333vw;
+    top: 25vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-horizontal-top {
+    width: 33.33333333vw;
+    height: 16.66666667vw;
+    top: 8.33333333vw;
+    left: 66.66666667vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-horizontal-bottom {
+    width: 33.33333333vw;
+    height: 16.66666667vw;
+    top: 41.66666667vw;
+    left: 50vw;
+  }
+  footer ul#menu-top-footer li {
+    width: 33.33333333vw;
+  }
+  footer ul#menu-bottom-footer li.col-menu-bottom-footer {
+    margin: 0 0 0 16.66666667vw;
+    width: 16.66666667vw;
+  }
+}
+@media (max-width: 979px) {
+  html,
+  body {
+    font-size: 0.9em;
+  }
+  #bloc-video #wrapper-video {
+    height: 300px;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li a.video-cover {
+    line-height: 300px;
+  }
+  #bloc-hopitaux #btn-solutions-hopitaux {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+@media (max-width: 767px) {
+  #bloc-video #wrapper-video {
+    height: 150px;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li#current-video {
+    z-index: 2;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li a.video-cover {
+    line-height: 150px;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li a.video-cover .cadre-video-cover {
+    width: 85%!important;
+    height: 85%!important;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li a.video-cover .video-txt {
+    width: 85%;
+    padding: 10px;
+  }
+  #bloc-video #wrapper-video ul#slider-videos li a.video-cover .video-txt .video-title .video-title-fixed {
+    margin: 0 0 5px 0;
+  }
+  #bloc-hopitaux #bloc-txt-automatiser {
+    width: 50vw;
+    height: 50vw;
+    line-height: 50vw;
+  }
+  #bloc-hopitaux #bloc-txt-desc-hopitaux {
+    display: none;
+  }
+  #bloc-hopitaux #btn-solutions-hopitaux {
+    width: 41.66666667vw;
+    height: 41.66666667vw;
+  }
+  footer ul#menu-top-footer li {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  footer ul#menu-top-footer li a.consultants-experts .zone-txt,
+  footer ul#menu-top-footer li a.installation-personnalisee .zone-txt,
+  footer ul#menu-top-footer li a.sav-dedie .zone-txt {
+    text-align: left;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 25px 0 25px 170px;
+    margin: 0;
+  }
+  footer ul#menu-top-footer li a.consultants-experts .zone-txt br,
+  footer ul#menu-top-footer li a.installation-personnalisee .zone-txt br,
+  footer ul#menu-top-footer li a.sav-dedie .zone-txt br {
+    display: none;
+  }
+  footer ul#menu-top-footer li a.consultants-experts .visu-menu {
+    margin-left: 0;
+    left: 50px;
+    top: 0;
+  }
+  footer ul#menu-top-footer li a.consultants-experts .fond-plus,
+  footer ul#menu-top-footer li a.consultants-experts .plus {
+    top: 25px;
+    left: 130px;
+    margin-left: 0;
+  }
+  footer ul#menu-top-footer li a.installation-personnalisee .visu-menu {
+    margin-left: 0;
+    left: 25px;
+    top: 0;
+  }
+  footer ul#menu-top-footer li a.installation-personnalisee .fond-plus,
+  footer ul#menu-top-footer li a.installation-personnalisee .plus {
+    top: 25px;
+    left: 130px;
+    margin-left: 0;
+  }
+  footer ul#menu-top-footer li a.sav-dedie .groupe-visu-menu {
+    margin-left: 0;
+    left: 20px;
+    top: 0;
+    width: 106px;
+  }
+  footer ul#menu-top-footer li a.sav-dedie .groupe-visu-menu .visu-menu.icon-casque {
+    left: 50%;
+    margin-left: -29px;
+  }
+  footer ul#menu-top-footer li a.sav-dedie .groupe-visu-menu .visu-menu.icon-outils {
+    display: none;
+  }
+  footer ul#menu-top-footer li a.sav-dedie .fond-plus,
+  footer ul#menu-top-footer li a.sav-dedie .plus {
+    top: 25px;
+    left: 130px;
+    margin-left: 0;
+  }
+  footer ul#menu-bottom-footer {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  #bloc-hopitaux #bloc-txt-automatiser {
+    width: 50vw;
+    height: 58.33333333vw;
+    line-height: 58.33333333vw;
+  }
+  #bloc-hopitaux #btn-solutions-hopitaux {
+    width: 50vw;
+    height: 50vw;
+  }
+}
 /* retina */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .pharmacies ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {

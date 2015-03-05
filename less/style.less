@@ -24,7 +24,9 @@
 
 //GRILLE
 @largeurCol: 88px;
-
+//@largeurCol: 8.33333333333%;
+//16.7vw
+@largeurColResponsive: 8.33333333333vw;
 /* @end */
 
 
@@ -555,7 +557,15 @@ a{
 a.btn{
   display: block;
   position: relative;
-  .size(2*@largeurCol);
+  width: 2*@largeurCol;
+  &:before {
+    content: "";
+    display: block;
+    margin-top: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   text-decoration: none;
   .box-sizing(border-box);
   padding: 35px;
@@ -1575,7 +1585,6 @@ ul#menu-header{
     position: absolute;
     top: 350px;
     left: 8*@largeurCol;
-
   }
   a#btn-rowa-vmax-pharmacies{
     position: absolute;
@@ -3289,6 +3298,9 @@ footer{
         padding: 0;
         position: relative;
         text-decoration: none;
+        &:focus{
+          outline: none;
+        }
         .visu-menu{
           display: block;
           color: @bleu3ARX;
@@ -3326,9 +3338,7 @@ footer{
           line-height: 27px;
           position: absolute;
           .transition(transform 0.3s ease-in-out);
-          &:focus{
-            outline: none;
-          }
+          
           &:after{
             content: "+";
             display: block;
@@ -3787,22 +3797,318 @@ ul.subMenu{
 
 
 /* mes resolutions responsives "classiques" */
+
 @media (max-width: 1150px) {
 
 }
 
+@media (max-width: 1056px) {
+  html, body{
+    font-size: 0.95em;
+  }
+  .container{
+    width: 100%;
+  }
+  ul.bg-grid{
+    width: 100%;
+  }
+  a.btn{
+    width: 2*@largeurColResponsive;
+    height: 2*@largeurColResponsive;
+    padding: 20px;
+    &.btn-vertical-centered{
+      line-height: 2*@largeurColResponsive;
+      padding: 0 20px;
+    }
+  }
+  #bloc-home{
+    #bg-bloc-home{
+      #machine{
+        right: 50%;
+        margin-right: -770px;
+      }
+    }
+    a#btn-robots-rowa{
+      left: 2*@largeurColResponsive;
+    }
+    a#btn-contact{
+      left: 8*@largeurColResponsive;
+    }
+  }
+  a.btn-video{
+    width: 2*@largeurColResponsive;
+    height: 2*@largeurColResponsive;
+    line-height: 2*@largeurColResponsive;
+    &#btn-left-video{
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      left: 0;
+    }
+    &#btn-right-video{
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      right: 0;
+    }
+  }
+  #bloc-video{
+    #wrapper-video{
+      width: 8*@largeurColResponsive;
+      margin-left: 2*@largeurColResponsive;
+      height: 350px;
+      ul#slider-videos{
+        li{
+          a.video-cover{
+            line-height: 350px;
+          }
+        } 
+      }
+    }
+  }
+  a.btn-references{
+    width: 2*@largeurColResponsive;
+    height: 2*@largeurColResponsive;
+    line-height: 2*@largeurColResponsive;
+    &#btn-left-references{
+      top: 4*@largeurColResponsive;
+      left: 4*@largeurColResponsive;
+    }
+    &#btn-right-references{
+      top: 4*@largeurColResponsive;
+      left: 10*@largeurColResponsive;
+    }
+  }
+  #bloc-hopitaux{
+    #bloc-txt-automatiser{
+      width: 2*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+    }
+    #bloc-txt-desc-hopitaux{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+    }
+    #btn-solutions-hopitaux{
+      width: 2*@largeurColResponsive;
+      height: 2*@largeurColResponsive;
+    }
+  }
+  #bloc-references{
+    height: 8*@largeurColResponsive;
+    #bloc-txt-references{
+      width: 2*@largeurColResponsive;
+      height: 2*@largeurColResponsive;
+      line-height: 2*@largeurColResponsive;
+    }
+    a#btn-brochure{
+      top: 6*@largeurColResponsive;
+      left: 4*@largeurColResponsive;
+    }
+    #bloc-couleur-references{
+      width: 2*@largeurColResponsive;
+      height: 2*@largeurColResponsive;
+      top: 6*@largeurColResponsive;
+      left: 2*@largeurColResponsive;
+    }
+    ul#liste-references{
+      li{
+        &#references-bloc-big{
+          width: 8*@largeurColResponsive;
+          height: 6*@largeurColResponsive;
+          left: 2*@largeurColResponsive;
+        }
+        &#references-bloc-vertical{
+          width: 2*@largeurColResponsive;
+          height: 4*@largeurColResponsive;
+          top: 3*@largeurColResponsive;
+        }
+        &#references-bloc-horizontal-top{
+          width: 4*@largeurColResponsive;
+          height: 2*@largeurColResponsive;
+          top: 1*@largeurColResponsive;
+          left: 8*@largeurColResponsive;
+        }
+        &#references-bloc-horizontal-bottom{
+          width: 4*@largeurColResponsive;
+          height: 2*@largeurColResponsive;
+          top: 5*@largeurColResponsive;
+          left: 6*@largeurColResponsive;
+        }
+      }
+    }
+  }
+  footer{
+    ul#menu-top-footer{
+      li{
+        width: 4*@largeurColResponsive;
+      }
+    }
+    ul#menu-bottom-footer{
+      li.col-menu-bottom-footer{
+        margin: 0 0 0 2*@largeurColResponsive;
+        width: 2*@largeurColResponsive;
+      }
+    }
+  }
+}
 
 @media (max-width: 979px) {
-
+  html, body{
+    font-size: 0.9em;
+  }
+  #bloc-video{
+    #wrapper-video{
+      height: 300px;
+      ul#slider-videos{
+        li{
+          a.video-cover{
+            line-height: 300px;
+          }
+        } 
+      }
+    }
+  }
+  #bloc-hopitaux{
+    #btn-solutions-hopitaux{
+      width: 3*@largeurColResponsive;
+      height: 3*@largeurColResponsive;
+    }
+  }
 }
 
 
 
 @media (max-width: 767px) {
+  #bloc-video{
+    #wrapper-video{
+      height: 150px;
+      ul#slider-videos{
+        li{
+          &#current-video{
+            z-index: 2;
+          }
+          a.video-cover{
+            line-height: 150px;
+            .cadre-video-cover{
+              width: 85%!important;
+              height: 85%!important;
+            }
+            .video-txt{
+              width: 85%;
+              padding: 10px;
+              .video-title{
+                .video-title-fixed{
+                  margin: 0 0 5px 0;
+                }
+              } 
+            }
+          }
+        } 
+      }
+    }
+  }
+  #bloc-hopitaux{
+    #bloc-txt-automatiser{
+      width: 6*@largeurColResponsive;
+      height: 6*@largeurColResponsive;
+      line-height: 6*@largeurColResponsive;
+    }
+    #bloc-txt-desc-hopitaux{
+      display: none;
+    }
+    #btn-solutions-hopitaux{
+      width: 5*@largeurColResponsive;
+      height: 5*@largeurColResponsive;
+    }
+  }
+  footer{
+    ul#menu-top-footer{
+      li{
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        a{
+          &.consultants-experts, &.installation-personnalisee, &.sav-dedie{
+            .zone-txt{
+              text-align: left;
+              width: 100%;
+              .box-sizing(border-box);
+              padding: 25px 0 25px 170px;
+              margin: 0;
+              br{
+                display: none;
+              }
+            }
+          }
+          &.consultants-experts{
+            .visu-menu{
+              margin-left: 0;
+              left: 50px;
+              top: 0;
+            }
+            .fond-plus, .plus{
+              top: 25px;
+              left: 130px;
+              margin-left: 0;
+            }
+          }
+          &.installation-personnalisee{
+            .visu-menu{
+              margin-left: 0;
+              left: 25px;
+              top: 0;
+            }
+            .fond-plus, .plus{
+              top: 25px;
+              left: 130px;
+              margin-left: 0;
+            }
+          }
+          &.sav-dedie{
+            .groupe-visu-menu{
+              margin-left: 0;
+              left: 20px;
+              top: 0;
+              width: 106px;
+              .visu-menu.icon-casque{
+                left: 50%;
+                margin-left: -29px;
+              }
+              .visu-menu.icon-outils{
+                display: none;
+              }
+            }
+            .fond-plus, .plus{
+              top: 25px;
+              left: 130px;
+              margin-left: 0;
+            }
 
+          }
+        }
+      }
+    }
+    ul#menu-bottom-footer{
+      display: none;
+    }
+  }
 }
 
-
+@media (max-width: 480px) {
+  #bloc-hopitaux{
+    #bloc-txt-automatiser{
+      width: 6*@largeurColResponsive;
+      height: 7*@largeurColResponsive;
+      line-height: 7*@largeurColResponsive;
+    }
+    #btn-solutions-hopitaux{
+      width: 6*@largeurColResponsive;
+      height: 6*@largeurColResponsive;
+    }
+  }
+}
 
 
 
