@@ -20,6 +20,7 @@
 @gris2ARX: #777777;
 @gris3ARX: #30394b;
 @gris4ARX: #232324;
+@gris5ARX: #8a8a8f;
 
 //GRILLE
 @largeurCol: 88px;
@@ -338,6 +339,7 @@ html, body{
 }
 
 .content{
+  position: relative;
   padding: 60px 0 0;
 }
 
@@ -358,6 +360,21 @@ html, body{
 .paddingLeft{
   padding: 0 0 0 2*@largeurCol;
 }
+.paddingRight{
+  padding: 0 2*@largeurCol 0 0;
+}
+.padTopBot{
+  padding: 20px 0;
+}
+
+.marginPadTop{
+  margin: 45px 0 0;
+  padding: 10px 0 0;
+}
+
+.marginTop{
+  margin: 55px 0 0;
+}
 
 .col{
   display: inline-block;
@@ -370,6 +387,9 @@ html, body{
   }
   &.col3{
     width: 6*@largeurCol;
+  }
+  &.col4{
+    width: 8*@largeurCol;
   }
 }
 
@@ -411,10 +431,16 @@ h2{
   margin: 0;
   padding: 0;
   .roboto-light(1.375em);
-  .arxFrance .content &{
+  .content &{
     .roboto-light(2.313em);
-    margin: 0 0 10px 0;
+    margin: 50px 0 10px -2px;
     color: @bleu7ARX;
+    padding-bottom: 15px;
+    background: @blanc;
+    &.right-aligned{
+      margin-left: 5px;
+      margin-right: -5px;
+    }
   }
 }
 
@@ -423,6 +449,33 @@ p{
   padding: 0;
   .roboto(1em);
   line-height: 1.3em;
+  .content &{
+    padding: 10px 0 0;
+    margin: 35px 0 0;
+    background: @blanc;
+  }
+}
+
+ul{
+  list-style: none;
+  &.tiret{
+    li{
+      position: relative;
+      &:before{
+        content: '-';
+        position: absolute;
+        left: -10px;
+      }
+    }
+  }
+  .content &{
+    background: @blanc;
+    margin: 0;
+    padding: 1em 0 3em 40px;
+  }
+}
+
+p, ul{
   strong{
     .roboto-bold(1em);
   }
@@ -431,12 +484,48 @@ p{
   }
 }
 
-ul{
-  list-style: none;
+blockquote{
+  margin: 0;
+  padding: 0 0 90px 105px;
+  text-align: right;
+  .roboto-light-italic(1.4em);
+  color: @grisARX;
+  position: relative;
+  strong{
+    display: block;
+    .roboto-bold-italic(1em);
+  }
+  span{
+    display: inline-block;
+    margin: 30px 60px 0 0;
+    .roboto-light(0.72em);
+    strong{
+      .roboto-bold(1em);
+      color: @bleu7ARX;
+    }
+  }
+  &:before, &:after{
+    .roboto-bold(80px);
+    color: @bleu7ARX;
+    position: absolute;
+  }
+  &:before{
+    content: '«';
+    top: -50px;
+    left: 60px;
+  }
+  &:after{
+    content: '»';
+    right: -3px;
+    bottom: 66px;
+  }
 }
 
 .center-aligned{
   text-align: center;
+}
+.right-aligned{
+  text-align: right;
 }
 
 .txt-bleu{
@@ -449,6 +538,10 @@ ul{
 
 .txt-blanc{
   color: @blanc;
+}
+
+.fdBlanc{
+  background: @blanc;
 }
 
 a{
@@ -2498,7 +2591,7 @@ a.btn-references{
 #bloc-titre-automatiser{
   display: block;
   margin: 0 auto;
-  padding: 10px 0 20px;
+  padding: 10px 0 30px;
   background-color: @blanc;
   width: 6*@largeurCol;
   height: auto;
@@ -2506,12 +2599,16 @@ a.btn-references{
     .roboto-light(2.313em);
     margin: 0 0 10px 0;
     color: @bleu7ARX;
+    .arxFrance &{
+      padding: 0;
+    }
   }
   p.txt-title{
     .roboto-light(1em);
     color: #727279;
     margin: 0 auto;
     line-height: 1.4em;
+    padding: 0;
   }
 }
 
@@ -3092,6 +3189,9 @@ footer{
     li.col-bg-grid.last-active:last-of-type{
       &:after{
         top: 123px;
+        .arxFrance &{
+          top: 0;
+        }
       }
     }
     li.col-bg-grid{
@@ -3101,7 +3201,7 @@ footer{
           .home &{
             top: 303px;
           }
-          .categ &{
+          .categ &, .arxFrance &{
             top: 0;
           }
         }
@@ -3125,7 +3225,7 @@ footer{
           .home &{
             top: 335px;
           }
-          .categ &{
+          .categ &, .arxFrance &{
             top: 0;
           }
         }
@@ -3149,7 +3249,7 @@ footer{
           .home &{
             top: 335px;
           }
-          .categ &{
+          .categ &, .arxFrance &{
             top: 0;
           }
         }
@@ -3558,6 +3658,68 @@ footer{
     }
   }
 }
+
+/* @group arxFrance */
+
+.arxFrance{
+  .content{
+    .bg-grid{
+      .col-bg-grid{
+        &:first-child{
+          &:before{
+            height: 100px;
+          }
+        }
+        &:nth-child(2){
+          &:before{
+            top: 500px;
+          }
+        }
+        &:nth-child(4){
+          &:before{
+            height: 250px;
+          }
+        }
+        &:last-child{
+          &:before{
+            top: 900px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* @end */
+
+/* @group subMenu*/
+
+ul.subMenu{
+  float: left;
+  background: none;
+  padding: 25px 0 0 15px;
+  .roboto-light(1.4em);
+  color: @gris5ARX;
+  ul{
+    padding: 15px 0 30px 15px;
+  }
+  li{
+    line-height: 0.65em;
+  }
+  a{
+    .roboto(0.63em);
+    text-decoration: none;
+    &:hover, &:focus{
+      padding: 0 0 0 3px;
+    }
+    &.actif{
+      color: @gris5ARX;
+      .roboto-italic(0.63em);
+    }
+  }
+}
+
+/* @end */
 
 /* @end */
 
