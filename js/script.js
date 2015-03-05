@@ -34,6 +34,9 @@ var numCurrentSlideScroll = 1;
 var nbSlidesScroll = $("ul#slider-scroll li").length;
 $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
+// Position sous menu pour le fixer au scroll
+var offsetSubMenu = $('.subMenu').offset().top - 100;
+
 function zoneSliderScrollMouseWheel(event){
 	//Normalize event wheel delta
 	var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
@@ -922,6 +925,9 @@ $(document).scroll(function() {
 	}
 	if($("body").hasClass("categ")){
 		setSliderScrollNavigator(myScroll);
+	}
+	if($('.subMenu').length){
+		(myScroll >= offsetSubMenu) ? $('.subMenu').addClass('fixed') : $('.subMenu').removeClass('fixed');
 	}
 	// parallaxe machine
 	TweenMax.set($("#machine"), {y: (0-(myScroll*.25))+"px"});

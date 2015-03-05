@@ -488,7 +488,7 @@ p, ul{
 
 blockquote{
   margin: 0;
-  padding: 0 0 90px 105px;
+  padding: 0 0 90px 65px;
   text-align: right;
   .roboto-light-italic(1.4em);
   color: @grisARX;
@@ -499,7 +499,7 @@ blockquote{
   }
   span{
     display: inline-block;
-    margin: 30px 60px 0 0;
+    margin: 30px 50px 0 0;
     .roboto-light(0.72em);
     strong{
       .roboto-bold(1em);
@@ -513,13 +513,13 @@ blockquote{
   }
   &:before{
     content: '«';
-    top: -50px;
-    left: 60px;
+    top: -48px;
+    left: 17px
   }
   &:after{
     content: '»';
     right: -3px;
-    bottom: 66px;
+    bottom: 67px;
   }
 }
 
@@ -549,8 +549,15 @@ blockquote{
 a{
   color: @bleu7ARX;
   .roboto-bold(1em);
-  &:hover{
+  &:hover, &:focus{
     color: @gris2ARX;
+  }
+  .content &{
+    text-decoration: none;
+    &:hover, &:focus{
+      color: @bleu7ARX;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -1256,7 +1263,7 @@ ul#menu-header{
       bottom: 0;
       right: 0;
       width: 170px;
-      .transition(all 0.15s ease-in-out);
+      .transition(.15s ease-in-out);
       &.lien-pharmacies{
         &:before{
           content: "";
@@ -1324,7 +1331,7 @@ ul#menu-header{
         position: absolute;
         bottom: 0;
         left: 0;
-        .transition(all 0.15s ease-in-out);
+        .transition(.15s ease-in-out);
       }
       .bg-lien-header-on{
         display: block;
@@ -1334,7 +1341,7 @@ ul#menu-header{
         left: 50%;
         margin-left: -45px;
         position: absolute;
-        .transition(all 0.15s ease-in-out);
+        .transition(.15s ease-in-out);
       }
       .txt-lien-header{
         position: absolute;
@@ -3710,6 +3717,10 @@ ul.subMenu{
   padding: 25px 0 0 15px;
   .roboto-light(1.4em);
   color: @gris5ARX;
+  &.fixed{
+    position: fixed;
+    top: 100px;
+  }
   ul{
     padding: 15px 0 30px 15px;
   }
@@ -3718,9 +3729,11 @@ ul.subMenu{
   }
   a{
     .roboto(0.63em);
-    text-decoration: none;
+    .transition(.15s ease-in-out);
     &:hover, &:focus{
       padding: 0 0 0 3px;
+      color: @gris5ARX;
+      text-decoration: none;
     }
     &.actif{
       color: @gris5ARX;

@@ -398,7 +398,7 @@ ul.light {
 }
 blockquote {
   margin: 0;
-  padding: 0 0 90px 105px;
+  padding: 0 0 90px 65px;
   text-align: right;
   font-family: 'robotolight_italic', sans-serif;
   font-weight: normal;
@@ -420,7 +420,7 @@ blockquote strong {
 }
 blockquote span {
   display: inline-block;
-  margin: 30px 60px 0 0;
+  margin: 30px 50px 0 0;
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
   font-size: 0.72em;
@@ -450,13 +450,13 @@ blockquote:after {
 }
 blockquote:before {
   content: '«';
-  top: -50px;
-  left: 60px;
+  top: -48px;
+  left: 17px;
 }
 blockquote:after {
   content: '»';
   right: -3px;
-  bottom: 66px;
+  bottom: 67px;
 }
 .center-aligned {
   text-align: center;
@@ -485,8 +485,17 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a:hover {
+a:hover,
+a:focus {
   color: #777777;
+}
+.content a {
+  text-decoration: none;
+}
+.content a:hover,
+.content a:focus {
+  color: #0070b8;
+  text-decoration: underline;
 }
 a.btn {
   display: block;
@@ -1283,10 +1292,10 @@ ul#menu-header li a {
   bottom: 0;
   right: 0;
   width: 170px;
-  -webkit-transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
+  -webkit-transition: 0.15s ease-in-out;
+  -moz-transition: 0.15s ease-in-out;
+  -o-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 ul#menu-header li a.lien-pharmacies:before {
   content: "";
@@ -1349,10 +1358,10 @@ ul#menu-header li a .bg-lien-header {
   position: absolute;
   bottom: 0;
   left: 0;
-  -webkit-transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
+  -webkit-transition: 0.15s ease-in-out;
+  -moz-transition: 0.15s ease-in-out;
+  -o-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 ul#menu-header li a .bg-lien-header-on {
   display: block;
@@ -1362,10 +1371,10 @@ ul#menu-header li a .bg-lien-header-on {
   left: 50%;
   margin-left: -45px;
   position: absolute;
-  -webkit-transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
+  -webkit-transition: 0.15s ease-in-out;
+  -moz-transition: 0.15s ease-in-out;
+  -o-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 ul#menu-header li a .txt-lien-header {
   position: absolute;
@@ -4062,6 +4071,10 @@ ul.subMenu {
   -moz-osx-font-smoothing: grayscale;
   color: #8a8a8f;
 }
+ul.subMenu.fixed {
+  position: fixed;
+  top: 100px;
+}
 ul.subMenu ul {
   padding: 15px 0 30px 15px;
 }
@@ -4075,11 +4088,16 @@ ul.subMenu a {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-decoration: none;
+  -webkit-transition: 0.15s ease-in-out;
+  -moz-transition: 0.15s ease-in-out;
+  -o-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 ul.subMenu a:hover,
 ul.subMenu a:focus {
   padding: 0 0 0 3px;
+  color: #8a8a8f;
+  text-decoration: none;
 }
 ul.subMenu a.actif {
   color: #8a8a8f;
