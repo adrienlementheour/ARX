@@ -107,6 +107,12 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-loupe:before {
+  content: "\e608";
+}
+.icon-mesure:before {
+  content: "\e609";
+}
 .icon-cross:before {
   content: "\e607";
 }
@@ -240,18 +246,31 @@ body {
 .paddingLeft {
   padding: 0 0 0 176px;
 }
+.paddingLeft2 {
+  padding-left: 352px;
+}
 .paddingRight {
-  padding: 0 176px 0 0;
+  padding-right: 176px;
 }
 .padTopBot {
   padding: 20px 0;
 }
+.padTop {
+  padding-top: 20px;
+}
+.padBot {
+  padding-bottom: 20px;
+}
 .marginPadTop {
-  margin: 45px 0 0;
-  padding: 10px 0 0;
+  margin-top: 45px;
+  padding-top: 10px;
+}
+.marginPadTop2 {
+  margin-top: 50px;
+  padding-top: 15px;
 }
 .marginTop {
-  margin: 55px 0 0;
+  margin-top: 55px;
 }
 .col {
   display: inline-block;
@@ -268,6 +287,9 @@ body {
 }
 .col.col4 {
   width: 704px;
+}
+.blocLeft {
+  margin-left: 5px;
 }
 #zone-titre-home {
   width: 352px;
@@ -346,37 +368,15 @@ h2 {
   margin-left: 5px;
   margin-right: -5px;
 }
-p {
-  margin: 0;
-  padding: 0;
-  font-family: 'robotoregular', sans-serif;
+h3 {
+  color: #0070b8;
+  font-family: 'robotolight', sans-serif;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 1.4em;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.3em;
-}
-.content p {
-  padding: 10px 0 0;
-  margin: 35px 0 0;
-  background: #ffffff;
-}
-ul {
-  list-style: none;
-}
-ul.tiret li {
-  position: relative;
-}
-ul.tiret li:before {
-  content: '-';
-  position: absolute;
-  left: -10px;
-}
-.content ul {
-  background: #ffffff;
   margin: 0;
-  padding: 1em 0 3em 40px;
 }
 p strong,
 ul strong {
@@ -395,6 +395,45 @@ ul.light {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+p {
+  margin: 0;
+  padding: 0;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.3em;
+}
+.apropos p {
+  padding: 10px 0 0;
+  margin: 35px 0 0;
+  background: #ffffff;
+}
+.consultant p {
+  margin: 25px 0 0;
+}
+p.big {
+  font-size: 1.1em;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+ul.tiret li {
+  position: relative;
+}
+ul.tiret li:before {
+  content: '-';
+  position: absolute;
+  left: -10px;
+}
+.content ul {
+  background: #ffffff;
+  margin: 0;
+  padding: 1em 0 3em 40px;
 }
 blockquote {
   margin: 0;
@@ -1426,10 +1465,10 @@ ul#menu-header li a:focus {
   min-height: 410px;
   max-height: 510px;
 }
-.apropos #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
+.arxFrance #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
   height: 155px;
 }
-.apropos #bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before {
+.arxFrance #bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before {
   top: 360px;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -1596,6 +1635,11 @@ ul#menu-header li a:focus {
 }
 .apropos #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  background-size: cover;
+}
+.consultant #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/bloc-home-consultant/consultant.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
@@ -2974,9 +3018,9 @@ ul#slider-scroll li .zone-txt-slider h3 {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #0070b8;
   margin: 0 0 25px 0;
   line-height: 1.2em;
+  padding: 0;
 }
 ul#slider-scroll li .zone-txt-slider h4 {
   font-family: 'robotolight', sans-serif;
@@ -3474,7 +3518,6 @@ a.btn-carousel:hover.btn-close-carousel .cross {
   box-sizing: border-box;
 }
 #zone-txt-options-pharmacies h3 {
-  color: #0070b8;
   font-family: 'robotobold', sans-serif;
   font-weight: normal;
   font-size: 1.625em;
@@ -3927,7 +3970,7 @@ footer ul#menu-bottom-footer {
   display: block;
   width: 100%;
   height: auto;
-  margin: 80px 0 0 0;
+  margin: 80px 0 0;
   padding: 5px 0 100px 0;
   background-color: #ffffff;
 }
@@ -3960,6 +4003,7 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer a h3 {
   margin: 0;
   padding: 0;
   display: inline;
+  color: #bfbfbf;
 }
 footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 {
   display: block;
@@ -4051,15 +4095,55 @@ footer ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.men
 .arxFrance .content .bg-grid .col-bg-grid:first-child:before {
   height: 100px;
 }
-.arxFrance .content .bg-grid .col-bg-grid:nth-child(2):before {
+/* @group a propos */
+.apropos .content .bg-grid .col-bg-grid:nth-child(2):before {
   top: 500px;
 }
-.arxFrance .content .bg-grid .col-bg-grid:nth-child(4):before {
+.apropos .content .bg-grid .col-bg-grid:nth-child(4):before {
   height: 250px;
 }
-.arxFrance .content .bg-grid .col-bg-grid:last-child:before {
+.apropos .content .bg-grid .col-bg-grid:last-child:before {
   top: 900px;
 }
+/* @end */
+/* @group consultant */
+.visuelConsulting {
+  width: 176px;
+  height: 176px;
+  margin: 5px auto 15px;
+  background: #eee;
+  position: relative;
+}
+.visuelConsulting span {
+  color: #0070b8;
+  display: block;
+  position: absolute;
+  font-size: 130px;
+  left: 50%;
+  margin: 0 0 0 -42px;
+  bottom: -45px;
+}
+.besoins {
+  position: relative;
+  padding-right: 65px;
+}
+.besoins span {
+  position: absolute;
+  font-size: 33px;
+  right: -10px;
+}
+.automatisation {
+  position: relative;
+  padding-left: 70px;
+  padding-top: 6px;
+}
+.automatisation span {
+  position: absolute;
+  font-size: 60px;
+  left: -19px;
+  top: 0;
+}
+/* @end */
 /* @end */
 /* @group subMenu*/
 ul.subMenu {

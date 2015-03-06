@@ -173,6 +173,14 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-loupe:before {
+  content: "\e608";
+}
+
+.icon-mesure:before {
+  content: "\e609";
+}
+
 .icon-cross:before {
   content: "\e607";
 }
@@ -362,20 +370,33 @@ html, body{
 .paddingLeft{
   padding: 0 0 0 2*@largeurCol;
 }
+.paddingLeft2{
+  padding-left: 4*@largeurCol;
+}
 .paddingRight{
-  padding: 0 2*@largeurCol 0 0;
+  padding-right: 2*@largeurCol;
 }
 .padTopBot{
   padding: 20px 0;
 }
+.padTop{
+  padding-top: 20px;
+}
+.padBot{
+  padding-bottom: 20px;
+}
 
 .marginPadTop{
-  margin: 45px 0 0;
-  padding: 10px 0 0;
+  margin-top: 45px;
+  padding-top: 10px;
+}
+.marginPadTop2{
+  margin-top: 50px;
+  padding-top: 15px;
 }
 
 .marginTop{
-  margin: 55px 0 0;
+  margin-top: 55px;
 }
 
 .col{
@@ -393,6 +414,10 @@ html, body{
   &.col4{
     width: 8*@largeurCol;
   }
+}
+
+.blocLeft{
+  margin-left: 5px;
 }
 
 #zone-titre-home{
@@ -446,15 +471,37 @@ h2{
   }
 }
 
+h3{
+  color: @bleu7ARX;
+  .roboto-light(1.4em);
+  margin: 0;
+}
+
+p, ul{
+  strong{
+    .roboto-bold(1em);
+  }
+  &.light{
+    .roboto-light(1em);
+  }
+}
+
 p{
   margin: 0;
   padding: 0;
   .roboto(1em);
   line-height: 1.3em;
-  .content &{
+  .apropos &{
     padding: 10px 0 0;
     margin: 35px 0 0;
     background: @blanc;
+  }
+  .consultant &{
+    margin: 25px 0 0;
+  }
+  &.big{
+    font-size: 1.1em;
+    margin: 0;
   }
 }
 
@@ -474,15 +521,6 @@ ul{
     background: @blanc;
     margin: 0;
     padding: 1em 0 3em 40px;
-  }
-}
-
-p, ul{
-  strong{
-    .roboto-bold(1em);
-  }
-  &.light{
-    .roboto-light(1em);
   }
 }
 
@@ -1406,7 +1444,7 @@ ul#menu-header{
     max-height: 510px;
   }
   ul.bg-grid{
-    .apropos &{
+    .arxFrance &{
       li.col-bg-grid{
         &:nth-child(3){
           &:before{
@@ -1560,6 +1598,11 @@ ul#menu-header{
     }
     .apropos &{
       background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
+      background-size: auto 100%;
+      background-size: cover;
+    }
+    .consultant &{
+      background: url("../layoutImg/bloc-home-consultant/consultant.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
     }
@@ -2723,9 +2766,9 @@ ul#slider-scroll{
       padding: 10px 0;
       h3{
         .roboto-bold(1.625em);
-        color: @bleu7ARX;
         margin: 0 0 25px 0;
         line-height: 1.2em;
+        padding: 0;
       }
       h4{
         .roboto-light(1em);
@@ -3176,7 +3219,6 @@ a.btn-carousel{
   padding: 0 25px;
   .box-sizing(border-box);
   h3{
-    color: @bleu7ARX;
     .roboto-bold(1.625em);
     margin: 14px 0;
     padding: 0;
@@ -3586,7 +3628,7 @@ footer{
     display: block;
     width: 100%;
     height: auto;
-    margin: 80px 0 0 0;
+    margin: 80px 0 0;
     padding: 5px 0 100px 0;
     background-color: @blanc;
     li.col-menu-bottom-footer{
@@ -3607,10 +3649,11 @@ footer{
           outline: none;
         }
         h3{
-          .roboto-bold(1.250em);
+          .roboto-bold(1.25em);
           margin: 0;
           padding: 0;
           display: inline;
+          color: #bfbfbf;
         }
       }
       ul.menu-categ-1{
@@ -3690,6 +3733,17 @@ footer{
             height: 100px;
           }
         }
+      }
+    }
+  }
+}
+
+/* @group a propos */
+
+.apropos{
+  .content{
+    .bg-grid{
+      .col-bg-grid{
         &:nth-child(2){
           &:before{
             top: 500px;
@@ -3709,6 +3763,50 @@ footer{
     }
   }
 }
+
+/* @end */
+
+/* @group consultant */
+
+.visuelConsulting{
+  .size(2*@largeurCol);
+  margin: 5px auto 15px;
+  background: #eee;
+  position: relative;
+  span{
+    color: @bleu7ARX;
+    display: block;
+    position: absolute;
+    font-size: 130px;
+    left: 50%;
+    margin: 0 0 0 -42px;
+    bottom: -45px;
+  }
+}
+
+.besoins{
+  position: relative;
+  padding-right: 65px;
+  span{
+    position: absolute;
+    font-size: 33px;
+    right: -10px;
+  }
+}
+
+.automatisation{
+  position: relative;
+  padding-left: 70px;
+  padding-top: 6px;
+  span{
+    position: absolute;
+    font-size: 60px;
+    left: -19px;
+    top: 0;
+  }
+}
+
+/* @end */
 
 /* @end */
 
