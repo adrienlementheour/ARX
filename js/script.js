@@ -35,7 +35,7 @@ var nbSlidesScroll = $("ul#slider-scroll li").length;
 $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
 // Position sous menu pour le fixer au scroll
-var offsetSubMenu = $('.subMenu').offset().top - 100;
+var offsetSubMenu;
 
 function zoneSliderScrollMouseWheel(event){
 	//Normalize event wheel delta
@@ -588,6 +588,11 @@ $(document).ready(function(){
 		slideScroll($(this).parent().index()+1);
 		return false;
 	});
+
+	// Position sous menu pour le fixer au scroll
+	if($('.subMenu').length){
+		offsetSubMenu = $('.subMenu').offset().top - 100;
+	}
 });
 
 function animCarouselHome(sens){
