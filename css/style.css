@@ -1277,7 +1277,7 @@ a#menu-responsive {
   width: 26px;
   height: auto;
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   z-index: 10;
   margin: 0 19px 0 0;
@@ -4003,11 +4003,20 @@ footer #bloc-pays ul#menu-pays li a:hover {
   position: relative;
   overflow: hidden;
 }
+a#close-menu-responsive {
+  display: none;
+  text-decoration: none;
+  font-size: 26px;
+  position: absolute;
+  top: 38px;
+  right: 0;
+  margin-right: 19px;
+}
 ul#menu-bottom-footer {
   display: block;
   width: 100%;
   height: auto;
-  margin: 80px 0 0;
+  margin: 80px 0 0 0;
   padding: 5px 0 100px 0;
   background-color: #ffffff;
 }
@@ -4474,15 +4483,30 @@ ul.subMenu a.actif {
   }
 }
 @media (max-width: 767px) {
+  header {
+    padding: 30px 0 15px 0;
+  }
   a#menu-responsive {
+    display: block;
+  }
+  a#close-menu-responsive {
     display: block;
   }
   ul#menu-header {
     display: none;
   }
+  .home h1 {
+    padding: 150px 0 0 0;
+    width: 230px;
+    font-size: 2em;
+  }
   #bloc-home {
-    min-height: inherit;
-    height: 95%;
+    /*min-height: inherit;
+    height: 95%;*/
+    min-height: 460px;
+  }
+  #bloc-home ul.bg-grid {
+    display: none;
   }
   #bloc-home a#btn-robots-rowa {
     width: 25vw;
@@ -4491,6 +4515,9 @@ ul.subMenu a.actif {
   #bloc-home a#btn-contact {
     width: 25vw;
     height: 25vw;
+  }
+  #bloc-home #bg-bloc-home #machine {
+    margin-right: -880px;
   }
   a.btn-video {
     top: 0;
@@ -4524,6 +4551,9 @@ ul.subMenu a.actif {
   }
   #bloc-video #wrapper-video ul#slider-videos li a.video-cover .video-txt .video-title .video-title-fixed {
     margin: 0 0 5px 0;
+  }
+  #bloc-hopitaux ul.bg-grid {
+    display: none;
   }
   #bloc-hopitaux #bloc-txt-automatiser {
     width: 50vw;

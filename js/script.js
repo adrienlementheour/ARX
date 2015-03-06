@@ -384,6 +384,15 @@ $(document).ready(function(){
 	TweenMax.set($("ul#slider-videos li#current-video"), {display: "block", x: "0"});
 	TweenMax.set($("#img-bg-video-cover"), {x: "0%", y: "-50%"});
 	TweenMax.set($("#next-img-bg-video-cover"), {x: "100%", y: "-50%"});
+	// Clic sur le btn de menu responsive
+	$("a#menu-responsive").click(function() {
+		TweenMax.set($("#menu-full"), {className:"+=open"});
+		return false;
+	});
+	$("a#close-menu-responsive").click(function() {
+		TweenMax.set($("#menu-full"), {className:"-=open"});
+		return false;
+	});
 	// Clic sur le bouton play d'une video
 	$("ul#slider-videos li a.video-cover").click(function() {
 		if($(this).closest("li").attr("id")=="current-video"){

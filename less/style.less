@@ -1251,7 +1251,7 @@ a#menu-responsive{
   width: 26px;
   height: auto;
   position: absolute;
-  top: 0;
+  top: 10px;
   right: 0;
   z-index: 10;
   margin: 0 19px 0 0;
@@ -3663,6 +3663,16 @@ footer{
   overflow: hidden;
 }
 
+a#close-menu-responsive{
+  display: none;
+  text-decoration: none;
+  font-size: 26px;
+  position: absolute;
+  top: 38px;
+  right: 0;
+  margin-right: 19px;
+}
+
 ul#menu-bottom-footer{
   display: block;
   width: 100%;
@@ -3677,7 +3687,6 @@ ul#menu-bottom-footer{
     padding: 0;
     width: 2*@largeurCol;
     height: auto;
-<<<<<<< HEAD
     a{
       display: inline;
       text-decoration: none;
@@ -3689,39 +3698,11 @@ ul#menu-bottom-footer{
         outline: none;
       }
       h3{
-        .roboto-bold(1.250em);
+        .roboto-bold(1.25em);
         margin: 0;
         padding: 0;
         display: inline;
-=======
-    margin: 80px 0 0;
-    padding: 5px 0 100px 0;
-    background-color: @blanc;
-    li.col-menu-bottom-footer{
-      display: inline-block;
-      vertical-align: top;
-      margin: 0 0 0 2*@largeurCol;
-      padding: 0;
-      width: 2*@largeurCol;
-      height: auto;
-      a{
-        display: inline;
-        text-decoration: none;
         color: #bfbfbf;
-        &:hover{
-          color: @gris2ARX;
-        }
-        &:focus{
-          outline: none;
-        }
-        h3{
-          .roboto-bold(1.25em);
-          margin: 0;
-          padding: 0;
-          display: inline;
-          color: #bfbfbf;
-        }
->>>>>>> origin/master
       }
     }
     ul.menu-categ-1{
@@ -4206,15 +4187,32 @@ ul.subMenu{
 }
 
 @media (max-width: 767px) {
+  header{
+    padding: 30px 0 15px 0;
+  }
   a#menu-responsive{
+    display: block;
+  }
+  a#close-menu-responsive{
     display: block;
   }
   ul#menu-header{
     display: none;
   }
+  .home{
+    h1{
+      padding: 150px 0 0 0;
+      width: 230px;
+      font-size: 2em;
+    }
+  }
   #bloc-home{
-    min-height: inherit;
-    height: 95%;
+    /*min-height: inherit;
+    height: 95%;*/
+    ul.bg-grid{
+      display: none;
+    }
+    min-height: 460px;
     a#btn-robots-rowa{
       width: 3*@largeurColResponsive;
       height: 3*@largeurColResponsive;
@@ -4222,6 +4220,11 @@ ul.subMenu{
     a#btn-contact{
       width: 3*@largeurColResponsive;
       height: 3*@largeurColResponsive;
+    }
+    #bg-bloc-home{
+      #machine{
+        margin-right: -880px;
+      }
     }
   }
   a.btn-video{
@@ -4264,6 +4267,9 @@ ul.subMenu{
     }
   }
   #bloc-hopitaux{
+    ul.bg-grid{
+      display: none;
+    }
     #bloc-txt-automatiser{
       width: 6*@largeurColResponsive;
       height: 6*@largeurColResponsive;
