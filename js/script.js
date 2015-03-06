@@ -400,7 +400,9 @@ $(document).ready(function(){
 			TweenMax.set($(this), {display: "none"});
 			// lancer la video
 			var numVideo = parseInt($("ul#slider-videos li#current-video .iframe-video").attr("id").match(pattern));
-			players[numVideo].playVideo();
+			if(!isMobile.phone){
+				players[numVideo].playVideo();
+			};
 		}
 		return false;
 	});
