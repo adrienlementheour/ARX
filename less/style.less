@@ -2255,6 +2255,7 @@ a.btn-video{
   position: relative;
   width: 100%;
   height: 8*@largeurCol;
+  overflow: hidden;
   .container{
     height: 100%;
   }
@@ -3536,6 +3537,8 @@ footer{
         padding: 0;
         width: 20%;
         height: auto;
+        min-width: 87px;
+        margin: 10px;
         a{
           display: block;
           position: relative;
@@ -3821,6 +3824,9 @@ ul.subMenu{
   }
   .container{
     width: 100%;
+    &.small{
+      width: 100%;
+    }
   }
   ul.bg-grid{
     width: 100%;
@@ -4037,11 +4043,20 @@ ul.subMenu{
       height: 3*@largeurColResponsive;
     }
   }
+  a.btn-video{
+    top: 0;
+  }
   #bloc-video{
+    padding: 0;
+    h2{
+      padding: 0;
+      height: 3*@largeurColResponsive;
+      line-height: 3*@largeurColResponsive;
+    }
     #wrapper-video{
       height: 300px;
       width: 100%;
-      margin: 0 0 3*@largeurColResponsive 0;
+      margin: 0;
       ul#slider-videos{
         li{
           &#current-video{
@@ -4079,6 +4094,75 @@ ul.subMenu{
     #btn-solutions-hopitaux{
       width: 5*@largeurColResponsive;
       height: 5*@largeurColResponsive;
+    }
+  }
+  #bloc-references{
+    height: 16*@largeurColResponsive;
+    #bloc-txt-references{
+      width: 100%;
+      text-align: center;
+      position: relative;
+      height: 3*@largeurColResponsive;
+      line-height: 3*@largeurColResponsive;
+      padding: 0 3*@largeurColResponsive;
+      h2{
+        .txt-bloc{
+          line-height: 1.1em;
+        }
+      }
+    }
+    #bloc-couleur-references{
+      display: none;
+    }
+    a#btn-brochure{
+      width: 5*@largeurColResponsive;
+      height: 5*@largeurColResponsive;
+      top: inherit;
+      bottom: 0;
+      left: inherit;
+      right: 0;
+    }
+    ul#liste-references{
+      height: 13*@largeurColResponsive;
+      li{
+        &#references-bloc-big{
+          width: 10*@largeurColResponsive;
+          height: 7*@largeurColResponsive;
+          left: inherit;
+          right: 0;
+        }
+        &#references-bloc-vertical{
+          width: 2*@largeurColResponsive;
+          height: 4*@largeurColResponsive;
+          top: 4*@largeurColResponsive;
+        }
+        &#references-bloc-horizontal-top{
+          width: 6*@largeurColResponsive;
+          height: 3*@largeurColResponsive;
+          top: 5*@largeurColResponsive;
+          left: 6*@largeurColResponsive;
+        }
+        &#references-bloc-horizontal-bottom{
+          width: 7*@largeurColResponsive;
+          height: 4*@largeurColResponsive;
+          top: inherit;
+          bottom: 1*@largeurColResponsive;
+          left: 0;
+        }
+      }
+    }
+  }
+  a.btn-references{
+    width: 3*@largeurColResponsive;
+    height: 3*@largeurColResponsive;
+    &#btn-left-references{
+      top: 0;
+      left: 0;
+    }
+    &#btn-right-references{
+      top: 0;
+      left: inherit;
+      right: 0;
     }
   }
   #bloc-reseaux-sociaux{
@@ -4183,7 +4267,7 @@ ul.subMenu{
 @media (max-width: 480px) {
   #bloc-home{
     a#btn-robots-rowa{
-      width: 6*@largeurColResponsive;
+      width: 50%;
       height: 6*@largeurColResponsive;
       top: inherit;
       bottom: 0;
@@ -4191,7 +4275,7 @@ ul.subMenu{
       padding: 30px;
     }
     a#btn-contact{
-      width: 6*@largeurColResponsive;
+      width: 50%;
       height: 6*@largeurColResponsive;
       top: inherit;
       bottom: 0;

@@ -2443,6 +2443,7 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   position: relative;
   width: 100%;
   height: 704px;
+  overflow: hidden;
 }
 #bloc-references .container {
   height: 100%;
@@ -3874,6 +3875,8 @@ footer #bloc-pays ul#menu-pays li {
   padding: 0;
   width: 20%;
   height: auto;
+  min-width: 87px;
+  margin: 10px;
 }
 footer #bloc-pays ul#menu-pays li a {
   display: block;
@@ -4171,6 +4174,9 @@ ul.subMenu a.actif {
   .container {
     width: 100%;
   }
+  .container.small {
+    width: 100%;
+  }
   ul.bg-grid {
     width: 100%;
     left: 0;
@@ -4349,10 +4355,21 @@ ul.subMenu a.actif {
     width: 25vw;
     height: 25vw;
   }
+  a.btn-video {
+    top: 0;
+  }
+  #bloc-video {
+    padding: 0;
+  }
+  #bloc-video h2 {
+    padding: 0;
+    height: 25vw;
+    line-height: 25vw;
+  }
   #bloc-video #wrapper-video {
     height: 300px;
     width: 100%;
-    margin: 0 0 25vw 0;
+    margin: 0;
   }
   #bloc-video #wrapper-video ul#slider-videos li#current-video {
     z-index: 2;
@@ -4382,6 +4399,71 @@ ul.subMenu a.actif {
   #bloc-hopitaux #btn-solutions-hopitaux {
     width: 41.66666667vw;
     height: 41.66666667vw;
+  }
+  #bloc-references {
+    height: 133.33333333vw;
+  }
+  #bloc-references #bloc-txt-references {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 25vw;
+    line-height: 25vw;
+    padding: 0 25vw;
+  }
+  #bloc-references #bloc-txt-references h2 .txt-bloc {
+    line-height: 1.1em;
+  }
+  #bloc-references #bloc-couleur-references {
+    display: none;
+  }
+  #bloc-references a#btn-brochure {
+    width: 41.66666667vw;
+    height: 41.66666667vw;
+    top: inherit;
+    bottom: 0;
+    left: inherit;
+    right: 0;
+  }
+  #bloc-references ul#liste-references {
+    height: 108.33333333vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-big {
+    width: 83.33333333vw;
+    height: 58.33333333vw;
+    left: inherit;
+    right: 0;
+  }
+  #bloc-references ul#liste-references li#references-bloc-vertical {
+    width: 16.66666667vw;
+    height: 33.33333333vw;
+    top: 33.33333333vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-horizontal-top {
+    width: 50vw;
+    height: 25vw;
+    top: 41.66666667vw;
+    left: 50vw;
+  }
+  #bloc-references ul#liste-references li#references-bloc-horizontal-bottom {
+    width: 58.33333333vw;
+    height: 33.33333333vw;
+    top: inherit;
+    bottom: 8.33333333vw;
+    left: 0;
+  }
+  a.btn-references {
+    width: 25vw;
+    height: 25vw;
+  }
+  a.btn-references#btn-left-references {
+    top: 0;
+    left: 0;
+  }
+  a.btn-references#btn-right-references {
+    top: 0;
+    left: inherit;
+    right: 0;
   }
   #bloc-reseaux-sociaux #bloc-txt-arx-reseaux-sociaux {
     display: none;
@@ -4475,7 +4557,7 @@ ul.subMenu a.actif {
 }
 @media (max-width: 480px) {
   #bloc-home a#btn-robots-rowa {
-    width: 50vw;
+    width: 50%;
     height: 50vw;
     top: inherit;
     bottom: 0;
@@ -4483,7 +4565,7 @@ ul.subMenu a.actif {
     padding: 30px;
   }
   #bloc-home a#btn-contact {
-    width: 50vw;
+    width: 50%;
     height: 50vw;
     top: inherit;
     bottom: 0;
