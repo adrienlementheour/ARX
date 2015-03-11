@@ -4242,6 +4242,17 @@ ul.subMenu a.actif {
   -moz-osx-font-smoothing: grayscale;
 }
 /* @end */
+/* @group sliderEquipe */
+#equipeFilter li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+#equipe li {
+  display: inline-block;
+  width: 176px;
+  height: 176px;
+}
+/* @end */
 /* @end */
 /* @end */
 /* @group Non semantic Boilerplate */

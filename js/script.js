@@ -4,34 +4,34 @@
 // Nombre de références
 var nbRefs = 3;
 // Numéro d'étape du slider scroll
-var etape = 1;
-var indexPucesVision = 1;
-var wheel;
-var oldDate = new Date();
-var scrollPos;
+var etape = 1,
+	indexPucesVision = 1,
+	wheel,
+	oldDate = new Date(),
+	scrollPos;
 
 ///////////////
 // variables //
 ///////////////
-var pattern = /[0-9]+/g;
-var currentRef = 1;
-var nextRef;
-var currentDetailHome = 1;
-var nextDetailHome;
-var heightBlocDrapeaux;
-var widthVisuLeftPharmacies;
-var mouseWheelPreventDefault = true;
+var pattern = /[0-9]+/g,
+	currentRef = 1,
+	nextRef,
+	currentDetailHome = 1,
+	nextDetailHome,
+	heightBlocDrapeaux,
+	widthVisuLeftPharmacies,
+	mouseWheelPreventDefault = true;
 
 // TIMELINES
-var tpsEtapeFondDetailHome = 0.1;
-var tpsEtapeDetailHome = 0.1;
-var tpsAnimBtnHalfVisu = 1;
-var easeAnimBtnHalfVisu = Expo.easeOut;
+var tpsEtapeFondDetailHome = 0.1,
+	tpsEtapeDetailHome = 0.1,
+	tpsAnimBtnHalfVisu = 1,
+	easeAnimBtnHalfVisu = Expo.easeOut;
 
 // Scroll page Pharmacie
-var isAnimating = false;
-var numCurrentSlideScroll = 1;
-var nbSlidesScroll = $("ul#slider-scroll li").length;
+var isAnimating = false,
+	numCurrentSlideScroll = 1,
+	nbSlidesScroll = $("ul#slider-scroll li").length;
 $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
 // Position sous menu pour le fixer au scroll
@@ -57,11 +57,11 @@ function zoneSliderScrollMouseWheel(event){
 function slideScroll(numNext){
 	if(!isAnimating){
 		isAnimating = true;
-		var currentSlideScroll = $("ul#slider-scroll li.active");
-		var nextSlide = $("ul#slider-scroll li#slide-"+(numNext));
-		var slideScrollPosition = nextSlide.offset().top;
-		var slideScrollHeight = nextSlide.height();
-		var windowHeight = $(window).height();
+		var currentSlideScroll = $("ul#slider-scroll li.active"),
+			nextSlide = $("ul#slider-scroll li#slide-"+(numNext)),
+			slideScrollPosition = nextSlide.offset().top,
+			slideScrollHeight = nextSlide.height(),
+			windowHeight = $(window).height();
 		// Arreter l'ancienne anim et jouer la nouvelle
 		if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
@@ -93,11 +93,11 @@ function nextSlideScroll(event){
 	if(numCurrentSlideScroll < nbSlidesScroll){
 		if(!isAnimating){
 			isAnimating = true;
-			var currentSlideScroll = $("ul#slider-scroll li.active");
-			var nextSlide = $("ul#slider-scroll li#slide-"+(numCurrentSlideScroll+1));
-			var slideScrollPosition = nextSlide.offset().top;
-			var slideScrollHeight = nextSlide.height();
-			var windowHeight = $(window).height();
+			var currentSlideScroll = $("ul#slider-scroll li.active"),
+				nextSlide = $("ul#slider-scroll li#slide-"+(numCurrentSlideScroll+1)),
+				slideScrollPosition = nextSlide.offset().top,
+				slideScrollHeight = nextSlide.height(),
+				windowHeight = $(window).height();
 			// Arreter l'ancienne anim et jouer la nouvelle
 			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
@@ -130,11 +130,11 @@ function prevSlideScroll(event){
 	if(numCurrentSlideScroll > 1){
 		if(!isAnimating){
 			isAnimating = true;
-			var currentSlideScroll = $("ul#slider-scroll li.active");
-			var nextSlide = $("ul#slider-scroll li#slide-"+(numCurrentSlideScroll-1));
-			var slideScrollPosition = nextSlide.offset().top;
-			var slideScrollHeight = nextSlide.height();
-			var windowHeight = $(window).height();
+			var currentSlideScroll = $("ul#slider-scroll li.active"),
+				nextSlide = $("ul#slider-scroll li#slide-"+(numCurrentSlideScroll-1)),
+				slideScrollPosition = nextSlide.offset().top,
+				slideScrollHeight = nextSlide.height(),
+				windowHeight = $(window).height();
 			// Arreter l'ancienne anim et jouer la nouvelle
 			if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 				tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
@@ -189,16 +189,15 @@ function completeAnimPrevSlideScroll(oldActive, newActive){
 	TweenMax.set($("ul#slider-scroll-navigator li").eq(numCurrentSlideScroll-1), {className:"+=active"});
 }
 
-var tableAnimScroll = [];
-var tableAnimScrollLoop = [];
+var tableAnimScroll = [],
+	tableAnimScrollLoop = [];
 // Fonction pour préparer les anims en sprites du slider au scroll
 function initSliderScroll(){
 	for(var i=0;i<nbSlidesScroll;i++){
 		// Première boucle
-		var slideAnim = $("ul#slider-scroll li").eq(i);
-		
-		var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
-		var steppedEase = new SteppedEase(numCols-1);
+		var slideAnim = $("ul#slider-scroll li").eq(i),
+			frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37,
+			steppedEase = new SteppedEase(numCols-1);
 
 		// Première boucle
 		tableAnimScroll[i] = new TimelineMax({paused: true, onComplete: completeFirstLoop, onCompleteParams: [slideAnim, i]});
@@ -212,8 +211,8 @@ function initSliderScroll(){
 }
 
 function completeFirstLoop(slideAnim, numAnim){
-	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37;
-	var steppedEase = new SteppedEase(numCols-1);
+	var frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37,
+		steppedEase = new SteppedEase(numCols-1);
 	tableAnimScrollLoop[numAnim] = new TimelineMax({repeat:-1});
 	for(var i=3;i<numRows;i++){
 		tableAnimScrollLoop[numAnim].add(TweenMax.fromTo($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), 0.3, { backgroundPosition:'0 -'+(frameHeight*i)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease:steppedEase}));
@@ -374,7 +373,7 @@ $(window).on('beforeunload', function(){
 	}
 });
 
-$(document).ready(function(){
+$(function(){
 	if($("body").hasClass("categ")){
 		initSliderScroll();
 	}
@@ -607,21 +606,21 @@ $(document).ready(function(){
 });
 
 function animCarouselHome(sens){
-	var indexDetailHomeActive = $("ul#carousel-img-home li.active").index("ul#carousel-img-home li")+1;
-	var nbDetailsHome = $("ul#carousel-img-home li").length;
+	var indexDetailHomeActive = $("ul#carousel-img-home li.active").index("ul#carousel-img-home li")+1,
+		nbDetailsHome = $("ul#carousel-img-home li").length;
 	if(sens=="right"){
 		// tester si il y a un detail suivant
 		if((indexDetailHomeActive+1)<=nbDetailsHome){
 			// il y a un detail suivant
-			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive);
-			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive);
-			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(indexDetailHomeActive);
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive),
+				nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive),
+				nextDetailTitle = $("ul#container-titles-carousel-home li").eq(indexDetailHomeActive);
 		}else{
 			// il n'y a pas de detail suivant
 			// il y a un detail suivant
-			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(0);
-			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(0);
-			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(0);
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(0),
+				nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(0),
+				nextDetailTitle = $("ul#container-titles-carousel-home li").eq(0);
 		}
 		// placer l'image et le texte suivant
 		TweenMax.set(nextDetailHomeImg, {x: "-100%"});
@@ -644,14 +643,14 @@ function animCarouselHome(sens){
 		// tester si il y a un detail précédent
 		if((indexDetailHomeActive-1)>=1){
 			// il y a un detail précédent
-			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive-2);
-			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive-2);
-			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(indexDetailHomeActive-2);
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(indexDetailHomeActive-2),
+				nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(indexDetailHomeActive-2),
+				nextDetailTitle = $("ul#container-titles-carousel-home li").eq(indexDetailHomeActive-2);
 		}else{
 			// il n'y a pas de detail précédent
-			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(nbDetailsHome-1);
-			var nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(nbDetailsHome-1);
-			var nextDetailTitle = $("ul#container-titles-carousel-home li").eq(nbDetailsHome-1);
+			var nextDetailHomeImg = $("ul#carousel-img-home li").eq(nbDetailsHome-1),
+				nextDetailHomeTxt = $("ul#carousel-txt-home li").eq(nbDetailsHome-1),
+				nextDetailTitle = $("ul#container-titles-carousel-home li").eq(nbDetailsHome-1);
 		}
 		// placer l'image et le texte précédent
 		TweenMax.set(nextDetailHomeImg, {x: "100%"});
@@ -696,13 +695,13 @@ function animCarouselOptions(sens){
 		// tester si il y a un detail suivant
 		if((indexDetailOptionsActive+1)<=nbOptions){
 			// il y a un detail suivant
-			var nextOptionImg = $("ul#carousel-img-options li").eq(indexDetailOptionsActive);
-			var nextOptionTxt = $("ul#carousel-txt-options li").eq(indexDetailOptionsActive);
+			var nextOptionImg = $("ul#carousel-img-options li").eq(indexDetailOptionsActive),
+				nextOptionTxt = $("ul#carousel-txt-options li").eq(indexDetailOptionsActive);
 		}else{
 			// il n'y a pas de detail suivant
 			// il y a un detail suivant
-			var nextOptionImg = $("ul#carousel-img-options li").eq(0);
-			var nextOptionTxt = $("ul#carousel-txt-options li").eq(0);
+			var nextOptionImg = $("ul#carousel-img-options li").eq(0),
+				nextOptionTxt = $("ul#carousel-txt-options li").eq(0);
 		}
 		// placer l'image et le texte suivant
 		TweenMax.set(nextOptionImg, {x: "-100%"});
@@ -716,12 +715,12 @@ function animCarouselOptions(sens){
 		// tester si il y a un detail précédent
 		if((indexDetailOptionsActive-1)>=1){
 			// il y a un detail précédent
-			var nextOptionImg = $("ul#carousel-img-options li").eq(indexDetailOptionsActive-2);
-			var nextOptionTxt = $("ul#carousel-txt-options li").eq(indexDetailOptionsActive-2);
+			var nextOptionImg = $("ul#carousel-img-options li").eq(indexDetailOptionsActive-2),
+				nextOptionTxt = $("ul#carousel-txt-options li").eq(indexDetailOptionsActive-2);
 		}else{
 			// il n'y a pas de detail précédent
-			var nextOptionImg = $("ul#carousel-img-options li").eq(nbOptions-1);
-			var nextOptionTxt = $("ul#carousel-txt-options li").eq(nbOptions-1);
+			var nextOptionImg = $("ul#carousel-img-options li").eq(nbOptions-1),
+				nextOptionTxt = $("ul#carousel-txt-options li").eq(nbOptions-1);
 		}
 		// placer l'image et le texte précédent
 		TweenMax.set(nextOptionImg, {x: "100%"});
@@ -893,12 +892,12 @@ function closeDetailOption(closeAll){
 	}
 }
 
-var tlBtnFile1 = new TimelineMax();
-var tlBtnFile2 = new TimelineMax();
+var tlBtnFile1 = new TimelineMax(),
+	tlBtnFile2 = new TimelineMax();
 function animBtnFile(btnFile){
-	var frameWidthBtnFile = 37, frameHeightBtnFile = 40, numColsBtnFile = 3, numRowsBtnFile = 3;
-	var steppedEaseBtnFile = new SteppedEase(numColsBtnFile-1);
-	var indexBtnSurvol = btnFile.index("ul#liste-btn-home li a.btn-file");
+	var frameWidthBtnFile = 37, frameHeightBtnFile = 40, numColsBtnFile = 3, numRowsBtnFile = 3,
+		steppedEaseBtnFile = new SteppedEase(numColsBtnFile-1),
+		indexBtnSurvol = btnFile.index("ul#liste-btn-home li a.btn-file");
 	tlBtnFile1 = new TimelineMax();
 	tlBtnFile2 = new TimelineMax();
 	if(indexBtnSurvol==0){
@@ -924,7 +923,6 @@ function animBtnFileRetour(btnFile){
 ////////////
 // scroll //
 ////////////
-
 
 $(document).scroll(function() {
 	myScroll = $(document).scrollTop();
