@@ -62,6 +62,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-dysfonctionnement:before {
+  content: "\e60d";
+}
+.icon-france:before {
+  content: "\e60e";
+}
+.icon-smiley:before {
+  content: "\e60f";
+}
+.icon-book:before {
+  content: "\e60a";
+}
+.icon-clock:before {
+  content: "\e60b";
+}
+.icon-plug:before {
+  content: "\e60c";
+}
 .icon-loupe:before {
   content: "\e608";
 }
@@ -253,6 +271,9 @@ body {
 .padTop {
   padding-top: 20px;
 }
+.padTop2 {
+  padding-top: 30px;
+}
 .padBot {
   padding-bottom: 20px;
 }
@@ -266,6 +287,9 @@ body {
 }
 .marginTop {
   margin-top: 55px;
+}
+.marginBot {
+  margin-bottom: 80px;
 }
 .col {
   display: inline-block;
@@ -407,7 +431,8 @@ p {
   margin: 35px 0 0;
   background: #ffffff;
 }
-.consultant p {
+.consultant p,
+.installation p {
   margin: 25px 0 0;
 }
 p.big {
@@ -1664,6 +1689,12 @@ ul#menu-header li a:focus {
 }
 .consultant #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-consultant/consultant.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  background-size: cover;
+}
+.installation #bloc-home #bg-bloc-home,
+.sav #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/bloc-home-install/install.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
@@ -4136,6 +4167,58 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
 .arxFrance .content .bg-grid .col-bg-grid:first-child:before {
   height: 100px;
 }
+.visuel {
+  width: 176px;
+  height: 176px;
+  margin: 5px auto 15px;
+  background: #eee;
+  position: relative;
+}
+.visuel span {
+  color: #0070b8;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.visuelConsulting span {
+  font-size: 130px;
+  margin: 0 0 0 -42px;
+  bottom: -45px;
+  top: auto;
+}
+.visuelInstall span {
+  font-size: 110px;
+  margin: -55px 0 0 -55px;
+}
+.visuelSav span {
+  font-size: 70px;
+  margin: -35px 0 0 -35px;
+}
+.titreIconeLeft {
+  position: relative;
+  padding-right: 65px;
+}
+.titreIconeLeft span {
+  position: absolute;
+  font-size: 33px;
+  right: -10px;
+}
+.titreIconeRight {
+  position: relative;
+  padding-left: 70px;
+  padding-top: 6px;
+}
+.titreIconeRight span {
+  position: absolute;
+  font-size: 60px;
+  left: -19px;
+  top: 0;
+}
+.titreIconeRight.formation span {
+  font-size: 40px;
+  left: -10px;
+}
 /* @group a propos */
 .apropos .content .bg-grid .col-bg-grid:nth-child(2):before {
   top: 500px;
@@ -4148,41 +4231,27 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
 }
 /* @end */
 /* @group consultant */
-.visuelConsulting {
-  width: 176px;
-  height: 176px;
-  margin: 5px auto 15px;
-  background: #eee;
-  position: relative;
+.consultant .content .bg-grid .col-bg-grid:nth-child(2):before,
+.consultant .content .bg-grid .col-bg-grid:last-child:before {
+  top: 1110px;
 }
-.visuelConsulting span {
-  color: #0070b8;
-  display: block;
-  position: absolute;
-  font-size: 130px;
-  left: 50%;
-  margin: 0 0 0 -42px;
-  bottom: -45px;
+/* @end */
+/* @group installation */
+.installation .content .bg-grid .col-bg-grid:nth-child(2):before,
+.installation .content .bg-grid .col-bg-grid:last-child:before {
+  top: 950px;
 }
-.besoins {
-  position: relative;
-  padding-right: 65px;
+.installation p.big {
+  margin: 20px 0 0;
 }
-.besoins span {
-  position: absolute;
-  font-size: 33px;
-  right: -10px;
+/* @end */
+/* @group sav */
+.sav .content .bg-grid .col-bg-grid:nth-child(2):before,
+.sav .content .bg-grid .col-bg-grid:last-child:before {
+  top: 950px;
 }
-.automatisation {
-  position: relative;
-  padding-left: 70px;
-  padding-top: 6px;
-}
-.automatisation span {
-  position: absolute;
-  font-size: 60px;
-  left: -19px;
-  top: 0;
+.sav p.big {
+  margin: 20px 0 0;
 }
 /* @end */
 /* @end */
@@ -4207,7 +4276,7 @@ ul.subMenu ul {
   padding: 15px 0 30px 15px;
 }
 ul.subMenu li {
-  line-height: 0.65em;
+  line-height: 0.8em;
 }
 ul.subMenu a {
   font-family: 'robotoregular', sans-serif;
@@ -4220,6 +4289,7 @@ ul.subMenu a {
   -moz-transition: 0.15s ease-in-out;
   -o-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
+  display: block;
 }
 ul.subMenu a:hover,
 ul.subMenu a:focus {
@@ -4238,12 +4308,21 @@ ul.subMenu a.actif {
 }
 /* @end */
 /* @group sliderEquipe */
+#equipeFilter {
+  padding-left: 0;
+  padding-bottom: 2.4em;
+}
 #equipeFilter li {
   display: inline-block;
   margin: 0 25px 0 0;
 }
 #equipeFilter a {
   color: #3e3e3e;
+  outline: 0;
+}
+#equipeFilter a.actif {
+  color: #0070b8;
+  text-decoration: underline;
 }
 #equipe li {
   display: inline-block;
@@ -4251,12 +4330,71 @@ ul.subMenu a.actif {
   height: 176px;
   position: relative;
 }
+#equipe li:hover div {
+  opacity: 1;
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition: 0.1s ease-in-out;
+  -o-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+#equipe li:hover strong {
+  margin: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+#equipe li:hover p {
+  margin: 15px 0 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
 #equipe li div {
   background: rgba(255, 255, 255, 0.8);
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+#equipe li strong {
+  display: block;
+  color: #0070b8;
+  margin: 88px 0 0;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+#equipe li p {
+  color: #232324;
+  font-size: 0.84em;
+  margin: 176px 0 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#equipe ul {
+  display: none;
+  opacity: 0;
+  padding: 0;
+  background: none;
+}
+#equipe ul.on {
+  display: block;
+  opacity: 1;
 }
 /* @end */
 /* @end */
