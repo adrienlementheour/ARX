@@ -163,7 +163,7 @@ function prevSlideScroll(event){
 }
 
 function completeAnimSlideScroll(oldActive, newActive, numNext){
-	numCurrentSlideScroll=numNext;
+	numCurrentSlideScroll = numNext;
 	isAnimating = false;
 	TweenMax.set(oldActive, {className:"-=active"});
 	TweenMax.set(newActive, {className:"+=active"});
@@ -352,9 +352,9 @@ function animHeaderHome(){
 
 function completeAnimMachine(){
 	setTimeout(function(){
-		transiInButton($("a#btn-robots-rowa"));
+		transiInButton($("#btn-robots-rowa"));
 		setTimeout(function(){
-			transiInButton($("a#btn-contact"));
+			transiInButton($("#btn-contact"));
 		}, 500);
 	}, 500);
 }
@@ -498,7 +498,7 @@ $(function(){
 	);
 	TweenMax.set($("#masque-btn-half-visu"), {width: "50%)"});
 	TweenMax.set($("#btn-visu-right"), {width: "50%"});
-	$("a.btn-half-visu").hover(
+	$(".btn-half-visu").hover(
 	  function() {
 	  	if($(this).is("#btn-visu-left")){
 	        TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "55%", ease:easeAnimBtnHalfVisu});
@@ -543,7 +543,7 @@ $(function(){
 	  	TweenMax.to($("#btn-visu-right"), 0.2, {width: "55%", ease:Cubic.easeInOut});
 	  }
 	);
-	$("a.btn-file").hover(
+	$(".btn-file").hover(
 	  function() {
         animBtnFile($(this));
 	  }, function() {
@@ -554,21 +554,21 @@ $(function(){
 		openOptions("openTitleOptions");
 		return false;
 	});
-	$("a.btn-detail-home").click(function() {
+	$(".btn-detail-home").click(function() {
 		openDetailHome($(this));
 		return false;
 	});
-	$("a#btn-close-carousel-home").click(function() {
+	$("#btn-close-carousel-home").click(function() {
 		closeDetailHome();
 		return false;
 	});
-	$("a#btn-right-carousel-home").click(function() {
+	$("#btn-right-carousel-home").click(function() {
 		if(!TweenMax.isTweening($("ul#carousel-img-home li"))&&!TweenMax.isTweening($("ul#carousel-txt-home li"))){
 			animCarouselHome("right");
 		}
 		return false;
 	});
-	$("a#btn-close-bloc-options").click(function() {
+	$("#btn-close-bloc-options").click(function() {
 		if($("body").hasClass("detail-option")){
 			closeDetailOption("all");
 		}else if($("body").hasClass("options")){
@@ -576,29 +576,29 @@ $(function(){
 		}
 		return false;
 	});
-	$("a#btn-close-detail-option").click(function() {
+	$("#btn-close-detail-option").click(function() {
 		closeDetailOption();
 		return false;
 	});
-	$("a#btn-left-carousel-home").click(function() {
+	$("#btn-left-carousel-home").click(function() {
 		if(!TweenMax.isTweening($("ul#carousel-img-home li"))&&!TweenMax.isTweening($("ul#carousel-txt-home li"))){
 			animCarouselHome("left");
 		}
 		return false;
 	});
-	$("a#btn-right-options").click(function() {
+	$("#btn-right-options").click(function() {
 		if(!TweenMax.isTweening($("ul#carousel-img-options li"))&&!TweenMax.isTweening($("ul#carousel-txt-options li"))){
 			animCarouselOptions("right");
 		}
 		return false;
 	});
-	$("a#btn-left-options").click(function() {
+	$("#btn-left-options").click(function() {
 		if(!TweenMax.isTweening($("ul#carousel-img-options li"))&&!TweenMax.isTweening($("ul#carousel-txt-options li"))){
 			animCarouselOptions("left");
 		}
 		return false;
 	});
-	$("ul#liste-options-pharmacies li a").click(function() {
+	$("#liste-options-pharmacies li a").click(function() {
 		openDetailOption($(this));
 		return false;
 	});
@@ -611,6 +611,9 @@ $(function(){
 	// Position sous menu pour le fixer au scroll
 	if($('.subMenu').length){
 		offsetSubMenu = $('.subMenu').offset().top - 100;
+	}
+	if($('.subMenuContact').length){
+		offsetSubMenu = $('.subMenuContact').offset().top - 100;
 	}
 });
 
@@ -767,9 +770,9 @@ function openDetailHome(btnDetailClic){
 
 	var tlBlocDetailHome = new TimelineMax();
 	//Fermer les btn detail home
-	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {x: "100%", ease:Cubic.easeIn}, 0.08);
-	tlBlocDetailHome.staggerTo("a.btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {x: "100%", ease:Cubic.easeIn}, 0.08);
-	tlBlocDetailHome.set($("a.btn-detail-home"), {display: "none"});
+	tlBlocDetailHome.staggerTo(".btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {x: "100%", ease:Cubic.easeIn}, 0.08);
+	tlBlocDetailHome.staggerTo(".btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {x: "100%", ease:Cubic.easeIn}, 0.08);
+	tlBlocDetailHome.set($(".btn-detail-home"), {display: "none"});
 	//Afficher les carousels
 	tlBlocDetailHome.set($("#bloc-detail-home"), {className:"+=detail-home-open"});
 	tlBlocDetailHome.to($(".masque-bloc-detail-home"), tpsEtapeFondDetailHome, {width: "100%", ease:Cubic.easeIn});
@@ -793,9 +796,9 @@ function closeDetailHome(){
 	TweenMax.set($("ul#carousel-img-home li"), {clearProps:"all"});
 	TweenMax.set($("ul#carousel-txt-home li"), {clearProps:"all"});
 	//ouvrir les btn detail home
-	tlCloseBlocDetailHome.set($("a.btn-detail-home"), {display: "block"});
-	tlCloseBlocDetailHome.staggerTo("a.btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.08);
-	tlCloseBlocDetailHome.staggerTo("a.btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.08);
+	tlCloseBlocDetailHome.set($(".btn-detail-home"), {display: "block"});
+	tlCloseBlocDetailHome.staggerTo(".btn-detail-home .container-fond-btn-anim", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.08);
+	tlCloseBlocDetailHome.staggerTo(".btn-detail-home .container-btn-anim", tpsEtapeDetailHome, {x: "0%", ease:Cubic.easeIn}, 0.08);
 }
 
 function closeBlocOptions(){
@@ -906,7 +909,7 @@ var tlBtnFile1 = new TimelineMax(),
 function animBtnFile(btnFile){
 	var frameWidthBtnFile = 37, frameHeightBtnFile = 40, numColsBtnFile = 3, numRowsBtnFile = 3,
 		steppedEaseBtnFile = new SteppedEase(numColsBtnFile-1),
-		indexBtnSurvol = btnFile.index("ul#liste-btn-home li a.btn-file");
+		indexBtnSurvol = btnFile.index("#liste-btn-home li .btn-file");
 	tlBtnFile1 = new TimelineMax();
 	tlBtnFile2 = new TimelineMax();
 	if(indexBtnSurvol==0){
@@ -921,7 +924,7 @@ function animBtnFile(btnFile){
 }
 
 function animBtnFileRetour(btnFile){
-	var indexBtnSurvol = btnFile.index("ul#liste-btn-home li a.btn-file");
+	var indexBtnSurvol = btnFile.index("#liste-btn-home li .btn-file");
 	if(indexBtnSurvol==0){
 		tlBtnFile1.reverse();
 	}else if(indexBtnSurvol==1){
@@ -947,6 +950,9 @@ $(document).scroll(function() {
 	}
 	if($('.subMenu').length){
 		(myScroll >= offsetSubMenu) ? $('.subMenu').addClass('fixed') : $('.subMenu').removeClass('fixed');
+	}
+	if($('.subMenuContact').length){
+		(myScroll >= offsetSubMenu) ? $('.subMenuContact').addClass('fixed') : $('.subMenuContact').removeClass('fixed');
 	}
 	// parallaxe machine
 	TweenMax.set($("#machine"), {y: (0-(myScroll*.25))+"px"});

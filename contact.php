@@ -1,3 +1,82 @@
+<?php
+
+$status = '';
+
+$erreurNom = '';
+$erreurPrenom = '';
+$erreurMail = '';
+$erreurTel = '';
+$erreurMessage = '';
+$erreurEnvoi = '';
+
+
+$nom = isset($_POST['nom']) ? strip_tags($_POST['nom']) : '';
+$prenom = isset($_POST['prenom']) ? strip_tags($_POST['prenom']) : '';
+$mail = isset($_POST['mail']) ? strip_tags($_POST['mail']) : '';
+$tel = isset($_POST['tel']) ? strip_tags($_POST['tel']) : '';
+$type = isset($_POST['type']) ? strip_tags($_POST['type']) : '';
+$poste = isset($_POST['poste']) ? strip_tags($_POST['poste']) : '';
+$objet = isset($_POST['objet']) ? strip_tags($_POST['objet']) : '';
+$message = isset($_POST['message']) ? strip_tags($_POST['message']) : '';
+
+
+// MAIL DE DESTINATION //////////////////////////////////////
+$mailto = 'shwarp@live.fr';
+
+if(isset($_POST['submit'])) {
+ 	if(empty($nom)) {
+ 		$erreurNom = 'Le champ Nom est obligatoire';
+ 	}
+ 	if(empty($prenom)) {
+ 		$erreurPrenom = 'Le champ Prénom est obligatoire';
+ 	}
+ 	if(empty($mail)) {
+ 		$erreurMail = 'Le champ Email est obligatoire';
+ 	}else{
+ 		if(!(filter_var($mail, FILTER_VALIDATE_EMAIL))) {
+ 			$erreurMail = 'Vérifiez votre adresse email';
+ 		}
+ 	}
+ 	if(empty($tel)) {
+ 		$erreurTel = 'Le champ Téléphone est obligatoire';
+ 	}else{
+ 		if (!(strlen($tel) == 10 && ctype_digit($tel))) {
+ 			$erreurTel = 'Vérifiez votre numéro de téléphone';
+ 		}
+ 	}
+ 	if(empty($message)) {
+ 		$erreurMessage = 'Le champ Message est obligatoire';
+ 	}
+ 	if($erreurNom == '' && $erreurPrenom == '' && $erreurMail == '' && $erreurTel == '' && $erreurMessage == ''){ 
+ 		$subject = $objet . " provenant de arxinter.fr";
+
+ 		$from = 'From: ' . $nom . ' ' . $prenom . '<' . $mail . '>';
+ 		$reply = 'Reply-To: ' . $mail;
+ 		$headers = $from . "\r\n" .
+ 				   $reply . "\r\n";
+
+ 		$content = 'De: ' . $nom .' ' . $prenom . "\r\n" .
+ 				   "Type d'établissement: " . $type . "\r\n" .
+ 				   'Fonction: ' . $poste . "\r\n\r\n" .
+ 				   'Coordonnées: ' . "\r\n" . $mail . "\r\n" . $tel . "\r\n\r\n\r\n" .
+ 				   'Message: ' . "\r\n\r\n" . $message;
+
+ 		$sent = mail($mailto, $subject, $content, $headers);
+
+ 		if($sent) {
+ 			$status = "succes";
+ 		}
+ 		else{ 
+ 			$status = "erreur"; 	
+ 			$erreurEnvoi = "Nous sommes désolé, une erreur est survenue. Votre message n'a pas pu être envoyé. Veuillez réessayer!";
+ 		}
+ 	}else{
+ 		$status = "erreur"; 
+ 	}
+}
+
+?>
+
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
@@ -18,7 +97,7 @@
 		<script src="js/libs/modernizr.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
-	<body class="apropos arxFrance">
+	<body class="contact arxFrance">
 		<header>
 			<div class="container">
 				<a href="./" id="logo-arx"></a>
@@ -47,75 +126,101 @@
 			</ul>
 			<div class="container">
 				<div id="zone-titre-home">
-					<h1 class="txt-blanc">Le groupe ARX <br /><span class="txt-bleu">L'automatisation au service de votre pharmacie</h1>
+					<h1 class="txt-blanc">Contactez-nous <br /><span class="txt-bleu">Nous nous ferons une joie de répondre à vos attentes</h1>
 				</div>
 			</div>
 		</div>
 		
 		<div class="content" id="scrollContent">
 			<ul class="bg-grid" data-sr="no reset">
-				<li class="col-bg-grid active bleu"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li>
+				<li class="col-bg-grid active bleu"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li>
 			</ul>
 			<div class="container">
-				<ul class="subMenu">
+				<ul class="subMenuContact">
 					<li>
-						Le groupe
-						<ul>
-							<li><a href="a-propos.html" class="actif">› A propos</a></li>
-							<li><a href="">› Partenaires</a></li>
+						Contacts
+						<ul class="infos">
+							<li class="adress">
+								La Petite Périche<br/>
+								Route des Navrans<br/>
+								72200 Bazouges sur le Loir
+							</li>
+							<li><span class="icon-tel"></span>(+33) 02 43 48 00 50</li>
+							<li><span class="icon-fax"></span>(+33) 02 43 45 98 58</li>
+							<li><span class="icon-mail"></span><a href="mailto:info@arxinter.net" title="Envoyer un e-mail">info@arxinter.net</a></li>
 						</ul>
 					</li>
 					<li>
-						Services
-						<ul>
-							<li><a href="consultant.html">› Nos consultants</a></li>
-							<li><a href="installation.html">› L'installation</a></li>
-							<li><a href="sav.html">› S.A.V.</a></li>
+						réseaux sociaux
+						<ul class="rs">
+							<li>
+								<a href="#" title="ARX sur Twitter" class="icon-twitter"><span class="triangle-btn-social"></span></a>
+							</li><li class="right">
+								<a href="#" title="ARX sur Pinterest" class="icon-pinterest"><span class="triangle-btn-social"></span></a>
+							</li><li class="center">
+								<a href="#" title="ARX sur Facebook" class="icon-fb"><span class="triangle-btn-social"></span></a>
+							</li><li>
+								<a href="#" title="ARX sur YouTube" class="icon-youtube"><span class="triangle-btn-social"></span></a>
+							</li><li class="right">
+								<a href="#" title="ARX sur Google+" class="icon-google"><span class="triangle-btn-social"></span></a>
+							</li>
 						</ul>
 					</li>
 				</ul>
-				<div id="bloc-titre-automatiser" data-sr="enter top move 100px over 0.5s">
-					<h2 class="center-aligned">Notre société</h2>
-					<p class="center-aligned txt-title">L'automatisation au service de votre pharmacie depuis 1995</p>
-				</div>
-				<div class="paddingLeft">
-					<div data-sr>
-						<div class="col col2 center-aligned fdBlanc padTopBot">
-							<img src="layoutImg/map.png" alt="Implantations du groupe ARX en Europe"/>
-						</div><div class="col col3">
-							<p class="light">Le GROUPE ARX a été fondé en 1995 en Angleterre, pays où le premier robot Rowa a été installé. Depuis près de 17 ans, ARX et Rowa se sont imposés dans toute l’Europe comme des acteurs incontournables dans la robotisation des pharmacies. Aujourd’hui ce sont plusieurs milliers de pharmaciens qui ont été séduits par nos différents produits tels que le Rowa Select, le Rowa Vmax ou encore notre module de chargement 100% Automatique : ProLog.<br/><br/>
-							Le GROUPE ARX réunit aujourd'hui à ses côtés les principaux acteurs de l'innovation et construit au quotidien avec ses clients, la pharmacie de demain.</p>
-						</div>
-					</div>
-					<h2 data-sr="enter right move 100px over 0.5s">Notre travail</h2>
-					<div data-sr>
-						<p class="light">
-							Le GROUPE ARX commercialise des systèmes d'automatisation pour les pharmacies et pour les hôpitaux. En complément de cette activité, nous proposons une multitude de services spécifiques aux pharmacies :
-						</p>
-						<ul class="light tiret">
-							<li><a href="">L’installation des robots</a> par nos équipes d’installateurs</li>
-							<li><strong>La formation,</strong> <a href="">par nos consultants</a> du personnel à cette nouvelle approche du quotidien de l'officine</li>
-							<li><strong>Le réaménagement de l'officine,</strong> <a href="">par nos consultants</a>, avec le souci constant du meilleur rapport qualité / efficacité / prix</li>
-							<li><a href="">Le Service Après Vente,</a> <strong>la maintenance</strong> et <strong>le suivi</strong> de chaque système installé</li>
-						</ul>
-					</div>
-					<h2 class="right-aligned paddingRight" data-sr="enter left move 100px over 0.5s">Nos valeurs</h2>
-					<div data-sr>
-						<div class="col col1 marginTop">
-							<img src="layoutImg/rupert.jpg" alt="Rupert KATRITZKY"/>
-						</div><div class="col col4 marginPadTop fdBlanc">
-							<blockquote>
-								J'ai toujours développé le GROUPE ARX en fonction de trois critères :<br/><br/>
-								<strong>Un comportement éthique</strong>
-								intégrité, respect mutuel et loyauté<br/><br/>
-								<strong>Des valeurs sûres</strong>
-								aide au bien-être, impératifde satisfaction du client et implication sur le long terme,<br/><br/>
-								<strong>Des valeurs sûres</strong>
-								innovations, qualité, efforts et améliorations.
-								<span><strong>Rupert KATRITZKY</strong>Président & Fondateur du Groupe ARX</span>
-							</blockquote>
-						</div>
-					</div>
+				<div class="paddingLeftBis paddingRight1">
+					<p data-sr="enter top move 100px over 0.5s" class="fdBlanc col col3Bis light padBot padTop2 paddingLeft1">
+						Afin de mieux vous répondre, nous vous invitons a remplir ce formulaire. Nous pourrons ainsi vous contacter, pas mail, ou par téléphone, et répondre précisémment à votre demande :
+					</p>
+					<?php 
+						if($status == 'succes'){ 
+							echo 'Merci!<br/>Votre message a bien été envoyé. Il sera traité dans les plus bref délais.';
+						}else if($status == 'erreur'){
+							echo $erreurNom . '<br/>' . $erreurPrenom . '<br/>' . $erreurMail . '<br/>' . $erreurTel . '<br/>' . $erreurMessage . '<br/>' . $erreurEnvoi;
+						}
+					?>
+					<form action="" method="POST" class="marginTop" data-sr>
+						<fieldset class="padTop">
+							<label for="nom">Nom <span>*</span></label>
+							<input type="text" name="nom" id="nom" value="<?php echo $nom; ?>"/>
+						</fieldset><fieldset class="padTop">
+							<label for="prenom">Prénom <span>*</span></label>
+							<input type="text" name="prenom" id="prenom" value="<?php echo $prenom; ?>"/>
+						</fieldset><fieldset>
+							<label for="mail">Email <span>*</span></label>
+							<input type="email" name="mail" id="mail" value="<?php echo $mail; ?>"/>
+						</fieldset><fieldset>
+							<label for="tel">Téléphone <span>*</span></label>
+							<input type="text" name="tel" id="tel" value="<?php echo $tel; ?>"/>
+						</fieldset><fieldset>
+							<label for="type">Type d'établissement <span>*</span></label>
+							<select name="type" id="type">
+								<option value="Pharmacie">Pharmacie</option>
+								<option value="Hopital">Hôpital</option>
+							</select>
+						</fieldset><fieldset>
+							<label for="poste">Fonction</label>
+							<input type="text" name="poste" id="poste" value="<?php echo $poste; ?>"/>
+						</fieldset>
+						<fieldset>
+							<label for="objet">Objet de votre message <span>*</span></label>
+							<select name="objet" id="objet">
+								<option value="Demande de devis">Demande de devis</option>
+								<option value="Coucou">Coucou</option>
+							</select>
+						</fieldset>
+						<fieldset class="block">
+							<label for="message">Votre message <span>*</span></label>
+							<textarea name="message" id="message"><?php if(!empty($message)) echo $message; ?></textarea>
+						</fieldset>
+
+						<button class="btn btn-bleu" name="submit">
+							<h2>
+								<span class="txt-btn"><strong>Envoyer</strong> votre message</span>
+								<span class="triangle-btn" style=""></span>
+							</h2>
+						</button>
+					</form>
+					<p class="label"><span>*</span> Champs obligatoires</p>
 				</div>
 			</div>
 		</div>
