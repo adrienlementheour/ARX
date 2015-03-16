@@ -35,7 +35,7 @@ var isAnimating = false,
 $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
 // Position sous menu pour le fixer au scroll
-var offsetSubMenu;
+var offsetSubMenu, fixedBottom = false;
 
 function zoneSliderScrollMouseWheel(event){
 	//Normalize event wheel delta
@@ -382,6 +382,16 @@ $(window).on('beforeunload', function(){
 
 $(function(){
 	$('#equipeFilter').find('a').on('click', slideEquipe);
+
+	if($('#popUpContact').length){
+		$('html, body').delay(300).animate({scrollTop: $('#form').offset().top - 150}, 500);
+		function popDisappear(){
+			$('#popUpContact').fadeOut();
+			$('#fdPop').fadeOut();
+		}
+		setTimeout(popDisappear, 4000);
+		$('#fdPop').on('click', popDisappear);
+	}
 
 	if($("body").hasClass("categ")){
 		initSliderScroll();
@@ -950,9 +960,23 @@ $(document).scroll(function() {
 	}
 	if($('.subMenu').length){
 		(myScroll >= offsetSubMenu) ? $('.subMenu').addClass('fixed') : $('.subMenu').removeClass('fixed');
+		($('.subMenu').offset().top + $('.subMenuContact').outerHeight() >= $('#menu-full').offset().top)  ? $('.subMenu').addClass('fixedBottom') : $('.subMenu').removeClass('fixedBottom');
 	}
 	if($('.subMenuContact').length){
 		(myScroll >= offsetSubMenu) ? $('.subMenuContact').addClass('fixed') : $('.subMenuContact').removeClass('fixed');
+
+		if($('.subMenuContact').offset().top + $('.subMenuContact').outerHeight() >= $('#menu-full').offset().top && !fixedBottom){
+			fixedBottom = true;
+			$('.subMenuContact').addClass('fixedBottom');
+		}
+		
+		
+		console.log($('#menu-full').offset().top)
+		
+		console.log($('.subMenuContact').offset().top+ $('.subMenuContact').outerHeight())
+		console.log(offsetSubMenu+ $('.subMenuContact').outerHeight())
+		console.log(myScroll)
+		console.log($('.subMenuContact').findPos().x)
 	}
 	// parallaxe machine
 	TweenMax.set($("#machine"), {y: (0-(myScroll*.25))+"px"});

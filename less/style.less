@@ -151,6 +151,15 @@ html, body{
 .padBot{
   padding-bottom: 20px;
 }
+.padBot2{
+  padding-bottom: 60px;
+}
+.padLeft{
+  padding-left: 30px;
+}
+.padRight{
+  padding-right: 30px;
+}
 
 .marginPadTop{
   margin-top: 45px;
@@ -159,6 +168,11 @@ html, body{
 .marginPadTop2{
   margin-top: 50px;
   padding-top: 15px;
+}
+.marginPadTopBot{
+  margin-top: 35px;
+  padding-top: 35px;
+  padding-bottom: 25px;
 }
 
 .marginTop{
@@ -172,8 +186,13 @@ html, body{
 .col{
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  .box-sizing(border-box);
   &.col1{
     width: 2*@largeurCol;
+  }
+  &.col1Bis{
+    width: 3*@largeurCol;
   }
   &.col2{
     width: 4*@largeurCol;
@@ -225,7 +244,7 @@ h1{
     width: 8*@largeurCol;
     margin: 0 auto;
   }
-  .contact &{
+  .contact &, .partenaires &{
     width: 6*@largeurCol;
   }
   .armoire-pyxis &{
@@ -281,6 +300,10 @@ p{
   &.big{
     font-size: 1.1em;
     margin: 0;
+  }
+  &.veryBig{
+    font-size: 1.25em;
+    margin: 0 0 5px;
   }
 }
 
@@ -386,6 +409,13 @@ a{
     &:hover, &:focus{
       color: @bleu7ARX;
       text-decoration: underline;
+    }
+  }
+  &.big{
+    font-size: 1.25em;
+    text-decoration: underline;
+    &:hover, &:focus{
+      color: @grisARX;
     }
   }
 }
@@ -1419,7 +1449,7 @@ ul#menu-header{
       background-size: auto 100%;
       background-size: cover;
     }
-    .apropos &{
+    .apropos &, .partenaires &{
       background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
@@ -2502,6 +2532,10 @@ a.btn-references{
   background-color: @blanc;
   width: 6*@largeurCol;
   height: auto;
+}
+#bloc-titre-partenaires, #bloc-titre-automatiser{
+  padding: 10px 0 30px;
+  background-color: @blanc;
   h2{
     .roboto-light(2.313em);
     margin: 0 0 10px 0;
@@ -2510,13 +2544,13 @@ a.btn-references{
       padding: 0;
     }
   }
-  p.txt-title{
-    .roboto-light(1em);
-    color: #727279;
-    margin: 0 auto;
-    line-height: 1.4em;
-    padding: 0;
-  }
+}
+p.txt-title{
+  .roboto-light(1em);
+  color: #727279;
+  margin: 0 auto;
+  line-height: 1.4em;
+  padding: 0;
 }
 
 #zone-slider-scroll{
@@ -3789,6 +3823,76 @@ ul#menu-bottom-footer{
 
 /* @end */
 
+/* @group partenaires */
+
+.partenaires{
+  .content{
+    padding-bottom: 150px;
+    .bg-grid{
+      .col-bg-grid{
+        &:nth-child(2){
+          &:before{
+            top: 920px;
+          }
+        }
+        &:last-child{
+          height: 205px;
+        }
+      }
+    }
+  }
+}
+
+.partenaires{
+  h3{
+    .size(2*@largeurCol);
+    color: @blanc;
+    padding: 35px;
+    .box-sizing(border-box);
+    strong{
+      display: block;
+    }
+  }
+}
+
+.content{
+  .listPartenaires{
+    padding: 0;
+    margin: 20px 0 0;
+  }
+}
+.listPartenaires{
+  li{
+    margin: 0 0 55px;
+    &.center-aligned{
+      margin-left: @largeurCol/2;
+      margin-right: @largeurCol/2;
+    }
+  }
+  h3{
+    display: inline-block;
+    text-align: left;
+    background: @bleu7ARX;
+    padding-right: 50px;
+    margin: 0 0 25px;
+  }
+  p{
+    .roboto-light(1em);
+    a{
+      padding: 10px 0 0;
+      display: inline-block;
+    }
+  }
+}
+
+.legend{
+  position: absolute;
+  right: 0;
+  background: fade(@bleu7ARX, 90);
+}
+
+/* @end */
+
 /* @group contact */
 
 .contact{
@@ -3829,6 +3933,14 @@ fieldset{
     padding: 0;
     label{
       margin: 0 0 20px;
+    }
+  }
+  &.error{
+    input, textarea{
+      border-color: #a5290c;
+    }
+    label, label span{
+      color: #a5290c;
     }
   }
 }
@@ -3913,6 +4025,44 @@ p.label{
   }
 }
 
+#popUpContact{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  background: @bleu7ARX;
+  color: @blanc;
+  padding: 30px 50px;
+  span{
+    display: inline-block;
+    margin: 5px 0;
+    .roboto-light(1.15em);
+  }
+  .icon-cross{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+#fdPop{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: fade(@blanc, 70);
+  z-index: 10;
+  text-align: center;
+  cursor: pointer;
+  &:before{
+    content: " ";
+    display: inline-block;
+    height: 100%;
+    width: 1%;
+    vertical-align: middle;
+  }
+}
+
 /* @end */
 
 /* @end */
@@ -3929,6 +4079,12 @@ ul.subMenu, ul.subMenuContact{
     position: fixed;
     top: 100px;
   }
+  &.fixedBottom{
+    position: absolute;
+    bottom: -495px;
+    top: auto;
+    height: auto;
+  }
 }
 
 ul.subMenu{
@@ -3938,6 +4094,11 @@ ul.subMenu{
   }
   li{
     line-height: 0.8em;
+    &:last-child{
+      ul{
+        padding-bottom: 0;
+      }
+    }
   }
   a{
     .roboto(0.63em);
