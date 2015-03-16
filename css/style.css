@@ -490,6 +490,23 @@ ul.tiret li:before {
   position: absolute;
   left: -10px;
 }
+ul.puce {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul.puce li {
+  position: relative;
+}
+ul.puce li:before {
+  content: '•';
+  position: absolute;
+  left: -10px;
+  color: #0070b8;
+}
 .content ul {
   background: #ffffff;
   margin: 0;
@@ -1840,6 +1857,11 @@ ul#menu-header li a:focus {
 }
 .armoire-pyxis #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  background-size: cover;
+}
+.blispack-grifols #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/bloc-home-hopitaux/blispack-grifols.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
@@ -3758,6 +3780,24 @@ a#btn-options-plus {
   margin: 40px auto 0 auto;
 }
 /* @end */
+.wrapper-embed {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+.wrapper-embed .embed-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+}
+.wrapper-embed .embed-container .iframe-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 /* @group Footer */
 footer {
   display: block;
@@ -4607,6 +4647,14 @@ ul.subMenu a.actif {
   font-family: 'robotoitalic', sans-serif;
   font-weight: normal;
   font-size: 0.63em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul.subMenu a.big {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
