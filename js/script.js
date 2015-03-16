@@ -35,7 +35,7 @@ var isAnimating = false,
 $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
 // Position sous menu pour le fixer au scroll
-var offsetSubMenu, fixedBottom = false;
+var offsetSubMenu;
 
 function zoneSliderScrollMouseWheel(event){
 	//Normalize event wheel delta
@@ -949,7 +949,7 @@ function animBtnFileRetour(btnFile){
 $(document).scroll(function() {
 	myScroll = $(document).scrollTop();
 	if (!$("html").hasClass("lt-ie9") && $("html").hasClass("no-touch")) {
-		if($(window).width()>=979){
+		if($(window).width() >= 979){
 			myScroll>55 ? $("header").addClass("on") : $("header").removeClass("on");
 		}else{
 			$("header").removeClass("on");
@@ -958,26 +958,20 @@ $(document).scroll(function() {
 	if($("body").hasClass("categ")){
 		setSliderScrollNavigator(myScroll);
 	}
+
+	function fixedSubMenu(subMenu){
+		if(subMenu.outerHeight() + 100 < $(window).height()){
+			(myScroll >= offsetSubMenu) ? subMenu.addClass('fixed') : subMenu.removeClass('fixed');
+			(subMenu.outerHeight() + 100 >= $('#menu-full').offset().top - myScroll) ? subMenu.addClass('fixedBottom') : subMenu.removeClass('fixedBottom');
+		}
+	}
 	if($('.subMenu').length){
-		(myScroll >= offsetSubMenu) ? $('.subMenu').addClass('fixed') : $('.subMenu').removeClass('fixed');
-		($('.subMenu').offset().top + $('.subMenuContact').outerHeight() >= $('#menu-full').offset().top)  ? $('.subMenu').addClass('fixedBottom') : $('.subMenu').removeClass('fixedBottom');
+		fixedSubMenu($('.subMenu'));
 	}
 	if($('.subMenuContact').length){
-		(myScroll >= offsetSubMenu) ? $('.subMenuContact').addClass('fixed') : $('.subMenuContact').removeClass('fixed');
-
-		if($('.subMenuContact').offset().top + $('.subMenuContact').outerHeight() >= $('#menu-full').offset().top && !fixedBottom){
-			fixedBottom = true;
-			$('.subMenuContact').addClass('fixedBottom');
-		}
-		
-		
-		console.log($('#menu-full').offset().top)
-		
-		console.log($('.subMenuContact').offset().top+ $('.subMenuContact').outerHeight())
-		console.log(offsetSubMenu+ $('.subMenuContact').outerHeight())
-		console.log(myScroll)
-		console.log($('.subMenuContact').findPos().x)
+		fixedSubMenu($('.subMenuContact'));
 	}
+
 	// parallaxe machine
 	TweenMax.set($("#machine"), {y: (0-(myScroll*.25))+"px"});
 });
