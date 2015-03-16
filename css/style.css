@@ -397,6 +397,9 @@ h1 {
 .contact h1 {
   width: 528px;
 }
+.armoire-pyxis h1 {
+  width: 528px;
+}
 h2 {
   margin: 0;
   padding: 0;
@@ -1658,6 +1661,10 @@ ul#menu-header li a:focus {
   min-height: 410px;
   max-height: 510px;
 }
+#bloc-home.small-bloc-home {
+  min-height: 410px;
+  max-height: 510px;
+}
 .arxFrance #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before {
   height: 155px;
 }
@@ -1827,6 +1834,11 @@ ul#menu-header li a:focus {
   background-size: cover;
 }
 .apropos #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
+  background-size: auto 100%;
+  background-size: cover;
+}
+.armoire-pyxis #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
