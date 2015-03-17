@@ -4469,6 +4469,9 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
 .arxFrance .content .bg-grid .col-bg-grid:first-child:before {
   height: 100px;
 }
+.arxFrance .content h3 {
+  margin: 0;
+}
 .visuel {
   width: 176px;
   height: 176px;
@@ -4804,6 +4807,7 @@ p.label {
 /* @group subMenu*/
 ul.subMenu,
 ul.subMenuContact {
+  position: absolute;
   float: left;
   background: none;
   padding: 25px 0 0 10px;
@@ -5350,6 +5354,7 @@ ul.subMenu a.big {
   ul.subMenu li,
   ul.subMenuContact li {
     display: inline-block;
+    padding: 0 10px 0 0;
   }
   ul.subMenu li:last-child ul,
   ul.subMenuContact li:last-child ul {
@@ -5436,6 +5441,13 @@ ul.subMenu a.big {
   .partenaires h1,
   .contact h1 {
     width: 140%;
+  }
+  #bloc-titre-automatiser {
+    width: 100%;
+    padding: 10px 20px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   header {
     padding: 30px 0 15px 0;

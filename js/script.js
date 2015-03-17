@@ -986,15 +986,16 @@ function setSliderScrollNavigator(myScroll){
 	}
 }
 
-$( window ).resize(function() {
+$(window).resize(function() {
 	heightBlocDrapeaux = $("#bloc-pays").height();
 
-	if($(window).width() > 979){
+	if($(window).width() < 979){
 		if($('.subMenu').length){
-			$('.subMenu').removeClass('fixed, fixedBottom');
+			console.log('bvjerbgie');
+			$('.subMenu').removeClass('fixed').removeClass('fixedBottom');
 		}
 		if($('.subMenuContact').length){
-			$('.subMenuContact').removeClass('fixed, fixedBottom');
+			$('.subMenuContact').removeClass('fixed').removeClass('fixedBottom');
 		}
 	}
 });
