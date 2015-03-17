@@ -105,6 +105,17 @@ html, body{
 .content{
   position: relative;
   padding: 60px 0 0;
+  .blispack-grifols &, .armoire-pyxis &{
+    ul.bg-grid{
+      li.col-bg-grid{
+        &:nth-child(1){
+          &:before{
+            height: 102px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .container{
@@ -269,6 +280,19 @@ h2{
       margin-left: 5px;
       margin-right: -5px;
     }
+    &.big-margin{
+      padding-top: 15px;
+      margin-bottom: 40px;
+      margin-top: 0px;
+      &.no-margin-bottom{
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+    &.no-margin-bottom{
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -276,6 +300,11 @@ h3{
   color: @bleu7ARX;
   .roboto-light(1.4em);
   margin: 0;
+  .content &{
+    margin: 40px 0 10px 0;
+    padding-bottom: 10px;
+    background: @blanc;
+  }
 }
 
 p, ul{
@@ -324,6 +353,7 @@ ul{
   }
   &.puce{
     .roboto-light(1em);
+    padding: 0;
     li{
       position: relative;
       &:before{
@@ -338,6 +368,9 @@ ul{
     background: @blanc;
     margin: 0;
     padding: 1em 0 3em 40px;
+    &.puce{
+      padding: 0;
+    }
   }
 }
 
@@ -399,6 +432,15 @@ blockquote{
 
 .fdBlanc{
   background: @blanc;
+  &.padding-top{
+    padding-top: 20px;
+  }
+}
+
+.horizontal-center-aligned{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a{
@@ -1798,14 +1840,6 @@ ul#menu-header{
       width: 8*@largeurCol;
       height: 6*@largeurCol;
     }
-
-    /*<ul id="container-titles-carousel-home">
-                <li id="title-qualite-securite-vmax" class="active">
-                  <span class="container-fond-title-carousel-home"></span>
-                  <span class="container-title-carousel-home">
-                  <h2><span class="txt-title-carousel-home">Qualité &amp; <strong>Sécurité</strong></span></h2></span>
-                </li>
-              </ul>*/
     ul#container-titles-carousel-home{
       display: block;
       .size(2*@largeurCol);
@@ -2562,6 +2596,16 @@ p.txt-title{
   margin: 0 auto;
   line-height: 1.4em;
   padding: 0;
+  &.margin-bottom{
+    margin-bottom: 40px;
+  }
+  &.padding-bottom{
+    padding-bottom: 40px;
+  }
+  .content &{
+    background-color: @blanc;
+    padding: 5px 0 15px 0;
+  }
 }
 
 #zone-slider-scroll{
@@ -4126,6 +4170,7 @@ ul.subMenu{
     }
     &.big{
       .roboto-light(1em);
+      text-decoration: none;
     }
   }
 }

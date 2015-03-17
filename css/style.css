@@ -264,6 +264,10 @@ body {
   position: relative;
   padding: 60px 0 0;
 }
+.blispack-grifols .content ul.bg-grid li.col-bg-grid:nth-child(1):before,
+.armoire-pyxis .content ul.bg-grid li.col-bg-grid:nth-child(1):before {
+  height: 102px;
+}
 .container {
   position: relative;
   width: 1056px;
@@ -451,6 +455,19 @@ h2 {
   margin-left: 5px;
   margin-right: -5px;
 }
+.content h2.big-margin {
+  padding-top: 15px;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+.content h2.big-margin.no-margin-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.content h2.no-margin-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 h3 {
   color: #0070b8;
   font-family: 'robotolight', sans-serif;
@@ -460,6 +477,11 @@ h3 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+}
+.content h3 {
+  margin: 40px 0 10px 0;
+  padding-bottom: 10px;
+  background: #ffffff;
 }
 p strong,
 ul strong {
@@ -526,6 +548,7 @@ ul.puce {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 ul.puce li {
   position: relative;
@@ -540,6 +563,9 @@ ul.puce li:before {
   background: #ffffff;
   margin: 0;
   padding: 1em 0 3em 40px;
+}
+.content ul.puce {
+  padding: 0;
 }
 blockquote {
   margin: 0;
@@ -620,6 +646,14 @@ blockquote:after {
 }
 .fdBlanc {
   background: #ffffff;
+}
+.fdBlanc.padding-top {
+  padding-top: 20px;
+}
+.horizontal-center-aligned {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 a {
   color: #0070b8;
@@ -2176,13 +2210,6 @@ ul#menu-header li a:focus {
   left: 352px;
   overflow: hidden;
   width: 0;
-  /*<ul id="container-titles-carousel-home">
-                <li id="title-qualite-securite-vmax" class="active">
-                  <span class="container-fond-title-carousel-home"></span>
-                  <span class="container-title-carousel-home">
-                  <h2><span class="txt-title-carousel-home">Qualité &amp; <strong>Sécurité</strong></span></h2></span>
-                </li>
-              </ul>*/
 }
 #bloc-home #bloc-detail-home .masque-bloc-detail-home {
   display: block;
@@ -3191,6 +3218,16 @@ p.txt-title {
   margin: 0 auto;
   line-height: 1.4em;
   padding: 0;
+}
+p.txt-title.margin-bottom {
+  margin-bottom: 40px;
+}
+p.txt-title.padding-bottom {
+  padding-bottom: 40px;
+}
+.content p.txt-title {
+  background-color: #ffffff;
+  padding: 5px 0 15px 0;
 }
 #zone-slider-scroll {
   display: block;
@@ -4828,6 +4865,7 @@ ul.subMenu a.big {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
 }
 .subMenuContact ul {
   padding: 35px 0 10px;
