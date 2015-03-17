@@ -965,11 +965,13 @@ $(document).scroll(function() {
 			(subMenu.outerHeight() + 100 >= $('#menu-full').offset().top - myScroll) ? subMenu.addClass('fixedBottom') : subMenu.removeClass('fixedBottom');
 		}
 	}
-	if($('.subMenu').length){
-		fixedSubMenu($('.subMenu'));
-	}
-	if($('.subMenuContact').length){
-		fixedSubMenu($('.subMenuContact'));
+	if($(window).width() > 979){
+		if($('.subMenu').length){
+			fixedSubMenu($('.subMenu'));
+		}
+		if($('.subMenuContact').length){
+			fixedSubMenu($('.subMenuContact'));
+		}
 	}
 
 	// parallaxe machine

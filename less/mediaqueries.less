@@ -13,6 +13,13 @@
     }
   }
 
+  .responsivePadRight{
+    padding-right: 20px;
+    .legend{
+      right: 20px;
+    }
+  }
+
   .paddingLeft1{
     padding-left: @largeurColResponsive;
   }
@@ -222,12 +229,52 @@
       width: 2*@largeurColResponsive;
     }
   }
+
+  #bloc-titre-partenaires{
+    padding-right: 20px;
+  }
+
+  .partenaires{
+    h3{
+      height: 2*@largeurColResponsive;
+      width: 2*@largeurColResponsive;
+    }
+    li{
+      .box-sizing(border-box);
+      padding-right: 20px;
+      &.center-aligned{
+        margin-left: @largeurColResponsive/2.5;
+        margin-right: @largeurColResponsive/2.5;
+      }
+      p{
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media (max-width: 979px) {
   html, body{
     font-size: 0.9em;
   }
+
+  .js [data-sr]{ visibility: visible !important; }
+  
+  .paddingLeft{
+    padding: 0;
+  }
+  .responsivePadLeft{
+    padding-left: 20px;
+  }
+
+  ul.subMenu, ul.subMenuContact{
+    float: none;
+    padding-top: 0;
+    li{
+      display: inline-block;
+    }
+  }
+
   #bloc-video{
     #wrapper-video{
       height: 300px;
@@ -262,9 +309,55 @@
       display: none;
     }
   }
+
+  .arxFrance{
+    h2{
+      padding-left: 20px;
+    }
+  }
+
+  .partenaires{
+    .content{
+      .col{
+        &.col3{
+          width: 8*@largeurColResponsive;
+        }
+      }
+    }
+    h3{
+      padding: 20px;
+    }
+    .legend{
+      padding: 35px 20px;
+    }
+  }
+
+  .listPartenaires{
+    text-align: center;
+    li{
+      text-align: left;
+      padding: 0;
+      &.col1Bis{
+        width: 29%;
+      }
+      &.center-aligned{
+        text-align: center;
+      }
+      &.right-aligned{
+        text-align: right;
+      }
+    }
+  }
+
 }
 
 @media (max-width: 767px) {
+  h1{
+    .partenaires &, .contact &{
+      width: 140%;
+    }
+  }
+
   header{
     padding: 30px 0 15px 0;
   }
@@ -564,9 +657,60 @@
       }
     }
   }
+
+  .partenaires{
+    .content{
+      .col{
+        &.col2{
+          width: 100%;
+          max-width: 392px;
+          padding: 0 20px;
+          + .col3{
+            padding-top: 20px;
+          }
+        }
+        &.col3{
+          width: 100%;
+          + .col2{
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+    .padLeft{
+      padding-left: 20px;
+    }
+    h3{
+      .size(125px);
+    }
+    .legend{
+      right: 20px;
+      .size(125px);
+    }
+  }
+
+  .listPartenaires{
+    li{
+      text-align: right;
+      &.center-aligned{
+        text-align: right;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &.col1Bis{
+        width: 47%;
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
+  h1{
+    .partenaires &, .contact &{
+      width: 100%;
+    }
+  }
+
   #bloc-home{
     a#btn-robots-rowa{
       width: 50%;
@@ -624,6 +768,15 @@
     #btn-solutions-hopitaux{
       width: 6*@largeurColResponsive;
       height: 6*@largeurColResponsive;
+    }
+  }
+
+  .listPartenaires{
+    li{
+      &.col1Bis{
+        width: 100%;
+        padding: 0 20px;
+      }
     }
   }
 }

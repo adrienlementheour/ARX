@@ -92,7 +92,7 @@ if(isset($_POST['submit'])) {
 	  	<link rel="stylesheet" href="css/libs/normalize.css">
 	  	<link rel="stylesheet" href="css/style.css">
 		
-		<style> [data-sr]{ visibility: hidden; } </style>
+		<style> .js [data-sr]{ visibility: hidden; } </style>
 
 		<script src="js/libs/modernizr.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -376,7 +376,7 @@ if(isset($_POST['submit'])) {
 			    wait: '0.5s',
 			    delay: 'onload'
 			}
-			window.sr = new scrollReveal( config );
+			if($(window).width() > 979){ window.sr = new scrollReveal( config ); }
 		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>

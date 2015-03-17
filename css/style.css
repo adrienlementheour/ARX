@@ -5071,6 +5071,12 @@ ul.subMenu a.big {
   .container.small {
     width: 100%;
   }
+  .responsivePadRight {
+    padding-right: 20px;
+  }
+  .responsivePadRight .legend {
+    right: 20px;
+  }
   .paddingLeft1 {
     padding-left: 8.33333333vw;
   }
@@ -5253,11 +5259,49 @@ ul.subMenu a.big {
     margin: 0 0 0 16.66666667vw;
     width: 16.66666667vw;
   }
+  #bloc-titre-partenaires {
+    padding-right: 20px;
+  }
+  .partenaires h3 {
+    height: 16.66666667vw;
+    width: 16.66666667vw;
+  }
+  .partenaires li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 20px;
+  }
+  .partenaires li.center-aligned {
+    margin-left: 3.33333333vw;
+    margin-right: 3.33333333vw;
+  }
+  .partenaires li p {
+    width: 100%;
+  }
 }
 @media (max-width: 979px) {
   html,
   body {
     font-size: 0.9em;
+  }
+  .js [data-sr] {
+    visibility: visible !important;
+  }
+  .paddingLeft {
+    padding: 0;
+  }
+  .responsivePadLeft {
+    padding-left: 20px;
+  }
+  ul.subMenu,
+  ul.subMenuContact {
+    float: none;
+    padding-top: 0;
+  }
+  ul.subMenu li,
+  ul.subMenuContact li {
+    display: inline-block;
   }
   #bloc-video #wrapper-video {
     height: 300px;
@@ -5281,8 +5325,40 @@ ul.subMenu a.big {
   footer ul.bg-grid {
     display: none;
   }
+  .arxFrance h2 {
+    padding-left: 20px;
+  }
+  .partenaires .content .col.col3 {
+    width: 66.66666667vw;
+  }
+  .partenaires h3 {
+    padding: 20px;
+  }
+  .partenaires .legend {
+    padding: 35px 20px;
+  }
+  .listPartenaires {
+    text-align: center;
+  }
+  .listPartenaires li {
+    text-align: left;
+    padding: 0;
+  }
+  .listPartenaires li.col1Bis {
+    width: 29%;
+  }
+  .listPartenaires li.center-aligned {
+    text-align: center;
+  }
+  .listPartenaires li.right-aligned {
+    text-align: right;
+  }
 }
 @media (max-width: 767px) {
+  .partenaires h1,
+  .contact h1 {
+    width: 140%;
+  }
   header {
     padding: 30px 0 15px 0;
   }
@@ -5554,8 +5630,49 @@ ul.subMenu a.big {
   #menu-full ul#menu-bottom-footer li.col-menu-bottom-footer:nth-child(2) ul.menu-categ-1 ul.menu-categ-2 {
     display: none;
   }
+  .partenaires .content .col.col2 {
+    width: 100%;
+    max-width: 392px;
+    padding: 0 20px;
+  }
+  .partenaires .content .col.col2 + .col3 {
+    padding-top: 20px;
+  }
+  .partenaires .content .col.col3 {
+    width: 100%;
+  }
+  .partenaires .content .col.col3 + .col2 {
+    padding-top: 20px;
+  }
+  .partenaires .padLeft {
+    padding-left: 20px;
+  }
+  .partenaires h3 {
+    width: 125px;
+    height: 125px;
+  }
+  .partenaires .legend {
+    right: 20px;
+    width: 125px;
+    height: 125px;
+  }
+  .listPartenaires li {
+    text-align: right;
+  }
+  .listPartenaires li.center-aligned {
+    text-align: right;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .listPartenaires li.col1Bis {
+    width: 47%;
+  }
 }
 @media (max-width: 480px) {
+  .partenaires h1,
+  .contact h1 {
+    width: 100%;
+  }
   #bloc-home a#btn-robots-rowa {
     width: 50%;
     height: 50vw;
@@ -5602,6 +5719,10 @@ ul.subMenu a.big {
   #bloc-hopitaux #btn-solutions-hopitaux {
     width: 50vw;
     height: 50vw;
+  }
+  .listPartenaires li.col1Bis {
+    width: 100%;
+    padding: 0 20px;
   }
 }
 /* retina */

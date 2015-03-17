@@ -13,7 +13,7 @@
 	  	<link rel="stylesheet" href="css/libs/normalize.css">
 	  	<link rel="stylesheet" href="css/style.css">
 		
-		<style> [data-sr]{ visibility: hidden; } </style>
+		<style> .js [data-sr]{ visibility: hidden; } </style>
 
 		<script src="js/libs/modernizr.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -81,7 +81,7 @@
 					</div>
 					<div data-sr>
 						<ul class="listPartenaires">
-							<li class="col col1Bis first">
+							<li class="col col1Bis">
 								<h3><strong>ARX</strong>Belgique</h3>
 								<p>
 									Boulevard de l'Humanité, 231<br/>
@@ -109,7 +109,7 @@
 									Fax : (+47) 23 38 38 42<br/>
 									<span>email: </span><a href="mailto:norge@arxinter.net">norge@arxinter.net</a>
 								</p>
-							</li><li class="col col1Bis first">
+							</li><li class="col col1Bis">
 								<h3><strong>ARX</strong>Espagne</h3>
 								<p>
 									Camino de la casabermeja 118<br/>
@@ -143,10 +143,10 @@
 					</div>
 					<h2 data-sr="enter right move 100px over 0.5s">Nos partenaires privilégiés</h2>
 					<div data-sr class="marginPadTop fdBlanc padBot2">
-						<div class="col col2">
+						<div class="col col2 responsivePadLeft">
 							<h3 class="legend"><strong>Rowa</strong>carefusion</h3>
 							<img src="layoutImg/rowa.jpg" alt="ROWA Carefusion"/>
-						</div><div data-sr class="col col3 padLeft">
+						</div><div data-sr class="col col3 padLeft responsivePadRight">
 							<p class="light veryBig">
 								L'un des leaders mondiaux de l'industrie médicale
 							</p>
@@ -162,7 +162,7 @@
 						</div>
 					</div>
 					<div class="marginPadTopBot fdBlanc" data-sr>
-						<div class="col col3 padRight">
+						<div class="col col3 padRight responsivePadLeft">
 							<p class="light veryBig">
 								L'un des leaders mondiaux de l'industrie médicale
 							</p>
@@ -175,7 +175,7 @@
 
 								<a href="http://www.carefusion.com" target="_blank" class="big">www.carefusion.com</a>
 							</p>
-						</div><div data-sr class="col col2">
+						</div><div data-sr class="col col2 responsivePadRight">
 							<h3 class="legend"><strong>Rowa</strong>carefusion</h3>
 							<img src="layoutImg/rowa.jpg" alt="ROWA Carefusion"/>
 						</div>
@@ -323,7 +323,7 @@
 			    wait: '0.5s',
 			    delay: 'onload'
 			}
-			window.sr = new scrollReveal( config );
+			if($(window).width() > 979){ window.sr = new scrollReveal( config ); }
 		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>
