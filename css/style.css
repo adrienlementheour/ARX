@@ -507,7 +507,7 @@ ul.light {
 }
 p.sur-tiret-right,
 ul.sur-tiret-right {
-  width: calc(101%);
+  width: calc(100% + 1px);
 }
 p {
   margin: 0;
