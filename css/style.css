@@ -505,6 +505,10 @@ ul.light {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+p.sur-tiret-right,
+ul.sur-tiret-right {
+  width: calc(101%);
+}
 p {
   margin: 0;
   padding: 0;
