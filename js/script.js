@@ -38,20 +38,22 @@ $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouse
 var offsetSubMenu;
 
 function zoneSliderScrollMouseWheel(event){
-	//Normalize event wheel delta
-	var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
-	if(delta < -1){
-		// Scroll down
-		nextSlideScroll(event);
-	}else if(delta > 1){
-		// Scroll up
-		prevSlideScroll(event);
+	if($(window).width() >= 979){
+		//Normalize event wheel delta
+		var delta = event.originalEvent.wheelDelta / 30 || -event.originalEvent.detail;
+		if(delta < -1){
+			// Scroll down
+			nextSlideScroll(event);
+		}else if(delta > 1){
+			// Scroll up
+			prevSlideScroll(event);
+		}
+		if(mouseWheelPreventDefault){
+			event.preventDefault();
+			//event.stopPropagation();
+		}
+		mouseWheelPreventDefault = true;
 	}
-	if(mouseWheelPreventDefault){
-		event.preventDefault();
-		//event.stopPropagation();
-	}
-	mouseWheelPreventDefault = true;
 };
 
 function slideScroll(numNext){
@@ -511,19 +513,23 @@ $(function(){
 	$(".btn-half-visu").hover(
 	  function() {
 	  	if($(this).is("#btn-visu-left")){
-	        TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "55%", ease:easeAnimBtnHalfVisu});
-	        TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "47%", ease:easeAnimBtnHalfVisu});
-	        TweenMax.set($(".btn-half-visu-small-left"), {className:"+=survol"});
-	        TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {x:"80px", ease:easeAnimBtnHalfVisu});
-	        TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {x:"80px", ease:easeAnimBtnHalfVisu});
-	        TweenMax.to($("#btn-visu-left .over-container-half-visu"), tpsAnimBtnHalfVisu, {opacity:"0", ease:easeAnimBtnHalfVisu});
+	  		if($(window).width()>=768){
+		        TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "55%", ease:easeAnimBtnHalfVisu});
+		        TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "47%", ease:easeAnimBtnHalfVisu});
+		        TweenMax.set($(".btn-half-visu-small-left"), {className:"+=survol"});
+		        TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {x:"80px", ease:easeAnimBtnHalfVisu});
+		        TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {x:"80px", ease:easeAnimBtnHalfVisu});
+		        TweenMax.to($("#btn-visu-left .over-container-half-visu"), tpsAnimBtnHalfVisu, {opacity:"0", ease:easeAnimBtnHalfVisu});
+	        }
 	  	}else if($(this).is("#btn-visu-right")){
-	  		TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "45%", ease:easeAnimBtnHalfVisu});
-	  		TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "57%", ease:easeAnimBtnHalfVisu});
-	  		TweenMax.set($(".btn-half-visu-small-right"), {className:"+=survol"});
-	  		TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {x:"-80px", ease:easeAnimBtnHalfVisu});
-	  		TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {x:"-80px", ease:easeAnimBtnHalfVisu});
-	  		TweenMax.to($("#btn-visu-right .over-container-half-visu"), tpsAnimBtnHalfVisu, {opacity:"0.2", ease:easeAnimBtnHalfVisu});
+	  		if($(window).width()>=768){
+		  		TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "45%", ease:easeAnimBtnHalfVisu});
+		  		TweenMax.to($("#btn-visu-right"), tpsAnimBtnHalfVisu, {width: "57%", ease:easeAnimBtnHalfVisu});
+		  		TweenMax.set($(".btn-half-visu-small-right"), {className:"+=survol"});
+		  		TweenMax.to($("#btn-rowa-smart-pharmacies"), tpsAnimBtnHalfVisu, {x:"-80px", ease:easeAnimBtnHalfVisu});
+		  		TweenMax.to($("#btn-rowa-vmax-pharmacies"), tpsAnimBtnHalfVisu, {x:"-80px", ease:easeAnimBtnHalfVisu});
+		  		TweenMax.to($("#btn-visu-right .over-container-half-visu"), tpsAnimBtnHalfVisu, {opacity:"0.2", ease:easeAnimBtnHalfVisu});
+		  	}
 	  	}
 	  }, function() {
 	  	TweenMax.to($("#masque-btn-half-visu"), tpsAnimBtnHalfVisu, {width: "50%", ease:easeAnimBtnHalfVisu});

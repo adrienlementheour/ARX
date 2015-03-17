@@ -5383,6 +5383,56 @@ ul.subMenu a.big {
     padding-bottom: 7px;
   }
 }
+@media (max-width: 1024px) {
+  /* @group Pages Pharmacies / Hopitaux */
+  ul#slider-scroll {
+    padding: 0 0 250px 0;
+  }
+  ul#slider-scroll li {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    margin: 100px 0;
+  }
+  ul#slider-scroll li .zone-visu-txt-slider {
+    z-index: 2;
+  }
+  ul#slider-scroll li .zone-txt-slider {
+    width: 100%;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  ul#slider-scroll li.slide-right .zone-visu-txt-slider {
+    left: 0;
+  }
+  ul#slider-scroll li.slide-right .zone-txt-slider {
+    left: 0;
+    padding-left: 352px;
+    padding-right: 8.33333333vw;
+    margin: 0;
+  }
+  ul#slider-scroll li.slide-left .zone-visu-txt-slider {
+    left: inherit;
+    right: 0;
+  }
+  ul#slider-scroll li.slide-left .zone-txt-slider {
+    left: 0;
+    padding-right: 352px;
+    padding-left: 8.33333333vw;
+    margin: 0;
+  }
+  ul#slider-scroll-navigator {
+    display: none;
+  }
+  /* @end */
+}
 @media (max-width: 979px) {
   html,
   body {
@@ -5546,6 +5596,12 @@ ul.subMenu a.big {
   .contact h1 {
     width: 140%;
   }
+  .pharmacies h1 {
+    padding-top: 130px;
+    width: 90%;
+    padding-left: 35px;
+    text-align: center;
+  }
   header {
     padding: 30px 0 15px 0;
   }
@@ -5578,6 +5634,21 @@ ul.subMenu a.big {
   #bloc-home a#btn-contact {
     width: 25vw;
     height: 25vw;
+  }
+  #bloc-home a#btn-rowa-vmax-pharmacies {
+    width: 25vw;
+    height: 25vw;
+    left: 0;
+    top: inherit;
+    bottom: 0;
+  }
+  #bloc-home a#btn-rowa-smart-pharmacies {
+    width: 25vw;
+    height: 25vw;
+    left: inherit;
+    top: inherit;
+    right: 0;
+    bottom: 0;
   }
   #bloc-home #bg-bloc-home #machine {
     margin-right: -880px;
@@ -5961,6 +6032,14 @@ ul.subMenu a.big {
     right: 0;
     padding: 30px;
   }
+  #bloc-home a#btn-rowa-vmax-pharmacies {
+    width: 50%;
+    height: 50vw;
+  }
+  #bloc-home a#btn-rowa-smart-pharmacies {
+    width: 50%;
+    height: 50vw;
+  }
   #bloc-video #wrapper-video {
     height: 200px;
     width: 100%;
@@ -6043,6 +6122,56 @@ ul.subMenu a.big {
   .hopitaux ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
     background: url("../layoutImg/slider-scroll/iatrogenie@2x.png") no-repeat 0 0;
     background-size: 1080px 1750px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .pharmacies ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .hopitaux ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .pharmacies ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .hopitaux ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .pharmacies ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .hopitaux ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .pharmacies ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .hopitaux ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .pharmacies ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
+  .hopitaux ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
+    background-size: 540px 875px;
   }
 }
 /* ==|== print styles =======================================================
