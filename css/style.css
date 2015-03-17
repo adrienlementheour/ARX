@@ -684,20 +684,20 @@ a:focus {
   color: #0070b8;
   text-decoration: underline;
 }
-a.big {
+a.bigPart {
   font-size: 1.25em;
   text-decoration: underline;
   position: relative;
   padding: 0 0 0 10px;
 }
-a.big:after {
+a.bigPart:after {
   content: '›';
   position: absolute;
   left: 0;
   top: 5px;
 }
-a.big:hover,
-a.big:focus {
+a.bigPart:hover,
+a.bigPart:focus {
   color: #535354;
 }
 .btn,
@@ -5334,6 +5334,16 @@ ul.subMenu a.big {
   .partenaires li p {
     width: 100%;
   }
+  .consultant .content .col.col2,
+  .installation .content .col.col2,
+  .sav .content .col.col2 {
+    width: 50vw;
+  }
+  .consultant .paddingLeft2,
+  .installation .paddingLeft2,
+  .sav .paddingLeft2 {
+    padding-left: 50vw;
+  }
 }
 @media (max-width: 979px) {
   html,
@@ -5350,6 +5360,7 @@ ul.subMenu a.big {
   ul.subMenuContact {
     float: none;
     padding: 0 0 20px 20px;
+    position: relative;
   }
   ul.subMenu li,
   ul.subMenuContact li {
@@ -5765,6 +5776,42 @@ ul.subMenu a.big {
   }
   .listPartenaires li.col1Bis {
     width: 47%;
+  }
+  .consultant .content .col.col2,
+  .installation .content .col.col2,
+  .sav .content .col.col2 {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .consultant .content .col.col2 + .col2,
+  .installation .content .col.col2 + .col2,
+  .sav .content .col.col2 + .col2 {
+    margin-top: 30px;
+    padding-left: 20px;
+  }
+  .consultant .paddingLeft2,
+  .installation .paddingLeft2,
+  .sav .paddingLeft2 {
+    padding-left: 20px;
+  }
+  .consultant .paddingLeft2 h3,
+  .installation .paddingLeft2 h3,
+  .sav .paddingLeft2 h3 {
+    padding-top: 15px;
+  }
+  .consultant .paddingLeft2 h3 {
+    padding-top: 15px;
+  }
+  .titreIconeLeft span {
+    right: 0;
+  }
+  .titreIconeRight span {
+    left: -15px;
+  }
+  .titreIconeRight.formation span {
+    top: 10px;
+    left: 0;
   }
 }
 @media (max-width: 480px) {

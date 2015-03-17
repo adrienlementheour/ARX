@@ -260,6 +260,19 @@
       }
     }
   }
+
+  .consultant, .installation, .sav{
+    .content{
+      .col{
+        &.col2{
+          width: 6*@largeurColResponsive;
+        }
+      }
+    }
+    .paddingLeft2{
+      padding-left: 6*@largeurColResponsive;
+    }
+  }
 }
 
 @media (max-width: 979px) {
@@ -277,6 +290,7 @@
   ul.subMenu, ul.subMenuContact{
     float: none;
     padding: 0 0 20px 20px;
+    position: relative;
     li{
       display: inline-block;
       padding: 0 10px 0 0;
@@ -753,6 +767,54 @@
       }
       &.col1Bis{
         width: 47%;
+      }
+    }
+  }
+
+  .consultant, .installation, .sav{
+    .content{
+      .col{
+        &.col2{
+          width: 100%;
+          padding-right: 20px;
+          padding-left: 20px;
+          +.col2{
+            margin-top: 30px;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+    .paddingLeft2{
+      padding-left: 20px;
+      h3{
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .consultant{
+    .paddingLeft2{
+      h3{
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .titreIconeLeft{
+    span{
+      right: 0;
+    }
+  }
+
+  .titreIconeRight{
+    span{
+      left: -15px;
+    }
+    &.formation{
+      span{
+        top: 10px;
+        left: 0;
       }
     }
   }
