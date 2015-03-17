@@ -68,6 +68,12 @@
     }
   }
 
+  .subMenuContact{
+    ul{
+      margin-left: 0;
+    }
+  }
+
   ul.bg-grid{
     width: 100%;
     left: 0;
@@ -261,18 +267,15 @@
     }
   }
 
-  .consultant, .installation, .sav{
-    .content{
-      .col{
-        &.col2{
-          width: 6*@largeurColResponsive;
-        }
-      }
+  #equipeFilter{
+    a{
+      font-size: 1.2em;
     }
-    .paddingLeft2{
-      padding-left: 6*@largeurColResponsive;
+    li{
+      padding-bottom: 7px;
     }
   }
+
 }
 
 @media (max-width: 979px) {
@@ -289,13 +292,26 @@
 
   ul.subMenu, ul.subMenuContact{
     float: none;
-    padding: 0 0 20px 20px;
+    margin: -60px 0 20px;
+    padding: 20px 0 0;
     position: relative;
-    li{
+    background: @blanc;
+    border-bottom: 1px solid fade(#7d7d7d, 40%);
+    text-align: center;
+    > li{
       display: inline-block;
-      padding: 0 10px 0 0;
+      vertical-align: top;
+      padding: 0 20px;
+      &:first-child{
+        padding: 0 21px;
+        border-right: 1px solid fade(#7d7d7d, 40%);
+      }
+      li{
+        display: block;
+        padding: 5px 0 0;
+      }
       &:last-child ul{
-        padding: 10px 0 20px 10px;
+        padding: 5px 0 20px 0;
       }
     }
     a, a.actif{
@@ -305,8 +321,14 @@
       }
     }
     ul{
-      padding: 10px 0 20px 10px;
+      padding: 5px 0 20px 0;
     }
+  }
+
+  #bloc-titre-automatiser{
+    width: 100%;
+    padding: 10px 20px 30px;
+    .box-sizing(border-box);
   }
 
   #bloc-video{
@@ -344,10 +366,20 @@
     }
   }
 
-  .arxFrance{
+  .apropos, .partenaires{
     .content{
       h2{
+        text-align: center;
         padding-left: 20px;
+        padding-right: 20px;
+        &.right-aligned{
+          text-align: center;
+        }
+      }
+      p.txt-title{
+        &.right-aligned{
+          text-align: center;
+        }
       }
     }
   }
@@ -363,6 +395,10 @@
         }
       }
     }
+  }
+
+  #bloc-titre-partenaires {
+    padding-left: 20px;
   }
 
   .partenaires{
@@ -398,6 +434,35 @@
     }
   }
 
+  .consultant, .installation, .sav{
+    .content{
+      .col{
+        &.col2{
+          width: 6*@largeurColResponsive;
+        }
+      }
+    }
+    .paddingLeft2{
+      padding-left: 6*@largeurColResponsive;
+    }
+  }
+
+  .consultant{
+    h3.col4{
+      width: 100%;
+    }
+  }
+
+  #equipeFilter{
+    text-align: center;
+  }
+
+  #equipe{
+    ul{
+      text-align: center;
+    }
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -405,12 +470,6 @@
     .partenaires &, .contact &{
       width: 140%;
     }
-  }
-
-  #bloc-titre-automatiser{
-    width: 100%;
-    padding: 10px 20px 30px;
-    .box-sizing(border-box);
   }
 
   header{
@@ -713,14 +772,37 @@
     }
   }
 
-  .apropos{
+  blockquote{
+    padding: 0 0 90px 80px;
+    text-align: center;
+    span{
+      display: block;
+    }
+  }
+
+  .arxFrance{
     .content{
+      p{
+        text-align: center;
+      }
       .col{
-        &.col1{
-          text-align: right;
-        }
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
         &.col1, &.col4, &.col2, &.col3{
           width: 100%;
+        }
+      }
+      h2{
+        padding-left: 20px;
+        text-align: center;
+        &.right-aligned{
+          text-align: center;
+        }
+      }
+      p.txt-title{
+        &.right-aligned{
+          text-align: center;
         }
       }
     }
@@ -730,15 +812,15 @@
     .content{
       .col{
         &.col2{
-          width: 100%;
           max-width: 392px;
           padding: 0 20px;
+          margin: 0 auto;
+          display: block;
           + .col3{
             padding-top: 20px;
           }
         }
         &.col3{
-          width: 100%;
           + .col2{
             padding-top: 20px;
           }
@@ -759,9 +841,11 @@
 
   .listPartenaires{
     li{
-      text-align: right;
+      &.right-aligned{
+      text-align: left;
+      }
       &.center-aligned{
-        text-align: right;
+        text-align: left;
         margin-left: 0;
         margin-right: 0;
       }
@@ -774,8 +858,8 @@
   .consultant, .installation, .sav{
     .content{
       .col{
+        text-align: center;
         &.col2{
-          width: 100%;
           padding-right: 20px;
           padding-left: 20px;
           +.col2{
@@ -783,41 +867,36 @@
             padding-left: 20px;
           }
         }
+        &.right-aligned{
+          text-align: center;
+        }
       }
     }
     .paddingLeft2{
       padding-left: 20px;
-      h3{
-        padding-top: 15px;
-      }
+    }
+    h3{
+      text-align: center;
     }
   }
 
-  .consultant{
-    .paddingLeft2{
-      h3{
-        padding-top: 15px;
-      }
+  .visuel{
+    &.visuelConsulting{
+      margin-bottom: 35px;
     }
   }
 
-  .titreIconeLeft{
-    span{
-      right: 0;
+  .titreIconeRight, .titreIconeLeft{
+    padding: 55px 0 0;
+    span, &.formation span, &.visites span, &.france span, &.tools span{
+      width: 46px;
+      font-size: 46px;
+      margin: 0 0 0 -23px;
+      left: 50%;
+      top: 0;
     }
   }
 
-  .titreIconeRight{
-    span{
-      left: -15px;
-    }
-    &.formation{
-      span{
-        top: 10px;
-        left: 0;
-      }
-    }
-  }
 }
 
 @media (max-width: 480px) {
@@ -892,6 +971,12 @@
       &.col1Bis{
         width: 100%;
         padding: 0 20px;
+      }
+      p{
+        display: inline-block;
+        width: 50%;
+        vertical-align: middle;
+        padding: 0 0 0 10px;
       }
     }
   }

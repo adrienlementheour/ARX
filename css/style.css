@@ -4598,6 +4598,9 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
   padding: 0;
   margin: 20px 0 0;
 }
+.content .listPartenaires h3 {
+  margin: 0 0 25px;
+}
 .content .legend {
   margin: 0;
   position: absolute;
@@ -4616,7 +4619,6 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
   text-align: left;
   background: #0070b8;
   padding-right: 50px;
-  margin: 0 0 25px;
 }
 .listPartenaires p {
   font-family: 'robotolight', sans-serif;
@@ -5044,6 +5046,7 @@ ul.subMenu a.big {
   transition: 0.2s ease-in-out;
 }
 #equipe li p {
+  text-align: left;
   color: #232324;
   font-size: 0.84em;
   margin: 176px 0 0;
@@ -5169,6 +5172,9 @@ ul.subMenu a.big {
   }
   .content h2.right-aligned {
     margin-right: 0;
+    margin-left: 0;
+  }
+  .subMenuContact ul {
     margin-left: 0;
   }
   ul.bg-grid {
@@ -5337,15 +5343,11 @@ ul.subMenu a.big {
   .partenaires li p {
     width: 100%;
   }
-  .consultant .content .col.col2,
-  .installation .content .col.col2,
-  .sav .content .col.col2 {
-    width: 50vw;
+  #equipeFilter a {
+    font-size: 1.2em;
   }
-  .consultant .paddingLeft2,
-  .installation .paddingLeft2,
-  .sav .paddingLeft2 {
-    padding-left: 50vw;
+  #equipeFilter li {
+    padding-bottom: 7px;
   }
 }
 @media (max-width: 979px) {
@@ -5362,17 +5364,32 @@ ul.subMenu a.big {
   ul.subMenu,
   ul.subMenuContact {
     float: none;
-    padding: 0 0 20px 20px;
+    margin: -60px 0 20px;
+    padding: 20px 0 0;
     position: relative;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(125, 125, 125, 0.4);
+    text-align: center;
   }
-  ul.subMenu li,
-  ul.subMenuContact li {
+  ul.subMenu > li,
+  ul.subMenuContact > li {
     display: inline-block;
-    padding: 0 10px 0 0;
+    vertical-align: top;
+    padding: 0 20px;
   }
-  ul.subMenu li:last-child ul,
-  ul.subMenuContact li:last-child ul {
-    padding: 10px 0 20px 10px;
+  ul.subMenu > li:first-child,
+  ul.subMenuContact > li:first-child {
+    padding: 0 21px;
+    border-right: 1px solid rgba(125, 125, 125, 0.4);
+  }
+  ul.subMenu > li li,
+  ul.subMenuContact > li li {
+    display: block;
+    padding: 5px 0 0;
+  }
+  ul.subMenu > li:last-child ul,
+  ul.subMenuContact > li:last-child ul {
+    padding: 5px 0 20px 0;
   }
   ul.subMenu a,
   ul.subMenuContact a,
@@ -5392,7 +5409,14 @@ ul.subMenu a.big {
   }
   ul.subMenu ul,
   ul.subMenuContact ul {
-    padding: 10px 0 20px 10px;
+    padding: 5px 0 20px 0;
+  }
+  #bloc-titre-automatiser {
+    width: 100%;
+    padding: 10px 20px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   #bloc-video #wrapper-video {
     height: 300px;
@@ -5416,14 +5440,28 @@ ul.subMenu a.big {
   footer ul.bg-grid {
     display: none;
   }
-  .arxFrance .content h2 {
+  .apropos .content h2,
+  .partenaires .content h2 {
+    text-align: center;
     padding-left: 20px;
+    padding-right: 20px;
+  }
+  .apropos .content h2.right-aligned,
+  .partenaires .content h2.right-aligned {
+    text-align: center;
+  }
+  .apropos .content p.txt-title.right-aligned,
+  .partenaires .content p.txt-title.right-aligned {
+    text-align: center;
   }
   .apropos .content .col.col1 {
     width: 33.33333333vw;
   }
   .apropos .content .col.col3 {
     width: 66.66666667vw;
+  }
+  #bloc-titre-partenaires {
+    padding-left: 20px;
   }
   .partenaires .content .col.col3 {
     width: 66.66666667vw;
@@ -5450,18 +5488,30 @@ ul.subMenu a.big {
   .listPartenaires li.right-aligned {
     text-align: right;
   }
+  .consultant .content .col.col2,
+  .installation .content .col.col2,
+  .sav .content .col.col2 {
+    width: 50vw;
+  }
+  .consultant .paddingLeft2,
+  .installation .paddingLeft2,
+  .sav .paddingLeft2 {
+    padding-left: 50vw;
+  }
+  .consultant h3.col4 {
+    width: 100%;
+  }
+  #equipeFilter {
+    text-align: center;
+  }
+  #equipe ul {
+    text-align: center;
+  }
 }
 @media (max-width: 767px) {
   .partenaires h1,
   .contact h1 {
     width: 140%;
-  }
-  #bloc-titre-automatiser {
-    width: 100%;
-    padding: 10px 20px 30px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
   }
   header {
     padding: 30px 0 15px 0;
@@ -5734,25 +5784,45 @@ ul.subMenu a.big {
   #menu-full ul#menu-bottom-footer li.col-menu-bottom-footer:nth-child(2) ul.menu-categ-1 ul.menu-categ-2 {
     display: none;
   }
-  .apropos .content .col.col1 {
-    text-align: right;
+  blockquote {
+    padding: 0 0 90px 80px;
+    text-align: center;
   }
-  .apropos .content .col.col1,
-  .apropos .content .col.col4,
-  .apropos .content .col.col2,
-  .apropos .content .col.col3 {
+  blockquote span {
+    display: block;
+  }
+  .arxFrance .content p {
+    text-align: center;
+  }
+  .arxFrance .content .col {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .arxFrance .content .col.col1,
+  .arxFrance .content .col.col4,
+  .arxFrance .content .col.col2,
+  .arxFrance .content .col.col3 {
     width: 100%;
+  }
+  .arxFrance .content h2 {
+    padding-left: 20px;
+    text-align: center;
+  }
+  .arxFrance .content h2.right-aligned {
+    text-align: center;
+  }
+  .arxFrance .content p.txt-title.right-aligned {
+    text-align: center;
   }
   .partenaires .content .col.col2 {
-    width: 100%;
     max-width: 392px;
     padding: 0 20px;
+    margin: 0 auto;
+    display: block;
   }
   .partenaires .content .col.col2 + .col3 {
     padding-top: 20px;
-  }
-  .partenaires .content .col.col3 {
-    width: 100%;
   }
   .partenaires .content .col.col3 + .col2 {
     padding-top: 20px;
@@ -5769,21 +5839,25 @@ ul.subMenu a.big {
     width: 125px;
     height: 125px;
   }
-  .listPartenaires li {
-    text-align: right;
+  .listPartenaires li.right-aligned {
+    text-align: left;
   }
   .listPartenaires li.center-aligned {
-    text-align: right;
+    text-align: left;
     margin-left: 0;
     margin-right: 0;
   }
   .listPartenaires li.col1Bis {
     width: 47%;
   }
+  .consultant .content .col,
+  .installation .content .col,
+  .sav .content .col {
+    text-align: center;
+  }
   .consultant .content .col.col2,
   .installation .content .col.col2,
   .sav .content .col.col2 {
-    width: 100%;
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -5793,28 +5867,43 @@ ul.subMenu a.big {
     margin-top: 30px;
     padding-left: 20px;
   }
+  .consultant .content .col.right-aligned,
+  .installation .content .col.right-aligned,
+  .sav .content .col.right-aligned {
+    text-align: center;
+  }
   .consultant .paddingLeft2,
   .installation .paddingLeft2,
   .sav .paddingLeft2 {
     padding-left: 20px;
   }
-  .consultant .paddingLeft2 h3,
-  .installation .paddingLeft2 h3,
-  .sav .paddingLeft2 h3 {
-    padding-top: 15px;
+  .consultant h3,
+  .installation h3,
+  .sav h3 {
+    text-align: center;
   }
-  .consultant .paddingLeft2 h3 {
-    padding-top: 15px;
+  .visuel.visuelConsulting {
+    margin-bottom: 35px;
   }
-  .titreIconeLeft span {
-    right: 0;
+  .titreIconeRight,
+  .titreIconeLeft {
+    padding: 55px 0 0;
   }
-  .titreIconeRight span {
-    left: -15px;
-  }
-  .titreIconeRight.formation span {
-    top: 10px;
-    left: 0;
+  .titreIconeRight span,
+  .titreIconeLeft span,
+  .titreIconeRight.formation span,
+  .titreIconeLeft.formation span,
+  .titreIconeRight.visites span,
+  .titreIconeLeft.visites span,
+  .titreIconeRight.france span,
+  .titreIconeLeft.france span,
+  .titreIconeRight.tools span,
+  .titreIconeLeft.tools span {
+    width: 46px;
+    font-size: 46px;
+    margin: 0 0 0 -23px;
+    left: 50%;
+    top: 0;
   }
 }
 @media (max-width: 480px) {
@@ -5872,6 +5961,12 @@ ul.subMenu a.big {
   .listPartenaires li.col1Bis {
     width: 100%;
     padding: 0 20px;
+  }
+  .listPartenaires li p {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    padding: 0 0 0 10px;
   }
 }
 /* retina */

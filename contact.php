@@ -147,8 +147,7 @@ if(isset($_POST['submit'])) {
 							<li><span class="icon-fax"></span>(+33) 02 43 45 98 58</li>
 							<li><span class="icon-mail"></span><a href="mailto:info@arxinter.net" title="Envoyer un e-mail">info@arxinter.net</a></li>
 						</ul>
-					</li>
-					<li>
+					</li><li>
 						réseaux sociaux
 						<ul class="rs">
 							<li>
