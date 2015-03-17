@@ -472,6 +472,9 @@ h2 {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+.content h2.no-negative-margin-left {
+  margin-left: 1px;
+}
 h3 {
   color: #0070b8;
   font-family: 'robotolight', sans-serif;
