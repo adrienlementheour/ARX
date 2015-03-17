@@ -988,4 +988,13 @@ function setSliderScrollNavigator(myScroll){
 
 $( window ).resize(function() {
 	heightBlocDrapeaux = $("#bloc-pays").height();
+
+	if($(window).width() > 979){
+		if($('.subMenu').length){
+			$('.subMenu').removeClass('fixed, fixedBottom');
+		}
+		if($('.subMenuContact').length){
+			$('.subMenuContact').removeClass('fixed, fixedBottom');
+		}
+	}
 });

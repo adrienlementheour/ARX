@@ -12,8 +12,6 @@
 
 	  	<link rel="stylesheet" href="css/libs/normalize.css">
 	  	<link rel="stylesheet" href="css/style.css">
-		
-		<style> .js [data-sr]{ visibility: hidden; } </style>
 
 		<script src="js/libs/modernizr.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -80,15 +78,15 @@
 				</div>
 				<div class="paddingLeft">
 					<div data-sr>
-						<div class="col col2 center-aligned fdBlanc padTopBot">
+						<div class="col col2 center-aligned fdBlanc padTopBot responsivePadLeft">
 							<img src="layoutImg/map.png" alt="Implantations du groupe ARX en Europe"/>
-						</div><div class="col col3">
+						</div><div class="col col3 responsivePadLeft responsivePadRight">
 							<p class="light">Le GROUPE ARX a été fondé en 1995 en Angleterre, pays où le premier robot Rowa a été installé. Depuis près de 17 ans, ARX et Rowa se sont imposés dans toute l’Europe comme des acteurs incontournables dans la robotisation des pharmacies. Aujourd’hui ce sont plusieurs milliers de pharmaciens qui ont été séduits par nos différents produits tels que le Rowa Select, le Rowa Vmax ou encore notre module de chargement 100% Automatique : ProLog.<br/><br/>
 							Le GROUPE ARX réunit aujourd'hui à ses côtés les principaux acteurs de l'innovation et construit au quotidien avec ses clients, la pharmacie de demain.</p>
 						</div>
 					</div>
 					<h2 data-sr="enter right move 100px over 0.5s">Notre travail</h2>
-					<div data-sr>
+					<div data-sr class="responsivePadRight responsivePadLeft">
 						<p class="light">
 							Le GROUPE ARX commercialise des systèmes d'automatisation pour les pharmacies et pour les hôpitaux. En complément de cette activité, nous proposons une multitude de services spécifiques aux pharmacies :
 						</p>
@@ -101,9 +99,9 @@
 					</div>
 					<h2 class="right-aligned paddingRight" data-sr="enter left move 100px over 0.5s">Nos valeurs</h2>
 					<div data-sr>
-						<div class="col col1 marginTop">
+						<div class="col col1 marginTop responsivePadLeft responsivePadRight">
 							<img src="layoutImg/rupert.jpg" alt="Rupert KATRITZKY"/>
-						</div><div class="col col4 marginPadTop fdBlanc">
+						</div><div class="col col4 marginPadTop fdBlanc responsivePadRight">
 							<blockquote>
 								J'ai toujours développé le GROUPE ARX en fonction de trois critères :<br/><br/>
 								<strong>Un comportement éthique</strong>
@@ -259,7 +257,7 @@
 			    wait: '0.5s',
 			    delay: 'onload'
 			}
-			if($(window).width() > 979){ window.sr = new scrollReveal( config ); }
+			window.sr = new scrollReveal( config );
 		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>

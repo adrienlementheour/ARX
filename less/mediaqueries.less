@@ -59,6 +59,15 @@
     }
   }
 
+  .content{
+    h2{
+      &.right-aligned{
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
   ul.bg-grid{
     width: 100%;
     left: 0;
@@ -257,8 +266,6 @@
   html, body{
     font-size: 0.9em;
   }
-
-  .js [data-sr]{ visibility: visible !important; }
   
   .paddingLeft{
     padding: 0;
@@ -269,9 +276,21 @@
 
   ul.subMenu, ul.subMenuContact{
     float: none;
-    padding-top: 0;
+    padding: 0 0 20px 20px;
     li{
       display: inline-block;
+      &:last-child ul{
+        padding: 10px 0 20px 10px;
+      }
+    }
+    a, a.actif{
+      font-size: 0.75em;
+      &:hover, &:focus{
+        padding: 0;
+      }
+    }
+    ul{
+      padding: 10px 0 20px 10px;
     }
   }
 
@@ -311,8 +330,23 @@
   }
 
   .arxFrance{
-    h2{
-      padding-left: 20px;
+    .content{
+      h2{
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .apropos{
+    .content{
+      .col{
+        &.col1{
+          width: 4*@largeurColResponsive;
+        }
+        &.col3{
+          width: 8*@largeurColResponsive;
+        }
+      }
     }
   }
 
@@ -323,12 +357,12 @@
           width: 8*@largeurColResponsive;
         }
       }
+      .legend{
+        padding: 35px 20px;
+      }
     }
     h3{
       padding: 20px;
-    }
-    .legend{
-      padding: 35px 20px;
     }
   }
 
@@ -658,6 +692,19 @@
     }
   }
 
+  .apropos{
+    .content{
+      .col{
+        &.col1{
+          text-align: right;
+        }
+        &.col1, &.col4, &.col2, &.col3{
+          width: 100%;
+        }
+      }
+    }
+  }
+
   .partenaires{
     .content{
       .col{
@@ -676,15 +723,15 @@
           }
         }
       }
+      .legend{
+        right: 20px;
+        .size(125px);
+      }
     }
     .padLeft{
       padding-left: 20px;
     }
     h3{
-      .size(125px);
-    }
-    .legend{
-      right: 20px;
       .size(125px);
     }
   }

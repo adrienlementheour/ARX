@@ -12,8 +12,6 @@
 
 	  	<link rel="stylesheet" href="css/libs/normalize.css">
 	  	<link rel="stylesheet" href="css/style.css">
-		
-		<style> .js [data-sr]{ visibility: hidden; } </style>
 
 		<script src="js/libs/modernizr.js" type="text/javascript" charset="utf-8"></script>
 	</head>
@@ -96,7 +94,7 @@
 							En étudiant vos flux de clientèle, vos mouvements de stocks et les spécificités de vos ventes, nous définirons vos besoins en stockage et en performances.
 						</p>
 					</div>
-					<div data-sr class="col col3 fdBlanc paddingLeft2 marginPadTop2 padBot">
+					<div data-sr class="col fdBlanc paddingLeft2 marginPadTop2 padBot">
 						<h3 class="titreIconeRight" data-sr="enter right move 100px over 0.5s">Définir l'emplacement des systèmes d'automatisation<span class="icon-mesure"></span></h3>
 						<p class="light">L' automatisation d'une officine s'accompagne la plupart du temps, d'un réagencement des locaux  et/ou d'une délocalisation des stocks. En prenant en compte votre budget, vos souhaits et l’architecture de votre officine, nous vous proposerons les meilleurs emplacements possibles et les solutions de convoyage les mieux adaptées.</p>
 					</div>
@@ -412,7 +410,7 @@
 			    wait: '0.5s',
 			    delay: 'onload'
 			}
-			if($(window).width() > 979){ window.sr = new scrollReveal( config ); }
+			window.sr = new scrollReveal( config );
 		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>

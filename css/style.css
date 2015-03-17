@@ -254,6 +254,9 @@ textarea {
   border-left-color: purple;
   border-top-color: rgba(128, 0, 128, 0);
 }
+.js [data-sr] {
+  visibility: hidden;
+}
 html,
 body {
   position: relative;
@@ -286,6 +289,7 @@ body {
 }
 .paddingLeft {
   padding: 0 0 0 176px;
+  overflow: hidden;
 }
 .paddingLeftBis {
   padding-left: 264px;
@@ -4584,6 +4588,12 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
   padding: 0;
   margin: 20px 0 0;
 }
+.content .legend {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  background: rgba(0, 112, 184, 0.9);
+}
 .listPartenaires li {
   margin: 0 0 55px;
 }
@@ -4609,11 +4619,6 @@ ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 li ul.menu-categ
 .listPartenaires p a {
   padding: 10px 0 0;
   display: inline-block;
-}
-.legend {
-  position: absolute;
-  right: 0;
-  background: rgba(0, 112, 184, 0.9);
 }
 /* @end */
 /* @group contact */
@@ -5151,6 +5156,10 @@ ul.subMenu a.big {
   .col.col4 {
     width: 66.66666667vw;
   }
+  .content h2.right-aligned {
+    margin-right: 0;
+    margin-left: 0;
+  }
   ul.bg-grid {
     width: 100%;
     left: 0;
@@ -5323,9 +5332,6 @@ ul.subMenu a.big {
   body {
     font-size: 0.9em;
   }
-  .js [data-sr] {
-    visibility: visible !important;
-  }
   .paddingLeft {
     padding: 0;
   }
@@ -5335,11 +5341,35 @@ ul.subMenu a.big {
   ul.subMenu,
   ul.subMenuContact {
     float: none;
-    padding-top: 0;
+    padding: 0 0 20px 20px;
   }
   ul.subMenu li,
   ul.subMenuContact li {
     display: inline-block;
+  }
+  ul.subMenu li:last-child ul,
+  ul.subMenuContact li:last-child ul {
+    padding: 10px 0 20px 10px;
+  }
+  ul.subMenu a,
+  ul.subMenuContact a,
+  ul.subMenu a.actif,
+  ul.subMenuContact a.actif {
+    font-size: 0.75em;
+  }
+  ul.subMenu a:hover,
+  ul.subMenuContact a:hover,
+  ul.subMenu a.actif:hover,
+  ul.subMenuContact a.actif:hover,
+  ul.subMenu a:focus,
+  ul.subMenuContact a:focus,
+  ul.subMenu a.actif:focus,
+  ul.subMenuContact a.actif:focus {
+    padding: 0;
+  }
+  ul.subMenu ul,
+  ul.subMenuContact ul {
+    padding: 10px 0 20px 10px;
   }
   #bloc-video #wrapper-video {
     height: 300px;
@@ -5363,17 +5393,23 @@ ul.subMenu a.big {
   footer ul.bg-grid {
     display: none;
   }
-  .arxFrance h2 {
+  .arxFrance .content h2 {
     padding-left: 20px;
+  }
+  .apropos .content .col.col1 {
+    width: 33.33333333vw;
+  }
+  .apropos .content .col.col3 {
+    width: 66.66666667vw;
   }
   .partenaires .content .col.col3 {
     width: 66.66666667vw;
   }
+  .partenaires .content .legend {
+    padding: 35px 20px;
+  }
   .partenaires h3 {
     padding: 20px;
-  }
-  .partenaires .legend {
-    padding: 35px 20px;
   }
   .listPartenaires {
     text-align: center;
@@ -5668,6 +5704,15 @@ ul.subMenu a.big {
   #menu-full ul#menu-bottom-footer li.col-menu-bottom-footer:nth-child(2) ul.menu-categ-1 ul.menu-categ-2 {
     display: none;
   }
+  .apropos .content .col.col1 {
+    text-align: right;
+  }
+  .apropos .content .col.col1,
+  .apropos .content .col.col4,
+  .apropos .content .col.col2,
+  .apropos .content .col.col3 {
+    width: 100%;
+  }
   .partenaires .content .col.col2 {
     width: 100%;
     max-width: 392px;
@@ -5682,15 +5727,15 @@ ul.subMenu a.big {
   .partenaires .content .col.col3 + .col2 {
     padding-top: 20px;
   }
+  .partenaires .content .legend {
+    right: 20px;
+    width: 125px;
+    height: 125px;
+  }
   .partenaires .padLeft {
     padding-left: 20px;
   }
   .partenaires h3 {
-    width: 125px;
-    height: 125px;
-  }
-  .partenaires .legend {
-    right: 20px;
     width: 125px;
     height: 125px;
   }

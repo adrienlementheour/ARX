@@ -96,6 +96,9 @@ textarea {
   &.bottom-left  { .triangle(bottom-left, @width, @height, purple) }
 }
 
+// ScrollReveal
+.js [data-sr]{ visibility: hidden; }
+
 html, body{
   position: relative;
   min-height: 100%;
@@ -137,6 +140,7 @@ html, body{
 }
 .paddingLeft{
   padding: 0 0 0 2*@largeurCol;
+  overflow: hidden;
 }
 .paddingLeftBis{
   padding-left: 3*@largeurCol;
@@ -3915,6 +3919,12 @@ ul#menu-bottom-footer{
     padding: 0;
     margin: 20px 0 0;
   }
+  .legend{
+    margin: 0;
+    position: absolute;
+    right: 0;
+    background: fade(@bleu7ARX, 90);
+  }
 }
 .listPartenaires{
   li{
@@ -3938,12 +3948,6 @@ ul#menu-bottom-footer{
       display: inline-block;
     }
   }
-}
-
-.legend{
-  position: absolute;
-  right: 0;
-  background: fade(@bleu7ARX, 90);
 }
 
 /* @end */
