@@ -645,6 +645,14 @@ a:focus {
 a.big {
   font-size: 1.25em;
   text-decoration: underline;
+  position: relative;
+  padding: 0 0 0 10px;
+}
+a.big:after {
+  content: '›';
+  position: absolute;
+  left: 0;
+  top: 5px;
 }
 a.big:hover,
 a.big:focus {

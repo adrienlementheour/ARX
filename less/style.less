@@ -417,6 +417,14 @@ a{
   &.big{
     font-size: 1.25em;
     text-decoration: underline;
+    position: relative;
+    padding: 0 0 0 10px;
+    &:after{
+      content: '›';
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
     &:hover, &:focus{
       color: @grisARX;
     }
