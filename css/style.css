@@ -1935,6 +1935,11 @@ ul#menu-header li a:focus {
   background-size: cover;
   background-color: #d7e0f0;
 }
+.smart #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/bloc-home-pharmacies/rowa-smart-head2.jpg") no-repeat 50% 60%;
+  background-size: auto 100%;
+  background-size: cover;
+}
 .hopitaux #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-hopitaux/rowa-vmax-hospital.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
@@ -2083,6 +2088,34 @@ ul#menu-header li a:focus {
   position: absolute;
   bottom: 176px;
   left: 704px;
+  width: 176px;
+  height: 176px;
+}
+#bloc-home a#btn-modele-economique-smart {
+  position: absolute;
+  bottom: 0;
+  left: 176px;
+  width: 176px;
+  height: 176px;
+}
+#bloc-home a#btn-avantages-smart {
+  position: absolute;
+  bottom: 352px;
+  left: 528px;
+  width: 176px;
+  height: 176px;
+}
+#bloc-home a#btn-economique-novateur-rentable-smart {
+  position: absolute;
+  bottom: 0;
+  left: 528px;
+  width: 176px;
+  height: 176px;
+}
+#bloc-home a#btn-attributs-smart {
+  position: absolute;
+  bottom: 176px;
+  left: 352px;
   width: 176px;
   height: 176px;
 }
