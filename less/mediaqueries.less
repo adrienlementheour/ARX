@@ -370,7 +370,7 @@
       display: inline-block;
       vertical-align: top;
       padding: 0 20px;
-      width: 150px;
+      width: 155px;
       .box-sizing(border-box);
       &:first-child{
         padding: 0 21px;
@@ -1232,6 +1232,10 @@
     }
   }
 
+  .partenaires .content {
+    padding-bottom: 0;
+  }
+
   .listPartenaires{
     li{
       &.col1Bis{
@@ -1267,21 +1271,21 @@
       margin: 0;
       width: 100%;
       li{
-        margin: 0 7px 0 0;
-        .size(35px);
+        margin: 0 8px 0 0;
+        .size(40px);
         &.right{
           float: left;
         }
         &.center{
-          margin: 0 7px 0 0;
+          margin: 0 8px 0 0;
           clear: none;
           float: left;
         }
       }
       a{
-        .size(35px);
-        line-height: 35px;
-        font-size: 22px;
+        .size(40px);
+        line-height: 40px;
+        font-size: 29px;
         span{
           display: none;
         }
@@ -1296,6 +1300,7 @@
   }
 
   label{
+    width: 100%;
     display: block;
     margin-bottom: 5px;
   }
@@ -1307,6 +1312,39 @@
     }
   }
 
+}
+
+
+@media (max-width: 767px) and (max-height: 620px){
+  .arxFrance {
+    h1{
+      padding: 140px 0 0;
+    }
+    #bloc-home {
+      min-height: 320px;
+      max-height: 400px;
+    }
+  }
+}
+
+@media (max-width: 450px) and (max-height: 620px){
+  .arxFrance {
+    h1{
+      padding: 110px 0 0;
+      font-size: 2em;
+      line-height: 1.25em;
+    }
+    #bloc-home {
+      height: 72%;
+      min-height: 260px;
+      max-height: 330px;
+    }
+    &.partenaires{
+      #bloc-home{
+        min-height: 300px;
+      }
+    }
+  }
 }
 
 

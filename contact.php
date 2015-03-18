@@ -221,7 +221,6 @@ if(isset($_POST['submit'])) {
 	    			<li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li>
 	    		</ul>
 	  		<div class="container">
-	  			<a id="btn-nous-contacter" href="#" class="btn btn-bleu" data-sr><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
 	  			<ul id="menu-center-footer" data-sr>
 	  				<li>&copy; 2015  ARX INTER</li>
 	  				<li><a href="#">Mentions légales</a></li>
