@@ -5601,6 +5601,22 @@ ul.subMenu.fixedBottom {
     margin-left: -12.5vw;
     line-height: 25vw;
   }
+  #bloc-home a#btn-rowa-vmax-hopitaux {
+    width: 25vw;
+    height: 25vw;
+    left: 8.33333333vw;
+    line-height: 25vw;
+  }
+  #bloc-home a#btn-blispack-grisfols-hopitaux {
+    width: 25vw;
+    height: 25vw;
+    left: 41.66666667vw;
+  }
+  #bloc-home a#btn-armoire-pyxis-hopitaux {
+    width: 25vw;
+    height: 25vw;
+    left: 66.66666667vw;
+  }
   ul.subMenu {
     float: none;
     margin: -60px 0 20px;
@@ -5810,9 +5826,14 @@ ul.subMenu.fixedBottom {
     width: 140%;
   }
   .pharmacies h1 {
-    padding-top: 130px;
+    padding-top: 120px;
     width: 90%;
     padding-left: 35px;
+    text-align: center;
+  }
+  .hopitaux h1 {
+    padding-top: 120px;
+    width: 90%;
     text-align: center;
   }
   header {
@@ -5866,6 +5887,30 @@ ul.subMenu.fixedBottom {
     right: 0;
     bottom: 0;
     margin: 0;
+  }
+  #bloc-home a#btn-rowa-vmax-hopitaux {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    left: 0;
+    line-height: 33.33333333vw;
+    top: inherit;
+    bottom: 0;
+  }
+  #bloc-home a#btn-blispack-grisfols-hopitaux {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    left: 50%;
+    margin-left: -16.66666667vw;
+    top: inherit;
+    bottom: 0;
+  }
+  #bloc-home a#btn-armoire-pyxis-hopitaux {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    left: inherit;
+    right: 0;
+    top: inherit;
+    bottom: 0;
   }
   #bloc-home #bg-bloc-home #machine {
     margin-right: -880px;
@@ -6535,7 +6580,7 @@ ul.subMenu.fixedBottom {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .hopitaux ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
-    background: url("../layoutImg/slider-scroll/iatrogenie@2x.png") no-repeat 0 0;
+    background: url("../layoutImg/slider-scroll/iatrogenie-responsive@2x.png") no-repeat 0 0;
     background-size: 90px 125px;
   }
 }
