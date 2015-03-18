@@ -1426,6 +1426,9 @@ ul.bg-grid {
   z-index: 2;
   overflow: hidden;
 }
+.lt-ie9 ul.bg-grid {
+  display: none;
+}
 ul.bg-grid li.col-bg-grid {
   display: inline-block;
   vertical-align: top;
