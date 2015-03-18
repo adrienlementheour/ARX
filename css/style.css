@@ -758,6 +758,15 @@ a.btn h2 .txt-btn strong {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.btn h2 .txt-btn .small,
+a.btn h2 .txt-btn .small {
+  font-family: 'robotolight', sans-serif;
+  font-weight: normal;
+  font-size: 0.9em;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .btn.btn-anim-width,
 a.btn.btn-anim-width {
   padding: 0;
@@ -859,6 +868,10 @@ a.btn.btn-anim-width .container-btn-anim h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.btn.btn-anim-width .container-btn-anim h2.small-padding,
+a.btn.btn-anim-width .container-btn-anim h2.small-padding {
+  padding: 0 25px;
 }
 .btn.btn-image,
 a.btn.btn-image {
@@ -2465,6 +2478,9 @@ ul#menu-header li a:focus {
   display: inline-block;
   vertical-align: middle;
   line-height: 1.2em;
+}
+#bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2.small-padding {
+  padding: 0 25px;
 }
 /* @end */
 /* @group Bloc video */
