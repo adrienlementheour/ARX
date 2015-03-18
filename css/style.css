@@ -5587,6 +5587,10 @@ ul.subMenu.fixedBottom {
   .responsivePadLeft {
     padding-left: 20px;
   }
+  #bloc-home {
+    /* @group btn rowa vmax */
+    /* @end */
+  }
   #bloc-home a#btn-rowa-vmax-pharmacies {
     width: 25vw;
     height: 25vw;
@@ -5616,6 +5620,46 @@ ul.subMenu.fixedBottom {
     width: 25vw;
     height: 25vw;
     left: 66.66666667vw;
+  }
+  #bloc-home a#btn-options {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+  }
+  #bloc-home a#btn-qualite-securite-vmax {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 25vw;
+    left: 50vw;
+  }
+  #bloc-home a#btn-design-speciaux-vmax {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 0;
+    left: 25vw;
+  }
+  #bloc-home a#btn-vitesse-precision-vmax {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 0vw;
+    left: 50vw;
+  }
+  #bloc-home a#btn-maitriser-espace-vmax {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 25vw;
+    left: 75vw;
+  }
+  #bloc-home a#btn-outil-silencieux-vmax {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 0;
+    left: 75vw;
   }
   ul.subMenu {
     float: none;
