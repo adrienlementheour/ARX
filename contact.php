@@ -114,11 +114,7 @@ if(isset($_POST['submit'])) {
 			</div>
 		</header>
 		<div id="bloc-home">
-			<div id="bg-bloc-home">
-				<div class="container">
-					<div id="machine"></div>
-				</div>
-			</div>
+			<div id="bg-bloc-home"></div>
 			<ul class="bg-grid">
 				<li class="col-bg-grid active bleu"></li><li class="col-bg-grid"></li><li class="col-bg-grid active blanc"></li><li class="col-bg-grid active bleu"></li><li class="col-bg-grid active blanc"></li><li class="col-bg-grid last-active last-bleu"></li>
 			</ul>

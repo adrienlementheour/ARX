@@ -257,6 +257,9 @@ textarea {
 .js [data-sr] {
   visibility: hidden;
 }
+.lt-ie9 [data-sr] {
+  visibility: visible;
+}
 html,
 body {
   position: relative;

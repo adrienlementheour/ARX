@@ -97,7 +97,14 @@ textarea {
 }
 
 // ScrollReveal
-.js [data-sr]{ visibility: hidden; }
+[data-sr]{ 
+  .js &{
+    visibility: hidden; 
+  }
+  .lt-ie9 &{
+    visibility: visible; 
+  }
+}
 
 html, body{
   position: relative;
