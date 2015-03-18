@@ -2662,6 +2662,7 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   background-color: #000000;
   text-decoration: none;
   color: #ffffff;
+  overflow: hidden;
   /*&:hover{
             .video-txt{
               width: 215px;
