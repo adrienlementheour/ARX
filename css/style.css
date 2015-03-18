@@ -5459,6 +5459,7 @@ ul.subMenu a.big {
     display: inline-block;
     vertical-align: top;
     padding: 0 20px;
+    width: 110px;
   }
   ul.subMenu > li:first-child,
   ul.subMenuContact > li:first-child {
