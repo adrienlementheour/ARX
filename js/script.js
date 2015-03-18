@@ -196,6 +196,12 @@ var tableAnimScroll = [],
 // Fonction pour préparer les anims en sprites du slider au scroll
 function initSliderScroll(){
 	for(var i=0;i<nbSlidesScroll;i++){
+		if(typeof tableAnimScroll[i] != 'undefined'){
+			tableAnimScroll[i].pause().stop().kill();
+		}
+		if(typeof tableAnimScrollLoop[i] != 'undefined'){
+			tableAnimScrollLoop[i].pause().stop().kill();
+		}
 		// Première boucle
 		var slideAnim = $("ul#slider-scroll li").eq(i),
 			frameWidth = 180, frameHeight = 250, numCols = 6, numRows = 6, numBoucle = 30, numTot = 37,
@@ -206,10 +212,18 @@ function initSliderScroll(){
 		for(var j=0;j<3;j++){
 			tableAnimScroll[i].add(TweenMax.fromTo($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), 0.3, { backgroundPosition:'0 -'+(frameHeight*j)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*j)+'px', ease:steppedEase}));
 		}
+		if(($(window).width()>767)){
+			tableAnimScroll[i].play();
+		}else{
+			TweenMax.set($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), {backgroundPosition:'0 -0'});
+			if(typeof tableAnimScroll[i] != 'undefined'){
+				tableAnimScroll[i].pause().stop().kill();
+			}
+			if(typeof tableAnimScrollLoop[i] != 'undefined'){
+				tableAnimScrollLoop[i].pause().stop().kill();
+			}
+		}
 	}
-
-	// Lancer la première anim
-	tableAnimScroll[0].play();
 }
 
 function completeFirstLoop(slideAnim, numAnim){
@@ -1003,5 +1017,8 @@ $(window).resize(function() {
 		if($('.subMenuContact').length){
 			$('.subMenuContact').removeClass('fixed').removeClass('fixedBottom');
 		}
+	}
+	if($("body").hasClass("categ")){
+		initSliderScroll();
 	}
 });

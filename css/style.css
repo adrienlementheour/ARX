@@ -5592,6 +5592,53 @@ ul.subMenu a.big {
   }
 }
 @media (max-width: 767px) {
+  /* @group Sliders */
+  ul#slider-scroll li .zone-visu-txt-slider {
+    height: 125px;
+    margin-top: -62px;
+    width: 110px;
+  }
+  ul#slider-scroll li .zone-visu-txt-slider .visu-txt-slider {
+    width: 90px;
+    margin-left: -45px;
+  }
+  ul#slider-scroll li.slide-right .zone-txt-slider {
+    padding-left: 110px;
+  }
+  ul#slider-scroll li.slide-left .zone-txt-slider {
+    padding-right: 110px;
+  }
+  .pharmacies ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/fleches-responsive.png") no-repeat 0 0;
+  }
+  .hopitaux ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/dispensation-responsive.png") no-repeat 0 0;
+  }
+  .pharmacies ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/box-responsive.png") no-repeat 0 0;
+  }
+  .hopitaux ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/codebarre-responsive.png") no-repeat 0 0;
+  }
+  .pharmacies ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/stocks-responsive.png") no-repeat 0 0;
+  }
+  .hopitaux ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/gestion-personnel-responsive.png") no-repeat 0 0;
+  }
+  .pharmacies ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/shield-responsive.png") no-repeat 0 0;
+  }
+  .hopitaux ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/shield-responsive.png") no-repeat 0 0;
+  }
+  .pharmacies ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/stats-responsive.png") no-repeat 0 0;
+  }
+  .hopitaux ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
+    background: url("../layoutImg/slider-scroll/iatrogenie-responsive.png") no-repeat 0 0;
+  }
+  /* @end */
   .partenaires h1,
   .contact h1 {
     width: 140%;
@@ -6126,52 +6173,62 @@ ul.subMenu a.big {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .pharmacies ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/fleches-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .hopitaux ul#slider-scroll li#slide-1 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/dispensation-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .pharmacies ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/box-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .hopitaux ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/codebarre-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .pharmacies ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/stocks-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .hopitaux ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/gestion-personnel-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .pharmacies ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/shield-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .hopitaux ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/shield-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .pharmacies ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/stats-responsive@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), only screen and (min-resolution: 144dpi) and (max-width: 767px) {
   .hopitaux ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
-    background-size: 540px 875px;
+    background: url("../layoutImg/slider-scroll/iatrogenie@2x.png") no-repeat 0 0;
+    background-size: 90px 125px;
   }
 }
 /* ==|== print styles =======================================================
