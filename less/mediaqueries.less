@@ -294,7 +294,7 @@
 
   /* @group Pages Pharmacies / Hopitaux */
   ul#slider-scroll{
-    padding: 0 0 250px 0;
+    padding: 0 0 20px 0;
     li{
       .opacity(1);
       margin: 100px 0;
@@ -356,6 +356,23 @@
   }
   .responsivePadLeft{
     padding-left: 20px;
+  }
+
+  #bloc-home{
+    a#btn-rowa-vmax-pharmacies{
+      width: 3*@largeurColResponsive;
+      height: 3*@largeurColResponsive;
+      left: 25%;
+      margin-left: -1.5*@largeurColResponsive;
+      line-height: 3*@largeurColResponsive;
+    }
+    a#btn-rowa-smart-pharmacies{
+      width: 3*@largeurColResponsive;
+      height: 3*@largeurColResponsive;
+      left: 75%;
+      margin-left: -1.5*@largeurColResponsive;
+      line-height: 3*@largeurColResponsive;
+    }
   }
 
   ul.subMenu{
@@ -692,19 +709,23 @@
       height: 3*@largeurColResponsive;
     }
     a#btn-rowa-vmax-pharmacies{
-      width: 3*@largeurColResponsive;
-      height: 3*@largeurColResponsive;
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
       left: 0;
       top: inherit;
       bottom: 0;
+      margin: 0;
     }
     a#btn-rowa-smart-pharmacies{
-      width: 3*@largeurColResponsive;
-      height: 3*@largeurColResponsive;
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
       left: inherit;
       top: inherit;
       right: 0;
       bottom: 0;
+      margin: 0;
     }
     #bg-bloc-home{
       #machine{
@@ -1151,6 +1172,12 @@
     .partenaires &, .contact &{
       width: 100%;
     }
+    .pharmacies &{
+      padding-left: 0;
+      .txt-bleu-clair{
+        display: block;
+      }
+    }
   }
 
   #zone-titre-home{
@@ -1185,10 +1212,12 @@
     a#btn-rowa-vmax-pharmacies{
       width: 50%;
       height: 6*@largeurColResponsive;
+      line-height: 6*@largeurColResponsive;
     }
     a#btn-rowa-smart-pharmacies{
       width: 50%;
       height: 6*@largeurColResponsive;
+      line-height: 6*@largeurColResponsive;
     }
   }
   #bloc-video{

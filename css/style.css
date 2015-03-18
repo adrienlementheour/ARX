@@ -5522,7 +5522,7 @@ ul.subMenu.fixedBottom {
 @media (max-width: 1024px) {
   /* @group Pages Pharmacies / Hopitaux */
   ul#slider-scroll {
-    padding: 0 0 250px 0;
+    padding: 0 0 20px 0;
   }
   ul#slider-scroll li {
     -webkit-opacity: 1;
@@ -5586,6 +5586,20 @@ ul.subMenu.fixedBottom {
   }
   .responsivePadLeft {
     padding-left: 20px;
+  }
+  #bloc-home a#btn-rowa-vmax-pharmacies {
+    width: 25vw;
+    height: 25vw;
+    left: 25%;
+    margin-left: -12.5vw;
+    line-height: 25vw;
+  }
+  #bloc-home a#btn-rowa-smart-pharmacies {
+    width: 25vw;
+    height: 25vw;
+    left: 75%;
+    margin-left: -12.5vw;
+    line-height: 25vw;
   }
   ul.subMenu {
     float: none;
@@ -5835,19 +5849,23 @@ ul.subMenu.fixedBottom {
     height: 25vw;
   }
   #bloc-home a#btn-rowa-vmax-pharmacies {
-    width: 25vw;
-    height: 25vw;
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
     left: 0;
     top: inherit;
     bottom: 0;
+    margin: 0;
   }
   #bloc-home a#btn-rowa-smart-pharmacies {
-    width: 25vw;
-    height: 25vw;
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
     left: inherit;
     top: inherit;
     right: 0;
     bottom: 0;
+    margin: 0;
   }
   #bloc-home #bg-bloc-home #machine {
     margin-right: -880px;
@@ -6253,6 +6271,12 @@ ul.subMenu.fixedBottom {
   .contact h1 {
     width: 100%;
   }
+  .pharmacies h1 {
+    padding-left: 0;
+  }
+  .pharmacies h1 .txt-bleu-clair {
+    display: block;
+  }
   #zone-titre-home {
     width: 100%;
   }
@@ -6282,10 +6306,12 @@ ul.subMenu.fixedBottom {
   #bloc-home a#btn-rowa-vmax-pharmacies {
     width: 50%;
     height: 50vw;
+    line-height: 50vw;
   }
   #bloc-home a#btn-rowa-smart-pharmacies {
     width: 50%;
     height: 50vw;
+    line-height: 50vw;
   }
   #bloc-video #wrapper-video {
     height: 200px;
