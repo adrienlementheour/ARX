@@ -276,6 +276,17 @@
     }
   }
 
+  fieldset{
+    display: block;
+    &:first-child{
+      padding-bottom: 30px;
+    }
+  }
+
+  label{
+    min-width: 122px;
+  }
+
 }
 
 @media (max-width: 1024px) {
@@ -352,7 +363,8 @@
       display: inline-block;
       vertical-align: top;
       padding: 0 20px;
-      width: 110px;
+      width: 150px;
+      .box-sizing(border-box);
       &:first-child{
         padding: 0 21px;
         border-right: 1px solid fade(#7d7d7d, 40%);
@@ -1062,6 +1074,17 @@
     .partenaires &, .contact &{
       width: 100%;
     }
+  }
+
+  #zone-titre-home{
+    width: 100%;
+    h1{
+      width: 100%;
+    }
+  }
+
+  .padBot2{
+    padding-bottom: 20px;
   }
 
   #bloc-home{

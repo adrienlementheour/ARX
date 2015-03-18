@@ -5071,6 +5071,7 @@ ul.subMenu a.big {
   transition: 0.2s ease-in-out;
 }
 #equipe li strong {
+  text-align: left;
   display: block;
   color: #0070b8;
   margin: 88px 0 0;
@@ -5383,6 +5384,15 @@ ul.subMenu a.big {
   #equipeFilter li {
     padding-bottom: 7px;
   }
+  fieldset {
+    display: block;
+  }
+  fieldset:first-child {
+    padding-bottom: 30px;
+  }
+  label {
+    min-width: 122px;
+  }
 }
 @media (max-width: 1024px) {
   /* @group Pages Pharmacies / Hopitaux */
@@ -5460,7 +5470,10 @@ ul.subMenu a.big {
     display: inline-block;
     vertical-align: top;
     padding: 0 20px;
-    width: 110px;
+    width: 150px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
   ul.subMenu > li:first-child,
   ul.subMenuContact > li:first-child {
@@ -6063,6 +6076,15 @@ ul.subMenu a.big {
   .partenaires h1,
   .contact h1 {
     width: 100%;
+  }
+  #zone-titre-home {
+    width: 100%;
+  }
+  #zone-titre-home h1 {
+    width: 100%;
+  }
+  .padBot2 {
+    padding-bottom: 20px;
   }
   #bloc-home a#btn-robots-rowa {
     width: 50%;
