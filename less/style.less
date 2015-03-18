@@ -42,7 +42,7 @@ button,
 input,
 select,
 textarea {
-    color: rgb(35,35,35);
+    color: @gris3ARX;
 }
 hr {
     display: block;
@@ -526,7 +526,7 @@ a{
     padding: 0;
     background-color: none;
     overflow: hidden;
-    &:hover, &.survol{
+    &:hover,&:focus, &.survol{
       background-color: none;
     }
     &.btn-vertical-centered{
@@ -534,7 +534,7 @@ a{
     }
     &.btn-bleu-alpha{
       background: none;
-      &:hover, &.survol{
+      &:hover, &:focus, &.survol{
         background: none;
         color: @bleu7ARX;
         .container-fond-btn-anim{
@@ -550,7 +550,7 @@ a{
     }
     &.btn-blanc{
       background: none;
-      &:hover, &.survol{
+      &:hover, &:focus, &.survol{
         background: none;
         color: @blanc;
         .container-fond-btn-anim{
@@ -599,7 +599,7 @@ a{
     padding: 0;
     .roboto-light(1em);
     overflow: hidden;
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       .zone-img-sur{
         .opacity(0);
       }
@@ -612,7 +612,7 @@ a{
         color: @blanc;
         border: 0px solid @bleu7ARX;
       }
-      &:hover, &.survol{
+      &:hover, &:focus, &.survol{
         background: none;
         color: @blanc;
         .zone-btn{
@@ -637,7 +637,7 @@ a{
           }
         }
       }
-      &:hover, &.survol{
+      &:hover, &:focus, &.survol{
         background: none;
         color: @blanc;
         .zone-btn{
@@ -718,7 +718,7 @@ a{
     background-color: @bleu2ARX;
     color: @blanc;
     border: 0px solid @bleu2ARX;
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       background-color: @blanc;
       color: @bleu2ARX;
       .triangle-btn{
@@ -731,7 +731,7 @@ a{
     background-color: fade(@bleu7ARX, 80%);
     color: @blanc;
     border: 0px solid @bleu7ARX;
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       background-color: @blanc;
       color: @bleu7ARX;
       .triangle-btn{
@@ -746,7 +746,7 @@ a{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       background-color: @bleu3ARX;
       color: @blanc;
       .triangle-btn{
@@ -761,7 +761,7 @@ a{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       background-color: @bleu3ARX;
       color: @blanc;
       border-color: @bleu3ARX;
@@ -775,7 +775,7 @@ a{
     background-color: fade(@blanc, 40%);
     border: 0px solid @blanc;
     color: @blanc;
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       background-color: @blanc;
       color: @bleu2ARX;
       .triangle-btn{
@@ -790,7 +790,7 @@ a{
     .triangle-btn{
       border-bottom-color: @bleu3ARX;
     }
-    &:hover, &.survol{
+    &:hover, &:focus, &.survol{
       background-color: @blanc;
       color: @bleu2ARX;
       .triangle-btn{
@@ -844,7 +844,7 @@ a{
     .triangle(bottom-right, 10px, 10px, @blanc);
     .transition(all 0.1s ease-in-out);
   }
-  &:hover, &.survol{
+  &:hover, &:focus, &.survol{
     .transition(background-color 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860), color 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860));
     .triangle-btn{
       margin: 3px 0 0 3px;
@@ -1119,7 +1119,7 @@ header{
             height: 0px;
             .transition(all 0s ease-in-out);
           }
-          &:hover{
+          &:hover, &:focus{
             .bg-lien-header-on{
               height: 8px;
             }
@@ -1274,7 +1274,7 @@ ul#menu-header{
           background-color: fade(@bleu3ARX, 25%);
         }
         .bg-lien-header{
-          background-color: @blanc;
+          background-color: #565454;
           background-color: fade(@blanc, 20%);
         }
         .bg-lien-header-on{
@@ -1314,7 +1314,7 @@ ul#menu-header{
         line-height: 48px;
         width: 100%;
       }
-      &:hover{
+      &:hover, &:focus{
         &.lien-pharmacies{
           .bg-lien-header{
             background-color: @vertARX;
@@ -2008,7 +2008,7 @@ a.btn-video{
   &:focus{
     outline: none;
   }
-  &:hover{
+  &:hover, &:focus{
     &#btn-left-video{
       .arrow.icon-arrow-left{
         .translate(-15px, 0);
@@ -2466,7 +2466,7 @@ a.btn-references{
   &:focus{
     outline: none;
   }
-  &:hover{
+  &:hover, &:focus{
     &#btn-left-references{
       .arrow.icon-arrow-left{
         .translate(-15px, 0);
@@ -2556,7 +2556,7 @@ a.btn-references{
       &:focus{
         outline: none;
       }
-      &:hover{
+      &:hover, &:focus{
         &.twitter{
           background-color: #6bacda;
         }
@@ -2701,7 +2701,7 @@ ul#slider-scroll-navigator{
       .box-sizing(border-box);
       border: 3px solid @bleu7ARX;
       background-color: @blanc;
-      &:hover{
+      &:hover, &:focus{
         background-color: @bleu7ARX;
       }
       &:active, &:focus{
@@ -3023,7 +3023,7 @@ a.btn-carousel{
     background-color: @bleu2ARX;
     color: @blanc;
     border: 0px solid @bleu2ARX;
-    &:hover{
+    &:hover, &:focus{
       background-color: @blanc;
       color: @bleu2ARX;
       border-width: 1px;
@@ -3100,7 +3100,7 @@ a.btn-carousel{
   &:focus{
     outline: none;
   }
-  &:hover{
+  &:hover, &:focus{
     &.btn-left-carousel{
       .arrow.icon-arrow-left{
         .translate(-15px, 0);
@@ -3486,7 +3486,7 @@ footer{
             margin-left: -34px;
           }
         }
-        &:hover{
+        &:hover, &:focus{
           .fond-plus{
             .scale(1.1);
           }
@@ -3550,7 +3550,7 @@ footer{
         &:focus{
           outline: none;
         }
-        &:hover{
+        &:hover, &:focus{
           color: @gris2ARX;
         }
       }
@@ -3576,7 +3576,7 @@ footer{
       &:focus{
         outline: none;
       }
-      &:hover{
+      &:hover, &:focus{
         color: @gris2ARX;
       }
     }
@@ -3630,7 +3630,7 @@ footer{
               background-image: url("../layoutImg/bloc-drapeaux/drapeau-allemagne.png");
             }
           }
-          &:hover{
+          &:hover, &:focus{
             color: @gris2ARX;
           }
         }
@@ -3675,7 +3675,7 @@ ul#menu-bottom-footer{
       display: inline;
       text-decoration: none;
       color: #bfbfbf;
-      &:hover{
+      &:hover, &:focus{
         color: @gris2ARX;
       }
       &:focus{
@@ -3718,7 +3718,7 @@ ul#menu-bottom-footer{
           &:focus{
             outline: none;
           }
-          &:hover{
+          &:hover, &:focus{
             color: @gris2ARX;
             text-decoration: underline;
           }
@@ -3742,7 +3742,7 @@ ul#menu-bottom-footer{
               &:focus{
                 outline: none;
               }
-              &:hover{
+              &:hover, &:focus{
                 color: @gris2ARX;
                 text-decoration: underline;
               }
@@ -3981,6 +3981,7 @@ ul#menu-bottom-footer{
     margin: 0;
     position: absolute;
     right: 0;
+    background: @bleu7ARX;
     background: fade(@bleu7ARX, 90);
   }
 }
@@ -4198,7 +4199,7 @@ ul.subMenu, ul.subMenuContact{
   }
   &.fixedBottom{
     position: absolute;
-    bottom: -493px;
+    bottom: -63px;
     top: auto;
     height: auto;
   }
@@ -4234,6 +4235,9 @@ ul.subMenu{
       .roboto-light(1em);
       text-decoration: none;
     }
+  }
+  &.fixedBottom{
+    bottom: -493px;
   }
 }
 
@@ -4309,6 +4313,9 @@ ul.subMenu{
         font-size: 12px;
         + a{
           text-decoration: underline;
+          &:hover, &:focus{
+            color: @grisARX;
+          }
         }
       }
     }
@@ -4345,6 +4352,9 @@ ul.subMenu{
       div{
         opacity: 1;
         .transition(.1s ease-in-out);
+        .lt-ie9 &{
+          display: block;
+        }
       }
       strong{
         margin: 0;
@@ -4356,6 +4366,7 @@ ul.subMenu{
       }
     }
     div{
+      background: @blanc;
       background: fade(@blanc, 80);
       position: absolute;
       height: 100%;
@@ -4366,6 +4377,9 @@ ul.subMenu{
       opacity: 0;
       overflow: hidden;
       .transition(.2s ease-in-out);
+      .lt-ie9 &{
+        display: none;
+      }
     }
     strong{
       text-align: left;

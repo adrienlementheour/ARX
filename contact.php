@@ -120,7 +120,7 @@ if(isset($_POST['submit'])) {
 			</ul>
 			<div class="container">
 				<div id="zone-titre-home">
-					<h1 class="txt-blanc">Contactez-nous <br /><span class="txt-bleu">Nous nous ferons une joie de répondre à vos attentes</h1>
+					<h1 class="txt-blanc">Contactez-nous <br /><span class="txt-bleu">Nous nous ferons une joie de répondre à vos attentes</span></h1>
 				</div>
 			</div>
 		</div>
