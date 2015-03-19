@@ -1,0 +1,33 @@
+http://www.arxinter.fr/node/174 	pharmacies.html
+http://www.arxinter.fr/node/12		rowa-smart-pharmacies.html
+http://www.arxinter.fr/node/21		rowa-vmax-pharmacies.html
+http://www.arxinter.fr/node/160		rowa-vmax-pharmacies.html
+http://www.arxinter.fr/node/183		rowa-vmax-pharmacies.html?option=prologs
+http://www.arxinter.fr/node/182		rowa-vmax-pharmacies.html?option=prologs
+http://www.arxinter.fr/node/184		rowa-vmax-pharmacies.html?option=refrigerateur
+http://www.arxinter.fr/node/167		rowa-vmax-pharmacies.html
+
+http://www.arxinter.fr/node/157		hopitaux.html
+http://www.arxinter.fr/node/176		rowa-vmax-hopitaux.html
+http://www.arxinter.fr/node/177		rowa-vmax-hopitaux.html
+http://www.arxinter.fr/node/178		rowa-vmax-hopitaux.html?option=prologs
+http://www.arxinter.fr/node/186		rowa-vmax-hopitaux.html?option=convoyage
+http://www.arxinter.fr/node/171		armoire-pyxis.html
+http://www.arxinter.fr/node/172		armoire-pyxis.html
+http://www.arxinter.fr/node/173		armoire-pyxis.html
+http://www.arxinter.fr/node/175		blispack-grisfols.html
+http://www.arxinter.fr/node/187		partenaires.html
+http://www.arxinter.fr/node/188		partenaires.html
+http://www.arxinter.fr/node/189		partenaires.html
+http://www.arxinter.fr/node/190		partenaires.html
+
+http://www.arxinter.fr/node/170		a-propos.html
+http://www.arxinter.fr/node/165		consultant.html
+http://www.arxinter.fr/node/168		installation.html
+http://www.arxinter.fr/node/169		sav.html
+http://www.arxinter.fr/node/163		partenaires.html
+http://www.arxinter.fr/node/30		partenaires.html
+http://www.arxinter.fr/node/161		partenaires.html
+http://www.arxinter.fr/node/162		partenaires.html
+	
+http://www.arxinter.fr/contact		contact.php
