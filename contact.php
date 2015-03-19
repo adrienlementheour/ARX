@@ -242,7 +242,7 @@ if(isset($_POST['submit'])) {
 	  			</div>
 	  		</div>
 	    </footer>
-		<div id="menu-full">
+		<div id="menu-full" data-sr>
 			<div class="container">
 				<a href="#" id="close-menu-responsive" class="icon-cross"></a>
 				<ul id="menu-bottom-footer">

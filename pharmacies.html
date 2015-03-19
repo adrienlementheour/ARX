@@ -56,10 +56,10 @@
 				<li class="col-bg-grid active bleu"></li><li class="col-bg-grid blanc"></li><li class="col-bg-grid blanc"></li><li class="col-bg-grid"></li><li class="col-bg-grid blanc"></li><li class="col-bg-grid blanc last-active last-bleu"></li>
 			</ul>
 			<div class="container pointer-events">
-				<h1 class="txt-blanc">Deux robots, <span class="txt-bleu-clair">deux stratégies</h1>
-				<p class="center-aligned txt-blanc"><strong>Le haut-de-gamme</strong> est notre seul mot d’ordre. Mais afin  d’être <strong>au plus prêt de votre projet,</strong> nous avons développé deux offres disctinctes :</p>
-				<a id="btn-rowa-vmax-pharmacies" href="rowa-vmax-pharmacies.html" class="btn btn-bleu-alpha btn-vertical-centered txt-very-small btn-half-visu-small-left"><h2><span class="txt-btn">Le haut de<br /> gamme<br /> sur-mesure <br /><strong>Rowa<br /> Vmax</strong></span><span class="triangle-btn"></span></h2></a>
-				<a id="btn-rowa-smart-pharmacies" href="rowa-smart-pharmacies.html" class="btn btn-bleu-alpha btn-vertical-centered txt-small btn-half-visu-small-right"><h2><span class="txt-btn">Le haut de<br /> gamme<br /> standardisé<br /> <strong>Rowa Smart</strong></span><span class="triangle-btn"></span></h2></a>
+				<h1 data-sr class="txt-blanc">Deux robots, <span class="txt-bleu-clair">deux stratégies</h1>
+				<p data-sr class="center-aligned txt-blanc"><strong>Le haut-de-gamme</strong> est notre seul mot d’ordre. Mais afin  d’être <strong>au plus prêt de votre projet,</strong> nous avons développé deux offres disctinctes :</p>
+				<a data-sr="wait 0.6s" id="btn-rowa-vmax-pharmacies" href="rowa-vmax-pharmacies.html" class="btn btn-bleu-alpha btn-vertical-centered txt-very-small btn-half-visu-small-left"><h2><span class="txt-btn">Le haut de<br /> gamme<br /> sur-mesure <br /><strong>Rowa<br /> Vmax</strong></span><span class="triangle-btn"></span></h2></a>
+				<a data-sr="wait 0.7s" id="btn-rowa-smart-pharmacies" href="rowa-smart-pharmacies.html" class="btn btn-bleu-alpha btn-vertical-centered txt-small btn-half-visu-small-right"><h2><span class="txt-btn">Le haut de<br /> gamme<br /> standardisé<br /> <strong>Rowa Smart</strong></span><span class="triangle-btn"></span></h2></a>
 			</div>
 		</div>
 		<div id="bloc-automatiser">
@@ -141,8 +141,8 @@
 	  			<li class="col-bg-grid"></li><li class="col-bg-grid active gris-10"></li><li class="col-bg-grid"></li><li class="col-bg-grid active bleu"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris-10"></li>
 	  		</ul>
 			<div class="container">
-				<a id="btn-nous-contacter" href="contact.php" class="btn btn-bleu"><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
-				<ul id="menu-center-footer">
+				<a id="btn-nous-contacter" href="contact.php" class="btn btn-bleu" data-sr><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
+				<ul id="menu-center-footer" data-sr>
 					<li>&copy; 2015  ARX INTER</li>
 					<li><a href="mentions-legales.html">Mentions légales</a></li>
 					<li><a id="btn-arx-international" href="#">ARX à l'international</a></li>
@@ -167,7 +167,7 @@
 				</div>
 			</div>
 	  	</footer>
-	  	<div id="menu-full">
+	  	<div id="menu-full" data-sr>
 	  		<div class="container">
 	  			<a href="#" id="close-menu-responsive" class="icon-cross"></a>
 	  			<ul id="menu-bottom-footer">
@@ -271,7 +271,19 @@
 		<script src="js/libs/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- scrollReveal -->
 		<script src="js/libs/scrollReveal.min.js" type="text/javascript" charset="utf-8"></script>
-		<script> window.sr = new scrollReveal();</script>
+		<script> 
+			var config = {
+				easing: 'hustle',
+				move: '10px',
+				over: '0.3s',
+			    scale: { direction: 'up', power: '0%' },
+			    reset: true,
+			    vFactor: '0.50',
+			    wait: '0.5s',
+			    delay: 'onload'
+			}
+			window.sr = new scrollReveal( config );
+		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- scroll -->

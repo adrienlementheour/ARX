@@ -137,7 +137,7 @@
 				</div><a id="btn-right-video" href="#" class="btn-video"><span class="arrow icon-arrow-right"></span><span class="masque-arrow"></span></a>
 			</div>
 		</div>
-	  	<div id="bloc-hopitaux">
+	  	<div id="bloc-hopitaux" data-sr>
 	  		<div id="bg-bloc-hopitaux"></div>
 			<div class="container">
 				<div id="bloc-txt-automatiser" class="bloc-txt bloc-txt-vertical-centered">
@@ -152,7 +152,7 @@
 				<li class="col-bg-grid active blanc"></li><li class="col-bg-grid active bleu-2"></li><li class="col-bg-grid active blanc"></li><li class="col-bg-grid active blanc-10"></li><li class="col-bg-grid active blanc"></li><li class="col-bg-grid active blanc-10 last-active last-bleu"></li>
 			</ul>
 	  	</div>
-	  	<div id="bloc-references">
+	  	<div id="bloc-references" data-sr>
 			<div class="container">
 				<div id="bloc-txt-references" class="bloc-txt bloc-txt-vertical-centered">
 					<h2><span class="txt-bloc">Quelques <strong>Références en images</strong></span></h2>
@@ -177,7 +177,7 @@
 	  			<li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li>
 	  		</ul>
 	  		<div class="container">
-				<ul id="menu-top-footer">
+				<ul id="menu-top-footer" data-sr>
 					<li>
 						<a class="consultants-experts" href="consultant.html"><span class="visu-menu icon-consultants"></span><span class="zone-txt">Des consultants <strong>Experts</strong></span><span class="fond-plus"></span><span class="plus"></span></a>
 					</li><li>
@@ -186,9 +186,9 @@
 						<a class="sav-dedie" href="sav.html"><span class="groupe-visu-menu"><span class="visu-menu icon-casque"></span><span class="visu-menu icon-outils"></span></span><span class="zone-txt">Un SAV <strong>totalement<br /> dédié</strong></span><span class="fond-plus"></span><span class="plus"></span></a>
 					</li>
 				</ul>
-				<a id="btn-nous-contacter" href="contact.php" class="btn btn-bleu"><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
+				<a id="btn-nous-contacter" href="contact.php" class="btn btn-bleu" data-sr><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
 			</div>
-		  	<div id="bloc-reseaux-sociaux">
+		  	<div id="bloc-reseaux-sociaux" data-sr>
 				<div class="container">
 					<div id="bloc-txt-arx-reseaux-sociaux" class="bloc-txt bloc-txt-vertical-centered">
 						<h2><span class="txt-bloc"><strong>ARX</strong><br /> sur les<br /> réseaux<br /> sociaux</span></h2>
@@ -198,7 +198,7 @@
 					<div id="bloc-txt-desc-reseaux-sociaux" class="bloc-txt bloc-txt-vertical-centered"><span class="txt-bloc"><p>Pour découvrir nos <strong>références en détail</strong>, prendre connaissance de <strong>notre veille permanente</strong> dans de multiple domaine, rendez-vous sur nos différents comptes de réseaux sociaux.</p></span></div>
 				</div>
 		  	</div>
-			<div class="container">
+			<div class="container" data-sr>
 				<ul id="menu-center-footer">
 					<li>&copy; 2015  ARX INTER</li>
 					<li><a href="mentions-legales.html">Mentions légales</a></li>
@@ -224,7 +224,7 @@
 				</div>
 			</div>
 	  	</footer>
-	  	<div id="menu-full">
+	  	<div id="menu-full" data-sr>
 	  		<div class="container">
 	  			<a href="#" id="close-menu-responsive" class="icon-cross"></a>
 	  			<ul id="menu-bottom-footer">
@@ -328,7 +328,19 @@
 		<script src="js/libs/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- scrollReveal -->
 		<script src="js/libs/scrollReveal.min.js" type="text/javascript" charset="utf-8"></script>
-		<script> window.sr = new scrollReveal();</script>
+		<script> 
+			var config = {
+				easing: 'hustle',
+				move: '10px',
+				over: '0.3s',
+			    scale: { direction: 'up', power: '0%' },
+			    reset: true,
+			    vFactor: '0.50',
+			    wait: '0.5s',
+			    delay: 'onload'
+			}
+			window.sr = new scrollReveal( config );
+		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- scroll -->

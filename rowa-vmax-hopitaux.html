@@ -55,12 +55,12 @@
 						</li>
 					</ul>
 				</div>
-				<a id="btn-options" href="#" class="btn btn-blanc btn-vertical-centered btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Les<br /> <strong>Options</strong></span><span class="triangle-btn"></span></h2></span></a>
-				<a id="btn-qualite-securite-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2 class="small-padding"><span class="txt-btn"><strong>41 brevets </strong><br />Performances <br />uniques</span><span class="triangle-btn"></span></h2></span></a>
-				<a id="btn-design-speciaux-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2 class="small-padding"><span class="txt-btn">Design &amp; <br /><strong>Architecture <br />commerciale</strong></span><span class="triangle-btn"></span></h2></span></a>
-				<a id="btn-vitesse-precision-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Vitesse &amp; <br /><strong>Précision</strong></span><span class="triangle-btn"></span></h2></span></a>
-				<a id="btn-maitriser-espace-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Maîtriser <br /><strong>Votre <br />Projet</strong></span><span class="triangle-btn"></span></h2></span></a>
-				<a id="btn-outil-silencieux-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Qualité &amp; <strong>Sécurité</strong></span><span class="triangle-btn"></span></h2></span></a>
+				<a data-sr id="btn-options" href="#" class="btn btn-blanc btn-vertical-centered btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Les<br /> <strong>Options</strong></span><span class="triangle-btn"></span></h2></span></a>
+				<a data-sr="wait 0.6s" id="btn-qualite-securite-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2 class="small-padding"><span class="txt-btn"><strong>41 brevets </strong><br />Performances <br />uniques</span><span class="triangle-btn"></span></h2></span></a>
+				<a data-sr="wait 0.7s" id="btn-design-speciaux-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2 class="small-padding"><span class="txt-btn">Design &amp; <br /><strong>Architecture <br />commerciale</strong></span><span class="triangle-btn"></span></h2></span></a>
+				<a data-sr="wait 0.8s" id="btn-vitesse-precision-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Vitesse &amp; <br /><strong>Précision</strong></span><span class="triangle-btn"></span></h2></span></a>
+				<a data-sr="wait 0.9s" id="btn-maitriser-espace-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Maîtriser <br /><strong>Votre <br />Projet</strong></span><span class="triangle-btn"></span></h2></span></a>
+				<a data-sr="wait 1s" id="btn-outil-silencieux-vmax" href="#" class="btn btn-bleu-alpha btn-vertical-centered btn-detail-home btn-anim-width"><span class="container-fond-btn-anim"></span><span class="container-btn-anim"><h2><span class="txt-btn">Qualité &amp; <strong>Sécurité</strong></span><span class="triangle-btn"></span></h2></span></a>
 				<div id="bloc-options-title">
 					<div id="txt-bloc-options-title">Options :<br /> <h2><span class="txt-bleu">Adaptez<br /> les performances</span><br /> à vos besoins...</h2></div>
 					<a id="btn-close-bloc-options" href="#" class="btn-carousel btn-close-carousel btn-carousel-bleu"><span class="cross">✕</span></a>
@@ -279,8 +279,8 @@
 	  			<li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li><li class="col-bg-grid"></li><li class="col-bg-grid active gris"></li>
 	  		</ul>
 			<div class="container">
-				<a id="btn-nous-contacter" href="contact.php" class="btn btn-bleu"><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
-				<ul id="menu-center-footer">
+				<a id="btn-nous-contacter" href="contact.php" class="btn btn-bleu" data-sr><span class="icon-mail"></span><h2><span class="txt-btn"><strong>Nous<br /> contacter</strong><br /> sans plus<br /> attendre</span><span class="triangle-btn"></span></h2></a>
+				<ul id="menu-center-footer" data-sr>
 					<li>&copy; 2015  ARX INTER</li>
 					<li><a href="mentions-legales.html">Mentions légales</a></li>
 					<li><a id="btn-arx-international" href="#">ARX à l'international</a></li>
@@ -305,7 +305,7 @@
 				</div>
 			</div>
 	  	</footer>
-	  	<div id="menu-full">
+	  	<div id="menu-full" data-sr>
 	  		<div class="container">
 	  			<ul id="menu-bottom-footer">
 	  				<li class="col-menu-bottom-footer">
@@ -408,7 +408,19 @@
 		<script src="js/libs/greensock/plugins/ScrollToPlugin.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- scrollReveal -->
 		<script src="js/libs/scrollReveal.min.js" type="text/javascript" charset="utf-8"></script>
-		<script> window.sr = new scrollReveal();</script>
+		<script> 
+			var config = {
+				easing: 'hustle',
+				move: '10px',
+				over: '0.3s',
+			    scale: { direction: 'up', power: '0%' },
+			    reset: true,
+			    vFactor: '0.50',
+			    wait: '0.5s',
+			    delay: 'onload'
+			}
+			window.sr = new scrollReveal( config );
+		</script>
 		<!-- imgLiquid -->
 		<script src="js/libs/imgLiquid-min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- scroll -->
