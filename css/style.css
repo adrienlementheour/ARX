@@ -5301,6 +5301,26 @@ ul.subMenu.fixedBottom {
   .responsivePadRight .legend {
     right: 20px;
   }
+  a.btn-carousel#btn-close-detail-option {
+    left: inherit;
+    right: 0;
+    width: 8.33333333vw;
+    height: 8.33333333vw;
+  }
+  a.btn-carousel#btn-right-options {
+    left: inherit;
+    right: 0;
+    top: 8.33333333vw;
+    width: 8.33333333vw;
+    height: 8.33333333vw;
+  }
+  a.btn-carousel#btn-left-options {
+    left: inherit;
+    right: 8.33333333vw;
+    top: 8.33333333vw;
+    width: 8.33333333vw;
+    height: 8.33333333vw;
+  }
   .paddingLeft1 {
     padding-left: 8.33333333vw;
   }
@@ -5640,6 +5660,26 @@ ul.subMenu.fixedBottom {
   .responsivePadLeft {
     padding-left: 20px;
   }
+  #bloc-options-title {
+    height: 200px;
+    bottom: -200px;
+  }
+  #bloc-options-title h2 {
+    font-size: 2em;
+    line-height: 1.1em;
+  }
+  #bloc-options-title h2 br {
+    display: none;
+  }
+  #bloc-options-title.open {
+    width: 100%;
+  }
+  ul#liste-options-pharmacies {
+    margin-top: 200px;
+  }
+  #bloc-content-detail-options {
+    margin-top: 200px;
+  }
   #bloc-home {
     /* @group btn rowa vmax */
     /* @end */
@@ -5748,6 +5788,26 @@ ul.subMenu.fixedBottom {
     margin-top: 0;
   }
   /* @end */
+  a.btn-carousel#btn-close-detail-option {
+    left: 0;
+    right: inherit;
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+  }
+  a.btn-carousel#btn-left-options {
+    top: 16.66666667vw;
+    left: 0;
+    right: inherit;
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+  }
+  a.btn-carousel#btn-right-options {
+    top: 16.66666667vw;
+    left: 16.66666667vw;
+    right: inherit;
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+  }
   ul.subMenu {
     float: none;
     margin: -60px 0 20px;
@@ -5971,6 +6031,9 @@ ul.subMenu.fixedBottom {
     background: url("../layoutImg/slider-scroll/iatrogenie-responsive.png") no-repeat 0 0;
   }
   /* @end */
+  #bloc-options-title h2 {
+    font-size: 2em!important;
+  }
   h1 {
     padding-top: 110px;
     font-size: 2em;
@@ -6023,7 +6086,7 @@ ul.subMenu.fixedBottom {
     width: 230px;
     font-size: 2em;
   }
-  a.btn-carousel {
+  .container-anim-inte-bloc-detail-home a.btn-carousel {
     border-color: #0070b8;
     color: #0070b8;
   }
@@ -6042,6 +6105,15 @@ ul.subMenu.fixedBottom {
     height: 16.66666667vw;
     right: 0;
     bottom: 1px;
+  }
+  #container-carousel-img-options {
+    width: 25%;
+  }
+  #container-carousel-txt-options {
+    width: 75%;
+  }
+  #container-carousel-txt-options ul#carousel-txt-options li {
+    padding: 20px 20px 0 20px;
   }
   #bloc-home {
     min-height: 460px;
@@ -6442,6 +6514,17 @@ ul.subMenu.fixedBottom {
   blockquote span {
     display: block;
   }
+  .vmax .content .col {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .vmax .content .col.col1,
+  .vmax .content .col.col4,
+  .vmax .content .col.col2,
+  .vmax .content .col.col3 {
+    width: 100%;
+  }
   .arxFrance .content p {
     text-align: center;
   }
@@ -6631,6 +6714,26 @@ ul.subMenu.fixedBottom {
   a.btn.btn-image .zone-btn {
     width: 41.66666667vw;
     height: 41.66666667vw;
+  }
+  a.btn-carousel#btn-close-detail-option {
+    left: 0;
+    right: inherit;
+    width: 25vw;
+    height: 25vw;
+  }
+  a.btn-carousel#btn-left-options {
+    top: 25vw;
+    left: 0;
+    right: inherit;
+    width: 25vw;
+    height: 25vw;
+  }
+  a.btn-carousel#btn-right-options {
+    top: 50vw;
+    left: 0;
+    right: inherit;
+    width: 25vw;
+    height: 25vw;
   }
   .padBot2 {
     padding-bottom: 20px;
