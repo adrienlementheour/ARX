@@ -4905,6 +4905,7 @@ p.label {
 }
 .content button {
   margin: 88px 0 0 88px;
+  width: 176px;
   height: 176px;
   text-align: left;
 }
@@ -5714,10 +5715,9 @@ ul.subMenu.fixedBottom {
   .responsivePadLeft {
     padding-left: 20px;
   }
-<<<<<<< HEAD
   .isIe .responsivePadLeft {
     padding-left: 20px;
-=======
+  }
   #bloc-options-title {
     height: 200px;
     bottom: -200px;
@@ -5737,7 +5737,6 @@ ul.subMenu.fixedBottom {
   }
   #bloc-content-detail-options {
     margin-top: 200px;
->>>>>>> origin/master
   }
   #bloc-home {
     /* @group btn rowa vmax */
@@ -6001,6 +6000,9 @@ ul.subMenu.fixedBottom {
   .listPartenaires li.col1Bis {
     width: 29%;
   }
+  .isIe .listPartenaires li.col1Bis {
+    width: 29%;
+  }
   .listPartenaires li.center-aligned {
     text-align: center;
   }
@@ -6025,7 +6027,7 @@ ul.subMenu.fixedBottom {
   .isIe .consultant .paddingLeft2,
   .isIe .installation .paddingLeft2,
   .isIe .sav .paddingLeft2 {
-    width: 50%;
+    padding-left: 50%;
   }
   .armoire-pyxis .content .col.col2 {
     width: 50vw;
@@ -6036,6 +6038,9 @@ ul.subMenu.fixedBottom {
     width: 50%;
   }
   .consultant h3.col4 {
+    width: 100%;
+  }
+  .isIe .consultant h3.col4 {
     width: 100%;
   }
   #equipeFilter {
@@ -6054,6 +6059,9 @@ ul.subMenu.fixedBottom {
     margin: 0;
   }
   .blispack-grifols .paddingLeft {
+    padding: 0 20px;
+  }
+  .isIe .blispack-grifols .paddingLeft {
     padding: 0 20px;
   }
   .blispack-grifols p {
@@ -6574,6 +6582,10 @@ ul.subMenu.fixedBottom {
     width: 100px;
     margin: 15px auto;
   }
+  .isIe #menu-full ul#menu-bottom-footer li.col-menu-bottom-footer {
+    width: 100px;
+    margin: 15px auto;
+  }
   #menu-full ul#menu-bottom-footer li.col-menu-bottom-footer ul.menu-categ-1 {
     margin: 5px 0 0 5px;
   }
@@ -6604,6 +6616,12 @@ ul.subMenu.fixedBottom {
   .vmax .content .col.col4,
   .vmax .content .col.col2,
   .vmax .content .col.col3 {
+    width: 100%;
+  }
+  .isIe .vmax .content .col.col1,
+  .isIe .vmax .content .col.col4,
+  .isIe .vmax .content .col.col2,
+  .isIe .vmax .content .col.col3 {
     width: 100%;
   }
   .arxFrance .content p {
@@ -6671,6 +6689,9 @@ ul.subMenu.fixedBottom {
   .listPartenaires li.col1Bis {
     width: 47%;
   }
+  .isIe .listPartenaires li.col1Bis {
+    width: 45%;
+  }
   .consultant .content .col,
   .installation .content .col,
   .sav .content .col {
@@ -6696,6 +6717,11 @@ ul.subMenu.fixedBottom {
   .consultant .paddingLeft2,
   .installation .paddingLeft2,
   .sav .paddingLeft2 {
+    padding-left: 20px;
+  }
+  .isIe .consultant .paddingLeft2,
+  .isIe .installation .paddingLeft2,
+  .isIe .sav .paddingLeft2 {
     padding-left: 20px;
   }
   .consultant h3,
@@ -6739,8 +6765,8 @@ ul.subMenu.fixedBottom {
     overflow: hidden;
   }
   ul.subMenuContact > li:first-child {
-    margin: 0 50px 0 0;
-    padding: 0 50px 0 0;
+    margin: 0 45px 0 0;
+    padding: 0 45px 0 0;
     border-right: 1px solid rgba(125, 125, 125, 0.4);
   }
   ul.subMenuContact > li:first-child ul {
@@ -6762,12 +6788,18 @@ ul.subMenu.fixedBottom {
     width: 100%;
     padding-left: 0;
   }
+  .isIe .contact .content .col {
+    width: 100%;
+  }
   .contact .content p {
     text-align: left;
   }
   .armoire-pyxis .content .col.col2 {
     width: 100%;
     text-align: center;
+  }
+  .isIe .armoire-pyxis .content .col.col2 {
+    width: 100%;
   }
   .page .content {
     text-align: center;
@@ -6906,6 +6938,9 @@ ul.subMenu.fixedBottom {
     width: 100%;
     padding: 0 20px;
   }
+  .isIe .listPartenaires li.col1Bis {
+    width: 100%;
+  }
   .listPartenaires li p {
     display: inline-block;
     width: 50%;
@@ -6968,6 +7003,9 @@ ul.subMenu.fixedBottom {
     padding-bottom: 10px;
   }
   .blispack-grifols .col.col3 {
+    width: 100%;
+  }
+  .isIe .blispack-grifols .col.col3 {
     width: 100%;
   }
   .wrapper-embed {

@@ -807,6 +807,9 @@
       padding: 0;
       &.col1Bis{
         width: 29%;
+        .isIe &{
+          width: 29%;
+        }
       }
       &.center-aligned{
         text-align: center;
@@ -831,7 +834,7 @@
     .paddingLeft2{
       padding-left: 6*@largeurColResponsive;
       .isIe &{
-        width: 6*@largeurColResponsiveIe;
+        padding-left: 6*@largeurColResponsiveIe;
       }
     }
   }
@@ -854,6 +857,9 @@
   .consultant{
     h3.col4{
       width: 100%;
+      .isIe &{
+        width: 100%;
+      }
     }
   }
 
@@ -884,6 +890,9 @@
   .blispack-grifols{
     .paddingLeft{
       padding: 0 20px;
+      .isIe &{
+        padding: 0 20px;
+      }
     }
     p{
       text-align: center;
@@ -1496,6 +1505,10 @@
         display: block;
         width: 100px;
         margin: 15px auto;
+        .isIe &{
+          width: 100px;
+          margin: 15px auto;
+        }
         ul.menu-categ-1{
           margin: 5px 0 0 5px;
           li{
@@ -1533,6 +1546,9 @@
         padding-right: 20px;
         &.col1, &.col4, &.col2, &.col3{
           width: 100%;
+          .isIe &{
+            width: 100%;
+          }
         }
       }
     }
@@ -1612,6 +1628,9 @@
       }
       &.col1Bis{
         width: 47%;
+        .isIe &{
+          width: 45%;
+        }
       }
     }
   }
@@ -1635,6 +1654,9 @@
     }
     .paddingLeft2{
       padding-left: 20px;
+      .isIe &{
+        padding-left: 20px;
+      }
     }
     h3{
       text-align: center;
@@ -1669,8 +1691,8 @@
       vertical-align: top;
       overflow: hidden;
       &:first-child{
-        margin: 0 50px 0 0;
-        padding: 0 50px 0 0;
+        margin: 0 45px 0 0;
+        padding: 0 45px 0 0;
         border-right: 1px solid fade(#7d7d7d, 40%);
         ul{
           margin: 0;
@@ -1697,6 +1719,9 @@
         text-align: left;
         width: 100%;
         padding-left: 0;
+        .isIe &{
+          width: 100%;
+        }
       }
       p{
         text-align: left;
@@ -1711,6 +1736,9 @@
         &.col2{
           width: 100%;
           text-align: center;
+          .isIe &{
+            width: 100%;
+          }
         }
       }
     }
@@ -1899,6 +1927,9 @@
       &.col1Bis{
         width: 100%;
         padding: 0 20px;
+        .isIe &{
+          width: 100%;
+        }
       }
       p{
         display: inline-block;
@@ -1973,6 +2004,9 @@
   .blispack-grifols{
     .col.col3{
       width: 100%;
+      .isIe &{
+        width: 100%;
+      }
     }
   }
 
