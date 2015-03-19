@@ -37,6 +37,16 @@ $("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouse
 // Position sous menu pour le fixer au scroll
 var offsetSubMenu;
 
+/**** Récupérer un paramètre GET dans l'url ****/
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results == null){
+        return null;
+    }else{
+        return results[1] || 0;
+    }
+}
+
 function zoneSliderScrollMouseWheel(event){
 	if($(window).width() >= 979){
 		//Normalize event wheel delta
@@ -397,6 +407,12 @@ $(window).on('beforeunload', function(){
 });
 
 $(function(){
+	if($('body').hasClass('vmax') && $.urlParam('option')){
+		var idOption = $.urlParam('option');
+		openDetailOption($('#' + idOption));
+		$('html, body').delay(300).animate({scrollTop: $('#bloc-options').offset().top - 80}, 500);
+	}
+
 	$('#equipeFilter').find('a').on('click', slideEquipe);
 
 	if($('#popUpContact').length){

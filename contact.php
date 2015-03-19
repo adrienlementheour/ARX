@@ -255,21 +255,24 @@ if(isset($_POST['submit'])) {
 							<li>
 								<a href="rowa-vmax-pharmacies.html">Rowa VMax</a><br />
 								<span class="opts">Options</span>
-								<ul  class="menu-categ-2">
+								<ul class="menu-categ-2">
 									<li>
-										<a href="#">Prolog</a>
+										<a href="rowa-vmax-pharmacies.html?option=prologs">ProLogs</a>
 									</li>
 									<li>
-										<a href="#">Iprolog</a>
+										<a href="rowa-vmax-pharmacies.html?option=vmotion">Vmotion</a>
 									</li>
 									<li>
-										<a href="#">Réfrégirateur</a>
+										<a href="rowa-vmax-pharmacies.html?option=refrigerateur">Réfrigérateur</a>
 									</li>
 									<li>
-										<a href="#">Cleaning Module</a>
+										<a href="rowa-vmax-pharmacies.html?option=tapis">2ème tapis d'entrée</a>
 									</li>
 									<li>
-										<a href="#">Homéopathie</a>
+										<a href="rowa-vmax-pharmacies.html?option=homeopathie">Homéopathie</a>
+									</li>
+									<li>
+										<a href="rowa-vmax-pharmacies.html?option=borne">Borne Visavia</a>
 									</li>
 								</ul>
 							</li>
@@ -290,10 +293,10 @@ if(isset($_POST['submit'])) {
 								</ul>
 							</li>
 							<li>
-								<a href="#">Armoire Pyxis</a>
+								<a href="armoire-pyxis.html">Armoire Pyxis</a>
 							</li>
 							<li>
-								<a href="#">BlisPack</a>
+								<a href="blispack-grisfols.html">BlisPack</a>
 							</li>
 						</ul>
 					</li><li class="col-menu-bottom-footer">
