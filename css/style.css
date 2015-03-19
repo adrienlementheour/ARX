@@ -2317,7 +2317,7 @@ ul#menu-header li a:focus {
   box-sizing: border-box;
   padding: 0 12px 0 0;
 }
-@media (max-height: 900px) {
+@media (max-height: 900px) and (min-width: 768px) {
   #bloc-home ul#liste-btn-home li {
     width: 100%;
     margin: 0 0 10px 0;
@@ -5353,6 +5353,27 @@ ul.subMenu.fixedBottom {
     line-height: 16.66666667vw;
     padding: 0 20px;
   }
+  #bloc-home #bloc-detail-home {
+    left: 16.66666667vw;
+  }
+  #bloc-home #bloc-detail-home.detail-home-open {
+    width: 66.66666667vw;
+    height: 50vw;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    bottom: 16.66666667vw;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home li {
+    line-height: 16.66666667vw;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2 {
+    padding-top: 0 15px;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2.small-padding {
+    padding-top: 0 15px;
+  }
   #bloc-home #bg-bloc-home #machine {
     right: 50%;
     margin-right: -770px;
@@ -5590,6 +5611,13 @@ ul.subMenu.fixedBottom {
   #bloc-home {
     /* @group btn rowa vmax */
     /* @end */
+  }
+  #bloc-home #bloc-detail-home {
+    left: 25vw;
+  }
+  #bloc-home #bloc-detail-home.detail-home-open {
+    width: 66.66666667vw;
+    height: 50vw;
   }
   #bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
     background-position: 50% 50%;
@@ -5888,7 +5916,9 @@ ul.subMenu.fixedBottom {
   }
   /* @end */
   h1 {
-    padding-top: 120px;
+    padding-top: 110px;
+    font-size: 2em;
+    line-height: 1.1em;
   }
   .partenaires h1,
   .contact h1 {
@@ -5913,7 +5943,6 @@ ul.subMenu.fixedBottom {
   #zone-titre-home h1 {
     width: 100%;
     text-align: center;
-    font-size: 2em;
   }
   #zone-titre-home h1 .txt-bleu {
     display: block;
@@ -5939,11 +5968,24 @@ ul.subMenu.fixedBottom {
     font-size: 2em;
   }
   #bloc-home {
-    /*min-height: inherit;
-    height: 95%;*/
     min-height: 460px;
     /* @group btn rowa vmax */
     /* @end */
+  }
+  #bloc-home #bloc-detail-home {
+    left: 0;
+  }
+  #bloc-home #bloc-detail-home.detail-home-open {
+    width: 100vw;
+    height: 83.33333333vw;
+  }
+  #bloc-home #bloc-detail-home #container-carousel-txt-home ul#carousel-txt-home li {
+    padding: 25px 20px 0 20px;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    bottom: 16.66666667vw;
   }
   #bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
     background-position: 55% 50%;
@@ -6015,7 +6057,7 @@ ul.subMenu.fixedBottom {
     height: 33.33333333vw;
     line-height: 33.33333333vw;
     bottom: 33.33333333vw;
-    left: 33.33333333vw;
+    left: 0;
   }
   #bloc-home a#btn-qualite-securite-vmax .container-btn-anim h2 {
     padding: 0 15px;
@@ -6024,7 +6066,7 @@ ul.subMenu.fixedBottom {
     width: 33.33333333vw;
     height: 33.33333333vw;
     line-height: 33.33333333vw;
-    bottom: 0;
+    bottom: 33.33333333vw;
     left: 33.33333333vw;
   }
   #bloc-home a#btn-design-speciaux-vmax .container-btn-anim h2 {
@@ -6474,6 +6516,18 @@ ul.subMenu.fixedBottom {
   .pharmacies h1 .txt-bleu-clair {
     display: block;
   }
+  .btn h2,
+  a.btn h2 {
+    font-size: 0.8em;
+  }
+  a.btn-carousel#btn-left-carousel-home {
+    width: 50%;
+    right: inherit;
+    left: 0;
+  }
+  a.btn-carousel#btn-right-carousel-home {
+    width: 50%;
+  }
   #zone-titre-home {
     width: 100%;
   }
@@ -6482,6 +6536,13 @@ ul.subMenu.fixedBottom {
   }
   .padBot2 {
     padding-bottom: 20px;
+  }
+  #bloc-home #bloc-detail-home.detail-home-open {
+    width: 100vw;
+    height: 116.66666667vw;
+  }
+  #bloc-home #bloc-detail-home #container-carousel-txt-home ul#carousel-txt-home li {
+    padding: 20px 20px 0 20px;
   }
   .pharmacies #bloc-home p {
     width: 90%;

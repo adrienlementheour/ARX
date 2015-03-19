@@ -92,6 +92,29 @@
     }
   }
   #bloc-home{
+    #bloc-detail-home{
+      left: 2*@largeurColResponsive;
+      &.detail-home-open{
+        width: 8*@largeurColResponsive;
+        height: 6*@largeurColResponsive;
+      }
+      ul#container-titles-carousel-home{
+        width: 2*@largeurColResponsive;
+        height: 2*@largeurColResponsive;
+        bottom: 2*@largeurColResponsive;
+        li{
+          line-height: 2*@largeurColResponsive;
+          .container-title-carousel-home{
+            h2{
+              padding-top: 0 15px;
+              &.small-padding{
+                padding-top: 0 15px;
+              }
+            }
+          } 
+        }
+      }
+    }
     #bg-bloc-home{
       #machine{
         right: 50%;
@@ -359,7 +382,14 @@
   }
 
   #bloc-home{
-   a.btn-half-visu{
+    #bloc-detail-home{
+      left: 3*@largeurColResponsive;
+      &.detail-home-open{
+        width: 8*@largeurColResponsive;
+        height: 6*@largeurColResponsive;
+      }
+    }
+    a.btn-half-visu{
      &#btn-visu-right{
        .container-img-half-visu{
         background-position: 50% 50%;
@@ -760,7 +790,9 @@
   /* @end */
   
   h1{
-    padding-top: 120px;
+    padding-top: 110px;
+    font-size: 2em;
+    line-height: 1.1em;
     .partenaires &, .contact &{
       width: 140%;
     }
@@ -784,7 +816,7 @@
     h1{
       width: 100%;
       text-align: center;
-      font-size: 2em;
+
       .txt-bleu{
         display: block;
       }
@@ -814,8 +846,25 @@
     }
   }
   #bloc-home{
-    /*min-height: inherit;
-    height: 95%;*/
+    #bloc-detail-home{
+      left: 0;
+      &.detail-home-open{
+        width: 12*@largeurColResponsive;
+        height: 10*@largeurColResponsive;
+      }
+      #container-carousel-txt-home{
+        ul#carousel-txt-home{
+          li{
+            padding: 25px 20px 0 20px;
+          }
+        }
+      }
+      ul#container-titles-carousel-home{
+        width: 4*@largeurColResponsive;
+        height: 4*@largeurColResponsive;
+        bottom: 2*@largeurColResponsive;
+      }
+    }
     a.btn-half-visu{
       &#btn-visu-right{
         .container-img-half-visu{
@@ -894,7 +943,7 @@
       height: 4*@largeurColResponsive;
       line-height: 4*@largeurColResponsive;
       bottom: 4*@largeurColResponsive; 
-      left: 4*@largeurColResponsive;
+      left: 0;
       .container-btn-anim{
         h2{
           padding: 0 15px;
@@ -905,7 +954,7 @@
       width: 4*@largeurColResponsive;
       height: 4*@largeurColResponsive;
       line-height: 4*@largeurColResponsive;
-      bottom: 0; 
+      bottom: 4*@largeurColResponsive;
       left: 4*@largeurColResponsive;
       .container-btn-anim{
         h2{
@@ -1414,6 +1463,22 @@
     }
   }
 
+  .btn, a.btn{
+    h2{
+      font-size: 0.8em;
+    }
+  }
+  a.btn-carousel{
+    &#btn-left-carousel-home{
+      width: 50%;
+      right: inherit;
+      left: 0;
+    }
+    &#btn-right-carousel-home{
+      width: 50%;
+    }
+  }
+
   #zone-titre-home{
     width: 100%;
     h1{
@@ -1426,6 +1491,19 @@
   }
 
   #bloc-home{
+    #bloc-detail-home{
+      &.detail-home-open{
+        width: 12*@largeurColResponsive;
+        height: 14*@largeurColResponsive;
+      }
+      #container-carousel-txt-home{
+        ul#carousel-txt-home{
+          li{
+            padding: 20px 20px 0 20px;
+          }
+        }
+      }
+    }
     p{
       .pharmacies &{
         width: 90%;
