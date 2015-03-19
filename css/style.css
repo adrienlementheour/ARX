@@ -1844,6 +1844,9 @@ ul#menu-header li a:focus {
 .home #bloc-home .container {
   overflow: hidden;
 }
+.home #bloc-home .container a.btn h2 {
+  font-size: 1em;
+}
 .arxFrance #bloc-home {
   min-height: 410px;
   max-height: 510px;
