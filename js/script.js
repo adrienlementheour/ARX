@@ -409,6 +409,7 @@ $(window).on('beforeunload', function(){
 $(function(){
 	if($('body').hasClass('vmax') && $.urlParam('option')){
 		var idOption = $.urlParam('option');
+		openOptions("openTitleOptions");
 		openDetailOption($('#' + idOption));
 		$('html, body').delay(300).animate({scrollTop: $('#bloc-options').offset().top - 80}, 500);
 	}
