@@ -251,7 +251,9 @@ function nextVideo(sens){
 	if($("ul#slider-videos li").length>=2){
 		// mettre la current video en pause
 		var numVideo = parseInt($("ul#slider-videos li#current-video .iframe-video").attr("id").match(pattern));
-		players[numVideo].stopVideo();
+		if(!isMobile.phone){
+			players[numVideo].stopVideo();
+		}
 
 		if(sens=="right"){
 			// tester si il y a une vidéo suivante
