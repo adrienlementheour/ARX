@@ -1625,10 +1625,12 @@ a#menu-responsive {
   height: auto;
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 19px;
   z-index: 10;
-  margin: 0 19px 0 0;
-  padding: 0;
+}
+a#menu-responsive:hover span,
+a#menu-responsive:focus span {
+  background: #777777;
 }
 a#menu-responsive:focus,
 a#menu-responsive:active {
@@ -4488,8 +4490,15 @@ a#close-menu-responsive {
   font-size: 26px;
   position: absolute;
   top: 38px;
-  right: 0;
-  margin-right: 19px;
+  right: 19px;
+  z-index: 9;
+}
+a#close-menu-responsive:hover,
+a#close-menu-responsive:focus {
+  color: #777777;
+}
+a#close-menu-responsive:focus {
+  outline: none;
 }
 ul#menu-bottom-footer {
   display: block;
@@ -6633,21 +6642,42 @@ ul.subMenu.fixedBottom {
     margin-left: 0;
   }
   #menu-full {
-    display: none;
+    opacity: 0;
     width: 100%;
-    height: 100%;
-    background-color: #ffffff;
+    height: 0;
+    background: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
+    -webkit-transition: height 0.3s ease-in-out, 0.2s opacity 0.2s ease-in-out;
+    -moz-transition: height 0.3s ease-in-out, 0.2s opacity 0.2s ease-in-out;
+    -o-transition: height 0.3s ease-in-out, 0.2s opacity 0.2s ease-in-out;
+    transition: height 0.3s ease-in-out, 0.2s opacity 0.2s ease-in-out;
+  }
+  .lt-ie9 #menu-full {
+    display: none;
   }
   #menu-full.open {
+    opacity: 1;
+    height: 100%;
+    -webkit-transition: opacity 0.1s ease-in-out, height 0.3s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out, height 0.3s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out, height 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out, height 0.3s ease-in-out;
+  }
+  .lt-ie9 #menu-full.open {
     display: block;
   }
+  #menu-full .container {
+    height: 100%;
+  }
   #menu-full ul#menu-bottom-footer {
-    margin: 0;
+    margin: -173px 0 0;
     background: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
   }
   #menu-full ul#menu-bottom-footer li.col-menu-bottom-footer {
     display: block;
@@ -7106,6 +7136,12 @@ ul.subMenu.fixedBottom {
   }
   .arxFrance.partenaires #bloc-home {
     min-height: 300px;
+  }
+}
+@media (max-height: 320px) {
+  #menu-full ul#menu-bottom-footer {
+    margin: 0;
+    top: 0;
   }
 }
 /* retina */
