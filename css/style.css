@@ -5741,6 +5741,8 @@ ul.subMenu.fixedBottom {
   #bloc-home {
     /* @group btn rowa vmax */
     /* @end */
+    /* @group btn rowa smart */
+    /* @end */
   }
   #bloc-home #bloc-detail-home {
     left: 25vw;
@@ -5820,6 +5822,34 @@ ul.subMenu.fixedBottom {
     height: 25vw;
     line-height: 25vw;
     bottom: 0;
+    left: 75vw;
+  }
+  #bloc-home a#btn-modele-economique-smart {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 0;
+    left: 0;
+  }
+  #bloc-home a#btn-avantages-smart {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 25vw;
+    left: 25vw;
+  }
+  #bloc-home a#btn-economique-novateur-rentable-smart {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 0;
+    left: 50vw;
+  }
+  #bloc-home a#btn-attributs-smart {
+    width: 25vw;
+    height: 25vw;
+    line-height: 25vw;
+    bottom: 25vw;
     left: 75vw;
   }
   /* @group options */
@@ -6204,6 +6234,8 @@ ul.subMenu.fixedBottom {
     min-height: 460px;
     /* @group btn rowa vmax */
     /* @end */
+    /* @group btn rowa smart */
+    /* @end */
   }
   #bloc-home #bloc-detail-home {
     left: 0;
@@ -6346,6 +6378,46 @@ ul.subMenu.fixedBottom {
     left: 66.66666667vw;
   }
   #bloc-home a#btn-outil-silencieux-vmax .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-modele-economique-smart {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 0;
+    left: 0;
+  }
+  #bloc-home a#btn-modele-economique-smart .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-avantages-smart {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 33.33333333vw;
+    left: 33.33333333vw;
+  }
+  #bloc-home a#btn-avantages-smart .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-economique-novateur-rentable-smart {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 33.33333333vw;
+    left: 66.66666667vw;
+  }
+  #bloc-home a#btn-economique-novateur-rentable-smart .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-attributs-smart {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 0;
+    left: 66.66666667vw;
+  }
+  #bloc-home a#btn-attributs-smart .container-btn-anim h2 {
     padding: 0 15px;
   }
   #bloc-home #bg-bloc-home #machine {
