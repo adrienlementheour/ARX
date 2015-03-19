@@ -5591,6 +5591,9 @@ ul.subMenu.fixedBottom {
     /* @group btn rowa vmax */
     /* @end */
   }
+  #bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
+    background-position: 50% 50%;
+  }
   #bloc-home a#btn-rowa-vmax-pharmacies {
     width: 25vw;
     height: 25vw;
@@ -5865,6 +5868,9 @@ ul.subMenu.fixedBottom {
     background: url("../layoutImg/slider-scroll/iatrogenie-responsive.png") no-repeat 0 0;
   }
   /* @end */
+  h1 {
+    padding-top: 120px;
+  }
   .partenaires h1,
   .contact h1 {
     width: 140%;
@@ -5879,6 +5885,22 @@ ul.subMenu.fixedBottom {
     padding-top: 120px;
     width: 90%;
     text-align: center;
+  }
+  #zone-titre-home {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  #zone-titre-home h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+  }
+  #zone-titre-home h1 .txt-bleu {
+    display: block;
+  }
+  #zone-titre-home h1 br {
+    display: none;
   }
   header {
     padding: 30px 0 15px 0;
@@ -5901,6 +5923,11 @@ ul.subMenu.fixedBottom {
     /*min-height: inherit;
     height: 95%;*/
     min-height: 460px;
+    /* @group btn rowa vmax */
+    /* @end */
+  }
+  #bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
+    background-position: 55% 50%;
   }
   #bloc-home ul.bg-grid {
     display: none;
@@ -5955,6 +5982,64 @@ ul.subMenu.fixedBottom {
     right: 0;
     top: inherit;
     bottom: 0;
+  }
+  #bloc-home a#btn-options {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+  }
+  #bloc-home a#btn-options .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-qualite-securite-vmax {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 33.33333333vw;
+    left: 33.33333333vw;
+  }
+  #bloc-home a#btn-qualite-securite-vmax .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-design-speciaux-vmax {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 0;
+    left: 33.33333333vw;
+  }
+  #bloc-home a#btn-design-speciaux-vmax .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-vitesse-precision-vmax {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 0vw;
+    left: 33.33333333vw;
+  }
+  #bloc-home a#btn-vitesse-precision-vmax .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-maitriser-espace-vmax {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 33.33333333vw;
+    left: 66.66666667vw;
+  }
+  #bloc-home a#btn-maitriser-espace-vmax .container-btn-anim h2 {
+    padding: 0 15px;
+  }
+  #bloc-home a#btn-outil-silencieux-vmax {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    line-height: 33.33333333vw;
+    bottom: 0;
+    left: 66.66666667vw;
+  }
+  #bloc-home a#btn-outil-silencieux-vmax .container-btn-anim h2 {
+    padding: 0 15px;
   }
   #bloc-home #bg-bloc-home #machine {
     margin-right: -880px;
@@ -6374,6 +6459,9 @@ ul.subMenu.fixedBottom {
   }
   .padBot2 {
     padding-bottom: 20px;
+  }
+  .pharmacies #bloc-home p {
+    width: 90%;
   }
   #bloc-home a#btn-robots-rowa {
     width: 50%;

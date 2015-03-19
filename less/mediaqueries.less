@@ -359,6 +359,13 @@
   }
 
   #bloc-home{
+   a.btn-half-visu{
+     &#btn-visu-right{
+       .container-img-half-visu{
+        background-position: 50% 50%;
+       }
+     }
+    }
     a#btn-rowa-vmax-pharmacies{
       width: 3*@largeurColResponsive;
       height: 3*@largeurColResponsive;
@@ -721,6 +728,7 @@
   /* @end */
   
   h1{
+    padding-top: 120px;
     .partenaires &, .contact &{
       width: 140%;
     }
@@ -734,6 +742,23 @@
       padding-top: 120px;
       width: 90%;
       text-align: center;
+    }
+  }
+
+  #zone-titre-home{
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+    h1{
+      width: 100%;
+      text-align: center;
+      font-size: 2em;
+      .txt-bleu{
+        display: block;
+      }
+      br{
+        display: none;
+      }
     }
   }
 
@@ -759,6 +784,13 @@
   #bloc-home{
     /*min-height: inherit;
     height: 95%;*/
+    a.btn-half-visu{
+      &#btn-visu-right{
+        .container-img-half-visu{
+         background-position: 55% 50%;
+        }
+      }
+     }
     ul.bg-grid{
       display: none;
     }
@@ -814,6 +846,78 @@
       top: inherit;
       bottom: 0;
     }
+    /* @group btn rowa vmax */
+    a#btn-options{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+      .container-btn-anim{
+        h2{
+          padding: 0 15px;
+        }
+      }
+    }
+    a#btn-qualite-securite-vmax{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+      bottom: 4*@largeurColResponsive; 
+      left: 4*@largeurColResponsive;
+      .container-btn-anim{
+        h2{
+          padding: 0 15px;
+        }
+      }
+    }
+    a#btn-design-speciaux-vmax{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+      bottom: 0; 
+      left: 4*@largeurColResponsive;
+      .container-btn-anim{
+        h2{
+          padding: 0 15px;
+        }
+      }
+    }
+    a#btn-vitesse-precision-vmax{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+      bottom: 0*@largeurColResponsive;
+      left: 4*@largeurColResponsive;
+      .container-btn-anim{
+        h2{
+          padding: 0 15px;
+        }
+      }
+    }
+    a#btn-maitriser-espace-vmax{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+      bottom: 4*@largeurColResponsive;
+      left: 8*@largeurColResponsive;
+      .container-btn-anim{
+        h2{
+          padding: 0 15px;
+        }
+      }
+    }
+    a#btn-outil-silencieux-vmax{
+      width: 4*@largeurColResponsive;
+      height: 4*@largeurColResponsive;
+      line-height: 4*@largeurColResponsive;
+      bottom: 0;
+      left: 8*@largeurColResponsive;
+      .container-btn-anim{
+        h2{
+          padding: 0 15px;
+        }
+      }
+    }
+    /* @end */
     #bg-bloc-home{
       #machine{
         margin-right: -880px;
@@ -1279,6 +1383,11 @@
   }
 
   #bloc-home{
+    p{
+      .pharmacies &{
+        width: 90%;
+      }
+    }
     a#btn-robots-rowa{
       width: 50%;
       height: 6*@largeurColResponsive;
