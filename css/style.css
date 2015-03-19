@@ -5304,38 +5304,74 @@ ul.subMenu.fixedBottom {
   .paddingLeft1 {
     padding-left: 8.33333333vw;
   }
+  .isIe .paddingLeft1 {
+    padding-left: 8.33333333%;
+  }
   .paddingLeft {
     padding: 0 0 0 16.66666667vw;
+  }
+  .isIe .paddingLeft {
+    padding: 0 0 0 16.66666667%;
   }
   .paddingLeftBis {
     padding-left: 25vw;
   }
+  .isIe .paddingLeftBis {
+    padding-left: 25%;
+  }
   .paddingLeft2 {
     padding-left: 33.33333333vw;
+  }
+  .isIe .paddingLeft2 {
+    padding-left: 33.33333333%;
   }
   .paddingRight1 {
     padding-right: 8.33333333vw;
   }
+  .isIe .paddingRight1 {
+    padding-right: 8.33333333%;
+  }
   .paddingRight {
     padding-right: 16.66666667vw;
+  }
+  .isIe .paddingRight {
+    padding-right: 16.66666667%;
   }
   .col.col1 {
     width: 16.66666667vw;
   }
+  .isIe .col.col1 {
+    width: 16.66666667%;
+  }
   .col.col1Bis {
     width: 25vw;
+  }
+  .isIe .col.col1Bis {
+    width: 25%;
   }
   .col.col2 {
     width: 33.33333333vw;
   }
+  .isIe .col.col2 {
+    width: 33.33333333%;
+  }
   .col.col3 {
     width: 50vw;
+  }
+  .isIe .col.col3 {
+    width: 50%;
   }
   .col.col3Bis {
     width: 58.33333333vw;
   }
+  .isIe .col.col3Bis {
+    width: 58.33333333%;
+  }
   .col.col4 {
     width: 66.66666667vw;
+  }
+  .isIe .col.col4 {
+    width: 66.66666667%;
   }
   .content h2.right-aligned {
     margin-right: 0;
@@ -5535,6 +5571,10 @@ ul.subMenu.fixedBottom {
     margin: 0 0 0 16.66666667vw;
     width: 16.66666667vw;
   }
+  .isIe ul#menu-bottom-footer li.col-menu-bottom-footer {
+    margin: 0 0 0 16.66666667%;
+    width: 16.66666667%;
+  }
   #bloc-titre-partenaires {
     padding-right: 20px;
   }
@@ -5551,6 +5591,10 @@ ul.subMenu.fixedBottom {
   .partenaires li.center-aligned {
     margin-left: 3.33333333vw;
     margin-right: 3.33333333vw;
+  }
+  .isIe .partenaires li.center-aligned {
+    margin-left: 3.33333333%;
+    margin-right: 3.33333333%;
   }
   .partenaires li p {
     width: 100%;
@@ -5630,14 +5674,27 @@ ul.subMenu.fixedBottom {
   .paddingLeft {
     padding: 0;
   }
+  .isIe .paddingLeft {
+    padding: 0;
+  }
   .paddingLeftBis,
   .paddingLeft1 {
+    padding-left: 20px;
+  }
+  .isIe .paddingLeftBis,
+  .isIe .paddingLeft1 {
     padding-left: 20px;
   }
   .paddingRight1 {
     padding-right: 20px;
   }
+  .isIe .paddingRight1 {
+    padding-right: 20px;
+  }
   .responsivePadLeft {
+    padding-left: 20px;
+  }
+  .isIe .responsivePadLeft {
     padding-left: 20px;
   }
   #bloc-home {
@@ -5848,14 +5905,23 @@ ul.subMenu.fixedBottom {
   .apropos .content .col.col1 {
     width: 33.33333333vw;
   }
+  .isIe .apropos .content .col.col1 {
+    width: 33.33333333%;
+  }
   .apropos .content .col.col3 {
     width: 66.66666667vw;
+  }
+  .isIe .apropos .content .col.col3 {
+    width: 66.66666667%;
   }
   #bloc-titre-partenaires {
     padding-left: 20px;
   }
   .partenaires .content .col.col3 {
     width: 66.66666667vw;
+  }
+  .isIe .partenaires .content .col.col3 {
+    width: 66.66666667%;
   }
   .partenaires .content .legend {
     padding: 35px 20px;
@@ -5884,15 +5950,28 @@ ul.subMenu.fixedBottom {
   .sav .content .col.col2 {
     width: 50vw;
   }
+  .isIe .consultant .content .col.col2,
+  .isIe .installation .content .col.col2,
+  .isIe .sav .content .col.col2 {
+    width: 50%;
+  }
   .consultant .paddingLeft2,
   .installation .paddingLeft2,
   .sav .paddingLeft2 {
     padding-left: 50vw;
   }
+  .isIe .consultant .paddingLeft2,
+  .isIe .installation .paddingLeft2,
+  .isIe .sav .paddingLeft2 {
+    width: 50%;
+  }
   .armoire-pyxis .content .col.col2 {
     width: 50vw;
     padding-right: 20px;
     padding-left: 20px;
+  }
+  .isIe .armoire-pyxis .content .col.col2 {
+    width: 50%;
   }
   .consultant h3.col4 {
     width: 100%;
@@ -5912,10 +5991,6 @@ ul.subMenu.fixedBottom {
   #mail {
     margin: 0;
   }
-  /*.wrapper-embed{
-    width: 90%;
-    margin: 0 auto;
-  }*/
   .blispack-grifols .paddingLeft {
     padding: 0 20px;
   }
@@ -6342,6 +6417,10 @@ ul.subMenu.fixedBottom {
     margin: 20px 0;
     margin: 0 0 25vw 0;
   }
+  .isIe footer ul#menu-top-footer li {
+    width: 100%;
+    margin: 0 0 25% 0;
+  }
   footer ul#menu-top-footer li a.consultants-experts .zone-txt,
   footer ul#menu-top-footer li a.installation-personnalisee .zone-txt,
   footer ul#menu-top-footer li a.sav-dedie .zone-txt {
@@ -6454,6 +6533,12 @@ ul.subMenu.fixedBottom {
   .arxFrance .content .col.col4,
   .arxFrance .content .col.col2,
   .arxFrance .content .col.col3 {
+    width: 100%;
+  }
+  .isIe .arxFrance .content .col.col1,
+  .isIe .arxFrance .content .col.col4,
+  .isIe .arxFrance .content .col.col2,
+  .isIe .arxFrance .content .col.col3 {
     width: 100%;
   }
   .arxFrance .content h2 {

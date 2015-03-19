@@ -22,40 +22,76 @@
 
   .paddingLeft1{
     padding-left: @largeurColResponsive;
+    .isIe &{
+      padding-left: @largeurColResponsiveIe;
+    }
   }
   .paddingLeft{
     padding: 0 0 0 2*@largeurColResponsive;
+    .isIe &{
+      padding: 0 0 0 2*@largeurColResponsiveIe;
+    }
   }
   .paddingLeftBis{
     padding-left: 3*@largeurColResponsive;
+    .isIe &{
+      padding-left: 3*@largeurColResponsiveIe;
+    }
   }
   .paddingLeft2{
     padding-left: 4*@largeurColResponsive;
+    .isIe &{
+      padding-left: 4*@largeurColResponsiveIe;
+    }
   }
   .paddingRight1{
     padding-right: @largeurColResponsive;
+    .isIe &{
+      padding-right: @largeurColResponsiveIe;
+    }
   }
   .paddingRight{
     padding-right: 2*@largeurColResponsive;
+    .isIe &{
+      padding-right: 2*@largeurColResponsiveIe;
+    }
   }
   .col{
     &.col1{
       width: 2*@largeurColResponsive;
+      .isIe &{
+        width: 2*@largeurColResponsiveIe;
+      }
     }
     &.col1Bis{
       width: 3*@largeurColResponsive;
+      .isIe &{
+        width: 3*@largeurColResponsiveIe;
+      }
     }
     &.col2{
       width: 4*@largeurColResponsive;
+      .isIe &{
+        width: 4*@largeurColResponsiveIe;
+      }
     }
     &.col3{
       width: 6*@largeurColResponsive;
+      .isIe &{
+        width: 6*@largeurColResponsiveIe;
+      }
     }
     &.col3Bis{
       width: 7*@largeurColResponsive;
+      .isIe &{
+        width: 7*@largeurColResponsiveIe;
+      }
     }
     &.col4{
       width: 8*@largeurColResponsive;
+      .isIe &{
+        width: 8*@largeurColResponsiveIe;
+      }
     }
   }
 
@@ -291,6 +327,10 @@
     li.col-menu-bottom-footer{
       margin: 0 0 0 2*@largeurColResponsive;
       width: 2*@largeurColResponsive;
+      .isIe &{
+        margin: 0 0 0 2*@largeurColResponsiveIe;
+        width: 2*@largeurColResponsiveIe;
+      }
     }
   }
 
@@ -309,6 +349,10 @@
       &.center-aligned{
         margin-left: @largeurColResponsive/2.5;
         margin-right: @largeurColResponsive/2.5;
+        .isIe &{
+          margin-left: @largeurColResponsiveIe/2.5;
+          margin-right: @largeurColResponsiveIe/2.5;
+        }
       }
       p{
         width: 100%;
@@ -396,15 +440,27 @@
   
   .paddingLeft{
     padding: 0;
+    .isIe &{
+      padding: 0;
+    }
   }
   .paddingLeftBis, .paddingLeft1{
     padding-left: 20px;
+    .isIe &{
+      padding-left: 20px;
+    }
   }
   .paddingRight1{
     padding-right: 20px;
+    .isIe &{
+      padding-right: 20px;
+    }
   }
   .responsivePadLeft{
     padding-left: 20px;
+    .isIe &{
+      padding-left: 20px;
+    }
   }
 
   #bloc-home{
@@ -642,9 +698,15 @@
       .col{
         &.col1{
           width: 4*@largeurColResponsive;
+          .isIe &{
+            width: 4*@largeurColResponsiveIe;
+          }
         }
         &.col3{
           width: 8*@largeurColResponsive;
+          .isIe &{
+            width: 8*@largeurColResponsiveIe;
+          }
         }
       }
     }
@@ -659,6 +721,9 @@
       .col{
         &.col3{
           width: 8*@largeurColResponsive;
+          .isIe &{
+            width: 8*@largeurColResponsiveIe;
+          }
         }
       }
       .legend{
@@ -692,11 +757,17 @@
       .col{
         &.col2{
           width: 6*@largeurColResponsive;
+          .isIe &{
+            width: 6*@largeurColResponsiveIe;
+          }
         }
       }
     }
     .paddingLeft2{
       padding-left: 6*@largeurColResponsive;
+      .isIe &{
+        width: 6*@largeurColResponsiveIe;
+      }
     }
   }
 
@@ -707,6 +778,9 @@
           width: 6*@largeurColResponsive;
           padding-right: 20px;
           padding-left: 20px;
+          .isIe &{
+            width: 6*@largeurColResponsiveIe;
+          }
         }
       }
     }
@@ -741,11 +815,6 @@
   #mail{
     margin: 0;
   }
-
-  /*.wrapper-embed{
-    width: 90%;
-    margin: 0 auto;
-  }*/
 
   .blispack-grifols{
     .paddingLeft{
@@ -1260,6 +1329,10 @@
         height: auto;
         margin: 20px 0;
         margin: 0 0 3*@largeurColResponsive 0;
+        .isIe &{
+          width: 100%;
+          margin: 0 0 3*@largeurColResponsiveIe 0;
+        }
         a{
           &.consultants-experts, &.installation-personnalisee, &.sav-dedie{
             .zone-txt{
@@ -1382,6 +1455,9 @@
         padding-right: 20px;
         &.col1, &.col4, &.col2, &.col3{
           width: 100%;
+          .isIe &{
+            width: 100%;
+          }
         }
       }
       h2{
