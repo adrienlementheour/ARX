@@ -5706,6 +5706,10 @@ ul.subMenu.fixedBottom {
   ul.subMenu ul {
     padding: 5px 0 20px 0;
   }
+  ul.subMenu.retour > li:first-child {
+    border: 0;
+    padding-bottom: 20px;
+  }
   ul.subMenuContact {
     padding-left: 20px;
   }
@@ -5801,6 +5805,11 @@ ul.subMenu.fixedBottom {
   .sav .paddingLeft2 {
     padding-left: 50vw;
   }
+  .armoire-pyxis .content .col.col2 {
+    width: 50vw;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .consultant h3.col4 {
     width: 100%;
   }
@@ -5818,6 +5827,16 @@ ul.subMenu.fixedBottom {
   }
   #mail {
     margin: 0;
+  }
+  /*.wrapper-embed{
+    width: 90%;
+    margin: 0 auto;
+  }*/
+  .blispack-grifols .paddingLeft {
+    padding: 0 20px;
+  }
+  .blispack-grifols p {
+    text-align: center;
   }
 }
 @media (max-width: 767px) {
@@ -6439,6 +6458,10 @@ ul.subMenu.fixedBottom {
   .contact .content p {
     text-align: left;
   }
+  .armoire-pyxis .content .col.col2 {
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (max-width: 480px) {
   .partenaires h1,
@@ -6587,6 +6610,12 @@ ul.subMenu.fixedBottom {
   }
   fieldset:first-child {
     padding-bottom: 10px;
+  }
+  .blispack-grifols .col.col3 {
+    width: 100%;
+  }
+  .wrapper-embed {
+    height: 280px;
   }
 }
 @media (max-width: 767px) and (max-height: 620px) {
