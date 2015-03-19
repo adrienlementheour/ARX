@@ -5374,10 +5374,10 @@ ul.subMenu.fixedBottom {
     line-height: 16.66666667vw;
   }
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2 {
-    padding-top: 0 15px;
+    padding: 0 15px;
   }
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2.small-padding {
-    padding-top: 0 15px;
+    padding: 0 15px;
   }
   #bloc-home #bg-bloc-home #machine {
     right: 50%;
@@ -5972,6 +5972,26 @@ ul.subMenu.fixedBottom {
     width: 230px;
     font-size: 2em;
   }
+  a.btn-carousel {
+    border-color: #0070b8;
+    color: #0070b8;
+  }
+  a.btn-carousel#btn-close-carousel-home {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+  }
+  a.btn-carousel#btn-left-carousel-home {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    right: 16.66666667vw;
+    bottom: 1px;
+  }
+  a.btn-carousel#btn-right-carousel-home {
+    width: 16.66666667vw;
+    height: 16.66666667vw;
+    right: 0;
+    bottom: 1px;
+  }
   #bloc-home {
     min-height: 460px;
     /* @group btn rowa vmax */
@@ -5990,7 +6010,20 @@ ul.subMenu.fixedBottom {
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home {
     width: 33.33333333vw;
     height: 33.33333333vw;
-    bottom: 16.66666667vw;
+    bottom: 0;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home li {
+    line-height: 33.33333333vw;
+  }
+  #bloc-home #bloc-detail-home .container-inte-bloc-detail-home {
+    width: 100%;
+    height: 50%;
+  }
+  #bloc-home #bloc-detail-home .container-inte-bloc-detail-home#container-carousel-img-home ul#carousel-img-home li {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 33.33333333vw;
   }
   #bloc-home a.btn-half-visu#btn-visu-right .container-img-half-visu {
     background-position: 55% 50%;
@@ -6529,15 +6562,7 @@ ul.subMenu.fixedBottom {
   }
   .btn h2,
   a.btn h2 {
-    font-size: 0.8em;
-  }
-  a.btn-carousel#btn-left-carousel-home {
-    width: 50%;
-    right: inherit;
-    left: 0;
-  }
-  a.btn-carousel#btn-right-carousel-home {
-    width: 50%;
+    font-size: 0.7em;
   }
   #zone-titre-home {
     width: 100%;
@@ -6554,6 +6579,9 @@ ul.subMenu.fixedBottom {
   }
   #bloc-home #bloc-detail-home #container-carousel-txt-home ul#carousel-txt-home li {
     padding: 20px 20px 0 20px;
+  }
+  #bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2 {
+    font-size: 0.9em;
   }
   .pharmacies #bloc-home p {
     width: 90%;
