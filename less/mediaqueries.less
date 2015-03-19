@@ -20,6 +20,29 @@
     }
   }
 
+  a.btn-carousel{
+    &#btn-close-detail-option{
+      left: inherit;
+      right: 0;
+      width: @largeurColResponsive;
+      height: @largeurColResponsive;
+    }
+    &#btn-right-options{
+      left: inherit;
+      right: 0;
+      top: @largeurColResponsive;
+      width: @largeurColResponsive;
+      height: @largeurColResponsive;
+    }
+    &#btn-left-options{
+      left: inherit;
+      right: @largeurColResponsive;
+      top: @largeurColResponsive;
+      width: @largeurColResponsive;
+      height: @largeurColResponsive;
+    }
+  }
+
   .paddingLeft1{
     padding-left: @largeurColResponsive;
     .isIe &{
@@ -463,6 +486,26 @@
     }
   }
 
+  #bloc-options-title{
+    height: 200px;
+    bottom: -200px;
+    h2{
+      font-size: 2em;
+      line-height: 1.1em;
+      br{
+        display: none;
+      }
+    }
+    &.open{
+      width: 100%;
+    }
+  }
+  ul#liste-options-pharmacies{
+    margin-top: 200px;
+  }
+  #bloc-content-detail-options{
+    margin-top: 200px;
+  }
   #bloc-home{
     #bloc-detail-home{
       left: 3*@largeurColResponsive;
@@ -582,6 +625,28 @@
 
   /* @end */
 
+  a.btn-carousel{
+    &#btn-close-detail-option{
+      left: 0;
+      right: inherit;
+      width: 2*@largeurColResponsive;
+      height: 2*@largeurColResponsive;
+    }
+    &#btn-left-options{
+      top: 2*@largeurColResponsive;
+      left: 0;
+      right: inherit;
+      width: 2*@largeurColResponsive;
+      height: 2*@largeurColResponsive;
+    }
+    &#btn-right-options{
+      top: 2*@largeurColResponsive;
+      left: 2*@largeurColResponsive;
+      right: inherit;
+      width: 2*@largeurColResponsive;
+      height: 2*@largeurColResponsive;
+    }
+  }
   ul.subMenu{
     float: none;
     margin: -60px 0 20px;
@@ -913,7 +978,11 @@
     }
   }
   /* @end */
-  
+  #bloc-options-title{
+    h2{
+      font-size: 2em!important;
+    }
+  }
   h1{
     padding-top: 110px;
     font-size: 2em;
@@ -971,8 +1040,10 @@
     }
   }
   a.btn-carousel{
-    border-color: #0070b8;
-    color: #0070b8;
+    .container-anim-inte-bloc-detail-home &{
+      border-color: #0070b8;
+      color: #0070b8;
+    }
     &#btn-close-carousel-home{
       width: 2*@largeurColResponsive;
       height: 2*@largeurColResponsive;
@@ -988,6 +1059,17 @@
       height: 2*@largeurColResponsive;
       right: 0;
       bottom: 1px;
+    }
+  }
+  #container-carousel-img-options{
+    width: 25%;
+  }
+  #container-carousel-txt-options{
+    width: 75%;
+    ul#carousel-txt-options{
+      li{
+        padding: 20px 20px 0 20px;
+      }
     }
   }
   #bloc-home{
@@ -1443,6 +1525,18 @@
       display: block;
     }
   }
+  .vmax{
+    .content{
+      .col{
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        &.col1, &.col4, &.col2, &.col3{
+          width: 100%;
+        }
+      }
+    }
+  }
 
   .arxFrance{
     .content{
@@ -1665,6 +1759,29 @@
         width: 5*@largeurColResponsive;
         height: 5*@largeurColResponsive;
       }
+    }
+  }
+
+  a.btn-carousel{
+    &#btn-close-detail-option{
+      left: 0;
+      right: inherit;
+      width: 3*@largeurColResponsive;
+      height: 3*@largeurColResponsive;
+    }
+    &#btn-left-options{
+      top: 3*@largeurColResponsive;
+      left: 0;
+      right: inherit;
+      width: 3*@largeurColResponsive;
+      height: 3*@largeurColResponsive;
+    }
+    &#btn-right-options{
+      top: 6*@largeurColResponsive;
+      left: 0;
+      right: inherit;
+      width: 3*@largeurColResponsive;
+      height: 3*@largeurColResponsive;
     }
   }
 
