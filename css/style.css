@@ -1426,7 +1426,8 @@ ul.bg-grid {
   z-index: 2;
   overflow: hidden;
 }
-.lt-ie9 ul.bg-grid {
+.lt-ie9 ul.bg-grid,
+.page ul.bg-grid {
   display: none;
 }
 ul.bg-grid li.col-bg-grid {
@@ -1844,6 +1845,10 @@ ul#menu-header li a:focus {
   min-height: 410px;
   max-height: 510px;
 }
+.page #bloc-home {
+  min-height: 300px;
+  max-height: 400px;
+}
 #bloc-home.small-bloc-home {
   min-height: 410px;
   max-height: 510px;
@@ -2022,12 +2027,9 @@ ul#menu-header li a:focus {
   background-size: cover;
 }
 .apropos #bloc-home #bg-bloc-home,
-.partenaires #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
-  background-size: auto 100%;
-  background-size: cover;
-}
-.armoire-pyxis #bloc-home #bg-bloc-home {
+.partenaires #bloc-home #bg-bloc-home,
+.armoire-pyxis #bloc-home #bg-bloc-home,
+.page #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
@@ -5333,6 +5335,9 @@ ul.subMenu.fixedBottom {
     margin-right: 0;
     margin-left: 0;
   }
+  .page .content {
+    padding: 60px 20px 0;
+  }
   .subMenuContact ul {
     margin-left: 0;
   }
@@ -6503,6 +6508,12 @@ ul.subMenu.fixedBottom {
   .armoire-pyxis .content .col.col2 {
     width: 100%;
     text-align: center;
+  }
+  .page .content {
+    text-align: center;
+  }
+  .page .content ul {
+    text-align: left;
   }
 }
 @media (max-width: 480px) {

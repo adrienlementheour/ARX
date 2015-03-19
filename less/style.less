@@ -917,7 +917,7 @@ ul.bg-grid{
   pointer-events: none;
   z-index: 2;
   overflow: hidden;
-  .lt-ie9 &{
+  .lt-ie9 &, .page &{
     display: none;
   }
   li.col-bg-grid{
@@ -1371,6 +1371,10 @@ ul#menu-header{
     min-height: 410px;
     max-height: 510px;
   }
+  .page &{
+    min-height: 300px;
+    max-height: 400px;
+  }
   &.small-bloc-home{
     min-height: 410px;
     max-height: 510px;
@@ -1533,12 +1537,7 @@ ul#menu-header{
       background-size: auto 100%;
       background-size: cover;
     }
-    .apropos &, .partenaires &{
-      background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
-      background-size: auto 100%;
-      background-size: cover;
-    }
-    .armoire-pyxis &{
+    .apropos &, .partenaires &, .armoire-pyxis &, .page &{
       background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;

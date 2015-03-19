@@ -219,7 +219,7 @@ if(isset($_POST['submit'])) {
 	  		<div class="container">
 	  			<ul id="menu-center-footer" data-sr>
 	  				<li>&copy; 2015  ARX INTER</li>
-	  				<li><a href="#">Mentions légales</a></li>
+	  				<li><a href="mentions-legales.html">Mentions légales</a></li>
 	  				<li><a id="btn-arx-international" href="#">ARX à l'international</a></li>
 	  			</ul>
 	  		</div>
