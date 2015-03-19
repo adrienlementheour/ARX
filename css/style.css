@@ -5349,14 +5349,22 @@ ul.subMenu.fixedBottom {
   .bloc-txt.bloc-txt-vertical-centered {
     line-height: 16.66666667vw;
   }
+  .btn,
   a.btn {
     width: 16.66666667vw;
     height: 16.66666667vw;
     padding: 20px;
   }
+  .btn.btn-vertical-centered,
   a.btn.btn-vertical-centered {
     line-height: 16.66666667vw;
     padding: 0 20px;
+  }
+  .btn.btn-image,
+  a.btn.btn-image {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    margin: 0;
   }
   #bloc-home #bloc-detail-home {
     left: 16.66666667vw;
@@ -5406,6 +5414,19 @@ ul.subMenu.fixedBottom {
     margin: 0;
     right: 0;
   }
+  /* @group options */
+  #bloc-options-title {
+    height: 33.33333333vw;
+    bottom: -16.66666667vw;
+  }
+  #bloc-options-title.open {
+    width: 33.33333333vw;
+  }
+  ul#liste-options-pharmacies li {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+  }
+  /* @end */
   #bloc-video #wrapper-video {
     width: 66.66666667vw;
     margin-left: 16.66666667vw;
@@ -5697,6 +5718,30 @@ ul.subMenu.fixedBottom {
     bottom: 0;
     left: 75vw;
   }
+  /* @group options */
+  #zone-txt-options-pharmacies {
+    margin-top: 20px;
+    width: 90%;
+  }
+  .btn.btn-image,
+  a.btn.btn-image {
+    width: 50vw;
+    height: 50vw;
+  }
+  ul#liste-options-pharmacies li {
+    width: 50vw;
+    height: 50vw;
+  }
+  ul#liste-options-pharmacies li.margin-bottom {
+    margin-bottom: 0;
+  }
+  ul#liste-options-pharmacies li.margin-top {
+    margin-top: 0;
+  }
+  ul#liste-options-pharmacies li.up {
+    margin-top: 0;
+  }
+  /* @end */
   ul.subMenu {
     float: none;
     margin: -60px 0 20px;
@@ -6279,6 +6324,12 @@ ul.subMenu.fixedBottom {
     width: 25vw;
     height: 25vw;
   }
+  /* @group options vmax */
+  a#btn-options-plus {
+    width: 25vw;
+    height: 25vw;
+  }
+  /* @end */
   footer ul#menu-top-footer li {
     width: 100%;
     height: auto;
@@ -6570,6 +6621,11 @@ ul.subMenu.fixedBottom {
   #zone-titre-home h1 {
     width: 100%;
   }
+  .btn.btn-image .zone-btn,
+  a.btn.btn-image .zone-btn {
+    width: 41.66666667vw;
+    height: 41.66666667vw;
+  }
   .padBot2 {
     padding-bottom: 20px;
   }
@@ -6633,6 +6689,10 @@ ul.subMenu.fixedBottom {
   }
   #bloc-video #wrapper-video ul#slider-videos li a.video-cover .video-txt .video-title .video-title-fixed {
     margin: 0 0 5px 0;
+  }
+  a#btn-options-plus {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
   }
   #bloc-hopitaux #bloc-txt-automatiser {
     width: 50vw;
