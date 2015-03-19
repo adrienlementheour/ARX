@@ -306,7 +306,7 @@ if(isset($_POST['submit'])) {
 										<a href="a-propos.html">ARX FRance</a>
 									</li>
 									<li>
-										<a href="#">Convoyage</a>
+										<a href="partenaires.html">Partenaires</a>
 									</li>
 								</ul>
 							</li>
