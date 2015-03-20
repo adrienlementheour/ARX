@@ -2568,7 +2568,7 @@ a.btn-references{
     &:nth-child(even){
       margin-top: @largeurCol;
     }
-    .social-link{
+    a.social-link{
       display: block;
       width: 100%;
       height: 100%;
@@ -2577,64 +2577,28 @@ a.btn-references{
       background-repeat: no-repeat;
       background-position: 50% 50%;
       .transition(all 0.1s ease-in-out);
+      background-color: @bleu2ARX;
       position: relative;
-      &.twitter{
-        background-color: #6bacda;
-        background-color: fade(#6bacda, 90%);
-        background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-twitter.png");
-      }
-      &.facebook{
-        background-color: #004b99;
-        background-color: fade(#004b99, 85%);
-        background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-facebook.png");
-      }
-      &.pinterest{
-        background-color: @blanc;
-        background-color: fade(@blanc, 75%);
-        background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-pinterest.png");
-      }
-      &.youtube{
-        background-color: @blanc;
-        background-color: fade(@blanc, 75%);
-        background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-youtube.png");
-      }
-      &.googleplus{
-        background-color: @blanc;
-        background-color: fade(@blanc, 75%);
-        background-image: url("../layoutImg/home/bloc-reseaux-sociaux/logo-googleplus.png");
+      .transition(background 0.2s ease-in, color 0.1s ease-in);
+      color: @blanc;
+      text-decoration: none;
+      text-align: center;
+      line-height: @largeurCol;
+      font-size: 1.8em;
+      &.icon-youtube{
+        font-size: 2.1em;
       }
       &:focus{
         outline: none;
       }
       &:hover, &:focus{
-        &.twitter{
-          background-color: #6bacda;
-        }
-        &.facebook{
-          background-color: #004b99;
-        }
-        &.pinterest{
-          background-color: @blanc;
-          .triangle-btn-social{
-            border-bottom-color: @bleu2ARX;
-          }
-        }
-        &.youtube{
-          background-color: @blanc;
-          .triangle-btn-social{
-            border-bottom-color: @bleu2ARX;
-          }
-        }
-        &.googleplus{
-          background-color: @blanc;
-          .triangle-btn-social{
-            border-bottom-color: @bleu2ARX;
-          }
-        }
+        background-color: @blanc;
+        color: @bleu2ARX;
         .triangle-btn-social{
           margin: 3px 0 0 3px;
           border-width: 0 0 11px 11px;
           .transform(translate(3px, 3px));
+          border-bottom-color: @bleu2ARX;
         }
       }
     }
