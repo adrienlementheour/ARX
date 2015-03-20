@@ -331,7 +331,7 @@ if(isset($_POST['submit'])) {
 							</li>
 						</ul>
 					</li><li class="col-menu-bottom-footer">
-						<a href="#"><h3>ARX France</h3></a>
+						<a href="a-propos.html"><h3>ARX France</h3></a>
 						<ul class="menu-categ-1">
 							<li>
 								<span class="no-link">À propos</span>
