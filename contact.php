@@ -184,7 +184,7 @@ if(isset($_POST['submit'])) {
 						Afin de mieux vous répondre, nous vous invitons a remplir ce formulaire. Nous pourrons ainsi vous contacter, pas mail, ou par téléphone, et répondre précisémment à votre demande :
 					</p>
 
-					<form action="" method="POST" class="marginTop" id="form" data-sr>
+					<form action="" method="POST" class="marginTop" id="form">
 							<fieldset class="padTop <?php if($erreurNom != '') echo 'error'; ?>">
 								<label for="nom">Nom <span>*</span></label>
 								<input type="text" name="nom" id="nom" value="<?php echo $nom; ?>"/>
