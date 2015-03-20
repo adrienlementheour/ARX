@@ -777,6 +777,29 @@ a.btn h2 .txt-btn .small {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.e404 .btn,
+.e404 a.btn {
+  height: 176px;
+  width: 176px;
+}
+.e404 .btn:hover,
+.e404 a.btn:hover,
+.e404 .btn:focus,
+.e404 a.btn:focus {
+  text-decoration: none;
+}
+.e404 .btn:hover h2,
+.e404 a.btn:hover h2,
+.e404 .btn:focus h2,
+.e404 a.btn:focus h2 {
+  color: #0070b8;
+}
+.e404 .btn h2,
+.e404 a.btn h2 {
+  margin: 0;
+  background: none;
+  color: #fff;
+}
 .btn.btn-anim-width,
 a.btn.btn-anim-width {
   padding: 0;
@@ -1873,7 +1896,8 @@ ul#menu-header li a:focus {
 .home #bloc-home .container a.btn h2 {
   font-size: 1em;
 }
-.arxFrance #bloc-home {
+.arxFrance #bloc-home,
+.e404 #bloc-home {
   min-height: 410px;
   max-height: 510px;
 }
@@ -2072,6 +2096,11 @@ ul#menu-header li a:focus {
 }
 .rowa-dose #bloc-home #bg-bloc-home {
   background: url("../img/hopitaux/header-dose.png") no-repeat 50% 50%;
+  background-size: auto 100%;
+  background-size: cover;
+}
+.e404 #bloc-home #bg-bloc-home {
+  background: url("../layoutImg/header-404.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
@@ -5439,7 +5468,8 @@ ul.subMenu.fixedBottom {
     margin-right: 0;
     margin-left: 0;
   }
-  .page .content {
+  .page .content,
+  .e404 .content {
     padding: 60px 20px 0;
   }
   .subMenuContact ul {
@@ -7192,36 +7222,43 @@ ul.subMenu.fixedBottom {
   }
 }
 @media (max-height: 800px) {
-  .arxFrance h1 {
+  .arxFrance h1,
+  .e404 h1 {
     padding: 170px 0 0;
   }
-  .arxFrance #bloc-home {
+  .arxFrance #bloc-home,
+  .e404 #bloc-home {
     height: 56%;
     min-height: 390px;
     max-height: 440px;
   }
 }
 @media (max-width: 767px) and (max-height: 620px) {
-  .arxFrance h1 {
+  .arxFrance h1,
+  .e404 h1 {
     padding: 140px 0 0;
   }
-  .arxFrance #bloc-home {
+  .arxFrance #bloc-home,
+  .e404 #bloc-home {
     min-height: 320px;
     max-height: 400px;
   }
 }
 @media (max-width: 450px) and (max-height: 620px) {
-  .arxFrance h1 {
+  .arxFrance h1,
+  .e404 h1 {
     padding: 110px 0 0;
     font-size: 2em;
     line-height: 1.25em;
   }
-  .arxFrance #bloc-home {
+  .arxFrance #bloc-home,
+  .e404 #bloc-home {
     height: 72%;
     min-height: 260px;
     max-height: 330px;
   }
-  .arxFrance.partenaires #bloc-home {
+  .arxFrance.partenaires #bloc-home,
+  .e404.partenaires #bloc-home {
     min-height: 300px;
   }
 }

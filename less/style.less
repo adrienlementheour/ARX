@@ -525,6 +525,21 @@ a{
       }
     }
   }
+  .e404 &{
+    height: 2*@largeurCol;
+    width: 2*@largeurCol;
+    &:hover, &:focus{
+      text-decoration: none;
+      h2{
+        color: @bleu7ARX;
+      }
+    }
+    h2{
+      margin: 0;
+      background: none;
+      color: #fff;
+    }
+  }
   &.btn-anim-width{
     padding: 0;
     background-color: none;
@@ -1392,7 +1407,7 @@ ul#menu-header{
       }
     }
   }
-  .arxFrance &{
+  .arxFrance &, .e404 &{
     min-height: 410px;
     max-height: 510px;
   }
@@ -1575,6 +1590,11 @@ ul#menu-header{
     }
     .rowa-dose &{
       background: url("../img/hopitaux/header-dose.png") no-repeat 50% 50%;
+      background-size: auto 100%;
+      background-size: cover;
+    }
+    .e404 &{
+      background: url("../layoutImg/header-404.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
     }
