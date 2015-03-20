@@ -2,7 +2,7 @@
 // variables à modifier //
 //////////////////////////
 // Nombre de références
-var nbRefs = 3;
+var nbRefs = 20;
 // Numéro d'étape du slider scroll
 var etape = 1,
 	indexPucesVision = 1,
