@@ -893,6 +893,14 @@ a.btn.btn-anim-width .container-btn-anim h2 {
 a.btn.btn-anim-width .container-btn-anim h2.small-padding {
   padding: 0 25px;
 }
+.btn.btn-anim-width .container-btn-anim h2.very-small-padding,
+a.btn.btn-anim-width .container-btn-anim h2.very-small-padding {
+  padding: 0 20px;
+}
+.btn.btn-anim-width .container-btn-anim h2.small-txt,
+a.btn.btn-anim-width .container-btn-anim h2.small-txt {
+  font-size: 0.85em;
+}
 .btn.btn-image,
 a.btn.btn-image {
   width: 352px;
@@ -2478,7 +2486,7 @@ ul#menu-header li a:focus {
 #bloc-home #bloc-detail-home #container-carousel-txt-home ul#carousel-txt-home li p {
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.95em;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2565,6 +2573,12 @@ ul#menu-header li a:focus {
 }
 #bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2.small-padding {
   padding: 0 25px;
+}
+#bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2.very-small-padding {
+  padding: 0 15px;
+}
+#bloc-home #bloc-detail-home ul#container-titles-carousel-home li .container-title-carousel-home h2.small-txt {
+  font-size: 1.2em;
 }
 /* @end */
 /* @group Bloc video */
