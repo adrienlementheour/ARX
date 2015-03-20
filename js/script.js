@@ -32,7 +32,7 @@ var tpsEtapeFondDetailHome = 0.1,
 var isAnimating = false,
 	numCurrentSlideScroll = 1,
 	nbSlidesScroll = $("ul#slider-scroll li").length;
-$("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
+//$("#zone-slider-scroll").bind('mousewheel DOMMouseScroll', zoneSliderScrollMouseWheel);
 
 // Position sous menu pour le fixer au scroll
 var offsetSubMenu;
