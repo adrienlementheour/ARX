@@ -285,7 +285,7 @@
 			    wait: '0s',
 			    delay: 'onload',
 			    complete: function( el ){
-			    	if($('#slider-scroll').find(el).length){
+			    	if($('#slider-scroll').find(el).length && $(window).width() > 768){
 			    		tableAnimScroll[$('#slider-scroll').find(el).index()].restart().play();
 			    	}
 			    }
