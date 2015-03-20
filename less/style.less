@@ -326,7 +326,7 @@ p, ul{
   strong{
     .roboto-bold(1em);
   }
-  &.light{
+  &.light, .page &{
     .roboto-light(1em);
   }
   &.sur-tiret-right{
@@ -1547,28 +1547,13 @@ ul#menu-header{
       background-size: auto 100%;
       background-size: cover;
     }
-    .apropos &, .partenaires &, .armoire-pyxis &, .page &{
-      background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
+    .arxFrance &, .armoire-pyxis &, .page &{
+      background: url("../layoutImg/header-arxfrance.png") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
     }
     .blispack-grifols &{
       background: url("../layoutImg/bloc-home-hopitaux/blispack-grifols.jpg") no-repeat 50% 50%;
-      background-size: auto 100%;
-      background-size: cover;
-    }
-    .consultant &{
-      background: url("../layoutImg/bloc-home-consultant/consultant.jpg") no-repeat 50% 50%;
-      background-size: auto 100%;
-      background-size: cover;
-    }
-    .installation &, .sav &{
-      background: url("../layoutImg/bloc-home-install/install.jpg") no-repeat 50% 50%;
-      background-size: auto 100%;
-      background-size: cover;
-    }
-    .contact &{
-      background: url("../layoutImg/bloc-home-contact/contact.jpg") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
     }
@@ -2721,7 +2706,7 @@ ul#slider-scroll-navigator{
       .box-sizing(border-box);
       border: 3px solid @bleu7ARX;
       background-color: @blanc;
-      &:hover, &:focus{
+      &:hover{
         background-color: @bleu7ARX;
       }
       &:active, &:focus{
@@ -2736,7 +2721,7 @@ ul#slider-scroll{
   width: 100%;
   height: auto;
   position: relative;
-  padding: 100px 0 250px 0;
+  padding: 50px 0;
   margin: 0;
   li{
     display: block;
@@ -2744,8 +2729,8 @@ ul#slider-scroll{
     height: auto;
     position: relative;
     .box-sizing(border-box);
-    .opacity(0);
-    margin: 160px 0;
+    //.opacity(0);
+    margin: 250px 0;
     &.active{
       .opacity(1);
       .zone-txt-slider{
@@ -2773,7 +2758,7 @@ ul#slider-scroll{
     .zone-txt-slider{
       display: block;
       width: 4*@largeurCol;
-      .transform(translateY(300px));
+      //.transform(translateY(300px));
       background-color: @blanc;
       padding: 10px 0;
       h3{
