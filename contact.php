@@ -269,7 +269,7 @@ if(isset($_POST['submit'])) {
 						<a href="pharmacies.html"><h3>Pharmacies</h3></a>
 						<ul class="menu-categ-1">
 							<li>
-								<a href="rowa-smart-pharmacies.html">Rowa smart</a>
+								<a href="rowa-smart-pharmacies.html">Rowa Smart</a>
 							</li>
 							<li>
 								<a href="rowa-vmax-pharmacies.html">Rowa VMax</a><br />
