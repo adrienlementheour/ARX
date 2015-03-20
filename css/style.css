@@ -5170,6 +5170,10 @@ ul.subMenu.fixedBottom {
   color: #0070b8;
   text-decoration: underline;
 }
+#equipe img {
+  width: 100%;
+  height: 100%;
+}
 #equipe li {
   display: inline-block;
   width: 176px;
