@@ -47,6 +47,14 @@ $.urlParam = function(name){
     }
 }
 
+/**** Tester si un élément est visible dans la fenetre ****/
+function isVisible(elt){
+    var botView = myScroll + $(window).height();
+    var topElt = elt.offset().top;
+    var botElt = topElt + elt.height();
+    return ((botElt <= botView) && (topElt >= myScroll));
+}
+
 function zoneSliderScrollMouseWheel(event){
 	if($(window).width() >= 979){
 		//Normalize event wheel delta
@@ -75,7 +83,7 @@ function slideScroll(numNext){
 			slideScrollHeight = nextSlide.height(),
 			windowHeight = $(window).height();
 		// Arreter l'ancienne anim et jouer la nouvelle
-		if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
+		/*if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 			tableAnimScrollLoop[numCurrentSlideScroll-1].pause();
 		}
 		if ( typeof tableAnimScroll[numCurrentSlideScroll-1] !== 'undefined'){
@@ -87,13 +95,13 @@ function slideScroll(numNext){
 		}
 		if ( typeof tableAnimScrollLoop[numCurrentSlideScroll-1] !== 'undefined'){
 			tableAnimScrollLoop[numCurrentSlideScroll-1].kill();
-		}
+		}*/
 		if (numCurrentSlideScroll<numNext){
 			TweenMax.set($(".zone-txt-slider", nextSlide), {y: "300px"});
 		}else if(numCurrentSlideScroll<numNext){
 			TweenMax.set($(".zone-txt-slider", nextSlide), {y: "-300px"});
 		}
-		TweenMax.to(currentSlideScroll, 0.2, {opacity: "0", ease:Cubic.easeInOut});
+		//TweenMax.to(currentSlideScroll, 0.2, {opacity: "0", ease:Cubic.easeInOut});
 		TweenMax.to(nextSlide, 0.2, {opacity: "1", ease:Cubic.easeInOut});
 		TweenMax.to($(".zone-txt-slider", nextSlide), 0.4, {y: "0px", delay: 0.1, ease:Cubic.easeInOut});
 		TweenMax.to(window, 0.6, {scrollTo: {y: slideScrollPosition-(windowHeight/2)+(slideScrollHeight/2)}, onComplete: completeAnimSlideScroll, onCompleteParams: [currentSlideScroll, nextSlide, numNext], ease:Cubic.easeInOut});
@@ -223,7 +231,7 @@ function initSliderScroll(){
 			tableAnimScroll[i].add(TweenMax.fromTo($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), 0.3, { backgroundPosition:'0 -'+(frameHeight*j)+'px'}, { backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*j)+'px', ease:steppedEase}));
 		}
 		if(($(window).width()>767)){
-			tableAnimScroll[i].play();
+			//tableAnimScroll[i].play();
 		}else{
 			TweenMax.set($(".zone-visu-txt-slider .visu-txt-slider", slideAnim), {backgroundPosition:'0 -0'});
 			if(typeof tableAnimScroll[i] != 'undefined'){
@@ -1057,7 +1065,13 @@ $(document).scroll(function() {
 
 function setSliderScrollNavigator(myScroll){
 	if((myScroll >= ($("#slider-scroll").offset().top)-280) && (myScroll <= ($("#slider-scroll").offset().top)+($("#slider-scroll").height()-600))){
+		var i = 0, slides= $("#slider-scroll").find('li');
 		TweenMax.set($("#slider-scroll-navigator"), {opacity: "1"});
+		for(i; slides.length; i++){
+			if(isVisible(slides.eq(i))){
+				$('#slider-scroll-navigator').find('li').eq(i).addClass('active').siblings().removeClass();
+			}
+		}
 	}else{
 		TweenMax.set($("#slider-scroll-navigator"), {opacity: "0"});
 	}

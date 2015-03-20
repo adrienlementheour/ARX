@@ -2715,7 +2715,7 @@ ul#slider-scroll-navigator{
       .box-sizing(border-box);
       border: 3px solid @bleu7ARX;
       background-color: @blanc;
-      &:hover, &:focus{
+      &:hover{
         background-color: @bleu7ARX;
       }
       &:active, &:focus{
@@ -2730,7 +2730,7 @@ ul#slider-scroll{
   width: 100%;
   height: auto;
   position: relative;
-  padding: 100px 0 250px 0;
+  padding: 50px 0;
   margin: 0;
   li{
     display: block;
@@ -2738,8 +2738,8 @@ ul#slider-scroll{
     height: auto;
     position: relative;
     .box-sizing(border-box);
-    .opacity(0);
-    margin: 160px 0;
+    //.opacity(0);
+    margin: 250px 0;
     &.active{
       .opacity(1);
       .zone-txt-slider{
@@ -2767,7 +2767,7 @@ ul#slider-scroll{
     .zone-txt-slider{
       display: block;
       width: 4*@largeurCol;
-      .transform(translateY(300px));
+      //.transform(translateY(300px));
       background-color: @blanc;
       padding: 10px 0;
       h3{

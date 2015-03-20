@@ -3432,8 +3432,7 @@ ul#slider-scroll-navigator li a {
   border: 3px solid #0070b8;
   background-color: #ffffff;
 }
-ul#slider-scroll-navigator li a:hover,
-ul#slider-scroll-navigator li a:focus {
+ul#slider-scroll-navigator li a:hover {
   background-color: #0070b8;
 }
 ul#slider-scroll-navigator li a:active,
@@ -3445,7 +3444,7 @@ ul#slider-scroll {
   width: 100%;
   height: auto;
   position: relative;
-  padding: 100px 0 250px 0;
+  padding: 50px 0;
   margin: 0;
 }
 ul#slider-scroll li {
@@ -3456,10 +3455,7 @@ ul#slider-scroll li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
-  margin: 160px 0;
+  margin: 250px 0;
 }
 ul#slider-scroll li.active {
   -webkit-opacity: 1;
@@ -3494,11 +3490,6 @@ ul#slider-scroll li .zone-visu-txt-slider .visu-txt-slider {
 ul#slider-scroll li .zone-txt-slider {
   display: block;
   width: 352px;
-  -webkit-transform: translateY(300px);
-  -moz-transform: translateY(300px);
-  -o-transform: translateY(300px);
-  -ms-transform: translateY(300px);
-  transform: translateY(300px);
   background-color: #ffffff;
   padding: 10px 0;
 }
