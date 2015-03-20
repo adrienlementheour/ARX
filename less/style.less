@@ -262,19 +262,15 @@ h1{
     }
   }
   .pharmacies &{
-    width: 6*@largeurCol;
     margin: 0 auto;
     padding-left: 110px;
+  }
+  .pharmacies &, .contact &, .partenaires &, .armoire-pyxis &, .rowa-dose &{
+    width: 6*@largeurCol;
   }
   .hopitaux &{
     width: 8*@largeurCol;
     margin: 0 auto;
-  }
-  .contact &, .partenaires &{
-    width: 6*@largeurCol;
-  }
-  .armoire-pyxis &{
-    width: 6*@largeurCol;
   }
 }
 
@@ -1554,6 +1550,11 @@ ul#menu-header{
     }
     .blispack-grifols &{
       background: url("../layoutImg/bloc-home-hopitaux/blispack-grifols.jpg") no-repeat 50% 50%;
+      background-size: auto 100%;
+      background-size: cover;
+    }
+    .rowa-dose &{
+      background: url("../img/hopitaux/header-dose.png") no-repeat 50% 50%;
       background-size: auto 100%;
       background-size: cover;
     }
