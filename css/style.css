@@ -7120,27 +7120,39 @@ ul.subMenu.fixedBottom {
   }
 }
 @media (max-width: 767px) and (max-height: 620px) {
-  .arxFrance h1 {
+  .arxFrance h1,
+  .arxFrance.contact h1 {
     padding: 140px 0 0;
   }
-  .arxFrance #bloc-home {
+  .arxFrance #bloc-home,
+  .arxFrance.contact #bloc-home {
     min-height: 320px;
     max-height: 400px;
   }
 }
 @media (max-width: 450px) and (max-height: 620px) {
-  .arxFrance h1 {
+  .arxFrance h1,
+  .arxFrance.contact h1 {
     padding: 110px 0 0;
     font-size: 2em;
     line-height: 1.25em;
   }
-  .arxFrance #bloc-home {
+  .arxFrance #bloc-home,
+  .arxFrance.contact #bloc-home {
     height: 72%;
     min-height: 260px;
     max-height: 330px;
   }
-  .arxFrance.partenaires #bloc-home {
+  .arxFrance.partenaires #bloc-home,
+  .arxFrance.contact.partenaires #bloc-home {
     min-height: 300px;
+  }
+}
+@media (max-height: 800px) {
+  .contact #bloc-home {
+    height: 56%;
+    min-height: 390px;
+    max-height: 440px;
   }
 }
 @media (max-height: 320px) {
