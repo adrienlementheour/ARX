@@ -3001,6 +3001,23 @@ a.btn-video:focus#btn-right-video .masque-arrow {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background: #ffffff;
+}
+#bloc-references ul#liste-references li .masque {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 #bloc-references ul#liste-references li#references-bloc-big {
   width: 704px;
@@ -3008,11 +3025,17 @@ a.btn-video:focus#btn-right-video .masque-arrow {
   top: 0;
   left: 176px;
 }
+#bloc-references ul#liste-references li#references-bloc-big:hover {
+  z-index: 3;
+}
 #bloc-references ul#liste-references li#references-bloc-vertical {
   width: 176px;
   height: 352px;
   top: 264px;
   left: 0;
+}
+#bloc-references ul#liste-references li#references-bloc-vertical .masque {
+  background: rgba(0, 112, 184, 0.4);
 }
 #bloc-references ul#liste-references li#references-bloc-horizontal-top {
   width: 352px;
@@ -3020,11 +3043,22 @@ a.btn-video:focus#btn-right-video .masque-arrow {
   top: 88px;
   left: 704px;
 }
+#bloc-references ul#liste-references li#references-bloc-horizontal-top .masque {
+  background: rgba(0, 0, 0, 0.4);
+}
 #bloc-references ul#liste-references li#references-bloc-horizontal-bottom {
   width: 352px;
   height: 176px;
   top: 440px;
   left: 528px;
+}
+#bloc-references ul#liste-references li#references-bloc-horizontal-bottom .masque {
+  background: rgba(255, 255, 255, 0.4);
+}
+#bloc-references ul#liste-references li:hover .masque {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
 }
 #bloc-references ul#liste-references li .container-img-references {
   display: block;
@@ -3093,6 +3127,19 @@ a.btn-references {
   color: #ffffff;
   text-align: center;
   background-color: #298bcc;
+  border: 1px solid #298bcc;
+  z-index: 4;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0s ease-in;
+  -moz-transition: all 0s ease-in;
+  -o-transition: all 0s ease-in;
+  transition: all 0s ease-in;
+}
+a.btn-references.btn-references-line {
+  background: none;
+  border-color: #ffffff;
 }
 a.btn-references .arrow {
   font-size: 13px;
@@ -3110,7 +3157,7 @@ a.btn-references .arrow {
   transition: all 0.1s ease-in;
 }
 a.btn-references .masque-arrow {
-  display: block;
+  display: none;
   width: 20px;
   height: 13px;
   background-color: #298bcc;

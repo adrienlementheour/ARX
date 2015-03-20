@@ -2354,29 +2354,58 @@ a.btn-video{
       margin: 0;
       padding: 0;
       overflow: hidden;
+      background: @blanc;
+      .masque{
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        .opacity(1);
+        .transition(all 0.1s ease-in-out);
+      }
       &#references-bloc-big{
         width: 8*@largeurCol;
         height: 6*@largeurCol;
         top: 0;
         left: 2*@largeurCol;
+        &:hover{
+          z-index: 3;
+        }
       }
       &#references-bloc-vertical{
         width: 2*@largeurCol;
         height: 4*@largeurCol;
         top: 3*@largeurCol;
         left: 0;
+        .masque{
+          background: fade(@bleu7ARX, 40%);
+        }
       }
       &#references-bloc-horizontal-top{
         width: 4*@largeurCol;
         height: 2*@largeurCol;
         top: 1*@largeurCol;
         left: 8*@largeurCol;
+        .masque{
+          background: fade(@noir, 40%);
+        }
       }
       &#references-bloc-horizontal-bottom{
         width: 4*@largeurCol;
         height: 2*@largeurCol;
         top: 5*@largeurCol;
         left: 6*@largeurCol;
+        .masque{
+          background: fade(@blanc, 40%);
+        }
+      }
+      &:hover{
+        .masque{
+          .opacity(0);
+        }
       }
       .container-img-references{
         display: block;
@@ -2433,6 +2462,14 @@ a.btn-references{
   color: @blanc;
   text-align: center;
   background-color: @bleu4ARX;
+  border: 1px solid @bleu4ARX;
+  z-index: 4;
+  .box-sizing(border-box);
+  .transition(all 0s ease-in);
+  &.btn-references-line{
+    background: none;
+    border-color: @blanc;
+  }
   .arrow{
     font-size: 13px;
     display: block;
@@ -2446,7 +2483,8 @@ a.btn-references{
     .transition(all 0.1s ease-in);
   }
   .masque-arrow{
-    display: block;
+    //display: block;
+    display: none;
     width: 20px;
     height: 13px;
     background-color: @bleu4ARX;

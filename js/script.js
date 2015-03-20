@@ -605,6 +605,38 @@ $(function(){
 	  	animBtnFileRetour($(this));
 	  }
 	);
+	// hover references
+	$("ul#liste-references li#references-bloc-big").hover(
+	  function() {
+        TweenMax.set($("a#btn-left-references"), {className:"+=btn-references-line", clearProps:"all"});
+        TweenMax.to([$("li#references-bloc-vertical .container-img-references"), $("li#references-bloc-horizontal-top .container-img-references"), $("li#references-bloc-horizontal-bottom .container-img-references")], 0.3, {opacity: "0.5", ease:Cubic.easeInOut});
+	  }, function() {
+	  	TweenMax.set($("a#btn-left-references"), {className:"-=btn-references-line", clearProps:"all"});
+	  	TweenMax.to([$("li#references-bloc-vertical .container-img-references"), $("li#references-bloc-horizontal-top .container-img-references"), $("li#references-bloc-horizontal-bottom .container-img-references")], 0.3, {opacity: "1", ease:Cubic.easeInOut});
+	  }
+	);
+	$("ul#liste-references li#references-bloc-vertical").hover(
+	  function() {
+	  	TweenMax.to([$("li#references-bloc-big .container-img-references"), $("li#references-bloc-horizontal-top .container-img-references"), $("li#references-bloc-horizontal-bottom .container-img-references")], 0.3, {opacity: "0.5", ease:Cubic.easeInOut});
+	  }, function() {
+	  	TweenMax.to([$("li#references-bloc-big .container-img-references"), $("li#references-bloc-horizontal-top .container-img-references"), $("li#references-bloc-horizontal-bottom .container-img-references")], 0.3, {opacity: "1", ease:Cubic.easeInOut});
+	  }
+	);
+	$("ul#liste-references li#references-bloc-horizontal-top").hover(
+	  function() {
+	  	TweenMax.to([$("li#references-bloc-vertical .container-img-references"), $("li#references-bloc-big .container-img-references"), $("li#references-bloc-horizontal-bottom .container-img-references")], 0.3, {opacity: "0.5", ease:Cubic.easeInOut});
+	  }, function() {
+	  	TweenMax.to([$("li#references-bloc-vertical .container-img-references"), $("li#references-bloc-big .container-img-references"), $("li#references-bloc-horizontal-bottom .container-img-references")], 0.3, {opacity: "1", ease:Cubic.easeInOut});
+	  }
+	);
+	$("ul#liste-references li#references-bloc-horizontal-bottom").hover(
+	  function() {
+	  	TweenMax.to([$("li#references-bloc-vertical .container-img-references"), $("li#references-bloc-horizontal-top .container-img-references"), $("li#references-bloc-big .container-img-references")], 0.3, {opacity: "0.5", ease:Cubic.easeInOut});
+	  }, function() {
+	  	TweenMax.to([$("li#references-bloc-vertical .container-img-references"), $("li#references-bloc-horizontal-top .container-img-references"), $("li#references-bloc-big .container-img-references")], 0.3, {opacity: "1", ease:Cubic.easeInOut});
+	  }
+	);
+
 	$("a#btn-options").click(function() {
 		openOptions("openTitleOptions");
 		return false;
