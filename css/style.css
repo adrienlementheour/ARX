@@ -2668,32 +2668,28 @@ a.btn-video#btn-right-video .masque-arrow {
 a.btn-video:focus {
   outline: none;
 }
-a.btn-video:hover#btn-left-video .arrow.icon-arrow-left,
-a.btn-video:focus#btn-left-video .arrow.icon-arrow-left {
+a.btn-video:hover#btn-left-video .arrow.icon-arrow-left {
   -webkit-transform: translate(-15px, 0);
   -moz-transform: translate(-15px, 0);
   -o-transform: translate(-15px, 0);
   -ms-transform: translate(-15px, 0);
   transform: translate(-15px, 0);
 }
-a.btn-video:hover#btn-left-video .masque-arrow,
-a.btn-video:focus#btn-left-video .masque-arrow {
+a.btn-video:hover#btn-left-video .masque-arrow {
   -webkit-transform: translate(-28px, 0);
   -moz-transform: translate(-28px, 0);
   -o-transform: translate(-28px, 0);
   -ms-transform: translate(-28px, 0);
   transform: translate(-28px, 0);
 }
-a.btn-video:hover#btn-right-video .arrow.icon-arrow-right,
-a.btn-video:focus#btn-right-video .arrow.icon-arrow-right {
+a.btn-video:hover#btn-right-video .arrow.icon-arrow-right {
   -webkit-transform: translate(15px, 0);
   -moz-transform: translate(15px, 0);
   -o-transform: translate(15px, 0);
   -ms-transform: translate(15px, 0);
   transform: translate(15px, 0);
 }
-a.btn-video:hover#btn-right-video .masque-arrow,
-a.btn-video:focus#btn-right-video .masque-arrow {
+a.btn-video:hover#btn-right-video .masque-arrow {
   -webkit-transform: translate(28px, 0);
   -moz-transform: translate(28px, 0);
   -o-transform: translate(28px, 0);
@@ -3242,32 +3238,28 @@ a.btn-references#btn-right-references {
 a.btn-references:focus {
   outline: none;
 }
-a.btn-references:hover#btn-left-references .arrow.icon-arrow-left,
-a.btn-references:focus#btn-left-references .arrow.icon-arrow-left {
+a.btn-references:hover#btn-left-references .arrow.icon-arrow-left {
   -webkit-transform: translate(-15px, 0);
   -moz-transform: translate(-15px, 0);
   -o-transform: translate(-15px, 0);
   -ms-transform: translate(-15px, 0);
   transform: translate(-15px, 0);
 }
-a.btn-references:hover#btn-left-references .masque-arrow,
-a.btn-references:focus#btn-left-references .masque-arrow {
+a.btn-references:hover#btn-left-references .masque-arrow {
   -webkit-transform: translate(-28px, 0);
   -moz-transform: translate(-28px, 0);
   -o-transform: translate(-28px, 0);
   -ms-transform: translate(-28px, 0);
   transform: translate(-28px, 0);
 }
-a.btn-references:hover#btn-right-references .arrow.icon-arrow-right,
-a.btn-references:focus#btn-right-references .arrow.icon-arrow-right {
+a.btn-references:hover#btn-right-references .arrow.icon-arrow-right {
   -webkit-transform: translate(15px, 0);
   -moz-transform: translate(15px, 0);
   -o-transform: translate(15px, 0);
   -ms-transform: translate(15px, 0);
   transform: translate(15px, 0);
 }
-a.btn-references:hover#btn-right-references .masque-arrow,
-a.btn-references:focus#btn-right-references .masque-arrow {
+a.btn-references:hover#btn-right-references .masque-arrow {
   -webkit-transform: translate(28px, 0);
   -moz-transform: translate(28px, 0);
   -o-transform: translate(28px, 0);
@@ -3916,24 +3908,21 @@ a.btn-carousel#btn-close-bloc-options {
 a.btn-carousel:focus {
   outline: none;
 }
-a.btn-carousel:hover.btn-left-carousel .arrow.icon-arrow-left,
-a.btn-carousel:focus.btn-left-carousel .arrow.icon-arrow-left {
+a.btn-carousel:hover.btn-left-carousel .arrow.icon-arrow-left {
   -webkit-transform: translate(-15px, 0);
   -moz-transform: translate(-15px, 0);
   -o-transform: translate(-15px, 0);
   -ms-transform: translate(-15px, 0);
   transform: translate(-15px, 0);
 }
-a.btn-carousel:hover.btn-right-carousel .arrow.icon-arrow-right,
-a.btn-carousel:focus.btn-right-carousel .arrow.icon-arrow-right {
+a.btn-carousel:hover.btn-right-carousel .arrow.icon-arrow-right {
   -webkit-transform: translate(15px, 0);
   -moz-transform: translate(15px, 0);
   -o-transform: translate(15px, 0);
   -ms-transform: translate(15px, 0);
   transform: translate(15px, 0);
 }
-a.btn-carousel:hover.btn-close-carousel .cross,
-a.btn-carousel:focus.btn-close-carousel .cross {
+a.btn-carousel:hover.btn-close-carousel .cross {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -o-transform: rotate(90deg);
