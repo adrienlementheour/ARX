@@ -1071,6 +1071,11 @@ a.btn.btn-image .zone-btn {
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
+.btn.btn-image .zone-btn.small-padding,
+a.btn.btn-image .zone-btn.small-padding {
+  padding: 35px 25px;
+  font-size: 0.9em;
+}
 .btn.btn-image h2 .txt-btn,
 a.btn.btn-image h2 .txt-btn {
   overflow: hidden;
