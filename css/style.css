@@ -2488,7 +2488,7 @@ ul#menu-header li a:focus {
   width: 176px;
   height: 176px;
   position: absolute;
-  bottom: 176px;
+  top: 0;
   left: 0;
   margin: 0;
   padding: 0;
@@ -5457,7 +5457,7 @@ ul.subMenu.fixedBottom {
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home {
     width: 16.66666667vw;
     height: 16.66666667vw;
-    bottom: 16.66666667vw;
+    top: 0;
   }
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home li {
     line-height: 16.66666667vw;
@@ -6290,6 +6290,7 @@ ul.subMenu.fixedBottom {
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home {
     width: 33.33333333vw;
     height: 33.33333333vw;
+    top: inherit;
     bottom: 0;
   }
   #bloc-home #bloc-detail-home ul#container-titles-carousel-home li {
