@@ -2163,14 +2163,21 @@ ul#menu-header li a:focus {
   width: 176px;
   height: 176px;
 }
-#bloc-home a#btn-blispack-grisfols-hopitaux {
+#bloc-home a#btn-rowa-dose-hopitaux {
+  position: absolute;
+  bottom: 176px;
+  left: 352px;
+  width: 176px;
+  height: 176px;
+}
+#bloc-home a#btn-armoire-pyxis-hopitaux {
   position: absolute;
   bottom: 0;
   left: 528px;
   width: 176px;
   height: 176px;
 }
-#bloc-home a#btn-armoire-pyxis-hopitaux {
+#bloc-home a#btn-blispack-grisfols-hopitaux {
   position: absolute;
   bottom: 176px;
   left: 704px;
@@ -5767,6 +5774,8 @@ ul.subMenu.fixedBottom {
     margin-top: 200px;
   }
   #bloc-home {
+    /* @group btn hopitaux */
+    /* @end */
     /* @group btn rowa vmax */
     /* @end */
     /* @group btn rowa smart */
@@ -5799,18 +5808,27 @@ ul.subMenu.fixedBottom {
   #bloc-home a#btn-rowa-vmax-hopitaux {
     width: 25vw;
     height: 25vw;
-    left: 8.33333333vw;
-    line-height: 25vw;
+    left: 0;
+    bottom: 0;
   }
-  #bloc-home a#btn-blispack-grisfols-hopitaux {
+  #bloc-home a#btn-rowa-dose-hopitaux {
     width: 25vw;
     height: 25vw;
-    left: 41.66666667vw;
+    position: absolute;
+    bottom: 0;
+    left: 25vw;
   }
   #bloc-home a#btn-armoire-pyxis-hopitaux {
     width: 25vw;
     height: 25vw;
-    left: 66.66666667vw;
+    bottom: 0;
+    left: 50vw;
+  }
+  #bloc-home a#btn-blispack-grisfols-hopitaux {
+    width: 25vw;
+    height: 25vw;
+    bottom: 0;
+    left: 75vw;
   }
   #bloc-home a#btn-options {
     width: 25vw;
@@ -6260,6 +6278,8 @@ ul.subMenu.fixedBottom {
   }
   #bloc-home {
     min-height: 460px;
+    /* @group btn hopitaux */
+    /* @end */
     /* @group btn rowa vmax */
     /* @end */
     /* @group btn rowa smart */
@@ -6334,21 +6354,25 @@ ul.subMenu.fixedBottom {
     top: inherit;
     bottom: 0;
   }
-  #bloc-home a#btn-blispack-grisfols-hopitaux {
+  #bloc-home a#btn-rowa-dose-hopitaux {
     width: 33.33333333vw;
     height: 33.33333333vw;
-    left: 50%;
-    margin-left: -16.66666667vw;
-    top: inherit;
     bottom: 0;
+    left: 33.33333333vw;
   }
   #bloc-home a#btn-armoire-pyxis-hopitaux {
     width: 33.33333333vw;
     height: 33.33333333vw;
-    left: inherit;
-    right: 0;
+    left: 66.66666667vw;
     top: inherit;
     bottom: 0;
+  }
+  #bloc-home a#btn-blispack-grisfols-hopitaux {
+    width: 33.33333333vw;
+    height: 33.33333333vw;
+    left: 66.66666667vw;
+    top: inherit;
+    bottom: 33.33333333vw;
   }
   #bloc-home a#btn-options {
     width: 33.33333333vw;
