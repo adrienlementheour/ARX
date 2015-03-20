@@ -87,7 +87,7 @@ if(isset($_POST['submit'])) {
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	  	<title>Nous contacter | ARX France</title>
 
-	  	<meta name="description" content="">
+	  	<meta name="description" content="Contactez-nous, nous nous ferons une joie de répondre à vos attentes.">
 	  	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	  	<link rel="stylesheet" href="css/libs/normalize.css">
