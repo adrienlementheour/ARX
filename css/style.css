@@ -503,7 +503,9 @@ ul strong {
   -moz-osx-font-smoothing: grayscale;
 }
 p.light,
-ul.light {
+ul.light,
+.page p,
+.page ul {
   font-family: 'robotolight', sans-serif;
   font-weight: normal;
   font-size: 1em;
@@ -2034,32 +2036,15 @@ ul#menu-header li a:focus {
   background-size: auto 100%;
   background-size: cover;
 }
-.apropos #bloc-home #bg-bloc-home,
-.partenaires #bloc-home #bg-bloc-home,
+.arxFrance #bloc-home #bg-bloc-home,
 .armoire-pyxis #bloc-home #bg-bloc-home,
 .page #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/bloc-home-apropos/a-propos.jpg") no-repeat 50% 50%;
+  background: url("../layoutImg/header-arxfrance.png") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
 .blispack-grifols #bloc-home #bg-bloc-home {
   background: url("../layoutImg/bloc-home-hopitaux/blispack-grifols.jpg") no-repeat 50% 50%;
-  background-size: auto 100%;
-  background-size: cover;
-}
-.consultant #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/bloc-home-consultant/consultant.jpg") no-repeat 50% 50%;
-  background-size: auto 100%;
-  background-size: cover;
-}
-.installation #bloc-home #bg-bloc-home,
-.sav #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/bloc-home-install/install.jpg") no-repeat 50% 50%;
-  background-size: auto 100%;
-  background-size: cover;
-}
-.contact #bloc-home #bg-bloc-home {
-  background: url("../layoutImg/bloc-home-contact/contact.jpg") no-repeat 50% 50%;
   background-size: auto 100%;
   background-size: cover;
 }
@@ -7142,6 +7127,16 @@ ul.subMenu.fixedBottom {
     width: 200px;
   }
 }
+@media (max-height: 800px) {
+  .arxFrance h1 {
+    padding: 170px 0 0;
+  }
+  .arxFrance #bloc-home {
+    height: 56%;
+    min-height: 390px;
+    max-height: 440px;
+  }
+}
 @media (max-width: 767px) and (max-height: 620px) {
   .arxFrance h1 {
     padding: 140px 0 0;
@@ -7164,16 +7159,6 @@ ul.subMenu.fixedBottom {
   }
   .arxFrance.partenaires #bloc-home {
     min-height: 300px;
-  }
-}
-@media (max-height: 800px) {
-  .arxFrance h1 {
-    padding: 170px 0 0;
-  }
-  .arxFrance #bloc-home {
-    height: 56%;
-    min-height: 390px;
-    max-height: 440px;
   }
 }
 @media (max-height: 320px) {
