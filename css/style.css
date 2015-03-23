@@ -7064,6 +7064,12 @@ ul.subMenu.fixedBottom {
   #bloc-reseaux-sociaux ul#social-arx li a.social-link.icon-youtube {
     font-size: 2.4em;
   }
+  #bloc-home #bloc-detail-home .container-inte-bloc-detail-home {
+    height: 40%;
+  }
+  #bloc-home #bloc-detail-home .container-carousel-txt-home {
+    height: 60%;
+  }
   #bloc-home #bloc-detail-home.detail-home-open {
     width: 100vw;
     height: 116.66666667vw;

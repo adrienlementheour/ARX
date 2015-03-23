@@ -387,12 +387,10 @@ function animHeaderHome(){
 }
 
 function completeAnimMachine(){
+	transiInButton($("#btn-robots-rowa"));
 	setTimeout(function(){
-		transiInButton($("#btn-robots-rowa"));
-		setTimeout(function(){
-			transiInButton($("#btn-contact"));
-		}, 500);
-	}, 500);
+		transiInButton($("#btn-contact"));
+	}, 200);
 }
 
 function slideEquipe(){
@@ -405,9 +403,7 @@ function slideEquipe(){
 
 $(window).load(function() {
 	if($("body").hasClass("home")){
-		setTimeout(function(){
-			animHeaderHome();
-		}, 200);
+		animHeaderHome();
 	}
 
 	if(document.all && document.addEventListener && !window.atob || document.body.style.msTouchAction !== undefined){
