@@ -871,6 +871,8 @@ a{
     right: 15px;
     .triangle(bottom-right, 10px, 10px, @blanc);
     .transition(all 0.1s ease-in-out);
+    .backface-visibility(hidden);
+    .transform-style(preserve-3d);
   }
   &:hover, &:focus, &.survol{
     .transition(background-color 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860), color 0.3s cubic-bezier(0.785, 0.135, 0.150, 0.860));

@@ -364,9 +364,9 @@ function blocDrapeauxInit(){
 function transiInButton(btnSelected){
 	var tlTransiInBtn = new TimelineMax;
 	tlTransiInBtn.to(btnSelected, 0.3, {opacity: "1", scaleY:1, ease:Circ.easeInOut});
-	tlTransiInBtn.to(btnSelected, 1, {y: "0px", ease:Circ.easeInOut}, 0);
-	tlTransiInBtn.to($(".txt-btn", btnSelected), 0.2, {opacity: "1", y: "0px", ease:Circ.easeInOut});
-	tlTransiInBtn.to($(".triangle-btn", btnSelected), 0.2, {opacity: "1", x: "0px", y: "0px", ease:Circ.easeInOut, clearProps: "all"});
+	tlTransiInBtn.to(btnSelected, 1, {y: "0px", ease:Circ.easeInOut, force3D:true,lazy:true}, 0);
+	tlTransiInBtn.to($(".txt-btn", btnSelected), 0.2, {opacity: "1", y: "0px", ease:Circ.easeInOut, force3D:true,lazy:true});
+	tlTransiInBtn.to($(".triangle-btn", btnSelected), 0.2, {opacity: "1", x: "0px", y: "0px", ease:Circ.easeInOut, clearProps: "all", force3D:true, lazy:true});
 }
 
 function initBtnAnim(){
