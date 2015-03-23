@@ -3582,25 +3582,25 @@ ul#slider-scroll li.slide-right .zone-txt-slider {
   background: url("../layoutImg/slider-scroll/box.png") no-repeat 0 0;
 }
 .hopitaux ul#slider-scroll li#slide-2 .zone-visu-txt-slider .visu-txt-slider {
-  background: url("../layoutImg/slider-scroll/codebarre.png") no-repeat 0 0;
+  background: url("../layoutImg/slider-scroll/shield.png") no-repeat 0 0;
 }
 .pharmacies ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/stocks.png") no-repeat 0 0;
 }
 .hopitaux ul#slider-scroll li#slide-3 .zone-visu-txt-slider .visu-txt-slider {
-  background: url("../layoutImg/slider-scroll/gestion-personnel.png") no-repeat 0 0;
+  background: url("../layoutImg/slider-scroll/codebarre.png") no-repeat 0 0;
 }
 .pharmacies ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/shield.png") no-repeat 0 0;
 }
 .hopitaux ul#slider-scroll li#slide-4 .zone-visu-txt-slider .visu-txt-slider {
-  background: url("../layoutImg/slider-scroll/shield.png") no-repeat 0 0;
+  background: url("../layoutImg/slider-scroll/box.png") no-repeat 0 0;
 }
 .pharmacies ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
   background: url("../layoutImg/slider-scroll/stats.png") no-repeat 0 0;
 }
 .hopitaux ul#slider-scroll li#slide-5 .zone-visu-txt-slider .visu-txt-slider {
-  background: url("../layoutImg/slider-scroll/box.png") no-repeat 0 0;
+  background: url("../layoutImg/slider-scroll/gestion-personnel.png") no-repeat 0 0;
 }
 /* @end */
 /* @group Bloc options */
