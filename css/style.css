@@ -3026,6 +3026,7 @@ a.btn-video:hover#btn-right-video .masque-arrow {
   position: absolute;
   top: 528px;
   left: 352px;
+  height: 176px;
 }
 #bloc-references #bloc-couleur-references {
   display: block;
@@ -5468,6 +5469,9 @@ ul.subMenu.fixedBottom {
     width: 100%;
     left: 0;
     margin: 0;
+  }
+  #bloc-references #btn-brochure {
+    height: 16.66666667vw;
   }
   .bloc-txt.bloc-txt-vertical-centered {
     line-height: 16.66666667vw;
