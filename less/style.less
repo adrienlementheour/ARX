@@ -1558,9 +1558,6 @@ ul#menu-header{
     right: 0;
     overflow: hidden;
     .home &{
-      background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat 50% 50%;
-      background-size: auto 100%;
-      background-size: cover;
       background-color: #d7e0f0;
     }
     .vmax &{
@@ -1602,6 +1599,20 @@ ul#menu-header{
     }
     .container{
       height: 100%;
+    }
+    #fond-bg-bloc-home{
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url("../layoutImg/home/bloc-home/bg-bloc-home.jpg") no-repeat 50% 50%;
+      background-size: auto 100%;
+      background-size: cover;
+      .opacity(0);
     }
     #machine{
       display: block;
