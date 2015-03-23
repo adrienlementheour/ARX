@@ -29,7 +29,8 @@ if(isset($_POST['submit'])) {
  	}
  	if(empty($mail)) {
  		$erreurMail = 'Le champ <strong>Email</strong> est obligatoire';
- 	}else{
+ 	}
+ 	else{
  		if(!(filter_var($mail, FILTER_VALIDATE_EMAIL))) {
  			$erreurMail = 'Vérifiez votre adresse email';
  		}
