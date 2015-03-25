@@ -380,10 +380,10 @@ function initBtnAnim(){
 }
 
 function animHeaderHome(){
-	TweenMax.to($("h1"), 0.3, {opacity: "1", y: "0px", ease:Circ.easeInOut});
-	TweenMax.to([$("#machine"), $("#fond-bg-bloc-home")], 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, delay: 0.3, onComplete: completeAnimMachine});
-	TweenMax.to([CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 1.5});
-	TweenMax.to([CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, delay: 2});
+	TweenMax.to($("h1"), 0.3, {opacity: "1", y: "0px", ease:Circ.easeInOut, force3D:true,lazy:true});
+	TweenMax.to([$("#machine"), $("#fond-bg-bloc-home")], 0.5, {opacity: "1", y: "0px", ease:Circ.easeInOut, force3D:true,lazy:true, delay: 0.3, onComplete: completeAnimMachine});
+	TweenMax.to([CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(2):before"), CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(3):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, force3D:true,lazy:true, delay: 1.5});
+	TweenMax.to([CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(5):before"), CSSRulePlugin.getRule(".home #bloc-home ul.bg-grid li.col-bg-grid:nth-child(6):before")], 1.2, {cssRule: {opacity: "1", y: "0px"}, ease:Circ.easeInOut, force3D:true,lazy:true, delay: 2});
 }
 
 function completeAnimMachine(){
