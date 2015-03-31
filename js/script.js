@@ -845,6 +845,8 @@ function completeTransiCarouselOptions(nextOptionImg, nextOptionTxt){
 }
 
 function openDetailHome(btnDetailClic){
+	// ScrollTop
+	TweenMax.to(window, 0.5, {scrollTo:{y:0}});
 	// Ajouter classe body
 	TweenMax.set($("body"), {className:"+=detail-home"});
 	// Récupérer l'index de l'élément cliqué
