@@ -132,6 +132,7 @@
   content: "\e601";
 }
 /* @end */
+/* @end */
 /* @group global var */
 /* @end */
 /* @group Mes styles */
@@ -1399,21 +1400,6 @@ a.btn.survol .triangle-btn {
 .btn:focus,
 a.btn:focus {
   outline: none;
-}
-.btn:active,
-a.btn:active {
-  -webkit-animation: blink 0.05s ease-in-out 2;
-  -moz-animation: blink 0.05s ease-in-out 2;
-  -o-animation: blink 0.05s ease-in-out 2;
-  animation: blink 0.05s ease-in-out 2;
-}
-.btn:active lesshat-selector,
-a.btn:active lesshat-selector {
-  -lh-property: 0; } 
-@-webkit-keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }}
-@-moz-keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }}
-@-o-keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; }}
-@keyframes blink{ 0%{ background-color: transparent; border-width: 1px; } 100%{ background-color: #ffffff; border-width: 0px; };
 }
 .btn-file,
 a.btn-file {
